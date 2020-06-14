@@ -3,7 +3,10 @@ const ROUTES = {
   detailLand: { path: "/detailLand/:id", to: "/detailLand/" },
   camera: "/camera",
   qr: "/qr",
-  manier: "/manier"
+  manier: "/manier",
+  ontvanger: "/ontvanger",
+  video: "/:id",
+  detailSouvenir: { path: "/detailSouvenir/:id", to: "/detailSouvenir/" },
 };
 
 export { ROUTES };

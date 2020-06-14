@@ -4,10 +4,13 @@ class UserService {
   constructor({ firebase }) {
     this.db = firebase.firestore();
   }
-
   create = async (user) => {
-    return await this.db.collection("users").doc(user.email).set(user);
+    return await this.db.collection("users").doc(user.id).set(user);
   };
+
+  // create = async (user) => {
+  //   return await this.db.collection("users").doc(user.email).set(user);
+  // };
 
   getUserByEmail = async (email) => {
     const data = (await this.db.collection("users").doc(email).get()).data();

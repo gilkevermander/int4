@@ -50,18 +50,17 @@ class LandStore {
         id: json.id,
         store: this.rootStore.landStore,
       });
-      console.log('newland')
     }
     if (json.isDeleted) {
       this.lands.remove(land);
     } else {
       land.updateFromJson(json);
-      console.log('bestaandland')
     }
     return land;
   }
 
   resolveLand = (id) => this.lands.find((land) => land.id === id);
+  resolveLandId = (title) => this.lands.find((land) => land.title === title);
 
   addLand = (land) => {
     this.lands.push(land);

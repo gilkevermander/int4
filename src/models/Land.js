@@ -7,7 +7,7 @@ class Land {
       throw new Error("voorzie een store");
     }
     this.store = store;
-    this.verhalen = [];
+    this.souvenirs = [];
 
     this.updateFromJson(json);
 
@@ -31,17 +31,17 @@ class Land {
   //   return this.verhalen.slice().sort((a, b) => a.naam - b.naam);
   // }
 
-  linkVerhaal(verhaal) {
-    !this.verhalen.includes(verhaal) && this.verhalen.push(verhaal);
-    !verhaal.lands.includes(verhaal) && verhaal.linkLand(this);
+  linkSouvenir(souvenir) {
+    !this.souvenirs.includes(souvenir) && this.souvenirs.push(souvenir);
+    !souvenir.lands.includes(souvenir) && souvenir.linkLand(this);
   }
 
-  unlinkVerhaal(verhaal) {
-    const index = this.verhalen.findIndex(test => test.id === verhaal.id);
+  unlinkSouvenir(souvenir) {
+    const index = this.souvenirs.findIndex(test => test.id === souvenir.id);
     if (index !== -1) {
-      this.verhalen.splice(index, 1);
+      this.souvenirs.splice(index, 1);
     }
-    verhaal.lands.includes(this) && verhaal.unlinkLand(this);
+    souvenir.lands.includes(this) && souvenir.unlinkLand(this);
   }
   
   get asJson() {

@@ -1,12 +1,11 @@
 import React from "react";
 
-import style from "./../Sidebar.module.css";
-import UnreadMessages from "../../../components/UnreadMessages/UnreadMessages";
+//import style from "./../Sidebar.module.css";
 import { useStore } from "../../../hooks/useStore";
 import { useHistory } from "react-router-dom";
 import { ROUTES } from "../../../consts";
 
-const AppHeader = ({ name, title, unreadLength }) => {
+const AppHeader = ({ name, title }) => {
   const { uiStore } = useStore();
   const history = useHistory();
 
@@ -21,17 +20,13 @@ const AppHeader = ({ name, title, unreadLength }) => {
   };
 
   return (
-    <header className={style.header}>
-      <div className={style.appnamewrapper}>
-        <h2 className={style.title}>{name}</h2>
-        <button onClick={handleLogout} className={style.button}>
+    <header >
+      <div >
+        <h2 >{name}</h2>
+        <button onClick={handleLogout} >
           Logout
         </button>
       </div>
-      <span className={style.unread}>
-        <UnreadMessages length={unreadLength} />
-        {title}
-      </span>
     </header>
   );
 };

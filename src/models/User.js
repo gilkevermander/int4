@@ -8,13 +8,8 @@ class User {
     }
     this.id = id;
     this.store = store;
+    this.souvenirs= []
 
-    this.messages = [];
-    this.groups = [];
-
-    if (!json.avatar) {
-      json.avatar = `https://avatars.dicebear.com/v2/avataaars/${this.id}.svg`;
-    }
     this.updateFromJson(json);
 
     this.store.addUser(this);
@@ -22,64 +17,61 @@ class User {
 
   create = async () => this.store.createUser(this.asJson);
 
-  linkMessage(message) {
-    !this.messages.includes(message) && this.messages.push(message);
+  linkSouvenir(souvenir) {
+    !this.souvenirs.includes(souvenir) && this.souvenirs.push(souvenir);
   }
 
-  unlinkMessage(message) {
-    const index = this.messages.findIndex((test) => test.id === message.id);
+  unlinkSouvenir(souvenir) {
+    const index = this.souvenirs.findIndex((test) => test.id === souvenir.id);
     if (index !== -1) {
-      this.messages.splice(index, 1);
+      this.souvenirs.splice(index, 1);
     }
   }
 
-  linkGroup(group) {
-    !this.groups.includes(group) && this.groups.push(group);
-    !group.users.includes(this) && group.linkUser(this);
-  }
+  // linkGroup(group) {
+  //   !this.groups.includes(group) && this.groups.push(group);
+  //   !group.users.includes(this) && group.linkUser(this);
+  // }
 
-  unlinkGroup(group) {
-    const index = this.groups.findIndex((test) => test.id === group.id);
-    if (index !== -1) {
-      this.groups.splice(index, 1);
-    }
-    group.users.includes(this) && group.unlinkUser(this);
-  }
+  // unlinkGroup(group) {
+  //   const index = this.groups.findIndex((test) => test.id === group.id);
+  //   if (index !== -1) {
+  //     this.groups.splice(index, 1);
+  //   }
+  //   group.users.includes(this) && group.unlinkUser(this);
+  // }
 
   updateFromJson = ({
+    voornaam = undefined,
+    achternaam = undefined,
+    gebruikersnaam = undefined,
     email = undefined,
-    name = undefined,
-    avatar = undefined,
-    groups = undefined,
   }) => {
-    this.name = name !== undefined ? name : this.name;
+    this.voornaam = voornaam !== undefined ? voornaam : this.voornaam;
+    this.achternaam = achternaam !== undefined ? achternaam : this.achternaam;
+    this.gebruikersnaam = gebruikersnaam !== undefined ? gebruikersnaam : this.gebruikersnaam;
     this.email = email !== undefined ? email : this.email;
-    this.avatar = avatar !== undefined ? avatar : this.avatar;
-    if (groups !== undefined) {
-      const oldGroups = this.groups.concat();
-      oldGroups.forEach((group) => group.unlinkUser(this));
-      groups.forEach((group) => {
-        this.store.rootStore.groupStore
-          .updateGroupFromServer(group)
-          .linkUser(this);
-      });
-    }
   };
 
   get asJson() {
     return {
       id: this.id,
-      name: this.name,
-      email: this.email,
-      avatar: this.avatar,
+      voornaam: this.voornaam,
+      achternaam: this.achternaam,
+      gebruikersnaam: this.gebruikersnaam,
+      email: this.email
     };
   }
 }
 
 decorate(User, {
-  groups: observable,
   updateFromJson: action,
   asJson: computed,
+  souvenirs: observable,
+  voornaam: observable,
+  achternaam: observable,
+  gebruikersnaam: observable,
+  email: observable,
 });
 
 export default User;

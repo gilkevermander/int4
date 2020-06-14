@@ -3,17 +3,19 @@ import Opnemen from '../Opnemen/index';
 import Record from '../Record/index';
 import Souvenir from '../Souvenir/index';
 import Pimp from '../Pimp/index';
+import Keuze from '../Keuze/index';
 import Land from '../Land/index';
+import Ontvanger from '../Ontvanger/index';
 import Gegevens from '../Gegevens/index';
 import { useStore } from "../../hooks/useStore.js";
 
 const Manier = () => {
 
-  const [land, setLand] = useState("Albania");
-  const [selectedoption, setSelectedOption] = useState("video");
+  const [land, setLand] = useState("");
+  const [selectedoption, setSelectedOption] = useState("");
   const [step, setStep] = useState(1);
-  const [souvenir, setSouvenir] = useState("sleutelhanger");
-  const [voornaam, setVoornaam] = useState("");
+  const [souvenir, setSouvenir] = useState("");
+  const [keuze, setKeuze] = useState("");
 
   const { landStore } = useStore();
 
@@ -25,7 +27,15 @@ const Manier = () => {
     setStep(step - 1);
   }
 
-  const values = { land, selectedoption, souvenir };
+  const prevprevStep = () => {
+    setStep(step - 2);
+  }
+
+  const overStep = () => {
+    setStep(step + 2);
+  }
+
+  const values = { land, selectedoption, souvenir, keuze };
   switch (step) {
     case 1:
       return <Opnemen
@@ -57,14 +67,32 @@ const Manier = () => {
       />
 
     case 5:
+      return <Keuze
+        values={values}
+        nextStep={nextStep}
+        prevStep={prevStep}
+        setKeuze = {setKeuze}
+        overStep= {overStep}
+      />
+
+      case 6:
       return <Pimp
         values={values}
         nextStep={nextStep}
         prevStep={prevStep}
       />
 
-    case 6:
+    case 7:
       return <Gegevens
+        values={values}
+        nextStep={nextStep}
+        prevStep={prevStep}
+        prevprevStep={prevprevStep}
+
+      />
+
+      case 8:
+      return <Ontvanger
         values={values}
         nextStep={nextStep}
         prevStep={prevStep}

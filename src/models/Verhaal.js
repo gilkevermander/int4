@@ -43,7 +43,7 @@ class Verhaal {
   };
 
 
-  create = async () => this.store.createVerhaal(this.asJson);
+  create = async () => this.store.createVehaal(this.asJson);
 
   linkLand(land) {
     !this.lands.includes(land) && this.lands.push(land);
@@ -66,6 +66,7 @@ class Verhaal {
       landId: this.landId,
     };
   }
+
 }
 
 decorate(Verhaal, {

@@ -7,7 +7,7 @@ class UserStore {
     this.rootStore = rootStore;
     this.users = [];
     this.usersService = new UserService({ firebase: this.rootStore.firebase });
-    // this.loadAllUsers();
+    this.loadAllUsers();
   }
 
   empty() {
@@ -77,6 +77,13 @@ class UserStore {
     }
     return user;
   }
+
+  // resolveUsers = (userId) => {
+  //   console.log(this.users)
+  //   console.log(userId)
+  //   console.log(this.users.find((user) => user.id === userId))
+  //   this.users.find((user) => user.id === userId)
+  // };
 
   resolveUser = (id) => this.users.find((user) => user.id === id);
 

@@ -3,11 +3,8 @@ import { Button, List } from 'semantic-ui-react';
 import VideoRecorder from 'react-video-recorder';
 import style from "./Record.module.css";
 import { ReactMic } from 'react-mic';
-// import { saveAs } from 'file-saver';
-// import MicRecorder from 'mic-recorder-to-mp3';
-// import AudioRecorder from 'react-audio-recorder';
+import { saveAs } from 'file-saver';
 let cloudinary = require('cloudinary/lib/cloudinary');
-
 
 //let cloudinary = require('cloudinary-core').Cloudinary.new()
 // import { render } from 'react-dom';
@@ -22,16 +19,10 @@ const Record = ({ nextStep, prevStep, values }) => {
     });
 
     const [record, setRecord] = useState("");
-    const [complete, setComplete] = useState(false);
-    const [error, setError] = useState("");
 
     const saveAndContinue = (e) => {
-        e.preventDefault()
-        if (complete === false) {
-            setError("Neem eerst je verhaal op!")
-        } else {
-            nextStep()
-        }
+        e.preventDefault();
+        nextStep();
     }
 
     const back = (e) => {
@@ -51,7 +42,6 @@ const Record = ({ nextStep, prevStep, values }) => {
     }
 
     const onData = (recordedBlob) => {
-        setComplete(true);
         console.log('chunk of real-time data is: ', recordedBlob);
     }
 
@@ -63,7 +53,6 @@ const Record = ({ nextStep, prevStep, values }) => {
         console.log('video');
         return (
             <div className={style.container}>
-                <p>{error}</p>
                 <h1 className="ui centered">details</h1>
                 <List>
                     <List.Item>
@@ -92,10 +81,9 @@ const Record = ({ nextStep, prevStep, values }) => {
                         console.log('Thumb Blob', thumbnailBlob, thumbUrl)
                         console.log('Started:', startedAt)
                         console.log('Duration:', duration)
-                        setComplete(true)
 
-                        // var FilyeSaver = require('file-saver');
-                        // FileSaver.saveAs(videoBlob, "hello world.mp4");
+                        var FileSaver = require('file-saver');
+                        FileSaver.saveAs(videoBlob, "hello world.mp4");
 
                         // cloudinary.uploader.upload(`blob:${videoUrl}`,
                         //     {
@@ -124,7 +112,6 @@ const Record = ({ nextStep, prevStep, values }) => {
         return (
             < div >
                 <h1 className="ui centered">details</h1>
-                <p>{error}</p>
                 <List>
                     <List.Item>
                         <List.Icon name='users' />

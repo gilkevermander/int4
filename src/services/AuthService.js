@@ -3,13 +3,13 @@ import "firebase/auth";
 class AuthService {
   constructor({ firebase, onAuthStateChanged }) {
     this.auth = firebase.auth();
-    // this.auth.onAuthStateChanged((data) => {
-    //   if (data) {
-    //     data.id = data.uid;
-    //     data.name = data.displayName;
-    //   }
-    //   onAuthStateChanged(data);
-    // });
+    this.auth.onAuthStateChanged((data) => {
+      if (data) {
+        data.id = data.uid;
+        data.gebruikersnaam = data.displayName;
+      }
+      onAuthStateChanged(data);
+    });
   }
 
   login = async (email, password) => {
@@ -21,15 +21,27 @@ class AuthService {
     return await this.auth.signOut();
   };
 
-  register = async ({ name, email, password, avatar }) => {
+  // register = async ({ name, email, password, avatar }) => {
+  //   const userCredential = await this.auth.createUserWithEmailAndPassword(
+  //     email,
+  //     password
+  //   );
+  //   await userCredential.user.updateProfile({
+  //     displayName: name,
+  //     photoURL: avatar,
+  //   });
+  //   return userCredential.user;
+  // };
+
+  register = async ({ gebruikersnaam, email, password }) => {
     const userCredential = await this.auth.createUserWithEmailAndPassword(
       email,
       password
     );
     await userCredential.user.updateProfile({
-      displayName: name,
-      photoURL: avatar,
+      displayName: gebruikersnaam
     });
+
     return userCredential.user;
   };
 

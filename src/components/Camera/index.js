@@ -18,7 +18,7 @@ const Camera = () => {
       <section className={style.container}>
         <Webcam
           audio={false}
-          ref={webcamRef}
+          //ref={webcamRef}
           screenshotFormat="image/jpeg"
           width={700}
           radius={4}

@@ -1,17 +1,25 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Form, Button } from 'semantic-ui-react';
 import { useObserver } from 'mobx-react-lite';
 
 const Opnemen = ({ nextStep, values, setSelectedOption }) => {
 
+  const [error, setError] = useState("");
+
   const saveAndContinue = (e) => {
     e.preventDefault()
-    nextStep()
+    if(values.selectedoption === "" ){
+      setError("duid een optie aan")
+    } else {
+      nextStep()
+    }
+    
   }
   console.log(values);
   return (
     <Form >
       <h2 className="ui centered">Kies op welke manier jij jouw reisverhaal wilt vertellen</h2>
+      <p>{error}</p>
       <Form.Field>
         <label>
           <input type="radio" name="manier" value="podcast" onChange={e => setSelectedOption(e.target.value)} /> <span>Spreek een podcast in</span>
