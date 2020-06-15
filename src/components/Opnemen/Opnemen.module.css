@@ -1,6 +1,6 @@
 
 @value tokens: "../../styles/tokens.module.css";
-@value fontTitel, spacer1 from tokens;
+@value fontTitel, fontSubtitel spacer1 from tokens;
 
 .procesbar {
   display: flex;
@@ -118,6 +118,52 @@
     position: absolute;
     display: inline-block;
     background-repeat: no-repeat;
+}
+
+.keuze {
+  display: block;
+  position: relative;
+  margin-bottom: 10rem;
+  cursor: pointer;
+  font-size: fontSubtitet;
+}
+
+.keuze__text {
+  position: absolute;
+  top: 0;
+  left: 20rem;
+  height: 32.8rem;
+  width: 42rem;
+  border-radius: 5rem;
+  background-color: white;
+  box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.25);
+  composes: medium from "../../styles/typo.module.css";
+  font-size: 3rem;
+}
+
+.keuze .keuze__mogelijkheid {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.keuze .keuze__mogelijkheid:checked ~ .keuze__text:after {
+  display: block;
+}
+
+.keuze:hover input ~ .keuze__text {
+  border: 10px solid #FFDC61;
+}
+
+.keuze input:checked ~ .keuze__text {
+  border: 10px solid #FFDC61;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
 
