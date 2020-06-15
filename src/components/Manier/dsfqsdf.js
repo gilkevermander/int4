@@ -10,8 +10,8 @@ const Manier = () => {
       <h1 className={style.message}>Kies op welke manier jij jouw reisverhaal wilt vertellen</h1>
       <form>
         <div className="radio">
-          <label>
-            <input type="radio" value={manier === 'podcast'} checked={true} onChange={e => setManier(e.currentTarget.value)} />
+          <label className={style.input}>
+            <input  type="radio" value={manier === 'podcast'} checked={true} onChange={e => setManier(e.currentTarget.value)} />
             Spreek een podcast in
           </label>
         </div>

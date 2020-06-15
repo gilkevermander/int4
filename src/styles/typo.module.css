@@ -1,18 +1,49 @@
 @value tokens: "./tokens.module.css";
-@value fontSizeLarge, fontSizeMedium, background, spacer1 from tokens;
+@value fontSizeLarge, fontSizeMedium, background, spacer1, raleway from tokens;
 
-.title1 {
-  font-size: fontSizeLarge;
-  font-weight: bold;
+.title {
+  font-size: fontTitel;
+  font-family: raleway;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .subtitle {
-  font-size: fontSizeMedium;
-  background-color: background;
-  padding: spacer1;
+  font-size: fontSubtitel;
+  font-family: raleway, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.largeText {
-  font-size: fontSizeMedium;
-  font-weight: bold;
+.button {
+  font-size: fontButton;
+  font-family: raleway, sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
+
+.bold {
+  font-family: raleway;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.semibold {
+font-family: raleway, sans-serif;
+font-weight: 600;
+font-style: normal;
+}
+
+.medium {
+  font-family: raleway, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+.regular {
+  font-family: raleway, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+

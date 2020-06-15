@@ -9,6 +9,7 @@
 
 .title {
   composes: title1 from "../../styles/typo.module.css";
+  font-family: 'Raleway Bold';
   padding: spacer1;
   text-transform: capitalize;
   color: notblack;

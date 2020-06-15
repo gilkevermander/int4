@@ -1,14 +1,17 @@
-@value colorPrimary: #00bcd4;
-@value darkPrimary: #028494;
-@value colorBubbleMe: #bdbdbd;
-@value background: #cfd8dc;
-@value hover: #eee;
-@value solight: whitesmoke;
-@value notblack: darkslategrey;
+@value groen: #8bd1cb;
+@value geel:  #ffdc61;
+@value roze: #f67f8f;
+@value blauw: #80a8f7;
+@value oranje: #ffad65;
 
-@value spacer1: 1rem;
-@value spacer2: 1.5rem;
-@value spacerLarge: 6rem;
+@value spacer1: 6.5rem;
+@value spacer2: 3rem;
+@value spacerInput: 0.5rem;
 
-@value fontSizeMedium: 1.8rem;
-@value fontSizeLarge: 3rem;
+@value fontTitel: 4rem;
+@value fontSubtitel: 1.8rem;
+@value fontButton: 2.4rem;
+
+@value raleway: raleway,sans-serif;
+
+
