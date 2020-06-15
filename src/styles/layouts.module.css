@@ -47,6 +47,16 @@
     composes: medium from "./typo.module.css";
     font-size: fontButton;
   }
+
+  .back__text{
+    display: flex;
+    justify-content: center;
+    color: black;
+    width: 7rem;
+    align-items: center;
+    composes: medium from "./typo.module.css";
+    font-size: 3rem;
+  }
   
   .next {
     display: flex;
@@ -59,7 +69,19 @@
     font-size: 2rem;
     margin-top: 4.5rem;
     z-index: -2;
-    
+  }
+
+  .back {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 7rem;
+    height: 7rem;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 2rem;
+    margin-top: 4.5rem;
+    z-index: -2;
   }
 
   .vraag{

@@ -115,6 +115,27 @@
     background-repeat: no-repeat;
 }
 
+.back{
+  composes: back from "../../styles/layouts.module.css";
+  border: none;
+  color: grey;
+}
+
+.back__text {
+  composes: back__text from "../../styles/layouts.module.css";
+}
+
+.back__text::after {
+    content: "";
+    background-image: url('../../assets/img/button__circle.png');
+    width: 15vw;
+    height: 15vh;
+    background-position: 9rem 2.5rem;
+    position: absolute;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
 .vraag{
   composes: semibold from "../../styles/typo.module.css";
   font-size: fontTitel;
