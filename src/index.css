@@ -1,4 +1,5 @@
 @import "./styles/reset.css";
+@value raleway from tokens;
 
 html {
   box-sizing: border-box;
@@ -45,21 +46,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: Luna;
+  src: url(assets/fonts/Luna.woff2) format('woff2'), url(assets/fonts/Luna.woff) format('woff');
+}
+
 #root {
   height: 100vh;
   width: 100%;
-  background-image: url('./img/textures.png');
+  background-image: url('./assets/img/textures.png');
   background-color: #8bd1cb;
   background-blend-mode: screen;
+  display: flex;
+  justify-content: center;
+  padding-top: 6.5rem;
+  padding-bottom: 3rem;
+  font-family: raleway ;
 }
 
 a {
   text-decoration: none;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
 }

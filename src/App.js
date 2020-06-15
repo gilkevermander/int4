@@ -15,14 +15,11 @@ import style from "./index.css";
 
 
 function App() {
-
   return (
-    <div className={style.container}>
-      <header>
-        <h1>
+    <div>
+      {/* <header>
           <Procesbar />
-        </h1>
-      </header>
+      </header> */}
 
       <main>
         <Switch>

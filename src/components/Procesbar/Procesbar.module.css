@@ -1,3 +1,69 @@
+
 .procesbar {
   display: flex;
 }
+
+.procesbar__item{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.item__text{
+  composes: regular from "../../styles/typo.module.css";
+}
+
+.item__number{
+  font-family: 'luna';
+  margin-bottom: 1.5rem;
+}
+
+.procesbar_lijn1{
+  display: flex;
+}
+
+.procesbar_lijn1::after {
+  content: url('../../assets/img/procesbar_lijn1.png');
+  width: 9rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.procesbar_lijn2{
+  display: flex;
+}
+
+.procesbar_lijn2::after {
+  content: url('../../assets/img/procesbar_lijn2.png');
+  width: 9rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.procesbar_lijn3{
+  display: flex;
+}
+
+.procesbar_lijn3::after {
+  content: url('../../assets/img/procesbar_lijn3.png');
+  width: 9rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+
+.procesbar_lijn4{
+  display: flex;
+}
+
+.procesbar_lijn4::after {
+  content: url('../../assets/img/procesbar_lijn4.png');
+  width: 9rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.hidden{
+  display: none;
+}
+
