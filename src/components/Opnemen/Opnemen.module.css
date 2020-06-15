@@ -1,8 +1,12 @@
 
+@value tokens: "../../styles/tokens.module.css";
+@value fontTitel, spacer1 from tokens;
+
 .procesbar {
   display: flex;
   align-items: center;
   height: 10rem;
+  justify-content: center;
 }
 
 .procesbar__item{
@@ -84,3 +88,33 @@
   display: none;
 }
 
+.vraag{
+  composes: semibold from "../../styles/typo.module.css";
+  font-size: fontTitel;
+  margin-top: spacer1;
+  display: flex;
+  justify-content: center;
+}
+
+.next{
+  composes: next from "../../styles/layouts.module.css";
+  border: none;
+  color: grey;
+}
+
+.next__text {
+  composes: next__text from "../../styles/layouts.module.css";
+}
+
+
+.next__text::after {
+    content: "";
+    background-image: url('../../assets/img/button__line.png');
+    width: 30vw;
+    height: 15vh;
+    background-position: 9rem 1.5rem;
+    position: absolute;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+  
