@@ -64,7 +64,7 @@ const Keuze = ({ nextStep, values, setKeuze, prevStep, overStep }) => {
         </div>
       </div>
     <Form >
-      <h2 className="ui centered">Wil jij jouw souvenir pimpen met een foto?</h2>
+      <h2 className={style.vraag}>Wil jij jouw souvenir pimpen met een foto?</h2>
       <p>{error}</p>
       <Form.Field>
         <label>

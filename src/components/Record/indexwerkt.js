@@ -59,7 +59,7 @@ const Record = ({ nextStep, prevStep, values }) => {
         console.log('video');
         return (
             <div className={style.container}>
-                <h1 className="ui centered">details</h1>
+                {/* <h1 className="ui centered">details</h1>
                 <List>
                     <List.Item>
                         <List.Icon name='users' />
@@ -69,7 +69,7 @@ const Record = ({ nextStep, prevStep, values }) => {
                         <List.Icon name='users' />
                         <List.Content>land:{values.land}</List.Content>
                     </List.Item>
-                </List>
+                </List> */}
 
 
                 <VideoRecorder

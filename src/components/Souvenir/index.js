@@ -61,9 +61,8 @@ const Souvenir = ({ nextStep, values, setSouvenir, prevStep }) => {
         </div>
       </div>
       <section className={style.container}>
-        <h2 className={style.message}>Souvenir</h2>
         <Form color='blue' >
-          <h1 className="ui centered">kies een souvenir</h1>
+          <h1 className={style.vraag}>kies je souvenir</h1>
           <p>{error}</p>
           <Form.Field>
             <label>

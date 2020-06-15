@@ -55,7 +55,8 @@ const Delen = ({ nextStep, values, setDelen }) => {
       </div>
     </div>
     <Form >
-      <h2 className="ui centered">Wil je jouw verhaal anoniem delen op
+      <h2 className={style.vraag}>Nog één laatste vraagje</h2>
+      <h2 className={style.subtitel}>Wil je jouw verhaal anoniem delen op
 de wereldkaart vol reisverhalen?</h2>
       <p>{error}</p>
       <Form.Field>
