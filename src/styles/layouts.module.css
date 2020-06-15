@@ -1,3 +1,7 @@
+
+@value tokens: "./tokens.module.css";
+@value fontTitel, spacer1 from tokens;
+
 .button__text{
     display: flex;
     justify-content: center;
@@ -56,4 +60,12 @@
     margin-top: 4.5rem;
     z-index: -2;
     
+  }
+
+  .vraag{
+    composes: semibold from "./typo.module.css";
+    font-size: fontTitel;
+    margin-top: spacer1;
+    display: flex;
+    justify-content: center;
   }

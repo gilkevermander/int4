@@ -63,7 +63,7 @@ const Land = ({nextStep, values, setLand, landStore, prevStep}) => {
     </div>
     
     <Form color='blue' >
-      <h1 className="ui centered">Kies het land van jouw herinnering</h1>
+      <h1 className={style.vraag}>Kies het land van jouw herinnering</h1>
       <p>{error}</p>
       <Form.Field>
         <select name="land" id="land" onChange={e => setLand(e.currentTarget.value)}>
