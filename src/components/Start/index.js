@@ -1,8 +1,8 @@
 import React from "react";
 import { Player } from 'video-react';
 
-import poster from './poster.png'
-import bestand from './bestand.mp4'
+import intro from '../../assets/img/poster.png'
+import bestand from '../../assets/video/intro.mp4'
 import style from "./Start.module.css";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../consts/index";
@@ -16,7 +16,7 @@ const Start = () => {
         <Player
           className={style.player}
           playsInline
-          poster={poster}
+          poster={intro}
           src={bestand}
           width="500"
           contentStyle={{ padding: 0 }}

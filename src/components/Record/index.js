@@ -62,6 +62,43 @@ const Record = ({ nextStep, prevStep, values }) => {
     if (values.selectedoption === 'video') {
         console.log('video');
         return (
+            <>
+            <div className={style.procesbar}>
+
+                <div className={style.procesbar_lijn1}>
+                    <div className={style.procesbar__item}>
+                        <p className={style.item__number}>1</p>
+                        <p className={style.item__text}>Verhaal</p>
+                    </div>
+                </div>
+
+                <div className={style.procesbar_lijn2}>
+                    <div className={style.procesbar__item}>
+                        <p className={style.item__number}>2</p>
+                        <p className={style.item__text}>land</p>
+                    </div>
+                </div>
+
+                <div className={style.procesbar_lijn3}>
+                    <div className={style.procesbar__item1}>
+                        <p className={style.item__number}>3</p>
+                        <p className={style.item__text}>Opname</p>
+                    </div>
+                </div>
+
+                <div className={style.procesbar_lijn4}>
+                    <div className={style.procesbar__item}>
+                        <p className={style.item__number}>4</p>
+                        <p className={style.item__text}>Souvenir</p>
+                    </div>
+                </div>
+
+                <div className={style.procesbar__item}>
+                    <p className={style.item__number}>5</p>
+                    <p className={style.item__text}>Gegevens</p>
+                </div>
+            </div>
+
             <div className={style.container}>
                 <p>{error}</p>
                 <h1 className="ui centered">details</h1>
@@ -117,11 +154,48 @@ const Record = ({ nextStep, prevStep, values }) => {
                 <Button onClick={back}>Back</Button>
                 <Button onClick={saveAndContinue}>Confirm</Button>
             </div>
+            </>
         )
 
     } else {
         console.log('audio');
         return (
+            <>
+            <div className={style.procesbar}>
+
+                <div className={style.procesbar_lijn1}>
+                    <div className={style.procesbar__item}>
+                        <p className={style.item__number}>1</p>
+                        <p className={style.item__text}>Verhaal</p>
+                    </div>
+                </div>
+
+                <div className={style.procesbar_lijn2}>
+                    <div className={style.procesbar__item}>
+                        <p className={style.item__number}>2</p>
+                        <p className={style.item__text}>land</p>
+                    </div>
+                </div>
+
+                <div className={style.procesbar_lijn3}>
+                    <div className={style.procesbar__item1}>
+                        <p className={style.item__number}>3</p>
+                        <p className={style.item__text}>Opname</p>
+                    </div>
+                </div>
+
+                <div className={style.procesbar_lijn4}>
+                    <div className={style.procesbar__item}>
+                        <p className={style.item__number}>4</p>
+                        <p className={style.item__text}>Souvenir</p>
+                    </div>
+                </div>
+
+                <div className={style.procesbar__item}>
+                    <p className={style.item__number}>5</p>
+                    <p className={style.item__text}>Gegevens</p>
+                </div>
+            </div>
             < div >
                 <h1 className="ui centered">details</h1>
                 <p>{error}</p>
@@ -147,6 +221,8 @@ const Record = ({ nextStep, prevStep, values }) => {
                 <Button onClick={back}>Back</Button>
                 <Button onClick={saveAndContinue}>Confirm</Button>
             </div >
+
+            </>
 
         )
     }

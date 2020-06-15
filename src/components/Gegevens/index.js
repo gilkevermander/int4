@@ -74,6 +74,43 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
   console.log(values);
 
   return (
+    <>
+    <div className={style.procesbar}>
+
+      <div className={style.procesbar_lijn1}>
+        <div className={style.procesbar__item}>
+          <p className={style.item__number}>1</p>
+          <p className={style.item__text}>Verhaal</p>
+        </div>
+      </div>
+
+      <div className={style.procesbar_lijn2}>
+        <div className={style.procesbar__item}>
+          <p className={style.item__number}>2</p>
+          <p className={style.item__text}>land</p>
+        </div>
+      </div>
+
+      <div className={style.procesbar_lijn3}>
+        <div className={style.procesbar__item}>
+          <p className={style.item__number}>3</p>
+          <p className={style.item__text}>Opname</p>
+        </div>
+      </div>
+
+      <div className={style.procesbar_lijn4}>
+        <div className={style.procesbar__item}>
+          <p className={style.item__number}>4</p>
+          <p className={style.item__text}>Souvenir</p>
+        </div>
+      </div>
+
+      <div className={style.procesbar__item1}>
+        <p className={style.item__number}>5</p>
+        <p className={style.item__text}>Gegevens</p>
+      </div>
+
+    </div>
     <form onSubmit={handleSubmit} className={style.form}>
       <h1 className="ui centered">Geef jouw gegevens in</h1>
       <TextInputGroup
@@ -135,6 +172,7 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
       <Button onClick={back}>Back</Button>
       {/* <Button onClick={saveAndContinue}>Save And Continue </Button> */}
     </form>
+    </>
   )
 }
 

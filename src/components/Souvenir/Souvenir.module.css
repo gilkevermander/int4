@@ -1,0 +1,118 @@
+@value tokens: "../../styles/tokens.module.css";
+@value fontTitel, spacer1 from tokens;
+
+.procesbar {
+  display: flex;
+  align-items: center;
+  height: 10rem;
+  justify-content: center;
+}
+
+.procesbar__item{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.procesbar__item1{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/img/procesbar_active.png');
+  background-repeat: no-repeat; 
+  height: 8.7rem;
+  width: 7.5rem;
+}
+
+.item__text{
+  composes: regular from "../../styles/typo.module.css";
+  text-transform: uppercase;
+}
+
+.item__number{
+  font-family: 'luna';
+  margin-bottom: 1.5rem;
+
+}
+
+.procesbar_lijn1{
+  display: flex;
+
+}
+
+.procesbar_lijn1::after {
+  content: url('../../assets/img/procesbar_lijn1.png');
+  width: 9rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 2.2rem
+}
+
+.procesbar_lijn2{
+  display: flex;
+}
+
+.procesbar_lijn2::after {
+  content: url('../../assets/img/procesbar_lijn2.png');
+  width: 9rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.procesbar_lijn3{
+  display: flex;
+}
+
+.procesbar_lijn3::after {
+  content: url('../../assets/img/procesbar_lijn3.png');
+  width: 9rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+
+.procesbar_lijn4{
+  display: flex;
+}
+
+.procesbar_lijn4::after {
+  content: url('../../assets/img/procesbar_lijn4.png');
+  width: 9rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.hidden{
+  display: none;
+}
+
+.vraag{
+  composes: semibold from "../../styles/typo.module.css";
+  font-size: fontTitel;
+  margin-top: spacer1;
+  display: flex;
+  justify-content: center;
+}
+
+.next{
+  composes: next from "../../styles/layouts.module.css";
+  border: none;
+  color: grey;
+}
+
+.next__text {
+  composes: next__text from "../../styles/layouts.module.css";
+}
+
+
+.next__text::after {
+    content: "";
+    background-image: url('../../assets/img/button__line.png');
+    width: 30vw;
+    height: 15vh;
+    background-position: 9rem 1.5rem;
+    position: absolute;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
