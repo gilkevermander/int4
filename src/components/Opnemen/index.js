@@ -56,7 +56,7 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
 
       </div>
       <Form >
-        <h2 className="ui centered">Kies op welke manier jij jouw reisverhaal wilt vertellen</h2>
+        <h2 className={style.vraag}>Kies op welke manier jij jouw reisverhaal wilt vertellen</h2>
         <p>{error}</p>
         <Form.Field>
           <label>
@@ -66,7 +66,7 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
             <input type="radio" name="manier" value="video" onChange={e => setSelectedOption(e.target.value)} /> <span>Neem een video op</span>
           </label>
         </Form.Field>
-        <Button onClick={saveAndContinue}>Save And Continue </Button>
+        <Button className={style.next} onClick={saveAndContinue}> <p className={style.next__text}>Volgende</p>  </Button>
       </Form>
     </>
   )
