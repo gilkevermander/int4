@@ -13,9 +13,6 @@
   display: flex;
   justify-content: center;
   color: black;
-  background-image: url('../../assets/img/button__line.png');
-  background-repeat: no-repeat;
-  background-position: 0 -3rem;
   width: 30rem;
   align-items: center;
   composes: medium from "../../styles/typo.module.css";
@@ -27,13 +24,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 30rem;
   height: 7rem;
-  
   background-color: geel;
   border-radius: 50%;
   font-size: 2rem;
   margin-top: 4.5rem;
+  z-index: -2;
   
 }
+
+.button__text::after {
+  content: "";
+  background-image: url('../../assets/img/button__line.png');
+  width: 30vw;
+  height: 15vh;
+  background-position: 3rem 0;
+  position: absolute;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+
+
