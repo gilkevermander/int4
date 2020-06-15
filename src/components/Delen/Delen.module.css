@@ -1,6 +1,6 @@
 
 @value tokens: "../../styles/tokens.module.css";
-@value fontTitel, spacer1 from tokens;
+@value fontTitel, spacer1, fontSubtitel from tokens;
 
 .procesbar {
   display: flex;
@@ -116,5 +116,22 @@
     position: absolute;
     display: inline-block;
     background-repeat: no-repeat;
+}
+
+.vraag{
+  composes: semibold from "../../styles/typo.module.css";
+  font-size: fontTitel;
+  margin-top: spacer1;
+  display: flex;
+  justify-content: center;
+}
+
+.subtitel {
+  composes: medium from "../../styles/typo.module.css";
+  font-size: 3rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+
 }
   

@@ -66,7 +66,7 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
             <input type="radio" name="manier" value="video" onChange={e => setSelectedOption(e.target.value)} /> <span>Neem een video op</span>
           </label>
         </Form.Field>
-        <Button className={style.next} onClick={saveAndContinue}> <p className={style.next__text}>Volgende</p>  </Button>
+        <Button className={style.next} onClick={saveAndContinue}> <p className={style.next__text}>Volgende</p></Button>
       </Form>
     </>
   )

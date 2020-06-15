@@ -101,7 +101,7 @@ const Record = ({ nextStep, prevStep, values }) => {
 
             <div className={style.container}>
                 <p>{error}</p>
-                <h1 className="ui centered">details</h1>
+                {/* <h1 className="ui centered">details</h1>
                 <List>
                     <List.Item>
                         <List.Icon name='users' />
@@ -111,7 +111,7 @@ const Record = ({ nextStep, prevStep, values }) => {
                         <List.Icon name='users' />
                         <List.Content>land:{values.land}</List.Content>
                     </List.Item>
-                </List>
+                </List> */}
 
                 <VideoRecorder
                     onRecordingComplete={(videoBlob, startedAt, thumbnailBlob, duration) => {
@@ -197,7 +197,7 @@ const Record = ({ nextStep, prevStep, values }) => {
                 </div>
             </div>
             < div >
-                <h1 className="ui centered">details</h1>
+                {/* <h1 className="ui centered">details</h1>
                 <p>{error}</p>
                 <List>
                     <List.Item>
@@ -208,7 +208,7 @@ const Record = ({ nextStep, prevStep, values }) => {
                         <List.Icon name='users' />
                         <List.Content>land:{values.land}</List.Content>
                     </List.Item>
-                </List>
+                </List> */}
                 <ReactMic
                     record={record}
                     className="sound-wave"

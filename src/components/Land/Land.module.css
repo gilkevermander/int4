@@ -114,4 +114,12 @@
     display: inline-block;
     background-repeat: no-repeat;
 }
+
+.vraag{
+  composes: semibold from "../../styles/typo.module.css";
+  font-size: fontTitel;
+  margin-top: spacer1;
+  display: flex;
+  justify-content: center;
+}
   

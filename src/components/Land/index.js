@@ -61,7 +61,7 @@ const Land = ({nextStep, values, setLand, landStore, prevStep}) => {
         <p className={style.item__text}>Gegevens</p>
       </div>
     </div>
-    
+
     <Form color='blue' >
       <h1 className={style.vraag}>Kies het land van jouw herinnering</h1>
       <p>{error}</p>

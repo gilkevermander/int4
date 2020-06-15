@@ -100,6 +100,8 @@
   composes: next from "../../styles/layouts.module.css";
   border: none;
   color: grey;
+  display: flex;
+  margin: 6rem 0 0rem 100rem;
 }
 
 .next__text {
@@ -117,4 +119,6 @@
     display: inline-block;
     background-repeat: no-repeat;
 }
+
+
   
