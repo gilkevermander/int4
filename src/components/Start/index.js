@@ -2,7 +2,7 @@ import React from "react";
 import { Player } from 'video-react';
 
 import poster from './poster.png'
-import bestand from './bestand.mp4'
+import bestand from './intro.mp4'
 import style from "./Start.module.css";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../consts/index";
