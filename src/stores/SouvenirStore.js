@@ -33,6 +33,14 @@ class SouvenirStore {
     return souvenir;
   }
 
+  loadLandSouvenir = async (landId) => {
+    const jsonSouvenir = await this.souvenirService.getByLand(landId);
+    console.log(jsonSouvenir)
+    console.log(landId);
+    this.updateSouvenirFromServer(jsonSouvenir);
+    return this.resolveSouvenir(landId);
+  }
+
   loadSouvenir = async (id) => {
     const jsonSouvenir = await this.souvenirService.getById(id);
     console.log(jsonSouvenir)

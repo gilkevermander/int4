@@ -14,21 +14,21 @@ class Land {
     this.store.addLand(this);
   }
 
-  updateFromJson = ({title = undefined, svg = undefined, verhalen = undefined}) => {
+  updateFromJson = ({title = undefined, svg = undefined, souvenirs = undefined}) => {
     this.title = (title !== undefined) ? title : this.title;
     this.svg = (svg !== undefined) ? svg : this.svg;
-    if (verhalen !== undefined) {
-      // unlink the old verhalen
-      const oldVerhalen = this.verhalen.concat();
-      oldVerhalen.forEach(verhaal => verhaal.unlinkLand(this));
-      verhalen.forEach(verhaal => {
-        this.store.rootStore.verhaalStore.updateVerhaalFromServer(verhaal).linkLand(this);
+    if (souvenirs !== undefined) {
+      // unlink the old souvenirs
+      const oldSouvenirs = this.souvenirs.concat();
+      oldSouvenirs.forEach(souvenir => souvenir.unlinkLand(this));
+      souvenirs.forEach(souvenir => {
+        this.store.rootStore.souvenirStore.updateSouvenirFromServer(souvenir).linkLand(this);
       });
     }
   };
 
-  // get verhalen() {
-  //   return this.verhalen.slice().sort((a, b) => a.naam - b.naam);
+  // get souvenirs() {
+  //   return this.souvenirs.slice().sort((a, b) => a.naam - b.naam);
   // }
 
   linkSouvenir(souvenir) {

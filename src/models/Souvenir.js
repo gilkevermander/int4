@@ -43,25 +43,26 @@ class Souvenir {
     if (this.user) {
       this.user.unlinkSouvenir(this);
     }
-    console.log(user);
+    //console.log(user);
     if (user) {
       this.userId = user.id;
       this.user.linkSouvenir(this);
     } else {
-      console.log('loser');
+      //console.log('loser');
       this.userId = null;
     }
   }
 
   
 
-  updateFromJson = ({naam = undefined, straat = undefined, nr = undefined, postcode = undefined, stad = undefined, souvenir = undefined, userId = undefined, landId = undefined,}) => {
+  updateFromJson = ({naam = undefined, straat = undefined, nr = undefined, postcode = undefined, stad = undefined, souvenir = undefined, userId = undefined, landId = undefined, delen = undefined}) => {
     this.naam = (naam !== undefined) ? naam : this.naam;
     this.straat = (straat !== undefined) ? straat : this.straat;
     this.nr = (nr !== undefined) ? nr : this.nr;
     this.postcode = (postcode !== undefined) ? postcode : this.postcode;
     this.stad = (stad !== undefined) ? stad : this.stad;
     this.souvenir = (souvenir !== undefined) ? souvenir : this.souvenir;
+    this.delen = (delen !== undefined) ? delen : this.delen;
     this.landId = this.lands.id
     if (landId !== undefined) {
       this.setLand(this.store.rootStore.landStore.resolveLand(landId));
@@ -69,8 +70,8 @@ class Souvenir {
     this.userId = this.users.id//x
     if (userId !== undefined) {
       this.setUser(this.store.rootStore.userStore.resolveUser(userId));
-      console.log(this.store.rootStore.userStore.resolveUser(userId));
-      console.log(userId);
+      //console.log(this.store.rootStore.userStore.resolveUser(userId));
+      //console.log(userId);
     }
   };
 
@@ -106,6 +107,7 @@ class Souvenir {
       landId: this.landId,
       userId: this.userId,
       souvenir: this.souvenir,
+      delen: this.delen
 
     };
   }
@@ -119,6 +121,7 @@ decorate(Souvenir, {
   asJson: computed,
   users: observable,
   lands: observable,
+  delen: observable
 });
 
 export default Souvenir;

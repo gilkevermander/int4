@@ -5,6 +5,9 @@ import Souvenir from '../Souvenir/index';
 import Pimp from '../Pimp/index';
 import Keuze from '../Keuze/index';
 import Land from '../Land/index';
+import Result from '../Result/index';
+import Match from '../Match/index';
+import Delen from '../Delen/index';
 import Ontvanger from '../Ontvanger/index';
 import Gegevens from '../Gegevens/index';
 import { useStore } from "../../hooks/useStore.js";
@@ -16,6 +19,8 @@ const Manier = () => {
   const [step, setStep] = useState(1);
   const [souvenir, setSouvenir] = useState("");
   const [keuze, setKeuze] = useState("");
+  const [delen, setDelen] = useState("");
+  const [souvid, setSouvid] = useState("");
 
   const { landStore } = useStore();
 
@@ -35,7 +40,7 @@ const Manier = () => {
     setStep(step + 2);
   }
 
-  const values = { land, selectedoption, souvenir, keuze };
+  const values = { land, selectedoption, souvenir, keuze, delen, souvid };
   switch (step) {
     case 1:
       return <Opnemen
@@ -82,7 +87,15 @@ const Manier = () => {
         prevStep={prevStep}
       />
 
-    case 7:
+      case 7:
+      return <Delen
+        values={values}
+        nextStep={nextStep}
+        prevStep={prevStep}
+        setDelen = {setDelen}
+      />
+
+    case 8:
       return <Gegevens
         values={values}
         nextStep={nextStep}
@@ -91,8 +104,24 @@ const Manier = () => {
 
       />
 
-      case 8:
+      case 9:
       return <Ontvanger
+        values={values}
+        nextStep={nextStep}
+        prevStep={prevStep}
+      />
+
+
+      case 10:
+      return <Result
+        values={values}
+        nextStep={nextStep}
+        prevStep={prevStep}
+        setSouvid={setSouvid}
+      />
+
+      case 11:
+      return <Match
         values={values}
         nextStep={nextStep}
         prevStep={prevStep}

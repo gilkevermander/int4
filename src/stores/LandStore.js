@@ -19,7 +19,7 @@ class LandStore {
   loadLand = async (id) => {
     const jsonLand = await this.landService.getById(id);
     this.updateLandFromServer(jsonLand);
-    this.loadLandVerhalen(id)
+    this.loadLandSouvenirs(id)
     return this.resolveLand(id);
   };
 
@@ -30,9 +30,29 @@ class LandStore {
   //   return this.resolveLand(id);
   // };
 
+  loadLandSouvenirs = async (id) => {
+    console.log('test')
+    const jsonSouvenirs = await this.landService.getSouvenirsForLand(id);
+    console.log(jsonSouvenirs);
+    console.log(id);
+    this.updateLandFromServer({ id, souvenirs: jsonSouvenirs});
+    return this.resolveLand(id);
+  };
+
+  loadSouvenirFromUrl = async (id, landId) => {
+    console.log('test')
+    const jsonSouvenir = await this.landService.getSouvenirsFromUrl(id, landId);
+    console.log(jsonSouvenir);
+    console.log(id);
+    this.updateLandFromServer(jsonSouvenir);
+    this.rootStore.souvenirStore.updateSouvenirFromServer(jsonSouvenir);
+    return this.resolveLand(landId);
+  };
+
+
   loadLandVerhalen = async (id) => {
     console.log('test')
-    const jsonVerhalen = await this.landService.getVerhalenForLand(id, this.onVerhaalAdded);
+    const jsonVerhalen = await this.landService.getVerhalenForLand(id, this.onxalAdded);
     console.log(jsonVerhalen);
     console.log(id);
     this.updateLandFromServer({ id, verhalen: jsonVerhalen });

@@ -6,7 +6,7 @@ const ROUTES = {
   manier: "/manier",
   ontvanger: "/ontvanger",
   video: "/:id",
-  detailSouvenir: { path: "/detailSouvenir/:id", to: "/detailSouvenir/" },
+  detailSouvenir: { path: "/detailSouvenir/:landId/:id", to: "/detailSouvenir/" },
 };
 
 export { ROUTES };

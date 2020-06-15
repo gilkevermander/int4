@@ -4,9 +4,6 @@ import TextInputGroup from "../TextInputGroup";
 import style from "./Ontvanger.module.css";
 import Souvenir from "../../models/Souvenir";
 import { useStore } from "../../hooks/useStore";
-import { useHistory } from "react-router-dom";
-import { ROUTES } from "../../consts";
-
 
 const Ontvanger = ({ nextStep, values, prevStep }) => {
 
@@ -18,7 +15,6 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
   const [userId, setUserId] = useState("");
 
   const { uiStore, landStore, souvenirStore } = useStore();
-  const history = useHistory();
 
 
   const saveAndContinue = (e) => {
@@ -32,6 +28,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
   }
 
   let souvenir = values.souvenir
+  let delen = values.delen
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -49,11 +46,12 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
         postcode,
         stad,
         souvenir,
+        delen,
         userId: uiStore.currentUser.id,
         landId: land.id
       });
       item.create();
-      history.push(ROUTES.home);
+      nextStep();
     } catch (error) {
       console.log(error);
     }

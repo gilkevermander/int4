@@ -7,14 +7,13 @@ import Empty from "../Empty/Empty";
 import Formpje from "../Formpje/index";
 import Kaart from "../Kaart/index";
 import style from "./DetailSouvenir.module.css";
-import LandStore from "../../stores/LandStore";
 
 const DetailSouvenir = () => {
   const { id } = useParams();
   const { landId } = useParams();
   console.log(id);
   console.log(landId)
-  const { souvenirStore, landStore, userStore } = useStore();
+  const { souvenirStore, userStore } = useStore();
 
   const STATE_LOADING = "loading";
   const STATE_DOES_NOT_EXIST = "doesNotExist";
@@ -27,16 +26,11 @@ const DetailSouvenir = () => {
     souvenir ? STATE_LOADING_MORE_DETAILS : STATE_LOADING
   );
 
-  console.log('joepie')
-
   useEffect(() => {
-    const loadSouvenir = async (landId, id) => {
-      console.log('haha')
+    const loadSouvenir = async (id) => {
       try {
-        console.log('hihi')
-        //const souvenir = await souvenirStore.loadSouvenir(id); //resolveLand
-        const souvenir = await landStore.loadSouvenirFromUrl(id, landId);
-        console.log('hoi');
+        const souvenir = await souvenirStore.loadSouvenir(id); //resolveLand
+        console.log(souvenir);
         console.log(id);
         if (!souvenir || souvenir === undefined) {
           setState(STATE_DOES_NOT_EXIST);
@@ -44,9 +38,7 @@ const DetailSouvenir = () => {
           return;
         }
         setSouvenir(souvenir);
-        console.log(souvenir);
-        console.log('yes')
-        const user = userStore.resolveUser(souvenir.souvenirs[0].userId)
+        const user = userStore.resolveUser(souvenir.userId)
         console.log(user);
         console.log(souvenir.delen)
         setUser(user);
@@ -60,8 +52,8 @@ const DetailSouvenir = () => {
         }
       }
     };
-    loadSouvenir(landId, id);
-  }, [id, landId, userStore, landStore, souvenirStore, setSouvenir]);
+    loadSouvenir(id);
+  }, [id, souvenirStore, setSouvenir, setUser]);
 
   console.log(state);
   console.log(souvenir);
@@ -78,12 +70,12 @@ const DetailSouvenir = () => {
     }
     return (
       <>
-        <p>naam:{souvenir.souvenirs[0].naam}</p>
-        {/* <p>land:{souvenir.land.title}</p> */}
-        <p>userid:{souvenir.souvenirs[0].userId}</p>
+        <p>naam:{souvenir.naam}</p>
+        <p>land:{souvenir.lands[0].title}</p>
+        <p>userid:{souvenir.userId}</p>
         <p>verstuurder:{user.gebruikersnaam}</p>
         <p>voornaam: {user.voornaam}</p>
-        <p>souvenir:{souvenir.souvenirs[0].souvenir}</p>
+        <p>souvenir:{souvenir.souvenir}</p>
       </>
     );
   });
