@@ -10,17 +10,17 @@ import DetailLand from "./components/DetailLand";
 import { ROUTES } from "./consts/index";
 import { Link } from "react-router-dom";
 //import './validate';
-import AppHeader from "./containers/Sidebar/AppHeader/index";
+import Procesbar from "./components/Procesbar";
+import style from "./index.css";
 
 
 function App() {
 
   return (
-    <>
+    <div className={style.container}>
       <header>
         <h1>
-          <Link to={ROUTES.home}>home</Link>
-          <AppHeader name="Kabien" title="start" />
+          <Procesbar />
         </h1>
       </header>
 
@@ -51,7 +51,7 @@ function App() {
 
         </Switch>
       </main>
-    </>
+    </div>
   );
 }
 
