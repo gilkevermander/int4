@@ -1,22 +1,39 @@
 /* @import '~video-react/styles/scss/video-react'; */
+@value tokens: "../../styles/tokens.module.css";
+@value geel, spacer1, fontButton from tokens;
 
 .video-react.video-react-16-9 {
   padding-top: 0;
 }
 
 .player {
-  width: 81rem
+  width: 145rem
+}
+.button__text{
+  display: flex;
+  justify-content: center;
+  color: black;
+  background-image: url('../../assets/img/button__line.png');
+  background-repeat: no-repeat;
+  background-position: 0 -3rem;
+  width: 30rem;
+  align-items: center;
+  composes: medium from "../../styles/typo.module.css";
+  font-size: fontButton;
 }
 
 .button {
-  display: block;
-  border: none;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: center;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  width: 30rem;
+  height: 7rem;
+  
+  background-color: geel;
+  border-radius: 50%;
   font-size: 2rem;
-  height: 5rem;
-  width: 5rem;
-  color: fuchsia;
+  margin-top: 4.5rem;
+  
 }

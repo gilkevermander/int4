@@ -12,14 +12,13 @@ const Start = () => {
 
   return (
     <section className={style.container}>
-      <h1 className={style.message}>Welkom in KABIEN</h1>
       <div className={style.player}>
         <Player
           className={style.player}
           playsInline
           poster={poster}
           src={bestand}
-          width="200"
+          width="500"
           contentStyle={{ padding: 0 }}
         />
         <link
@@ -27,7 +26,7 @@ const Start = () => {
           href="https://video-react.github.io/assets/video-react.css"
         />
         <Link className={style.button} to={ROUTES.manier}>
-          <span>Ga verder</span>
+          <span className={style.button__text}>Start</span>
         </Link>
       </div>
     </section>
