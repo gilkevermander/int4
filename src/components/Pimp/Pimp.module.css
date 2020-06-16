@@ -1,5 +1,5 @@
 @value tokens: "../../styles/tokens.module.css";
-@value fontTitel, spacer1 from tokens;
+@value fontTitel, spacer1, raleway, fontSubtitel from tokens;
 /* 
 .container {
   composes: full from "../../styles/layouts.module.css";
@@ -7,28 +7,66 @@
 
 .mask {
   clip-path: ellipse(22% 40%);
+  margin-bottom: -5rem;
 }
 .img {
   clip-path: ellipse(22% 40%);
   grid-row: 1;
-  grid-column: 3;
-  width: 18rem;
-  margin-left: 11rem;
-  margin-top: 11rem;
+  grid-column: 2;
+  width: 23rem;
+  margin-left: 8.6rem;
+  margin-top: 22rem;
 }
+
 .container {
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 70rem 50rem;
 }
 
-.paris {
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.souvenir {
   grid-row: 1;
-  grid-column: 3;
-  width: -webkit-fill-available;
+  grid-column: 2;
+  border-radius: 5rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 6rem;
 }
 
+.name_souvenir {
+  font-family: raleway;
+  font-size: fontTitel;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  margin-top: spacer1;
+}
 
+.header{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.capture {
+  background-image: url('../../assets/img/start.png');
+  margin: -2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7.8rem;
+    height: 7.8rem;
+    background-color: geel;
+    border-radius: 50%;
+    font-size: 2rem;
+    margin-top: 4.5rem;
+    z-index: 1;
+    border: none;
+}
 
 .procesbar {
   display: flex;
@@ -110,6 +148,7 @@
   width: 9rem;
   margin-left: 2rem;
   margin-right: 2rem;
+  margin-top: 2rem;
 }
 
 .hidden{
@@ -129,10 +168,19 @@
   border: none;
   color: grey;
   margin: -3rem 0 0rem 108.5rem;
+  z-index: 1;
 }
 
 .next__text {
   composes: next__text from "../../styles/layouts.module.css";
+}
+
+.next__active {
+  composes: next from "../../styles/layouts.module.css";
+  border: none;
+  background-color:  #FFDC61;
+  display: flex;
+  margin: 3.2rem 0 0rem 100rem;
 }
 
 

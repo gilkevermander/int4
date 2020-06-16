@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from 'semantic-ui-react';
 import Webcam from "react-webcam";
-import paris from "./paris.jpeg"
+import souvenir from "../../assets/img/souvenir.jpg"
 
 import style from "./Pimp.module.css";
 
@@ -35,7 +35,7 @@ const Pimp = ({ nextStep, values, prevStep }) => {
   }, [webcamRef, setImgSrc]);
 
   return (
-    <div className={style.container}>
+    <div >
       <div className={style.header}>
         <Button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></Button>
         <div className={style.procesbar}>
@@ -48,7 +48,7 @@ const Pimp = ({ nextStep, values, prevStep }) => {
           </div>
 
           <div className={style.procesbar_lijn2}>
-            <div className={style.procesbar__item1}>
+            <div className={style.procesbar__item}>
               <p className={style.item__number}>2</p>
               <p className={style.item__text}>land</p>
             </div>
@@ -62,7 +62,7 @@ const Pimp = ({ nextStep, values, prevStep }) => {
           </div>
 
           <div className={style.procesbar_lijn4}>
-            <div className={style.procesbar__item}>
+            <div className={style.procesbar__item1}>
               <p className={style.item__number}>4</p>
               <p className={style.item__text}>Souvenir</p>
             </div>
@@ -74,9 +74,10 @@ const Pimp = ({ nextStep, values, prevStep }) => {
           </div>
         </div>
       </div>
-      <p>u koos voor een: {values.souvenir}</p>
+      <p className={style.name_souvenir}>U koos voor een: {values.souvenir}</p>
       <p>{error}</p>
       <section className={style.container}>
+        <div className={style.wrapper}>
         <Webcam
           audio={false}
           ref={webcamRef}
@@ -86,15 +87,15 @@ const Pimp = ({ nextStep, values, prevStep }) => {
           className={style.mask}
           mirrored={true}
         />
-        <button onClick={capture}>Capture photo</button>
+        <button onClick={capture} className={style.capture}></button>
+        </div>
         {imgSrc && (
           <img
             src={imgSrc} alt="foto" className={style.img}
           />
         )}
-        <img alt="tourist" className={style.paris} src={paris}></img>
-        <Button onClick={back}>Back</Button>
-        <Button onClick={saveAndContinue}>Save And Continue </Button>
+        <img alt="tourist" className={style.souvenir} src={souvenir} width="400"></img>
+        <Button onClick={saveAndContinue} className={imgSrc === "" ? style.next__active : style.next}><p className={style.next__text}>Volgende</p> </Button>
       </section>
     </div>
   );

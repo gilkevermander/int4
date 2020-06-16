@@ -5,16 +5,16 @@ import style from "./Land.module.css";
 
 const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
 
-  //const [error, setError] = useState("");
+  const [error, setError] = useState("");
 
   const saveAndContinue = (e) => {
     e.preventDefault()
     nextStep()
-    // if (values.land === "") {
-    //   setError("duid een land aan")
-    // } else {
-    //   nextStep()
-    // }
+    if (values.land === "") {
+      setError("duid een land aan")
+    } else {
+      nextStep()
+    }
   }
 
   const back = (e) => {
@@ -68,7 +68,7 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
 
       <Form color='blue' className={style.form}>
         <h1 className={style.vraag}>Kies het land van jouw herinnering</h1>
-        {/* <p>{error}</p> */}
+        <p>{error}</p>
         <Form.Field className={style.form__select}>
             <select className={style.select__css} name="land" id="land" onChange={e => setLand(e.currentTarget.value)}>
               <option className={style.option} key="niks" id="land" name="land" value="" >Kies je land</option>
