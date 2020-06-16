@@ -102,7 +102,7 @@ const Record = ({ nextStep, prevStep, values }) => {
                     </div>
                 </div>
 
-                <div className={style.container}>
+                <div className={style.container__video}>
                     <p>{error}</p>
 
                     <VideoRecorder className={style.video}
@@ -139,8 +139,6 @@ const Record = ({ nextStep, prevStep, values }) => {
                         isFlipped={true}
 
                     />
-
-                    <Button onClick={back}>Back</Button>
                     <Button onClick={saveAndContinue} className={style.next}><p className={style.next__text}>Volgende</p> </Button>
                 </div>
             </div>

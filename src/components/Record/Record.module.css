@@ -1,11 +1,16 @@
 .video {
   border-radius: 40rem;
+  width: 70rem;
+  height: 30rem;
 }
 
 
-.container {
-  height: 70rem;
-  border-radius: 40rem;
+.container__video {
+  height: 60.1rem;
+  width: 130rem;
+  margin-top: 5rem;
+  margin: 0 auto;
+  padding: 0 10rem;
 }
 
 
@@ -17,6 +22,7 @@
   align-items: center;
   height: 10rem;
   justify-content: center;
+  margin-bottom: 10rem;
 }
 
 .procesbar__item{
