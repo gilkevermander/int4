@@ -70,7 +70,7 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
         <p>{error}</p>
         <Form.Field className={style.form__select}>
             <select className={style.select__css} name="land" id="land" onChange={e => setLand(e.currentTarget.value)}>
-              {/* <option className={style.option} key="niks" id="land" name="land" value="" >Kies je land</option> */}
+              <option className={style.option} key="niks" id="land" name="land" value="" >Kies je land</option>
               {landStore.lands.map(land => (
                 <option className={style.option} key={land.id} id="land" name="land" value={land.title} >{land.title}</option>
               ))}
