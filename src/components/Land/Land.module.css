@@ -153,4 +153,16 @@
   justify-content: space-between;
   margin-right: 21rem;
 }
+
+.form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_option{
+  width: 6.7rem;
+  height: 9rem;
+}
   

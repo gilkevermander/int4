@@ -65,12 +65,12 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
         </div>
       </div>
 
-      <Form color='blue'>
+      <Form color='blue' className={style.form}>
         <h1 className={style.vraag}>Kies het land van jouw herinnering</h1>
         <p>{error}</p>
         <Form.Field>
-          <select name="land" id="land" onChange={e => setLand(e.currentTarget.value)}>
-            <option key="niks" id="land" name="land" value="" >kies een optie</option>
+          <select classname={style.form__option} name="land" id="land" onChange={e => setLand(e.currentTarget.value)}>
+            <option classname={style.form__option} key="niks" id="land" name="land" value="" >kies een optie</option>
             {landStore.lands.map(land => (
               <option key={land.id} id="land" name="land" value={land.title} >{land.title}</option>
             ))}
