@@ -2,6 +2,7 @@ import React, { useState, Component } from 'react';
 import { Form, Button } from 'semantic-ui-react';
 import { useObserver } from 'mobx-react-lite';
 import style from "./Keuze.module.css";
+import cameras from '../../assets/img/camera.png'
 
 const Keuze = ({ nextStep, values, setKeuze, prevStep, overStep }) => {
 
@@ -80,8 +81,10 @@ const Keuze = ({ nextStep, values, setKeuze, prevStep, overStep }) => {
             </label>
           </div>
         </Form>
-       
+        <div className={style.form__backgroundimg}>
+        <img className={style.backgroundimg} src={cameras} width="486" alt="tapes"></img>
         <Button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </Button>
+        </div>
       </Form>
     </div >
   )

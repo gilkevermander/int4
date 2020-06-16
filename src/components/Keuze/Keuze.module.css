@@ -107,7 +107,7 @@
   border: none;
   color: grey;
   display: flex;
-  margin: 7.7rem 0 0rem 100rem;
+  margin: 0 0 0rem 100rem;
 }
 
 .next__text {
@@ -251,8 +251,9 @@
 
 .backgroundimg {
   z-index: 100;
-  margin-top: -30rem;
+  margin-top: -60rem;
   margin-left: -20rem;
+  margin-bottom: -10rem
 }
 
 .container {
