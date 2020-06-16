@@ -106,7 +106,7 @@ const Record = ({ nextStep, prevStep, values }) => {
                 <div className={style.container__video}>
                     <p>{error}</p>
                     <div class={style.video__content}>
-                        <img class={style.content__palmboom} alt="palmboom" src={palmboom}></img>
+                    <img class={style.content__palmboom} alt="palmboom" src={palmboom}></img>
                         <VideoRecorder className={style.video}
                             onRecordingComplete={(videoBlob, startedAt, thumbnailBlob, duration) => {
                                 const urlCreator = window.URL || window.webkitURL
@@ -143,7 +143,7 @@ const Record = ({ nextStep, prevStep, values }) => {
                         />
                     </div>
                 </div>
-                <Button onClick={saveAndContinue} className={style.next}><p className={style.next__text}>Koppel jouw souvenir</p> </Button>
+                <Button onClick={saveAndContinue} className={complete ? style.next__active : style.next}><p className={style.next__text}>Koppel jouw souvenir</p> </Button>
             </div>
         )
 

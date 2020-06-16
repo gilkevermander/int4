@@ -13,11 +13,13 @@
 
 .video__content {
   display: flex;
+  height: 60rem;
+  margin-top: -14rem;
 }
 
 .content__palmboom {
   margin-left: -41rem;
-  margin-top: -13rem;
+  margin-top: 2rem;
   width: 50.7rem;
   height: 85.4rem;
 }
@@ -124,7 +126,7 @@
   border: none;
   color: grey;
   display: flex;
-  margin: 3.2rem 0 0rem 90rem;
+  margin: 3.2rem 0 0rem 100rem;
 }
 
 .next__text {
@@ -141,6 +143,14 @@
     position: absolute;
     display: inline-block;
     background-repeat: no-repeat;
+}
+
+.next__active {
+  composes: next from "../../styles/layouts.module.css";
+  border: none;
+  background-color:  #FFDC61;
+  display: flex;
+  margin: 3.2rem 0 0rem 100rem;
 }
 
 .back{
