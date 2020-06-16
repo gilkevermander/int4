@@ -100,7 +100,7 @@
   border: none;
   color: grey;
   display: flex;
-  margin: 6rem 0 0rem 100rem;
+  margin: -11.6rem 0 0rem 100rem;
 }
 
 .next__text {
@@ -208,4 +208,28 @@
   display: grid;
   grid-template-columns: 50% 50%;
   margin: 10rem auto 10rem;
+}
+
+
+.backgroundimg {
+  z-index: 100;
+  margin-top: -30rem;
+  margin-left: -20rem;
+}
+
+.container {
+  display: flex;
+}
+
+.keuze input:checked ~ .next {
+  display: block;
+  color: #FFDC61;
+}
+
+.next__active {
+  composes: next from "../../styles/layouts.module.css";
+  border: none;
+  background-color:  #FFDC61;
+  display: flex;
+  margin: -11.6rem 0 0rem 100rem;
 }
