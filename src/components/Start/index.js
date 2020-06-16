@@ -1,5 +1,5 @@
 import React from "react";
-import { Player } from 'video-react';
+import { Player, BigPlayButton } from 'video-react';
 
 import intro from '../../assets/img/poster.png'
 import bestand from '../../assets/video/intro.mp4'
@@ -20,7 +20,9 @@ const Start = () => {
           src={bestand}
           width="500"
           contentStyle={{ padding: 0 }}
-        />
+        >
+        <BigPlayButton position="center" className={style.play}/>
+        </Player>
         <link
           rel="stylesheet"
           href="https://video-react.github.io/assets/video-react.css"
