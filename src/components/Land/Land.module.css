@@ -190,4 +190,12 @@
 	outline: none;
 }
 
+.next__active {
+  composes: next from "../../styles/layouts.module.css";
+  border: none;
+  background-color:  #FFDC61;
+  display: flex;
+  margin: 7.7rem 0 0rem 100rem;
+}
+
   
