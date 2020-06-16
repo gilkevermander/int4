@@ -25,8 +25,11 @@ const Souvenir = ({ nextStep, values, setSouvenir, prevStep }) => {
 
   return (
     <>
+    <div className= {style.container}>
+    <div className={style.header}>
+    <Button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></Button>
       <div className={style.procesbar}>
-
+      
         <div className={style.procesbar_lijn1}>
           <div className={style.procesbar__item}>
             <p className={style.item__number}>1</p>
@@ -60,6 +63,7 @@ const Souvenir = ({ nextStep, values, setSouvenir, prevStep }) => {
           <p className={style.item__text}>Gegevens</p>
         </div>
       </div>
+      </div>
       <section className={style.container}>
         <Form color='blue' >
           <h1 className={style.vraag}>Kies je souvenir</h1>
@@ -77,10 +81,10 @@ const Souvenir = ({ nextStep, values, setSouvenir, prevStep }) => {
             </label>
             </div>
           </Form>
-          <Button onClick={back}>Back</Button>
-          <Button className={values.selectedoption === "" ? style.next : style.next__active} onClick={saveAndContinue}><p className={style.next__text}>Volgende</p> </Button>
+          <Button className={values.souvenir === "" ? style.next : style.next__active} onClick={saveAndContinue}><p className={style.next__text}>Volgende</p> </Button>
         </Form>
       </section>
+      </div>
     </>
   );
 };

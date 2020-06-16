@@ -25,6 +25,13 @@
   width: 7.5rem;
 }
 
+.header{
+  display: flex;
+  justify-content: space-around;
+  margin-right: 21rem;
+  width: 126rem;
+}
+
 .item__text{
   composes: regular from "../../styles/typo.module.css";
   text-transform: uppercase;
@@ -81,6 +88,7 @@
   width: 9rem;
   margin-left: 2rem;
   margin-right: 2rem;
+  margin-top: 2rem;
 }
 
 .hidden{
@@ -92,7 +100,7 @@
   border: none;
   color: grey;
   display: flex;
-  margin: 7.7rem 0 0rem 100rem;
+  margin: -11.6rem 0 0rem 100rem;
 }
 
 .next__text {
@@ -184,25 +192,23 @@
 
 .keuze__magneet::before{
   content: "";
-  background-image: url('../../assets/img/podcast.png');
-  width: 10.2rem;
-  height: 11.6rem;
-  margin-bottom: 2rem;
+  background-image: url('../../assets/img/magneet.png');
+  width: 25.6rem;
+  height: 24.6rem;
 }
 
 .keuze__sleutel::before{
   content: "";
-  background-image: url('../../assets/img/video.png');
-  width: 12.8rem;
-  height: 8.9rem;
-  margin-bottom: 2rem;
+  background-image: url('../../assets/img/sleutel.png');
+  width: 130px;
+  height: 245px;
 }
 
 .keuze__sticker::before{
   content: "";
-  background-image: url('../../assets/img/video.png');
-  width: 12.8rem;
-  height: 8.9rem;
+  background-image: url('../../assets/img/sticker.png');
+  width: 24.8rem;
+  height: 21.4rem;
   margin-bottom: 2rem;
 }
 
@@ -253,4 +259,36 @@
   display: grid;
   grid-template-columns: 33% 33% 33%;
   margin: 10rem auto 10rem;
+  width: 150rem;
 }
+
+.next__active {
+  composes: next from "../../styles/layouts.module.css";
+  border: none;
+  background-color:  #FFDC61;
+  display: flex;
+  margin: -11.6rem 0 0rem 100rem;
+}
+
+.back{
+  composes: back from "../../styles/layouts.module.css";
+  border: none;
+  color: grey;
+  z-index: 100;
+}
+
+.back__text {
+  composes: back__text from "../../styles/layouts.module.css";
+}
+
+.back__text::after {
+    content: "";
+    background-image: url('../../assets/img/button__circle.png');
+    width: 15vw;
+    height: 15vh;
+    background-position: 11rem 3.5rem;
+    position: absolute;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
