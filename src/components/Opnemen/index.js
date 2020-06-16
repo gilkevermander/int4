@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'semantic-ui-react';
-import { useObserver } from 'mobx-react-lite';
+import { Form } from 'semantic-ui-react';
 import style from "./Opnemen.module.css";
 
 const Opnemen = ({ nextStep, values, setSelectedOption }) => {
