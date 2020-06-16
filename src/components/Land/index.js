@@ -78,7 +78,7 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
 
         </Form.Field>
 
-        <Button onClick={saveAndContinue} className={style.next}><p className={style.next__text}>Volgende</p> </Button>
+        <Button onClick={saveAndContinue} className={values.land === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </Button>
       </Form>
 
     </div>
