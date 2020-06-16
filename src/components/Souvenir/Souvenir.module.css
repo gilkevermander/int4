@@ -25,6 +25,13 @@
   width: 7.5rem;
 }
 
+.header{
+  display: flex;
+  justify-content: space-around;
+  margin-right: 21rem;
+  width: 126rem;
+}
+
 .item__text{
   composes: regular from "../../styles/typo.module.css";
   text-transform: uppercase;
@@ -81,24 +88,19 @@
   width: 9rem;
   margin-left: 2rem;
   margin-right: 2rem;
+  margin-top: 2rem;
 }
 
 .hidden{
   display: none;
 }
 
-.vraag{
-  composes: semibold from "../../styles/typo.module.css";
-  font-size: fontTitel;
-  margin-top: spacer1;
-  display: flex;
-  justify-content: center;
-}
-
 .next{
   composes: next from "../../styles/layouts.module.css";
   border: none;
   color: grey;
+  display: flex;
+  margin: -1.5rem 0 0rem 110rem;
 }
 
 .next__text {
@@ -111,11 +113,14 @@
     background-image: url('../../assets/img/button__line.png');
     width: 30vw;
     height: 15vh;
-    background-position: 9rem 1.5rem;
+    background-position: 13rem 1.5rem;
     position: absolute;
     display: inline-block;
     background-repeat: no-repeat;
 }
+
+
+
 
 .vraag{
   composes: semibold from "../../styles/typo.module.css";
@@ -124,3 +129,157 @@
   display: flex;
   justify-content: center;
 }
+
+.keuze {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 10rem;
+  cursor: pointer;
+  font-size: fontSubtitel;
+}
+
+.keuze__sleutel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 32.8rem;
+  width: 42rem;
+  border-radius: 5rem;
+  background-color: white;
+  box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.25);
+  composes: medium from "../../styles/typo.module.css";
+  font-size: 3rem;
+}
+
+.keuze__magneet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 32.8rem;
+  width: 42rem;
+  border-radius: 5rem;
+  background-color: white;
+  box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.25);
+  composes: medium from "../../styles/typo.module.css";
+  font-size: 3rem;
+}
+
+.keuze__sticker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 32.8rem;
+  width: 42rem;
+  border-radius: 5rem;
+  background-color: white;
+  box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.25);
+  composes: medium from "../../styles/typo.module.css";
+  font-size: 3rem;
+}
+
+.keuze__magneet::before{
+  content: "";
+  background-image: url('../../assets/img/magneet.png');
+  width: 25.6rem;
+  height: 24.6rem;
+}
+
+.keuze__sleutel::before{
+  content: "";
+  background-image: url('../../assets/img/sleutel.png');
+  width: 130px;
+  height: 245px;
+}
+
+.keuze__sticker::before{
+  content: "";
+  background-image: url('../../assets/img/sticker.png');
+  width: 24.8rem;
+  height: 21.4rem;
+  margin-bottom: 2rem;
+}
+
+.keuze .keuze__mogelijkheid {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.keuze .keuze_mogelijkheid:checked ~ .keuze_magneet:after {
+  display: block;
+}
+
+.keuze .keuze_mogelijkheid:checked ~ .keuze_sleutel:after {
+  display: block;
+}
+
+.keuze .keuze_mogelijkheid:checked ~ .keuze_sticker:after {
+  display: block;
+}
+
+.keuze:hover input ~ .keuze__magneet {
+  border: 10px solid #FFDC61;
+}
+.keuze:hover input ~ .keuze__sleutel {
+  border: 10px solid #FFDC61;
+}
+
+.keuze:hover input ~ .keuze__sticker {
+  border: 10px solid #FFDC61;
+}
+
+.keuze input:checked ~ .keuze__magneet {
+  border: 10px solid #FFDC61;
+}
+
+.keuze input:checked ~ .keuze__sleutel {
+  border: 10px solid #FFDC61;
+}
+
+.keuze input:checked ~ .keuze__sticker {
+  border: 10px solid #FFDC61;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  margin: 10rem auto 10rem;
+  width: 150rem;
+}
+
+.next__active {
+  composes: next from "../../styles/layouts.module.css";
+  border: none;
+  background-color:  #FFDC61;
+  display: flex;
+  margin: -1.5rem 0 0rem 110rem;
+}
+
+.back{
+  composes: back from "../../styles/layouts.module.css";
+  border: none;
+  color: grey;
+  z-index: 100;
+}
+
+.back__text {
+  composes: back__text from "../../styles/layouts.module.css";
+}
+
+.back__text::after {
+    content: "";
+    background-image: url('../../assets/img/button__circle.png');
+    width: 15vw;
+    height: 15vh;
+    background-position: 11rem 3.5rem;
+    position: absolute;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+

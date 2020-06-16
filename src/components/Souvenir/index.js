@@ -25,8 +25,11 @@ const Souvenir = ({ nextStep, values, setSouvenir, prevStep }) => {
 
   return (
     <>
+    <div className= {style.container}>
+    <div className={style.header}>
+    <Button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></Button>
       <div className={style.procesbar}>
-
+      
         <div className={style.procesbar_lijn1}>
           <div className={style.procesbar__item}>
             <p className={style.item__number}>1</p>
@@ -60,25 +63,28 @@ const Souvenir = ({ nextStep, values, setSouvenir, prevStep }) => {
           <p className={style.item__text}>Gegevens</p>
         </div>
       </div>
+      </div>
       <section className={style.container}>
         <Form color='blue' >
-          <h1 className={style.vraag}>kies je souvenir</h1>
+          <h1 className={style.vraag}>Kies je souvenir</h1>
           <p>{error}</p>
-          <Form.Field>
-            <label>
-              <input type="radio" name="souvenir" value="sleutelhanger" onChange={e => setSouvenir(e.currentTarget.value)} /> <span>sleutelhanger</span>
+          <Form>
+            <div className= {style.grid}>
+            <label className={style.keuze}>
+              <input className={style.keuze__mogelijkheid} type="radio" name="souvenir" value="sleutelhanger" onChange={e => setSouvenir(e.currentTarget.value)} /> <span className={style.keuze__sleutel}>sleutelhanger</span>
             </label>
-            <label>
-              <input type="radio" name="souvenir" value="magneet" onChange={e => setSouvenir(e.currentTarget.value)} /> <span>magneet</span>
+            <label className={style.keuze}>
+              <input className={style.keuze__mogelijkheid} type="radio" name="souvenir" value="magneet" onChange={e => setSouvenir(e.currentTarget.value)} /> <span className={style.keuze__magneet}>magneet</span>
             </label>
-            <label>
-              <input type="radio" name="souvenir" value="sticker" onChange={e => setSouvenir(e.currentTarget.value)} /> <span>sticker</span>
+            <label className={style.keuze}>
+              <input className={style.keuze__mogelijkheid} type="radio" name="souvenir" value="sticker" onChange={e => setSouvenir(e.currentTarget.value)} /> <span className={style.keuze__sticker}>sticker</span>
             </label>
-          </Form.Field>
-          <Button onClick={back}>Back</Button>
-          <Button onClick={saveAndContinue}>Save And Continue </Button>
+            </div>
+          </Form>
+          <Button className={values.souvenir === "" ? style.next : style.next__active} onClick={saveAndContinue}><p className={style.next__text}>Volgende</p> </Button>
         </Form>
       </section>
+      </div>
     </>
   );
 };

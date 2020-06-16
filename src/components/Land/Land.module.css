@@ -40,7 +40,6 @@
 
 .procesbar_lijn1{
   display: flex;
-
 }
 
 .procesbar_lijn1::after {
@@ -112,7 +111,7 @@
     background-image: url('../../assets/img/button__line.png');
     width: 30vw;
     height: 15vh;
-    background-position: 9rem 1.5rem;
+    background-position: 13rem 1.5rem;
     position: absolute;
     display: inline-block;
     background-repeat: no-repeat;
@@ -134,7 +133,7 @@
     background-image: url('../../assets/img/button__circle.png');
     width: 15vw;
     height: 15vh;
-    background-position: 9rem 3.5rem;
+    background-position: 11rem 3.5rem;
     position: absolute;
     display: inline-block;
     background-repeat: no-repeat;
@@ -189,6 +188,14 @@
 .select__css:focus {
 	color: #222; 
 	outline: none;
+}
+
+.next__active {
+  composes: next from "../../styles/layouts.module.css";
+  border: none;
+  background-color:  #FFDC61;
+  display: flex;
+  margin: 7.7rem 0 0rem 100rem;
 }
 
   
