@@ -62,21 +62,23 @@ const Souvenir = ({ nextStep, values, setSouvenir, prevStep }) => {
       </div>
       <section className={style.container}>
         <Form color='blue' >
-          <h1 className={style.vraag}>kies je souvenir</h1>
+          <h1 className={style.vraag}>Kies je souvenir</h1>
           <p>{error}</p>
-          <Form.Field>
-            <label>
-              <input type="radio" name="souvenir" value="sleutelhanger" onChange={e => setSouvenir(e.currentTarget.value)} /> <span>sleutelhanger</span>
+          <Form>
+            <div className= {style.grid}>
+            <label className={style.keuze}>
+              <input className={style.keuze__mogelijkheid} type="radio" name="souvenir" value="sleutelhanger" onChange={e => setSouvenir(e.currentTarget.value)} /> <span className={style.keuze__sleutel}>sleutelhanger</span>
             </label>
-            <label>
-              <input type="radio" name="souvenir" value="magneet" onChange={e => setSouvenir(e.currentTarget.value)} /> <span>magneet</span>
+            <label className={style.keuze}>
+              <input className={style.keuze__mogelijkheid} type="radio" name="souvenir" value="magneet" onChange={e => setSouvenir(e.currentTarget.value)} /> <span className={style.keuze__magneet}>magneet</span>
             </label>
-            <label>
-              <input type="radio" name="souvenir" value="sticker" onChange={e => setSouvenir(e.currentTarget.value)} /> <span>sticker</span>
+            <label className={style.keuze}>
+              <input className={style.keuze__mogelijkheid} type="radio" name="souvenir" value="sticker" onChange={e => setSouvenir(e.currentTarget.value)} /> <span className={style.keuze__sticker}>sticker</span>
             </label>
-          </Form.Field>
+            </div>
+          </Form>
           <Button onClick={back}>Back</Button>
-          <Button onClick={saveAndContinue}>Save And Continue </Button>
+          <Button className={values.selectedoption === "" ? style.next : style.next__active} onClick={saveAndContinue}><p className={style.next__text}>Volgende</p> </Button>
         </Form>
       </section>
     </>
