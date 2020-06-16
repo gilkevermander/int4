@@ -53,6 +53,7 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
           <p className={style.item__number}>5</p>
           <p className={style.item__text}>Gegevens</p>
         </div>
+
       </div>
 
       <Form >
@@ -61,10 +62,10 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
         <Form.Field>
           <div className={style.grid}>
           <label className={style.keuze}>
-            <input className={style.keuze_mogelijkheid} type="radio" name="manier" value="podcast" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze_text1}>Podcast</span>
+            <input className={style.keuze__mogelijkheid} type="radio" name="manier" value="podcast" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze__text1}>Podcast</span>
           </label>
           <label className={style.keuze}>
-            <input className={style.keuze_mogelijkheid} type="radio" name="manier" value="video" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze_text2}>Video</span>
+            <input className={style.keuze__mogelijkheid} type="radio" name="manier" value="video" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze__text2}>Video</span>
           </label>
           </div>
         </Form.Field>
