@@ -101,19 +101,8 @@ const Record = ({ nextStep, prevStep, values }) => {
 
             <div className={style.container}>
                 <p>{error}</p>
-                {/* <h1 className="ui centered">details</h1>
-                <List>
-                    <List.Item>
-                        <List.Icon name='users' />
-                        <List.Content>Selected option: {values.selectedoption}</List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Icon name='users' />
-                        <List.Content>land:{values.land}</List.Content>
-                    </List.Item>
-                </List> */}
 
-                <VideoRecorder
+                <VideoRecorder 
                     onRecordingComplete={(videoBlob, startedAt, thumbnailBlob, duration) => {
                         const urlCreator = window.URL || window.webkitURL
                         const thumbUrl = thumbnailBlob && urlCreator.createObjectURL(thumbnailBlob)
@@ -130,21 +119,6 @@ const Record = ({ nextStep, prevStep, values }) => {
                         console.log('Started:', startedAt)
                         console.log('Duration:', duration)
                         setComplete(true)
-
-                        // var FilyeSaver = require('file-saver');
-                        // FileSaver.saveAs(videoBlob, "hello world.mp4");
-
-                        // cloudinary.uploader.upload(`blob:${videoUrl}`,
-                        //     {
-                        //         responsive_breakpoints:
-                        //         {
-                        //             create_derived: true,
-                        //             bytes_step: 20000,
-                        //             min_width: 200,
-                        //             max_width: 1000
-                        //         }
-                        //     },
-                        //     function (error, result) { console.log(result, error); });
                     }}
                     className={style.video}
                     isFlipped={true}
@@ -152,7 +126,7 @@ const Record = ({ nextStep, prevStep, values }) => {
                 />
 
                 <Button onClick={back}>Back</Button>
-                <Button onClick={saveAndContinue}>Confirm</Button>
+                <Button onClick={saveAndContinue} className={style.next}><p className={style.next__text}>Volgende</p> </Button>
             </div>
             </>
         )
