@@ -61,10 +61,10 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
         <Form.Field>
           <div className={style.grid}>
           <label className={style.keuze}>
-            <input className={style.keuze__mogelijkheid} type="radio" name="manier" value="podcast" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze__text}>Podcast</span>
+            <input className={style.keuze__mogelijkheid} type="radio" name="manier" value="podcast" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze__text1}>Podcast</span>
           </label>
           <label className={style.keuze}>
-            <input className={style.keuze__mogelijkheid} type="radio" name="manier" value="video" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze__text}>Video</span>
+            <input className={style.keuze__mogelijkheid} type="radio" name="manier" value="video" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze__text2}>Video</span>
           </label>
           </div>
         </Form.Field>
