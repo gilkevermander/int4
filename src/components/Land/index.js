@@ -25,7 +25,7 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
   console.log(landStore.lands);
 
   return (
-    <>
+    <div className={style.container}>
       <div className= {style.header}>
         <Button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></Button>
         <div className={style.procesbar}>
@@ -65,7 +65,7 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
         </div>
       </div>
 
-      <Form color='blue' >
+      <Form color='blue'>
         <h1 className={style.vraag}>Kies het land van jouw herinnering</h1>
         <p>{error}</p>
         <Form.Field>
@@ -80,7 +80,7 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
         <Button onClick={saveAndContinue} className={style.next}><p className={style.next__text}>Volgende</p> </Button>
       </Form>
 
-    </>
+    </div>
   )
 }
 
