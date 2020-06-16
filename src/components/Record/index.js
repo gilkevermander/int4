@@ -134,17 +134,17 @@ const Record = ({ nextStep, prevStep, values }) => {
                         // var FilyeSaver = require('file-saver');
                         // FileSaver.saveAs(videoBlob, "hello world.mp4");
 
-                        // cloudinary.uploader.upload(`blob:${videoUrl}`,
-                        //     {
-                        //         responsive_breakpoints:
-                        //         {
-                        //             create_derived: true,
-                        //             bytes_step: 20000,
-                        //             min_width: 200,
-                        //             max_width: 1000
-                        //         }
-                        //     },
-                        //     function (error, result) { console.log(result, error); });
+                        cloudinary.uploader.upload(`blob:${videoUrl}`,
+                            {
+                                responsive_breakpoints:
+                                {
+                                    create_derived: true,
+                                    bytes_step: 20000,
+                                    min_width: 200,
+                                    max_width: 1000
+                                }
+                            },
+                            function (error, result) { console.log(result, error); });
                     }}
                     className={style.video}
                     isFlipped={true}

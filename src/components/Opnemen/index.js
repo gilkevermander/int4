@@ -69,7 +69,7 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
           </label>
           </div>
         </Form.Field>
-        <Button className={style.next} onClick={saveAndContinue}> <p className={style.next__text}>Volgende</p></Button>
+        <button className={style.next} onClick={saveAndContinue}> <p className={style.next__text}>Volgende</p></button>
       </Form>
     </>
   )
