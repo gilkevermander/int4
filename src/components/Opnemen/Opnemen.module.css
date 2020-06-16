@@ -1,4 +1,3 @@
-
 @value tokens: "../../styles/tokens.module.css";
 @value fontTitel, fontSubtitel, spacer1 from tokens;
 
@@ -182,11 +181,11 @@
   width: 0;
 }
 
-.keuze .keuze__mogelijkheid:checked ~ .keuze__text1:after {
+.keuze .keuze_mogelijkheid:checked ~ .keuze_text1:after {
   display: block;
 }
 
-.keuze .keuze__mogelijkheid:checked ~ .keuze__text2:after {
+.keuze .keuze_mogelijkheid:checked ~ .keuze_text2:after {
   display: block;
 }
 
@@ -210,6 +209,3 @@
   grid-template-columns: 50% 50%;
   margin: 10rem auto 10rem;
 }
-
-
-  

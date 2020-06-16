@@ -55,7 +55,7 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
         </div>
       </div>
 
-   <Form >
+      <Form >
         <h2 className={style.vraag}>Kies op welke manier jij jouw reisverhaal wilt vertellen</h2>
         <p>{error}</p>
         <Form.Field>
