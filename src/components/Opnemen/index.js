@@ -53,20 +53,22 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
           <p className={style.item__number}>5</p>
           <p className={style.item__text}>Gegevens</p>
         </div>
-
       </div>
-      <Form >
+
+   <Form >
         <h2 className={style.vraag}>Kies op welke manier jij jouw reisverhaal wilt vertellen</h2>
         <p>{error}</p>
         <Form.Field>
-          <label>
-            <input type="radio" name="manier" value="podcast" onChange={e => setSelectedOption(e.target.value)} /> <span>Spreek een podcast in</span>
+          <div className={style.grid}>
+          <label className={style.keuze}>
+            <input className={style.keuze_mogelijkheid} type="radio" name="manier" value="podcast" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze_text1}>Podcast</span>
           </label>
-          <label>
-            <input type="radio" name="manier" value="video" onChange={e => setSelectedOption(e.target.value)} /> <span>Neem een video op</span>
+          <label className={style.keuze}>
+            <input className={style.keuze_mogelijkheid} type="radio" name="manier" value="video" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze_text2}>Video</span>
           </label>
+          </div>
         </Form.Field>
-        <Button className={style.next} onClick={saveAndContinue}> <p className={style.next__text}>Volgende</p>  </Button>
+        <Button className={style.next} onClick={saveAndContinue}> <p className={style.next__text}>Volgende</p></Button>
       </Form>
     </>
   )
