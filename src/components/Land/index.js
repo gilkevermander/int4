@@ -26,7 +26,7 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
 
   return (
     <div className={style.container}>
-      <div className= {style.header}>
+      <div className={style.header}>
         <Button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></Button>
         <div className={style.procesbar}>
 
@@ -68,13 +68,14 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
       <Form color='blue' className={style.form}>
         <h1 className={style.vraag}>Kies het land van jouw herinnering</h1>
         <p>{error}</p>
-        <Form.Field>
-          <select classname={style.form__option} name="land" id="land" onChange={e => setLand(e.currentTarget.value)}>
-            <option classname={style.form__option} key="niks" id="land" name="land" value="" >kies een optie</option>
-            {landStore.lands.map(land => (
-              <option key={land.id} id="land" name="land" value={land.title} >{land.title}</option>
-            ))}
-          </select>
+        <Form.Field className={style.form__select}>
+            <select className={style.select__css} name="land" id="land" onChange={e => setLand(e.currentTarget.value)}>
+              {/* <option className={style.option} key="niks" id="land" name="land" value="" >Kies je land</option> */}
+              {landStore.lands.map(land => (
+                <option className={style.option} key={land.id} id="land" name="land" value={land.title} >{land.title}</option>
+              ))}
+            </select>
+
         </Form.Field>
 
         <Button onClick={saveAndContinue} className={style.next}><p className={style.next__text}>Volgende</p> </Button>
