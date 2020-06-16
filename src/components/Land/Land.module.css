@@ -156,12 +156,18 @@
 .form__select {
   display: flex;
   justify-content: center;
+  margin: 0 auto;
   margin-top: 5rem;
+  background-image: url("../../assets/img/wereldKaart.png");
+  background-repeat: no-repeat ;
+  height: 48.6rem;
+  width: 90rem;
 }
 
 .select__css {
   display: flex;
   font-size: 16px;
+  margin-top: 4rem;
   font-family: raleway,sans-serif;
   composes: medium from "../../styles/typo.module.css";
   font-size: 2rem;
