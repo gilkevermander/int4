@@ -3,6 +3,7 @@ import { Button, List } from 'semantic-ui-react';
 import VideoRecorder from 'react-video-recorder';
 import style from "./Record.module.css";
 import { ReactMic } from 'react-mic';
+import palmboom from '../../assets/img/palmboom.png'
 // import { saveAs } from 'file-saver';
 // import MicRecorder from 'mic-recorder-to-mp3';
 // import AudioRecorder from 'react-audio-recorder';
@@ -104,43 +105,45 @@ const Record = ({ nextStep, prevStep, values }) => {
 
                 <div className={style.container__video}>
                     <p>{error}</p>
+                    <div class={style.video__content}>
+                        <img class={style.content__palmboom} alt="palmboom" src={palmboom}></img>
+                        <VideoRecorder className={style.video}
+                            onRecordingComplete={(videoBlob, startedAt, thumbnailBlob, duration) => {
+                                const urlCreator = window.URL || window.webkitURL
+                                const thumbUrl = thumbnailBlob && urlCreator.createObjectURL(thumbnailBlob)
+                                const videoUrl = urlCreator.createObjectURL(videoBlob)
 
-                    <VideoRecorder className={style.video}
-                        onRecordingComplete={(videoBlob, startedAt, thumbnailBlob, duration) => {
-                            const urlCreator = window.URL || window.webkitURL
-                            const thumbUrl = thumbnailBlob && urlCreator.createObjectURL(thumbnailBlob)
-                            const videoUrl = urlCreator.createObjectURL(videoBlob)
+                                //let url = videoBlob.toBlobUrl();
+                                //console.log(url);
+                                console.log(urlCreator);
+                                console.log(thumbUrl);
+                                console.log(videoUrl);
+                                console.log('Video Blob', videoBlob.size, videoBlob, videoUrl)
+                                console.log(videoBlob);
+                                console.log('Thumb Blob', thumbnailBlob, thumbUrl)
+                                console.log('Started:', startedAt)
+                                console.log('Duration:', duration)
+                                setComplete(true)
 
-                            //let url = videoBlob.toBlobUrl();
-                            //console.log(url);
-                            console.log(urlCreator);
-                            console.log(thumbUrl);
-                            console.log(videoUrl);
-                            console.log('Video Blob', videoBlob.size, videoBlob, videoUrl)
-                            console.log(videoBlob);
-                            console.log('Thumb Blob', thumbnailBlob, thumbUrl)
-                            console.log('Started:', startedAt)
-                            console.log('Duration:', duration)
-                            setComplete(true)
-
-                            cloudinary.uploader.upload(`blob:${videoUrl}`,
-                                {
-                                    responsive_breakpoints:
+                                cloudinary.uploader.upload(`blob:${videoUrl}`,
                                     {
-                                        create_derived: true,
-                                        bytes_step: 20000,
-                                        min_width: 200,
-                                        max_width: 1000
-                                    }
-                                },
-                                function (error, result) { console.log(result, error); });
-                        }}
+                                        responsive_breakpoints:
+                                        {
+                                            create_derived: true,
+                                            bytes_step: 20000,
+                                            min_width: 200,
+                                            max_width: 1000
+                                        }
+                                    },
+                                    function (error, result) { console.log(result, error); });
+                            }}
 
-                        isFlipped={true}
+                            isFlipped={true}
 
-                    />
-                    <Button onClick={saveAndContinue} className={style.next}><p className={style.next__text}>Volgende</p> </Button>
+                        />
+                    </div>
                 </div>
+                <Button onClick={saveAndContinue} className={style.next}><p className={style.next__text}>Koppel jouw souvenir</p> </Button>
             </div>
         )
 
