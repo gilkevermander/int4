@@ -1,6 +1,13 @@
 @value tokens: "../../styles/tokens.module.css";
 @value fontTitel, spacer1 from tokens;
 
+.header{
+  display: flex;
+  justify-content: space-around;
+  margin-right: 21rem;
+  width: 126rem;
+}
+
 .procesbar {
   display: flex;
   align-items: center;
@@ -99,6 +106,8 @@
   composes: next from "../../styles/layouts.module.css";
   border: none;
   color: grey;
+  display: flex;
+  margin: 7.7rem 0 0rem 100rem;
 }
 
 .next__text {
@@ -111,7 +120,29 @@
     background-image: url('../../assets/img/button__line.png');
     width: 30vw;
     height: 15vh;
-    background-position: 9rem 1.5rem;
+    background-position: 13rem 1.5rem;
+    position: absolute;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+.back{
+  composes: back from "../../styles/layouts.module.css";
+  border: none;
+  color: grey;
+  z-index: 100;
+}
+
+.back__text {
+  composes: back__text from "../../styles/layouts.module.css";
+}
+
+.back__text::after {
+    content: "";
+    background-image: url('../../assets/img/button__circle.png');
+    width: 15vw;
+    height: 15vh;
+    background-position: 11rem 3.5rem;
     position: absolute;
     display: inline-block;
     background-repeat: no-repeat;
@@ -123,4 +154,120 @@
   margin-top: spacer1;
   display: flex;
   justify-content: center;
+}
+
+.keuze {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 10rem;
+  cursor: pointer;
+  font-size: fontSubtitel;
+}
+
+.keuze__text1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 32.8rem;
+  width: 42rem;
+  border-radius: 5rem;
+  background-color: white;
+  box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.25);
+  composes: medium from "../../styles/typo.module.css";
+  font-size: 3rem;
+}
+
+.keuze__text2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 32.8rem;
+  width: 42rem;
+  border-radius: 5rem;
+  background-color: white;
+  box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.25);
+  composes: medium from "../../styles/typo.module.css";
+  font-size: 3rem;
+}
+
+.keuze__text1::before{
+  content: "";
+  background-image: url('../../assets/img/kruis.png');
+  background-repeat: no-repeat;
+  width: 8.3rem;
+  height: 9.1rem;
+  margin-bottom: 2rem;
+}
+
+.keuze__text2::before{
+  content: "";
+  background-image: url('../../assets/img/vink.png');
+  background-repeat: no-repeat;
+  width: 13rem;
+  height: 11rem;
+  margin-bottom: 2rem;
+}
+
+.keuze .keuze__mogelijkheid {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.keuze .keuze_mogelijkheid:checked ~ .keuze_text1:after {
+  display: block;
+}
+
+.keuze .keuze_mogelijkheid:checked ~ .keuze_text2:after {
+  display: block;
+}
+
+.keuze:hover input ~ .keuze__text1 {
+  border: 10px solid #FFDC61;
+}
+.keuze:hover input ~ .keuze__text2 {
+  border: 10px solid #FFDC61;
+}
+
+.keuze input:checked ~ .keuze__text1 {
+  border: 10px solid #FFDC61;
+}
+
+.keuze input:checked ~ .keuze__text2 {
+  border: 10px solid #FFDC61;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 10rem auto 10rem;
+}
+
+
+.backgroundimg {
+  z-index: 100;
+  margin-top: -30rem;
+  margin-left: -20rem;
+}
+
+.container {
+  display: flex;
+}
+
+.keuze input:checked ~ .next {
+  display: block;
+  color: #FFDC61;
+}
+
+.next__active {
+  composes: next from "../../styles/layouts.module.css";
+  border: none;
+  background-color:  #FFDC61;
+  display: flex;
+  margin: 7.7rem 0 0rem 100rem;
 }
