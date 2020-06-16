@@ -121,7 +121,8 @@
 }
 
 .keuze {
-  display: block;
+  display: flex;
+  justify-content: center;
   position: relative;
   margin-bottom: 10rem;
   cursor: pointer;
@@ -131,7 +132,7 @@
 .keuze__text {
   position: absolute;
   top: 0;
-  left: 20rem;
+  left: 2rem;
   height: 32.8rem;
   width: 42rem;
   border-radius: 5rem;
@@ -164,6 +165,7 @@
 .grid {
   display: grid;
   grid-template-columns: 50% 50%;
+  margin: 10rem auto 30rem;
 }
 
 

@@ -64,7 +64,7 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
             <input className={style.keuze__mogelijkheid} type="radio" name="manier" value="podcast" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze__text}>Podcast</span>
           </label>
           <label className={style.keuze}>
-            <input className={style.keuze__mogelijkheid} type="radio" name="manier" value="video" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze__text}>Neem een video op</span>
+            <input className={style.keuze__mogelijkheid} type="radio" name="manier" value="video" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze__text}>Video</span>
           </label>
           </div>
         </Form.Field>
