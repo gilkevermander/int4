@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'semantic-ui-react';
 import { useObserver } from 'mobx-react-lite';
 import style from "./Opnemen.module.css";
 
@@ -56,10 +55,9 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
 
       </div>
 
-      <Form >
+      <form >
         <h2 className={style.vraag}>Kies op welke manier jij jouw reisverhaal wilt vertellen</h2>
         <p>{error}</p>
-        <Form.Field>
           <div className={style.grid}>
           <label className={style.keuze}>
             <input className={style.keuze__mogelijkheid} type="radio" name="manier" value="podcast" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze__text1}>Podcast</span>
@@ -68,9 +66,8 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
             <input className={style.keuze__mogelijkheid} type="radio" name="manier" value="video" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze__text2}>Video</span>
           </label>
           </div>
-        </Form.Field>
         <button className={style.next} onClick={saveAndContinue}> <p className={style.next__text}>Volgende</p></button>
-      </Form>
+      </form>
     </>
   )
 
