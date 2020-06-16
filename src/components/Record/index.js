@@ -151,6 +151,9 @@ const Record = ({ nextStep, prevStep, values }) => {
         console.log('audio');
         return (
             <>
+
+                <div className={style.header}>
+                    <Button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></Button>
                 <div className={style.procesbar}>
 
                     <div className={style.procesbar_lijn1}>
@@ -186,19 +189,25 @@ const Record = ({ nextStep, prevStep, values }) => {
                         <p className={style.item__text}>Gegevens</p>
                     </div>
                 </div>
-                < div >
+                </div>
+                
+                <img class={style.content__palmboom} alt="palmboom" src={palmboom}></img>
+                < div className={style.content_sound} >
                     <ReactMic
                         record={record}
-                        className="sound-wave"
+                        className={style.sound}
                         onStop={onStop}
                         onData={onData}
                         strokeColor="#000000"
-                        backgroundColor="#FF4081" />
-                    <button onClick={startRecording} type="button">Start</button>
-                    <button onClick={stopRecording} type="button">Stop</button>
-                    <Button onClick={back}>Back</Button>
-                    <Button onClick={saveAndContinue}>Confirm</Button>
-                </div >
+                        backgroundColor="#FFFFFF" />
+                    <p>Max. 3 minuten opnemen</p>
+                    <div className={style.wrapper}>
+                    <button onClick={startRecording} type="button" className={style.start}></button>
+                    <button onClick={stopRecording} type="button" className={style.stop}></button>
+                    </div>
+                    </div >
+                    <Button onClick={saveAndContinue} className={complete ? style.next__active : style.next}><p className={style.next__text}>Koppel jouw souvenir</p></Button>
+                
 
             </>
 
