@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-<<<<<<< HEAD
 import { useObserver } from 'mobx-react-lite';
-=======
-import { Form } from 'semantic-ui-react';
->>>>>>> 1ca49f874a7911ad8e78cd86d6daa69171914c5b
 import style from "./Opnemen.module.css";
 import tapes from "../../assets/img/tapes.png"
 
@@ -59,33 +55,21 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
         </div>
 
       </div>
-
-      <form >
-        <h2 className={style.vraag}>Kies op welke manier jij jouw reisverhaal wilt vertellen</h2>
-        <p>{error}</p>
-<<<<<<< HEAD
-=======
-        <Form>
-          
->>>>>>> 1ca49f874a7911ad8e78cd86d6daa69171914c5b
-          <div className={style.grid}>
+      <h2 className={style.vraag}>Kies op welke manier jij jouw reisverhaal wilt vertellen</h2>
+      <p>{error}</p>
+      <form>
+        <div className={style.grid}>
           <label className={style.keuze}>
             <input className={style.keuze__mogelijkheid} type="radio" name="manier" value="podcast" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze__text1}>Podcast</span>
           </label>
           <label className={style.keuze}>
             <input className={style.keuze__mogelijkheid} type="radio" name="manier" value="video" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze__text2}>Video</span>
           </label>
-          </div>
-<<<<<<< HEAD
-        <button className={style.next} onClick={saveAndContinue}> <p className={style.next__text}>Volgende</p></button>
+        </div>
+        <img className={style.backgroundimg} src={tapes} width="486" alt="tapes"></img>
+        <button className={values.selectedoption === "" ? style.next : style.next__active} onClick={saveAndContinue}> <p className={style.next__text}>Volgende</p></button>
       </form>
-=======
-          
-        </Form>
-          <img className={style.backgroundimg} src={tapes} width="486" alt="tapes"></img>
-          <button className={values.selectedoption === "" ? style.next : style.next__active} onClick={saveAndContinue}> <p className={style.next__text}>Volgende</p></button>
-      </Form>
->>>>>>> 1ca49f874a7911ad8e78cd86d6daa69171914c5b
+
     </>
   )
 
