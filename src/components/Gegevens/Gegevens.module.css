@@ -2,6 +2,10 @@
 @value tokens: "../../styles/tokens.module.css";
 @value fontTitel, fontSubtitel, spacer1 from tokens;
 
+.error {
+  composes: error from "../../styles/layouts.module.css";
+}
+
 .vraag__bold {
   composes: bold from "../../styles/typo.module.css";
   margin: 0 1rem;

@@ -111,6 +111,7 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
       </div>
       <form onSubmit={handleSubmit} className={style.form}>
         <h1 className={style.vraag}>Geef <span className={style.vraag__bold}> jouw </span> gegevens in</h1>
+        { values.land === "" ? <p className={style.error}>Vul alle gegevens in</p> : <p className={style.error}></p>}
         <div className={style.grid}>
           <div className={style.wrapper}>
             <div className={style.input__wrapper}>
