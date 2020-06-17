@@ -37,6 +37,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
       const land = await landStore.resolveLandId(values.land);
       const video = values.video
       console.log(video);
+      console.log('handlesubmit')
       setUserId(uiStore.currentUser.id)
       console.log(userId);
       const item = new Souvenir({
