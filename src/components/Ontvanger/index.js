@@ -119,7 +119,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
           />
           <div className={style.wrapper}>
             <div className={style.wrapper__item}>
-              <label className={[ style.wrapper__item__straat ,style.wrapper__item]}>Straat</label>
+              <label className={[ style.label, style.wrapper__item__straat ,style.wrapper__item]}>Straat</label>
               <TextInputGroup
                 label="straat"
                 name="straat"
@@ -142,6 +142,16 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
               />
             </div>
           </div>
+          <label className={style.label}>Postcode</label>
+          <TextInputGroup
+            label="postcode"
+            type="postcode"
+            name="postcode"
+            placeholder="8500"
+            value={postcode}
+            onChange={(e) => setPostcode(e.currentTarget.value)}
+            className={[style.input__postcode, style.input]}
+          />
           <label className={style.label}>Stad/gemeente</label>
           <TextInputGroup
             label="Stad"
@@ -152,16 +162,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
             onChange={(e) => setStad(e.currentTarget.value)}
             className={style.input}
           />
-          <label className={style.label}>Postcode</label>
-          <TextInputGroup
-            label="postcode"
-            type="postcode"
-            name="postcode"
-            placeholder="8500"
-            value={postcode}
-            onChange={(e) => setPostcode(e.currentTarget.value)}
-            className={style.input}
-          />
+          
 
           <button onClick={handleSubmit} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
         </div>

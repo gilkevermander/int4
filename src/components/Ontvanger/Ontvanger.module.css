@@ -191,6 +191,7 @@
   flex-flow: column;
   width: 100%;
   margin-right: 1rem;
+  font-size: fontSubtitel;
 }
 
 .wrapper__item__nummer{
@@ -199,10 +200,14 @@
 
 .wrapper__item__straat{
   width: 20rem;
-  margin-right: 2rem;;
+  margin-right: 2rem;
 }
 
 .input{
   margin-bottom: 6rem;
+}
+
+.input__postcode {
+  width: 20rem;
 }
 
