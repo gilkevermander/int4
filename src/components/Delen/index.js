@@ -16,61 +16,66 @@ const Delen = ({ nextStep, values, setDelen }) => {
     }
 
   }
-  console.log(values);
+
   return (
-    <>
-    <div className={style.procesbar}>
+    <div>
+      <div className={style.header}>
 
-      <div className={style.procesbar_lijn1}>
-        <div className={style.procesbar__item}>
-          <p className={style.item__number}>1</p>
-          <p className={style.item__text}>Verhaal</p>
+        <div className={style.procesbar}>
+
+          <div className={style.procesbar_lijn1}>
+            <div className={style.procesbar__item}>
+              <p className={style.item__number}>1</p>
+              <p className={style.item__text}>Verhaal</p>
+            </div>
+          </div>
+
+          <div className={style.procesbar_lijn2}>
+            <div className={style.procesbar__item1}>
+              <p className={style.item__number}>2</p>
+              <p className={style.item__text}>land</p>
+            </div>
+          </div>
+
+          <div className={style.procesbar_lijn3}>
+            <div className={style.procesbar__item}>
+              <p className={style.item__number}>3</p>
+              <p className={style.item__text}>Opname</p>
+            </div>
+          </div>
+
+          <div className={style.procesbar_lijn4}>
+            <div className={style.procesbar__item}>
+              <p className={style.item__number}>4</p>
+              <p className={style.item__text}>Souvenir</p>
+            </div>
+          </div>
+
+          <div className={style.procesbar__item}>
+            <p className={style.item__number}>5</p>
+            <p className={style.item__text}>Gegevens</p>
+          </div>
         </div>
       </div>
-
-      <div className={style.procesbar_lijn2}>
-        <div className={style.procesbar__item}>
-          <p className={style.item__number}>2</p>
-          <p className={style.item__text}>land</p>
-        </div>
-      </div>
-
-      <div className={style.procesbar_lijn3}>
-        <div className={style.procesbar__item}>
-          <p className={style.item__number}>3</p>
-          <p className={style.item__text}>Opname</p>
-        </div>
-      </div>
-
-      <div className={style.procesbar_lijn4}>
-        <div className={style.procesbar__item1}>
-          <p className={style.item__number}>4</p>
-          <p className={style.item__text}>Souvenir</p>
-        </div>
-      </div>
-
-      <div className={style.procesbar__item}>
-        <p className={style.item__number}>5</p>
-        <p className={style.item__text}>Gegevens</p>
-      </div>
-    </div>
-    <Form >
-      <h2 className={style.vraag}>Nog één laatste vraagje</h2>
-      <h2 className={style.subtitel}>Wil je jouw verhaal anoniem delen op
-de wereldkaart vol reisverhalen?</h2>
-      <p>{error}</p>
-      <Form.Field>
-        <label>
-          <input type="radio" name="keuze" value="false" onChange={e => setDelen(false)} /> <span>Nee, liever niet</span>
-        </label>
-        <label>
-          <input type="radio" name="keuze" value="true" onChange={e => setDelen(true)} /> <span>Ja, het mag op de
+      <Form >
+        <h2 className={style.vraag}>Nog één laatste vraagje</h2>
+        <h2 className={style.subtitel}>Wil je jouw verhaal anoniem delen op
+de wereldkaart vol reisverhalen? </h2>
+        <p>{error}</p>
+        <Form>
+          <div className={style.grid}>
+            <label className={style.keuze}>
+              <input className={style.keuze__mogelijkheid} type="radio" name="keuze" value="false" onChange={e => setDelen(false)} /> <span className={style.keuze__text1}>Nee, liever niet</span>
+            </label>
+            <label className={style.keuze}>
+              <input className={style.keuze__mogelijkheid} type="radio" name="keuze" value="true" onChange={e => setDelen(true)} /> <span className={style.keuze__text2}>Ja, het mag op de
 wereldkaart als audio</span>
-        </label>
-      </Form.Field>
-      <Button onClick={saveAndContinue}>Save And Continue </Button>
-    </Form>
-    </>
+            </label>
+          </div>
+        </Form>
+        <Button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Verstuur</p> </Button>
+      </Form>
+    </div>
   )
 
 }
