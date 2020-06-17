@@ -19,24 +19,26 @@ const Authentication = () => {
           {uiStore.currentUser ? (
             <Redirect to={ROUTES.home} />
           ) : (
-            <div className={style.wrapper}>
-              <AppHeader name="ThatsApp" title="Login" />
-              <LoginForm />
-              <NavLink to={ROUTES.register} className={style.textlink}>
-                <span>Do you want to register?</span>
-              </NavLink>
-            </div>
-          )}
+              <div className={style.wrapper}>
+                <AppHeader name="ThatsApp" title="Login" />
+                <LoginForm />
+                <NavLink to={ROUTES.register} className={style.textlink}>
+                  <span>Registeren?</span>
+                  <span>gilke is leuk</span>
+                </NavLink>
+              </div>
+            )}
         </Route>
+
         <Route exact path={ROUTES.register}>
           {uiStore.currentUser ? (
             <Redirect to={ROUTES.home} />
           ) : (
-            <div className={style.wrapper}>
-              <AppHeader name="ThatsApp" title="Register" />
-              <RegisterForm />
-            </div>
-          )}
+              <div className={style.wrapper}>
+                <AppHeader name="ThatsApp" title="Register" />
+                <RegisterForm />
+              </div>
+            )}
         </Route>
         <Route path={ROUTES.home}>
           {uiStore.currentUser ? (
@@ -45,8 +47,8 @@ const Authentication = () => {
               <Content />
             </>
           ) : (
-            <Redirect to={ROUTES.login} />
-          )}
+              <Redirect to={ROUTES.login} />
+            )}
         </Route>
       </Switch>
     </>
