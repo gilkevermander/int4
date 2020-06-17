@@ -59,97 +59,108 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
     }
   };
 
-console.log(values);
+  console.log(values);
 
-return (
-  <>
-  <div className={style.procesbar}>
+  return (
+    <div className={style.container}>
+      <div className={style.header}>
+        <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
+        <div className={style.procesbar}>
 
-      <div className={style.procesbar_lijn1}>
-        <div className={style.procesbar__item}>
-          <p className={style.item__number}>1</p>
-          <p className={style.item__text}>Verhaal</p>
+          <div className={style.procesbar_lijn1}>
+            <div className={style.procesbar__item}>
+              <p className={style.item__number}>1</p>
+              <p className={style.item__text}>Verhaal</p>
+            </div>
+          </div>
+
+          <div className={style.procesbar_lijn2}>
+            <div className={style.procesbar__item}>
+              <p className={style.item__number}>2</p>
+              <p className={style.item__text}>land</p>
+            </div>
+          </div>
+
+          <div className={style.procesbar_lijn3}>
+            <div className={style.procesbar__item}>
+              <p className={style.item__number}>3</p>
+              <p className={style.item__text}>Opname</p>
+            </div>
+          </div>
+
+          <div className={style.procesbar_lijn4}>
+            <div className={style.procesbar__item1}>
+              <p className={style.item__number}>4</p>
+              <p className={style.item__text}>Souvenir</p>
+            </div>
+          </div>
+
+          <div className={style.procesbar__item}>
+            <p className={style.item__number}>5</p>
+            <p className={style.item__text}>Gegevens</p>
+          </div>
         </div>
       </div>
 
-      <div className={style.procesbar_lijn2}>
-        <div className={style.procesbar__item}>
-          <p className={style.item__number}>2</p>
-          <p className={style.item__text}>land</p>
-        </div>
-      </div>
+      <form onSubmit={handleSubmit} className={style.form}>
+        <h1 className={style.vraag}>Vul de gegevens van de <span className={style.vraag__bold}>ontvanger</span> in</h1>
+        <div className={style.grid}>
+          <label className={style.label}>Naam ontvanger</label>
+          <TextInputGroup
+            label="naam"
+            name="naam"
+            type="naam"
+            placeholder="jhon Doe"
+            value={naam}
+            onChange={(e) => setNaam(e.currentTarget.value)}
+          />
+          <div className={style.wrapper}>
+            <div className={style.wrapper__item}>
+              <label className={style.label}>Straat</label>
+              <TextInputGroup
+                label="straat"
+                name="straat"
+                type="straat"
+                placeholder="Kortrijkstraat"
+                value={straat}
+                onChange={(e) => setStraat(e.currentTarget.value)}
+              />
+            </div>
+            <div className={[ style.wrapper__item__postcode ,style.wrapper__item]}>
+              <label className={style.label}>nummer</label>
+              <TextInputGroup
+                label="nr"
+                type="nr"
+                name="nr"
+                value={nr}
+                onChange={(e) => setNr(e.currentTarget.value)}
+              />
+            </div>
+          </div>
+          <label className={style.label}>Stad/gemeente</label>
+          <TextInputGroup
+            label="Stad"
+            type="stad"
+            name="stad"
+            placeholder="Kortrijk"
+            value={stad}
+            onChange={(e) => setStad(e.currentTarget.value)}
+          />
+          <label className={style.label}>Postcode</label>
+          <TextInputGroup
+            label="postcode"
+            type="postcode"
+            name="postcode"
+            placeholder="8500"
+            value={postcode}
+            onChange={(e) => setPostcode(e.currentTarget.value)}
+          />
 
-      <div className={style.procesbar_lijn3}>
-        <div className={style.procesbar__item}>
-          <p className={style.item__number}>3</p>
-          <p className={style.item__text}>Opname</p>
+          <button onClick={handleSubmit} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
         </div>
-      </div>
-
-      <div className={style.procesbar_lijn4}>
-        <div className={style.procesbar__item}>
-          <p className={style.item__number}>4</p>
-          <p className={style.item__text}>Souvenir</p>
-        </div>
-      </div>
-
-      <div className={style.procesbar__item1}>
-        <p className={style.item__number}>5</p>
-        <p className={style.item__text}>Gegevens</p>
-      </div>
-    </div>
-  <form onSubmit={handleSubmit} className={style.form}>
-    <h1 className="ui centered">Geef jouw gegevens in</h1>
-    <div className={style.grid}>
-    <TextInputGroup
-      label="naam"
-      name="naam"
-      type="naam"
-      placeholder="vul zijn/haar naam in"
-      value={naam}
-      onChange={(e) => setNaam(e.currentTarget.value)}
-    />
-    <div className={style.wrapper}>
-    <TextInputGroup
-      label="straat"
-      name="straat"
-      type="straat"
-      placeholder="vul zijn/haar straat in"
-      value={straat}
-      onChange={(e) => setStraat(e.currentTarget.value)}
-    />
-    <TextInputGroup
-      label="nr"
-      type="nr"
-      name="nr"
-      placeholder="vul zijn/haar nr in"
-      value={nr}
-      onChange={(e) => setNr(e.currentTarget.value)}
-    />
-    </div>
-    <TextInputGroup
-      label="Stad"
-      type="stad"
-      name="stad"
-      placeholder="vul zijn/haar stad in"
-      value={stad}
-      onChange={(e) => setStad(e.currentTarget.value)}
-    />
-    <TextInputGroup
-      label="postcode"
-      type="postcode"
-      name="postcode"
-      placeholder="vul zijn/haar postcode in"
-      value={postcode}
-      onChange={(e) => setPostcode(e.currentTarget.value)}
-    />
-    
-    <input type="submit" value="Register" className={style.button} />
-    <button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
-    </div>
-  </form>
-  </>
-)
+      </form >
+    </div >
+  )
 }
 
 export default Ontvanger;
