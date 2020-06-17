@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button } from 'semantic-ui-react';
 import { useObserver } from 'mobx-react-lite';
 import style from "./Delen.module.css";
-
+import gsm from "../../assets/video/GSMgif.gif"
 
 const Delen = ({ nextStep, values, setDelen }) => {
 
@@ -60,6 +60,8 @@ const Delen = ({ nextStep, values, setDelen }) => {
       </div>
       <Form >
         <div className={style.gif}>
+          <img alt="gif kaart" src={gsm} width="177"></img>
+        </div>
           <h2 className={style.vraag}>Nog één laatste vraagje</h2>
           <h2 className={style.subtitel}>Wil je jouw verhaal anoniem delen op
 de wereldkaart vol reisverhalen? </h2>
@@ -75,7 +77,7 @@ wereldkaart als audio</span>
               </label>
             </div>
           </Form>
-        </div>
+        
         <Button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Verstuur</p> </Button>
       </Form>
     </div>

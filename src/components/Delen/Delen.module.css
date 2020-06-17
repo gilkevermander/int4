@@ -124,12 +124,13 @@
   margin-top: spacer1;
   display: flex;
   justify-content: center;
+  margin-left: 2rem;
 }
 
 .subtitel {
   composes: medium from "../../styles/typo.module.css";
   font-size: 3rem;
-  margin: 3rem auto 0;
+  margin: 5rem auto 0;
   display: flex;
   justify-content: center;
   width: 55rem;
@@ -227,7 +228,7 @@
 .grid {
   display: grid;
   grid-template-columns: 50% 50%;
-  margin: 10rem auto 10rem;
+  margin: 18rem auto 10rem;
   width: 70%;
 }
 
@@ -236,7 +237,7 @@
   border: none;
   color: grey;
   display: flex;
-  margin: -3rem 0 0rem 108.5rem;
+  margin: -8rem 0 0rem 108.5rem;
 }
 
 .next__text {
@@ -260,7 +261,7 @@
   border: none;
   background-color:  #FFDC61;
   display: flex;
-  margin: -3rem 0 0rem 108.5rem;
+  margin: -13rem 0 0rem 108.5rem;
 }
 
 .gif::before {
@@ -269,4 +270,11 @@
   width: 117px;
   height: 353px;
 }
+
+.gif {
+  margin-top: 3rem;
+  margin-bottom: -35rem;
+  margin-left: 25rem;
+}
+
   
