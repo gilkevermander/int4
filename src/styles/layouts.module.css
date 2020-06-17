@@ -91,3 +91,14 @@
     display: flex;
     justify-content: center;
   }
+
+
+  .error {
+    display: block;
+    color: red;
+    font-size: 3rem;
+    font-weight: 600;
+    height: 3.4rem;
+    margin: 4rem auto -5rem;
+    text-align: center;
+  }

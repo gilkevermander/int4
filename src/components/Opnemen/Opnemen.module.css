@@ -1,11 +1,9 @@
 @value tokens: "../../styles/tokens.module.css";
-@value fontTitel, fontSubtitel, spacer1 from tokens;
-
+@value fontTitel, fontSubtitel, spacer1, roze from tokens;
 
 .error {
-  display: block;
+  composes: error from "../../styles/layouts.module.css";
 }
-
 .procesbar {
   display: flex;
   align-items: center;
