@@ -8,10 +8,8 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
 
   const saveAndContinue = (e) => {
     e.preventDefault()
-    nextStep()
     if (values.land === "") {
       setError("duid een land aan")
-      nextStep()
     } else {
       nextStep()
     }
@@ -68,7 +66,7 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
 
       <form color='blue' className={style.form}>
         <h1 className={style.vraag}>Kies het land van jouw herinnering</h1>
-      { values.selectedoption === "" ? <p className={style.error}>{error}</p> : <p className={style.error}></p>}
+      { values.land === "" ? <p className={style.error}>{error}</p> : <p className={style.error}></p>}
         <section className={style.form__select}>
             <select className={style.select__css} name="land" id="land" onChange={e => setLand(e.currentTarget.value)}>
               <option className={style.option} key="niks" id="land" name="land" value="" >Kies je land</option>
