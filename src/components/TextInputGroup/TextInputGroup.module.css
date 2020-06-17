@@ -3,7 +3,7 @@
 
 .input {
   composes: input from "../../styles/components.module.css";
-  margin-bottom: spacer1;
+  margin-top: 1rem;
 }
 
 .label {

@@ -1,5 +1,5 @@
 @value tokens: "./tokens.module.css";
-@value fontSizeMedium, notblack, solight,background,colorPrimary, spacer1, spacer2 from tokens;
+@value fontSubtitel,fontTitel,  notblack, solight,background,colorPrimary, spacer1, spacer2 from tokens;
 
 .button {
   border: 0.1rem solid notblack;
@@ -28,8 +28,9 @@
 .input {
   width: 100%;
   border: none;
-  border-radius: spacer2;
-  font-size: fontSizeMedium;
+  border-radius: fontTitel;
   color: notblack;
-  padding: spacer1;
+  height: 6.8rem;
+  padding-left: 3rem;
+  font-size: fontSubtitel;
 }
