@@ -111,12 +111,14 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                         </div>
                     </div>
                 </div>
-
+                { values.land === "" ? <p className={[style.error2, style.error]}>{error}</p> : <p className={style.error}></p>}
                 <div className={style.container__video}>
-                    <p>{error}</p>
+                    
                     <div className={style.video__content}>
+
+                        
                         <img className={style.content__palmboom} alt="palmboom" src={palmboom}></img>
-                        <VideoRecorder className={style.video}
+                  [      <VideoRecorder className={style.video}
                             onRecordingComplete={(videoBlob, startedAt, thumbnailBlob, duration) => {
                                 const urlCreator = window.URL || window.webkitURL
                                 const thumbUrl = thumbnailBlob && urlCreator.createObjectURL(thumbnailBlob)
@@ -241,7 +243,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
         console.log('audio');
         return (
             <div className={style.container}>
-                <div className={style.header}>
+                <div className={style.header2}>
                     <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
                     <div className={style.procesbar}>
 
@@ -279,9 +281,13 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                         </div>
                     </div>
                 </div>
+                { values.land === "" ? <p className={style.error}>{error}</p> : <p className={style.error}></p>}
 
                 <img className={style.content__palmboom2} alt="palmboom" src={palmboom}></img>
+
+                
                 < div className={style.content_sound} >
+                
                     <ReactMic
                         record={record}
                         className={style.sound}

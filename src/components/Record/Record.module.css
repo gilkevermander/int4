@@ -1,11 +1,18 @@
-.video {
-  width: 70rem;
-  height: 60rem; 
+@value tokens: "../../styles/tokens.module.css";
+@value fontTitel, spacer1 from tokens;
+
+.error {
+  composes: error from "../../styles/layouts.module.css";
+}
+
+.error2 {
+  composes: error from "../../styles/layouts.module.css";
+  margin-top: -3rem;
 }
 
 .container__video {
   height: 60.1rem;
-  width: 130rem;
+  width: 110rem;
   margin-top: 5rem;
   margin: 0 auto;
   padding: 10rem 10rem 0;
@@ -13,13 +20,12 @@
 
 .video__content {
   display: flex;
-  height: 60rem;
-  margin-top: -14rem;
+  height: 50rem;
 }
 
 .content__palmboom {
-  margin-left: -41rem;
-  margin-top: 2rem;
+  margin-left: -51rem;
+  margin-top: -9.5rem;
   width: 50.7rem;
   height: 85.4rem;
 }
@@ -31,8 +37,6 @@
   margin-top: -4rem;
 }
 
-@value tokens: "../../styles/tokens.module.css";
-@value fontTitel, spacer1 from tokens;
 
 .procesbar {
   display: flex;
@@ -134,7 +138,7 @@
   border: none;
   color: grey;
   display: flex;
-  margin: 11.6rem 0 0rem 101.6rem;
+  margin: 9.2rem 0 0rem 101.5rem;
 }
 
 .next__text {
@@ -166,7 +170,7 @@
   border: none;
   color: grey;
   display: flex;
-  margin: 5.6rem 0 0rem 101.6rem;
+  margin: 10.2rem 0 0rem 100.0rem;
 }
 
 .next__text2 {
@@ -227,7 +231,14 @@
   display: flex;
   justify-content: space-around;
   width: 126rem;
-  margin-left: 1.58rem;
+}
+
+.header2{
+  display: flex;
+  justify-content: space-around;
+  width: 126rem;
+  margin-left: 1.5rem
+
 }
 
 .content_sound {
