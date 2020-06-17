@@ -74,46 +74,47 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
   console.log(values);
 
   return (
-    <>
-      <Button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></Button>
-      <div className={style.procesbar}>
+    <div className={style.container}>
+      <div className={style.header}>
+        <Button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></Button>
+        <div className={style.procesbar}>
 
-        <div className={style.procesbar_lijn1}>
+          <div className={style.procesbar_lijn1}>
+            <div className={style.procesbar__item}>
+              <p className={style.item__number}>1</p>
+              <p className={style.item__text}>Verhaal</p>
+            </div>
+          </div>
+
+          <div className={style.procesbar_lijn2}>
+            <div className={style.procesbar__item}>
+              <p className={style.item__number}>2</p>
+              <p className={style.item__text}>land</p>
+            </div>
+          </div>
+
+          <div className={style.procesbar_lijn3}>
+            <div className={style.procesbar__item}>
+              <p className={style.item__number}>3</p>
+              <p className={style.item__text}>Opname</p>
+            </div>
+          </div>
+
+          <div className={style.procesbar_lijn4}>
+            <div className={style.procesbar__item1}>
+              <p className={style.item__number}>4</p>
+              <p className={style.item__text}>Souvenir</p>
+            </div>
+          </div>
+
           <div className={style.procesbar__item}>
-            <p className={style.item__number}>1</p>
-            <p className={style.item__text}>Verhaal</p>
+            <p className={style.item__number}>5</p>
+            <p className={style.item__text}>Gegevens</p>
           </div>
         </div>
-
-        <div className={style.procesbar_lijn2}>
-          <div className={style.procesbar__item}>
-            <p className={style.item__number}>2</p>
-            <p className={style.item__text}>land</p>
-          </div>
-        </div>
-
-        <div className={style.procesbar_lijn3}>
-          <div className={style.procesbar__item}>
-            <p className={style.item__number}>3</p>
-            <p className={style.item__text}>Opname</p>
-          </div>
-        </div>
-
-        <div className={style.procesbar_lijn4}>
-          <div className={style.procesbar__item}>
-            <p className={style.item__number}>4</p>
-            <p className={style.item__text}>Souvenir</p>
-          </div>
-        </div>
-
-        <div className={style.procesbar__item1}>
-          <p className={style.item__number}>5</p>
-          <p className={style.item__text}>Gegevens</p>
-        </div>
-
       </div>
       <form onSubmit={handleSubmit} className={style.form}>
-        <h1 className="ui centered">Geef <span>jouw</span> gegevens in</h1>
+        <h1 className={style.vraag}>Geef <span> jouw </span> gegevens in</h1>
         <div className={style.grid}>
           <div className={style.wrapper}>
             <div className={style.input__wrapper}>
@@ -122,85 +123,86 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
                 label="voornaam"
                 name="voornaam"
                 type="voornaam"
-                placeholder="vul je voornaam in"
+                placeholder="Kabien"
                 value={voornaam}
                 onChange={(e) => setVoornaam(e.currentTarget.value)}
                 className={style.input}
               />
             </div>
             <div className={style.input__wrapper}>
-            <label>Gebruikersnaam</label>
-            <Form>
-              {/* <span style={{ color: "red" }}>{errorGebruiker}</span> */}
-              <input
-                placeholder='Gebruikersnaam'
-                onChange={e => setGebruikersnaam(e.currentTarget.value)}
-                defaultValue={values.gebruikersnaam}
-                required
-                className={style.input}
-              />
-            </Form>
+              <label>Gebruikersnaam</label>
+              <Form>
+                {/* <span style={{ color: "red" }}>{errorGebruiker}</span> */}
+                <input
+                  placeholder='Gebruikersnaam'
+                  onChange={e => setGebruikersnaam(e.currentTarget.value)}
+                  defaultValue={values.gebruikersnaam}
+                  required
+                  placeholder="kabien_kortrijk"
+                  className={style.input}
+                />
+              </Form>
             </div>
             <div className={style.input__wrapper}>
-            <label>Wachtwoord</label>
-            <TextInputGroup
-              label="Password"
-              type="password"
-              name="Password"
-              placeholder="Fill in your password."
-              value={password}
-              onChange={(e) => setPassWord(e.currentTarget.value)}
-              className={style.input}
-            />
+              <label>Wachtwoord</label>
+              <TextInputGroup
+                label="Password"
+                type="password"
+                name="Password"
+                placeholder="Fill in your password."
+                value={password}
+                onChange={(e) => setPassWord(e.currentTarget.value)}
+                className={style.input}
+              />
             </div>
           </div>
           <div className={style.wrapper}>
-          <div className={style.input__wrapper}>
-            <label>Achternaam</label>
-            <Form>
-              {/* <span style={{ color: "red" }}>{errorAchter}</span> */}
-              <input
-                placeholder='Achternaam'
-                onChange={e => setAchternaam(e.currentTarget.value)}
-                defaultValue={values.achternaam}
-                required
-                className={style.input}
-              />
-            </Form>
+            <div className={style.input__wrapper}>
+              <label>Achternaam</label>
+              <Form>
+                {/* <span style={{ color: "red" }}>{errorAchter}</span> */}
+                <input
+                  placeholder='Achternaam'
+                  onChange={e => setAchternaam(e.currentTarget.value)}
+                  defaultValue={values.achternaam}
+                  required
+                  className={style.input}
+                />
+              </Form>
             </div>
             <div className={style.input__wrapper}>
               <label>E-mail</label>
-            <Form>
-              {/* <span style={{ color: "red" }}>{errorEmail}</span> */}
-              <input
-                placeholder='E-mail'
-                onChange={e => setEmail(e.currentTarget.value)}
-                defaultValue={values.email}
-                type="email"
-                required
-                className={style.input}
-              />
-            </Form>
+              <Form>
+                {/* <span style={{ color: "red" }}>{errorEmail}</span> */}
+                <input
+                  placeholder='kabien@kortrijk.be'
+                  onChange={e => setEmail(e.currentTarget.value)}
+                  defaultValue={values.email}
+                  type="email"
+                  required
+                  className={style.input}
+                />
+              </Form>
             </div>
             <div className={style.input__wrapper}>
-            <label>Herhaal wachtwoord</label>
-            <TextInputGroup
-              label="Passwordagain"
-              type="password"
-              name="Passwordagain"
-              placeholder="Fill in your password again."
-              value={passwordAgain}
-              onChange={(e) => setPassWordAgain(e.currentTarget.value)}
-              className={style.input}
-            />
+              <label>Herhaal wachtwoord</label>
+              <TextInputGroup
+                label="Passwordagain"
+                type="password"
+                name="Passwordagain"
+                placeholder="Fill in your password again."
+                value={passwordAgain}
+                onChange={(e) => setPassWordAgain(e.currentTarget.value)}
+                className={style.input}
+              />
             </div>
           </div>
         </div>
-        <input type="submit" value="Volgende" className={style.next} />
+        <input type="submit" value="Volgende" className={values.keuze === "" ? style.next : style.next__active} />
         <Button onClick={back}>Back</Button>
         {/* <Button onClick={saveAndContinue}>Save And Continue </Button> */}
       </form>
-    </>
+    </div>
   )
 }
 
