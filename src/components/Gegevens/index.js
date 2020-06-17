@@ -20,6 +20,8 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
   const [password, setPassWord] = useState("");
   const [passwordAgain, setPassWordAgain] = useState("");
 
+  const [error, setError] = useState("");
+
   const { uiStore } = useStore();
   const history = useHistory();
 
@@ -58,12 +60,17 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (values.password === values.passwordAgain) {
-      try {
-        await uiStore.registerUser({ voornaam, achternaam, gebruikersnaam, email, password });
-        nextStep();
-      } catch (error) {
-        console.log(error);
+      if (voornaam !== null && voornaam !== '') {
+        try {
+          await uiStore.registerUser({ voornaam, achternaam, gebruikersnaam, email, password });
+          nextStep();
+        } catch (error) {
+          console.log(error);
+        }
+      } else {
+        setError("Neem eerst je verhaal op!")
       }
+
     }
   };
 
@@ -111,10 +118,10 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
       </div>
       <form onSubmit={handleSubmit} className={style.form}>
         <h1 className={style.vraag}>Geef <span className={style.vraag__bold}> jouw </span> gegevens in</h1>
-        { values.land === "" ? <p className={style.error}>Vul alle gegevens in</p> : <p className={style.error}></p>}
         <div className={style.grid}>
           <div className={style.wrapper}>
             <div className={style.input__wrapper}>
+              {voornaam !== null && voornaam !== '' ? <p className={style.error__input}>{error}</p> : <p className={style.error__input}></p>}
               <label>Voornaam</label>
               <TextInputGroup
                 label="voornaam"
@@ -129,13 +136,13 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
             <div className={style.input__wrapper}>
               <label>Gebruikersnaam</label>
               <TextInputGroup
-                  placeholder='Gebruikersnaam'
-                  onChange={e => setGebruikersnaam(e.currentTarget.value)}
-                  defaultValue={values.gebruikersnaam}
-                  required
-                  placeholder="kabien_kortrijk"
-                  className={style.input}
-                />
+                placeholder='Gebruikersnaam'
+                onChange={e => setGebruikersnaam(e.currentTarget.value)}
+                defaultValue={values.gebruikersnaam}
+                required
+                placeholder="kabien_kortrijk"
+                className={style.input}
+              />
             </div>
             <div className={style.input__wrapper}>
               <label>Wachtwoord</label>
@@ -154,23 +161,23 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
             <div className={style.input__wrapper}>
               <label>Achternaam</label>
               <TextInputGroup
-                  placeholder='Achternaam'
-                  onChange={e => setAchternaam(e.currentTarget.value)}
-                  defaultValue={values.achternaam}
-                  required
-                  className={style.input}
-                />
+                placeholder='Achternaam'
+                onChange={e => setAchternaam(e.currentTarget.value)}
+                defaultValue={values.achternaam}
+                required
+                className={style.input}
+              />
             </div>
             <div className={style.input__wrapper}>
               <label>E-mail</label>
               <TextInputGroup
-                  placeholder='kabien@kortrijk.be'
-                  onChange={e => setEmail(e.currentTarget.value)}
-                  defaultValue={values.email}
-                  type="email"
-                  required
-                  className={style.input}
-                />
+                placeholder='kabien@kortrijk.be'
+                onChange={e => setEmail(e.currentTarget.value)}
+                defaultValue={values.email}
+                type="email"
+                required
+                className={style.input}
+              />
             </div>
             <div className={style.input__wrapper}>
               <label>Herhaal wachtwoord</label>

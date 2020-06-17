@@ -102,3 +102,12 @@
     margin: 4rem auto -5rem;
     text-align: center;
   }
+
+  .error__input{
+    display: block;
+    color: red;
+    font-weight: 600;
+    height: 3.4rem;
+    margin: 4rem auto -5rem;
+    text-align: center;
+  }

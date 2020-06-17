@@ -3,7 +3,7 @@
 @value fontTitel, fontSubtitel, spacer1 from tokens;
 
 .error {
-  composes: error from "../../styles/layouts.module.css";
+  composes: error__input from "../../styles/layouts.module.css";
 }
 
 .vraag__bold {
