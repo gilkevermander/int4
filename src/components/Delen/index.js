@@ -84,7 +84,6 @@ de wereldkaart vol reisverhalen? </h2>
 wereldkaart als audio</span>
               </label>
             </div>
-        </div>
         <button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Verstuur</p> </button>
       </form>
     </div>
