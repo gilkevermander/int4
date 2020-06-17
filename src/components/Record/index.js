@@ -224,6 +224,7 @@ const Record = ({ nextStep, prevStep, values }) => {
                                     //   var dt = e.dataTransfer;
                                     //   var files = dt.files;
                                     //   handleFiles(files);
+                                    //dsqfsd
                                 }
 
                             }}
