@@ -24,6 +24,13 @@
   height: 85.4rem;
 }
 
+.content__palmboom2 {
+  margin-left: -31rem;
+  width: 48.7rem;
+  height: 85.4rem;
+  margin-top: -4rem;
+}
+
 @value tokens: "../../styles/tokens.module.css";
 @value fontTitel, spacer1 from tokens;
 
@@ -127,7 +134,7 @@
   border: none;
   color: grey;
   display: flex;
-  margin: 3.2rem 0 0rem 100rem;
+  margin: 11.6rem 0 0rem 101.6rem;
 }
 
 .next__text {
@@ -151,7 +158,39 @@
   border: none;
   background-color:  #FFDC61;
   display: flex;
-  margin: 3.2rem 0 0rem 100rem;
+  margin: 11.6rem 0 0rem 101.6rem;
+}
+
+.next2{
+  composes: next from "../../styles/layouts.module.css";
+  border: none;
+  color: grey;
+  display: flex;
+  margin: 5.6rem 0 0rem 101.6rem;
+}
+
+.next__text2 {
+  composes: next__text from "../../styles/layouts.module.css";
+}
+
+
+.next__text2::after {
+    content: "";
+    background-image: url('../../assets/img/button__line.png');
+    width: 30vw;
+    height: 15vh;
+    background-position: 13rem 1.5rem;
+    position: absolute;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+.next__active2 {
+  composes: next from "../../styles/layouts.module.css";
+  border: none;
+  background-color:  #FFDC61;
+  display: flex;
+  margin: 5.6rem 0 0rem 101.6rem;
 }
 
 .back{
@@ -188,6 +227,7 @@
   display: flex;
   justify-content: space-around;
   width: 126rem;
+  margin-left: 1.58rem;
 }
 
 .content_sound {

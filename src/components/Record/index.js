@@ -233,15 +233,14 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                         />
                     </div>
                 </div>
-                <button onClick={saveAndContinue} className={complete ? style.next_active : style.next}><p className={style.next_text}>Koppel jouw souvenir</p> </button>
+                <button onClick={saveAndContinue} className={complete ? style.next__active2 : style.next2}><p className={style.next__text2}>Koppel jouw souvenir</p> </button>
             </div>
         )
 
     } else {
         console.log('audio');
         return (
-            <>
-
+            <div className={style.container}>
                 <div className={style.header}>
                     <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
                     <div className={style.procesbar}>
@@ -281,7 +280,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                     </div>
                 </div>
 
-                <img className={style.content__palmboom} alt="palmboom" src={palmboom}></img>
+                <img className={style.content__palmboom2} alt="palmboom" src={palmboom}></img>
                 < div className={style.content_sound} >
                     <ReactMic
                         record={record}
@@ -299,10 +298,8 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                 <div className="progress-bar" id="progress-bar">
                     <div className="progress" id="progress"></div>
                 </div>
-                <button onClick={saveAndContinue} className={complete ? style.next_active : style.next}><p className={style.next_text}>Koppel jouw souvenir</p></button>
-
-
-            </>
+                <button onClick={saveAndContinue} className={complete ? style.next__active : style.next}><p className={style.next__text}>Koppel jouw souvenir</p></button>
+            </div>
 
         )
     }
