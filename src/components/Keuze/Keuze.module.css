@@ -107,7 +107,7 @@
   border: none;
   color: grey;
   display: flex;
-  margin: -3rem 0 0rem 108.5rem;
+  margin: -3.7rem 0 0rem 108.5rem;
 }
 
 .next__text {
@@ -270,5 +270,9 @@
   border: none;
   background-color:  #FFDC61;
   display: flex;
-  margin: -3rem 0 0rem 108.5rem;
+  margin: -3.7rem 0 0rem 108.5rem;
+}
+
+.error {
+  composes: error from "../../styles/layouts.module.css";
 }

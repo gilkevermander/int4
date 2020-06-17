@@ -17,7 +17,7 @@ const Keuze = ({ nextStep, values, setKeuze, prevStep, overStep }) => {
         nextStep()
       }
     } else {
-      setError("duide een keuze aan")
+      setError("Duid een keuze aan")
     }
 
   }
@@ -69,7 +69,7 @@ const Keuze = ({ nextStep, values, setKeuze, prevStep, overStep }) => {
 
       <form >
         <h2 className={style.vraag}>Wil jij jouw souvenir pimpen met een foto?</h2>
-        <p>{error}</p>
+        <p className={style.error}>{error}</p>
           <div className={style.grid}>
             <label className={style.keuze}>
               <input className={style.keuze__mogelijkheid} type="radio" name="keuze" value="false" onChange={e => setKeuze(false)} /> <span className={style.keuze__text1}>Nee, liever niet</span>
