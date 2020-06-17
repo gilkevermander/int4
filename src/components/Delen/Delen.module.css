@@ -271,14 +271,12 @@
   height: 353px;
 }
 
-<<<<<<< HEAD
 .gif {
   margin-top: 3rem;
   margin-bottom: -35rem;
   margin-left: 25rem;
 }
 
-=======
 .back{
   composes: back from "../../styles/layouts.module.css";
   border: none;
