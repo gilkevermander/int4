@@ -117,4 +117,28 @@
     display: inline-block;
     background-repeat: no-repeat;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  position: absolute;
+  background: #FFFFFF;
+  border-radius: 40px;
+  border: none;
+  height: 5.8rem;
+  width: 40rem;
+}
+
+.input__wrapper {
+  display: flex;
+  flex-direction: column;
+}
   
