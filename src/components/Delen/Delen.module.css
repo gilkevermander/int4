@@ -82,10 +82,18 @@
   width: 9rem;
   margin-left: 2rem;
   margin-right: 2rem;
+  margin-top: 2rem;
 }
 
 .hidden{
   display: none;
+}
+
+.vragen{
+  display: flex;
+  flex-direction: column;
+  margin-top: -10rem;
+  margin-bottom: -5rem;
 }
 
 .vraag{
@@ -100,6 +108,7 @@
   composes: next from "../../styles/layouts.module.css";
   border: none;
   color: grey;
+  margin: -14rem 0 2rem 100rem;
 }
 
 .next__text {
@@ -112,10 +121,18 @@
     background-image: url('../../assets/img/button__line.png');
     width: 30vw;
     height: 15vh;
-    background-position: 9rem 1.5rem;
+    background-position: 13rem 1.5rem;
     position: absolute;
     display: inline-block;
     background-repeat: no-repeat;
+}
+
+.next__active {
+  composes: next from "../../styles/layouts.module.css";
+  border: none;
+  background-color:  #FFDC61;
+  display: flex;
+  margin: -14rem 0 2rem 100rem;
 }
 
 .vraag{
@@ -232,49 +249,14 @@
   width: 70%;
 }
 
-.next{
-  composes: next from "../../styles/layouts.module.css";
-  border: none;
-  color: grey;
-  display: flex;
-  margin: -8rem 0 0rem 108.5rem;
-}
-
-.next__text {
-  composes: next__text from "../../styles/layouts.module.css";
-}
 
 
-.next__text::after {
-    content: "";
-    background-image: url('../../assets/img/button__line.png');
-    width: 30vw;
-    height: 15vh;
-    background-position: 13rem 1.5rem;
-    position: absolute;
-    display: inline-block;
-    background-repeat: no-repeat;
-}
 
-.next__active {
-  composes: next from "../../styles/layouts.module.css";
-  border: none;
-  background-color:  #FFDC61;
-  display: flex;
-  margin: -13rem 0 0rem 108.5rem;
-}
-
-.gif::before {
-  content: "";
-  background-image: url("../../assets/video/GSMgif.gif");
-  width: 117px;
-  height: 353px;
-}
 
 .gif {
-  margin-top: 3rem;
-  margin-bottom: -35rem;
-  margin-left: 25rem;
+  margin-top: 10rem;
+  margin-bottom: -65rem;
+  margin-left: -10rem;
 }
 
 .back{
