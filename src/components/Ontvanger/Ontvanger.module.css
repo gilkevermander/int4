@@ -3,16 +3,6 @@
 @value fontTitel, spacer1 from tokens;
 
 
-.grid label {
-  font-size: fontSubtitel;
-  margin-top: 3rem;
-}
-
-.label{
-  font-size: fontSubtitel;
-  margin-top: 3rem;
-}
-
 .vraag__bold {
   composes: bold from "../../styles/typo.module.css";
   margin: 0 1rem;
@@ -162,11 +152,11 @@
 .back__text {
   composes: back__text from "../../styles/layouts.module.css";
 }
-
 .header{
   display: flex;
   justify-content: space-between;
   margin-right: 21rem;
+  width: 106rem;
 }
 
 .back__text::after {
@@ -198,7 +188,16 @@
   width: 100%;
 }
 
-.wrapper__item__postcode{
-  width: 4rem;
+.wrapper__item__nummer{
+  width: 3rem;
+}
+
+.wrapper__item__straat{
+  width: 20rem;
+  margin-right: 2rem;;
+}
+
+.input{
+  margin-bottom: 6rem;
 }
 

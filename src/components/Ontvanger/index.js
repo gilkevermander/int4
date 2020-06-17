@@ -113,10 +113,12 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
             placeholder="jhon Doe"
             value={naam}
             onChange={(e) => setNaam(e.currentTarget.value)}
+
+            className={style.input}
           />
           <div className={style.wrapper}>
             <div className={style.wrapper__item}>
-              <label className={style.label}>Straat</label>
+              <label className={[ style.wrapper__item__straat ,style.wrapper__item]}>Straat</label>
               <TextInputGroup
                 label="straat"
                 name="straat"
@@ -124,9 +126,10 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
                 placeholder="Kortrijkstraat"
                 value={straat}
                 onChange={(e) => setStraat(e.currentTarget.value)}
+                className={style.input}
               />
             </div>
-            <div className={[ style.wrapper__item__postcode ,style.wrapper__item]}>
+            <div className={[ style.wrapper__item__nummer ,style.wrapper__item]}>
               <label className={style.label}>nummer</label>
               <TextInputGroup
                 label="nr"
@@ -134,6 +137,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
                 name="nr"
                 value={nr}
                 onChange={(e) => setNr(e.currentTarget.value)}
+                className={style.input}
               />
             </div>
           </div>
@@ -145,6 +149,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
             placeholder="Kortrijk"
             value={stad}
             onChange={(e) => setStad(e.currentTarget.value)}
+            className={style.input}
           />
           <label className={style.label}>Postcode</label>
           <TextInputGroup
@@ -154,6 +159,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
             placeholder="8500"
             value={postcode}
             onChange={(e) => setPostcode(e.currentTarget.value)}
+            className={style.input}
           />
 
           <button onClick={handleSubmit} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
