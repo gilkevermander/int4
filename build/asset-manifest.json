@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5e529afe.chunk.css",
+    "main.js": "/static/js/main.f98abea5.chunk.js",
+    "main.js.map": "/static/js/main.f98abea5.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.374301ac.js",
+    "runtime-main.js.map": "/static/js/runtime-main.374301ac.js.map",
+    "static/js/2.de27bc70.chunk.js": "/static/js/2.de27bc70.chunk.js",
+    "static/js/2.de27bc70.chunk.js.map": "/static/js/2.de27bc70.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.63422bac4c6b66ec8019922356fcabce.js": "/precache-manifest.63422bac4c6b66ec8019922356fcabce.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.5e529afe.chunk.css.map": "/static/css/main.5e529afe.chunk.css.map",
+    "static/js/2.de27bc70.chunk.js.LICENSE.txt": "/static/js/2.de27bc70.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/textures.c7ff1e4d.png",
+    "static/media/Start.module.css": "/static/media/button__line.2fcd4469.png",
+    "static/media/camera.png": "/static/media/camera.020b4298.png",
+    "static/media/intro.mp4": "/static/media/intro.52979061.mp4",
+    "static/media/Souvenir.module.css": "/static/media/sticker.1a4f4dc9.png",
+    "static/media/palmboom.png": "/static/media/palmboom.cd6781bc.png",
+    "static/media/paris.jpeg": "/static/media/paris.990e081f.jpeg",
+    "static/media/poster.png": "/static/media/poster.d2acee4d.png",
+    "static/media/souvenir.jpg": "/static/media/souvenir.9c0e7262.jpg",
+    "static/media/tapes.png": "/static/media/tapes.f3d21252.png",
+    "static/media/Land.module.css": "/static/media/wereldKaart.aff0aca9.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.374301ac.js",
+    "static/js/2.de27bc70.chunk.js",
+    "static/css/main.5e529afe.chunk.css",
+    "static/js/main.f98abea5.chunk.js"
+  ]
+}
