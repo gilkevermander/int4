@@ -36,6 +36,8 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
       //foto op souvenir
       //filmpje of audio
       const land = await landStore.resolveLandId(values.land);
+      const video = values.video
+      console.log(video);
       setUserId(uiStore.currentUser.id)
       console.log(userId);
       const item = new Souvenir({
@@ -48,7 +50,8 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
         souvenir,
         delen,
         userId: uiStore.currentUser.id,
-        landId: land.id
+        landId: land.id,
+        video
       });
       item.create();
       nextStep();

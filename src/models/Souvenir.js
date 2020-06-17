@@ -55,7 +55,7 @@ class Souvenir {
 
   
 
-  updateFromJson = ({naam = undefined, straat = undefined, nr = undefined, postcode = undefined, stad = undefined, souvenir = undefined, userId = undefined, landId = undefined, delen = undefined}) => {
+  updateFromJson = ({naam = undefined, straat = undefined, nr = undefined, postcode = undefined, stad = undefined, souvenir = undefined, userId = undefined, landId = undefined, delen = undefined, video = undefined}) => {
     this.naam = (naam !== undefined) ? naam : this.naam;
     this.straat = (straat !== undefined) ? straat : this.straat;
     this.nr = (nr !== undefined) ? nr : this.nr;
@@ -63,6 +63,7 @@ class Souvenir {
     this.stad = (stad !== undefined) ? stad : this.stad;
     this.souvenir = (souvenir !== undefined) ? souvenir : this.souvenir;
     this.delen = (delen !== undefined) ? delen : this.delen;
+    this.video = (video !== undefined) ? video : this.video;
     this.landId = this.lands.id
     if (landId !== undefined) {
       this.setLand(this.store.rootStore.landStore.resolveLand(landId));
@@ -107,7 +108,8 @@ class Souvenir {
       landId: this.landId,
       userId: this.userId,
       souvenir: this.souvenir,
-      delen: this.delen
+      delen: this.delen,
+      video: this.video
 
     };
   }
@@ -121,7 +123,8 @@ decorate(Souvenir, {
   asJson: computed,
   users: observable,
   lands: observable,
-  delen: observable
+  delen: observable,
+  video: observable
 });
 
 export default Souvenir;
