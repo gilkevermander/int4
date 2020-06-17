@@ -1,0 +1,97 @@
+@value tokens: "../../styles/tokens.module.css";
+@value fontTitel, spacer1, geel from tokens;
+
+.vraag{
+    composes: semibold from "../../styles/typo.module.css";
+    font-size: fontTitel;
+    margin-top: spacer1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .subtitle {
+    composes: regular from "../../styles/typo.module.css";
+    font-size: 3rem;
+    margin: 5rem auto 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .info{
+    composes: regular from "../../styles/typo.module.css";
+    font-size: 4.8rem;
+    margin: 20rem auto 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .big {
+    font-family: 'luna', sans-serif;
+    font-size: 8rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: -3.3rem;
+  }
+
+  .big2 {
+    font-family: 'luna', sans-serif;
+    font-size: 8rem;
+    color: geel;
+    margin-top: -14rem
+  }
+
+  .back {
+    composes: next from "../../styles/layouts.module.css";
+    border: none;
+    display: flex;
+    margin: 3rem 0 0rem 10rem;
+  }
+
+  .back__text {
+    composes: next__text from "../../styles/layouts.module.css";
+  }
+  
+  
+  .back__text::after {
+      content: "";
+      background-image: url('../../assets/img/button__line.png');
+      width: 30vw;
+      height: 15vh;
+      background-position: 13rem 1.5rem;
+      position: absolute;
+      display: inline-block;
+      background-repeat: no-repeat;
+  }
+
+  .match {
+    margin-left: 108.5rem;
+    margin-top: 10rem;
+}
+
+.next__active {
+    composes: next from "../../styles/layouts.module.css";
+    border: none;
+    background-color:  #FFDC61;
+    display: flex;
+    margin: -7rem 0 0rem 108.5rem;
+  }
+
+  .next__text {
+    composes: next__text from "../../styles/layouts.module.css";
+  }
+  
+  
+  .next__text::after {
+      content: "";
+      background-image: url('../../assets/img/button__line.png');
+      width: 30vw;
+      height: 15vh;
+      background-position: 13rem 1.5rem;
+      position: absolute;
+      display: inline-block;
+      background-repeat: no-repeat;
+  }

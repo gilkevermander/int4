@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useObserver } from 'mobx-react-lite';
 import { useHistory } from "react-router-dom";
 import { ROUTES } from "../../consts";
 import { useStore } from "../../hooks/useStore";
 import { Link } from "react-router-dom";
+import style from "./Result.module.css";
 
 const Result = ({ nextStep, values, setSouvid }) => {
 
@@ -43,14 +43,16 @@ const Result = ({ nextStep, values, setSouvid }) => {
   // console.log(souvenirs);
   return (
     <>
-      <h2 className="ui centered">Bedankt om je verhaal op te sturen!</h2>
-      <p>Je ontvangt een bevestiging via mail en toegang tot de wereldkaart vol reisverhalen.</p>
-      <p>Je verstuurde 1 van de {aantal} opnames over <span>{values.land}</span></p>
-      <p>We vonden een ervaring die past bij die van jou!</p>
+   
+      <h2 className={style.vraag}>Bedankt om je verhaal op te sturen!</h2>
+      <p className={style.subtitle}>Je ontvangt een bevestiging via mail en toegang tot de wereldkaart vol reisverhalen.</p>
+      <p className={style.info}>Je verstuurde <span className={style.big}>1</span> van de <span className={style.big}>{aantal}</span> opnames over </p>
+      <p className={style.info}><span className={style.big2}>{values.land}</span></p>
+      <p className={style.match}>We vonden een ervaring die past bij die van jou!</p>
+      <button onClick={back} className={style.back}><p className={style.back__text}>Terug naar startscherm</p></button>
       {/* <Link to={`${ROUTES.detailSouvenir.to}${souvenir.id}`}> */}
-        <button onClick={saveAndContinue}>Beluister de ervaring </button>
+        <button onClick={saveAndContinue} className={style.next__active}><p className={style.next__text}>Beluister de ervaring</p> </button>
       {/* </Link> */}
-      <button onClick={back}>Terug naar startscherm</button>
     </>
   )
 
