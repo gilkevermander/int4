@@ -23,7 +23,7 @@ const unsignedUploadPreset = 'guaqui4h';
 // import { render } from 'react-dom';
 // import MediaCapturer from 'react-multimedia-capture';
 
-const Record = ({ nextStep, prevStep, values }) => {
+const Record = ({ nextStep, prevStep, values, setVideo }) => {
 
     // cloudinary.config({
     //     cloud_name: 'int4',
