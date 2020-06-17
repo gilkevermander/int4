@@ -51,11 +51,7 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
 
   const back = (e) => {
     e.preventDefault();
-    if (values.keuze === false) {
-      prevprevStep();
-    } else {
-      prevStep();
-    }
+    prevStep();
 
   }
 
