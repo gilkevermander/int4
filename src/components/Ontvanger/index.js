@@ -146,8 +146,7 @@ return (
     />
     
     <input type="submit" value="Register" className={style.button} />
-    <Button onClick={back}>Back</Button>
-    <Button onClick={saveAndContinue}>Save And Continue </Button>
+    <Button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </Button>
     </div>
   </form>
   </>
