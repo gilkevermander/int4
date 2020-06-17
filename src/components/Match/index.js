@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Button } from 'semantic-ui-react';
 import { useObserver } from 'mobx-react-lite';
 import { useHistory } from "react-router-dom";
 import { ROUTES } from "../../consts";
@@ -26,12 +25,11 @@ const Match = ({ nextStep, values }) => {
       <p>van anoniempje</p>
       <ReactPlayer
           className='react-player'
-          url='https://www.youtube.com/watch?v=DykVJl6wr_4'
+          url='https://res.cloudinary.com/int4/video/upload/v1592396569/jjfba8egbdgvhvfkke1z.mp4'
           width='100%'
           height='100%'
-          controls='true'
         />
-      <Button onClick={back}>Terug naar startscherm</Button>
+      <button onClick={back}>Terug naar startscherm</button>
     </>
   )
 

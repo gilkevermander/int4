@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Button, List } from 'semantic-ui-react';
 import VideoRecorder from 'react-video-recorder';
 import style from "./Record.module.css";
 import { ReactMic } from 'react-mic';
@@ -75,7 +74,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
         return (
             <div className={style.container}>
                 <div className={style.header}>
-                    <Button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></Button>
+                    <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
                     <div className={style.procesbar}>
 
                         <div className={style.procesbar_lijn1}>
@@ -115,8 +114,8 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
 
                 <div className={style.container__video}>
                     <p>{error}</p>
-                    <div class={style.video__content}>
-                        <img class={style.content__palmboom} alt="palmboom" src={palmboom}></img>
+                    <div className={style.video__content}>
+                        <img className={style.content__palmboom} alt="palmboom" src={palmboom}></img>
                         <VideoRecorder className={style.video}
                             onRecordingComplete={(videoBlob, startedAt, thumbnailBlob, duration) => {
                                 const urlCreator = window.URL || window.webkitURL
@@ -234,7 +233,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                         />
                     </div>
                 </div>
-                <Button onClick={saveAndContinue} className={complete ? style.next_active : style.next}><p className={style.next_text}>Koppel jouw souvenir</p> </Button>
+                <button onClick={saveAndContinue} className={complete ? style.next_active : style.next}><p className={style.next_text}>Koppel jouw souvenir</p> </button>
             </div>
         )
 
@@ -244,7 +243,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
             <>
 
                 <div className={style.header}>
-                    <Button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></Button>
+                    <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
                     <div className={style.procesbar}>
 
                         <div className={style.procesbar_lijn1}>
@@ -282,7 +281,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                     </div>
                 </div>
 
-                <img class={style.content__palmboom} alt="palmboom" src={palmboom}></img>
+                <img className={style.content__palmboom} alt="palmboom" src={palmboom}></img>
                 < div className={style.content_sound} >
                     <ReactMic
                         record={record}
@@ -297,10 +296,10 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                         <button onClick={stopRecording} type="button" className={style.stop}></button>
                     </div>
                 </div >
-                <div class="progress-bar" id="progress-bar">
-                    <div class="progress" id="progress"></div>
+                <div className="progress-bar" id="progress-bar">
+                    <div className="progress" id="progress"></div>
                 </div>
-                <Button onClick={saveAndContinue} className={complete ? style.next_active : style.next}><p className={style.next_text}>Koppel jouw souvenir</p></Button>
+                <button onClick={saveAndContinue} className={complete ? style.next_active : style.next}><p className={style.next_text}>Koppel jouw souvenir</p></button>
 
 
             </>

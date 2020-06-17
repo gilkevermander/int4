@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Button } from 'semantic-ui-react';
 import TextInputGroup from "../TextInputGroup";
 import style from "./Ontvanger.module.css";
 import Souvenir from "../../models/Souvenir";
@@ -146,7 +145,7 @@ return (
     />
     
     <input type="submit" value="Register" className={style.button} />
-    <Button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </Button>
+    <button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
     </div>
   </form>
   </>

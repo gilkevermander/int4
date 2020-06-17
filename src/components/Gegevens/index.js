@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'semantic-ui-react';
+
 import TextInputGroup from "../TextInputGroup";
 import style from "./Gegevens.module.css";
 import { useStore } from "../../hooks/useStore";
@@ -72,7 +72,7 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
   return (
     <div className={style.container}>
       <div className={style.header}>
-        <Button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></Button>
+        <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
         <div className={style.procesbar}>
 
           <div className={style.procesbar_lijn1}>
@@ -127,9 +127,7 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
             </div>
             <div className={style.input__wrapper}>
               <label>Gebruikersnaam</label>
-              <Form>
-                {/* <span style={{ color: "red" }}>{errorGebruiker}</span> */}
-                <input
+              <TextInputGroup
                   placeholder='Gebruikersnaam'
                   onChange={e => setGebruikersnaam(e.currentTarget.value)}
                   defaultValue={values.gebruikersnaam}
@@ -137,7 +135,6 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
                   placeholder="kabien_kortrijk"
                   className={style.input}
                 />
-              </Form>
             </div>
             <div className={style.input__wrapper}>
               <label>Wachtwoord</label>
@@ -155,22 +152,17 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
           <div className={style.wrapper}>
             <div className={style.input__wrapper}>
               <label>Achternaam</label>
-              <Form>
-                {/* <span style={{ color: "red" }}>{errorAchter}</span> */}
-                <input
+              <TextInputGroup
                   placeholder='Achternaam'
                   onChange={e => setAchternaam(e.currentTarget.value)}
                   defaultValue={values.achternaam}
                   required
                   className={style.input}
                 />
-              </Form>
             </div>
             <div className={style.input__wrapper}>
               <label>E-mail</label>
-              <Form>
-                {/* <span style={{ color: "red" }}>{errorEmail}</span> */}
-                <input
+              <TextInputGroup
                   placeholder='kabien@kortrijk.be'
                   onChange={e => setEmail(e.currentTarget.value)}
                   defaultValue={values.email}
@@ -178,7 +170,6 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
                   required
                   className={style.input}
                 />
-              </Form>
             </div>
             <div className={style.input__wrapper}>
               <label>Herhaal wachtwoord</label>
@@ -195,7 +186,7 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
           </div>
         </div>
 
-        <Button onClick={handleSubmit} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </Button>
+        <button onClick={handleSubmit} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
         {/* <input type="submit" value="Volgende" className={values.keuze === "" ? style.next : style.next__active} /> */}
       </form>
     </div>

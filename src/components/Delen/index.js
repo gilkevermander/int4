@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'semantic-ui-react';
 import { useObserver } from 'mobx-react-lite';
 import style from "./Delen.module.css";
 
@@ -31,7 +30,7 @@ const Delen = ({ nextStep, values, setDelen, prevStep, prevprevStep }) => {
   return (
     <div>
       <div className={style.header}>
-      <Button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></Button>
+      <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
         <div className={style.procesbar}>
 
           <div className={style.procesbar_lijn1}>
@@ -68,13 +67,12 @@ const Delen = ({ nextStep, values, setDelen, prevStep, prevprevStep }) => {
           </div>
         </div>
       </div>
-      <Form >
+      <form >
         <div className={style.gif}>
           <h2 className={style.vraag}>Nog één laatste vraagje</h2>
           <h2 className={style.subtitel}>Wil je jouw verhaal anoniem delen op
 de wereldkaart vol reisverhalen? </h2>
           <p>{error}</p>
-          <Form>
             <div className={style.grid}>
               <label className={style.keuze}>
                 <input className={style.keuze__mogelijkheid} type="radio" name="keuze" value="false" onChange={e => setDelen(false)} /> <span className={style.keuze__text1}>Nee, liever niet</span>
@@ -84,10 +82,9 @@ de wereldkaart vol reisverhalen? </h2>
 wereldkaart als audio</span>
               </label>
             </div>
-          </Form>
         </div>
-        <Button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Verstuur</p> </Button>
-      </Form>
+        <button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Verstuur</p> </button>
+      </form>
     </div>
   )
 
