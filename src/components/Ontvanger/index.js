@@ -98,6 +98,7 @@ return (
     </div>
   <form onSubmit={handleSubmit} className={style.form}>
     <h1 className="ui centered">Geef jouw gegevens in</h1>
+    <div className={style.grid}>
     <TextInputGroup
       label="naam"
       name="naam"
@@ -106,6 +107,7 @@ return (
       value={naam}
       onChange={(e) => setNaam(e.currentTarget.value)}
     />
+    <div className={style.wrapper}>
     <TextInputGroup
       label="straat"
       name="straat"
@@ -122,14 +124,7 @@ return (
       value={nr}
       onChange={(e) => setNr(e.currentTarget.value)}
     />
-    <TextInputGroup
-      label="postcode"
-      type="postcode"
-      name="postcode"
-      placeholder="vul zijn/haar postcode in"
-      value={postcode}
-      onChange={(e) => setPostcode(e.currentTarget.value)}
-    />
+    </div>
     <TextInputGroup
       label="Stad"
       type="stad"
@@ -138,9 +133,19 @@ return (
       value={stad}
       onChange={(e) => setStad(e.currentTarget.value)}
     />
+    <TextInputGroup
+      label="postcode"
+      type="postcode"
+      name="postcode"
+      placeholder="vul zijn/haar postcode in"
+      value={postcode}
+      onChange={(e) => setPostcode(e.currentTarget.value)}
+    />
+    
     <input type="submit" value="Register" className={style.button} />
     <Button onClick={back}>Back</Button>
     <Button onClick={saveAndContinue}>Save And Continue </Button>
+    </div>
   </form>
   </>
 )

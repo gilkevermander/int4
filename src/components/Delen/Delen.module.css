@@ -262,4 +262,11 @@
   display: flex;
   margin: -3rem 0 0rem 108.5rem;
 }
+
+.gif::before {
+  content: "";
+  background-image: url("../../assets/video/GSMgif.gif");
+  width: 117px;
+  height: 353px;
+}
   
