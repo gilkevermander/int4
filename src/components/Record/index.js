@@ -9,9 +9,14 @@ import palmboom from '../../assets/img/palmboom.png'
 // import AudioRecorder from 'react-audio-recorder';
 //let cloudinary = require('cloudinary/lib/cloudinary');
 //let cloudinary = require('cloudinary').v2;
-import cloudinary from 'cloudinary-core'; 
+import cloudinary from 'cloudinary-core';
 
-var cl = new cloudinary.Cloudinary({cloud_name: "int4", secure: true});
+const cl = new cloudinary.Cloudinary({ cloud_name: "int4", secure: true });
+const uploadUrl = 'https://res.cloudinary.com/int4/video/upload/sample.webm';
+
+const cloudName = 'int4';
+const unsignedUploadPreset = 'guaqui4h';
+
 
 
 //let cloudinary = require('cloudinary-core').Cloudinary.new()
@@ -30,10 +35,6 @@ const Record = ({ nextStep, prevStep, values }) => {
     const [complete, setComplete] = useState(false);
     const [error, setError] = useState("");
     const [base, setBase] = useState("");
-
-
-
-    
 
     const saveAndContinue = (e) => {
         e.preventDefault()
@@ -137,11 +138,94 @@ const Record = ({ nextStep, prevStep, values }) => {
                                 reader.readAsDataURL(videoBlob);
                                 reader.onloadend = function () {
                                     var base64data = reader.result;
-                                    console.log(base64data);
+                                    // console.log(base64data);
                                     setBase(base64data);
+                                    // cl.cloudinary.v2.uploader.unsigned_upload(base,
+                                    //     function (error, result) { console.log(result, error); });
+                                    ////
+                                    // var xhr = new XMLHttpRequest();
+                                    // var fd = new FormData();
+                                    // xhr.open('POST', uploadUrl, true);
+                                    // xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                                    // xhr.onreadystatechange = function (e) {
+                                    //     if (xhr.readyState == 4 && xhr.status == 200) {
+                                    //         // File uploaded successfully
+                                    //         var response = JSON.parse(xhr.responseText);
+                                    //         // https://res.cloudinary.com/cloudName/image/upload/v1483481128/public_id.jpg
+                                    //         var url = response.secure_url;
+                                    //         console.log(url);
+                                    //     }
+                                    // };
+
+                                    // fd.append('upload_preset', 'guaqui4h');
+                                    // //   fd.append('tags', 'browser_upload'); // Optional - add tag for image admin in Cloudinary
+                                    // fd.append('file', base64data);
+                                    // xhr.send(fd);
+
+                                    function uploadFile(file) {
+                                        var url = `https://api.cloudinary.com/v1_1/${cloudName}/upload`;
+                                        var xhr = new XMLHttpRequest();
+                                        var fd = new FormData();
+                                        xhr.open('POST', url, true);
+                                        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+
+                                        // // Reset the upload progress bar
+                                        // document.getElementById('progress').style.width = 0;
+
+                                        // // Update progress (can be used to show progress indicator)
+                                        // xhr.upload.addEventListener("progress", function (e) {
+                                        //     var progress = Math.round((e.loaded * 100.0) / e.total);
+                                        //     document.getElementById('progress').style.width = progress + "%";
+
+                                        //     console.log(`fileuploadprogress data.loaded: ${e.loaded},
+                                        // data.total: ${e.total}`);
+                                        // });
+
+                                        xhr.onreadystatechange = function (e) {
+                                            if (xhr.readyState == 4 && xhr.status == 200) {
+                                                // File uploaded successfully
+                                                var response = JSON.parse(xhr.responseText);
+                                                // https://res.cloudinary.com/cloudName/image/upload/v1483481128/public_id.jpg
+                                                var url = response.secure_url;
+                                                // Create a thumbnail of the uploaded image, with 150px width
+                                                console.log(url);
+                                                // var tokens = url.split('/');
+                                                // tokens.splice(-2, 0, 'w_150,c_scale');
+                                                // var img = new Image(); // HTML5 Constructor
+                                                // img.src = tokens.join('/');
+                                                // img.alt = response.public_id;
+                                                // document.getElementById('gallery').appendChild(img);
+                                            }
+                                        };
+
+                                        var reader = new FileReader();
+
+                                        reader.onloadend = function () {
+                                            var base64 = reader.result;
+                                            console.log('file read complete');
+
+                                            fd.append('upload_preset', unsignedUploadPreset);
+                                            fd.append('tags', 'browser_upload'); // Optional - add tag for image admin in Cloudinary
+                                            fd.append('file', base64);
+                                            xhr.send(fd);
+                                        };
+
+                                        reader.readAsDataURL(file);
+
+                                    }
+
+                                    // *********** Handle selected files ******************** //
+                                    var handleFiles = function (files) {
+                                        for (var i = 0; i < files.length; i++) {
+                                            uploadFile(files[i]); // call the function to upload the file
+                                        }
+                                    };
+                                    uploadFile(videoBlob);
+                                    //   var dt = e.dataTransfer;
+                                    //   var files = dt.files;
+                                    //   handleFiles(files);
                                 }
-                                cl.cloudinary.v2.uploader.unsigned_upload(base,
-                                    function (error, result) { console.log(result, error); });
+
                             }}
 
                             isFlipped={true}
@@ -212,6 +296,9 @@ const Record = ({ nextStep, prevStep, values }) => {
                         <button onClick={stopRecording} type="button" className={style.stop}></button>
                     </div>
                 </div >
+                <div class="progress-bar" id="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
                 <Button onClick={saveAndContinue} className={complete ? style.next__active : style.next}><p className={style.next__text}>Koppel jouw souvenir</p></Button>
 
 

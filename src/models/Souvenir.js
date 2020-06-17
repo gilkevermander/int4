@@ -15,7 +15,7 @@ class Souvenir {
     // }
     //naam, stad, postcode, nr, straat, souvenir
     this.store = store;
-    this.lands = []; //in commentaar
+    this.lands = []; //in commentaar (blijft rond draaien)
     this.users = []//x
     //this.updateFromJson(landId, userId, naam, stad, postcode, nr, straat, souvenir);
     this.updateFromJson(json);
