@@ -1,6 +1,6 @@
 
 @value tokens: "../../styles/tokens.module.css";
-@value fontTitel, spacer1 from tokens;
+@value fontTitel, spacer1, fontSubtitel from tokens;
 
 
 .vraag__bold {
@@ -21,6 +21,10 @@
   margin-top: spacer1;
   display: flex;
   justify-content: center;
+}
+
+.label {
+  font-size: fontSubtitel;
 }
 
 .procesbar__item{
@@ -186,6 +190,7 @@
   display: flex;
   flex-flow: column;
   width: 100%;
+  margin-right: 1rem;
 }
 
 .wrapper__item__nummer{
