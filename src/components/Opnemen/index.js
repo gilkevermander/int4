@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useObserver } from 'mobx-react-lite';
 import style from "./Opnemen.module.css";
 import tapes from "../../assets/img/tapes.png"
 
@@ -10,7 +9,7 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
   const saveAndContinue = (e) => {
     e.preventDefault()
     if (values.selectedoption === "") {
-      setError("duid een optie aan")
+      setError("Duid een optie aan")
     } else {
       nextStep()
     }
@@ -56,7 +55,6 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
 
       </div>
       <h2 className={style.vraag}>Kies op welke manier jij jouw reisverhaal wilt vertellen</h2>
-      <p>{error}</p>
       <form>
         <div className={style.grid}>
           <label className={style.keuze}>
