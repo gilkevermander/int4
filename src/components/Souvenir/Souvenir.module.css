@@ -100,7 +100,7 @@
   border: none;
   color: grey;
   display: flex;
-  margin: -1.5rem 0 0rem 110rem;
+  margin: 8rem 0 0rem 110rem;
 }
 
 .next__text {
@@ -117,6 +117,14 @@
     position: absolute;
     display: inline-block;
     background-repeat: no-repeat;
+}
+
+.next__active {
+  composes: next from "../../styles/layouts.module.css";
+  border: none;
+  background-color:  #FFDC61;
+  display: flex;
+  margin: 4rem 0 0rem 110rem;
 }
 
 
@@ -253,13 +261,7 @@
   width: 150rem;
 }
 
-.next__active {
-  composes: next from "../../styles/layouts.module.css";
-  border: none;
-  background-color:  #FFDC61;
-  display: flex;
-  margin: -1.5rem 0 0rem 110rem;
-}
+
 
 .back{
   composes: back from "../../styles/layouts.module.css";
