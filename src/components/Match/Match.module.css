@@ -1,0 +1,32 @@
+.vraag{
+  composes: semibold from "../../styles/typo.module.css";
+  font-size: fontTitel;
+  margin-top: spacer1;
+  display: flex;
+  justify-content: center;
+}
+
+.next__active {
+  composes: next from "../../styles/layouts.module.css";
+  border: none;
+  background-color:  #FFDC61;
+  display: flex;
+  margin: -7rem 0 0rem 108.5rem;
+}
+
+.next__text {
+  composes: next__text from "../../styles/layouts.module.css";
+}
+
+
+.next__text::after {
+    content: "";
+    background-image: url('../../assets/img/button__line.png');
+    width: 30vw;
+    height: 15vh;
+    background-position: 13rem 1.5rem;
+    position: absolute;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
