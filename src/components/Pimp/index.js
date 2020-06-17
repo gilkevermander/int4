@@ -94,7 +94,7 @@ const Pimp = ({ nextStep, values, prevStep }) => {
           />
         )}
         <img alt="tourist" className={style.souvenir} src={souvenir} width="400"></img>
-        <button onClick={saveAndContinue} className={imgSrc ? style.next__active : style.next}><p className={style.next__text}>Volgende</p> </button>
+        <button onClick={saveAndContinue} className={ imgSrc === null ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
       </section>
     </div>
   );

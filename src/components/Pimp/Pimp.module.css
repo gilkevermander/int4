@@ -167,6 +167,7 @@
   composes: next from "../../styles/layouts.module.css";
   border: none;
   color: grey;
+
   margin: 2rem 0 0rem 96rem;
   z-index: 1;
 }
@@ -175,12 +176,13 @@
   composes: next__text from "../../styles/layouts.module.css";
 }
 
-.next__active {
+.next__active{
   composes: next from "../../styles/layouts.module.css";
   border: none;
+  color: grey;
   background-color:  #FFDC61;
-  display: flex;
-  margin: 3.2rem 0 0rem 100rem;
+  margin: 2rem 0 0rem 96rem;
+  z-index: 1;
 }
 
 
