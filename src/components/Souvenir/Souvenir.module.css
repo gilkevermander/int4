@@ -1,6 +1,12 @@
 @value tokens: "../../styles/tokens.module.css";
 @value fontTitel, spacer1 from tokens;
 
+
+.error {
+  composes: error from "../../styles/layouts.module.css";
+}
+
+
 .procesbar {
   display: flex;
   align-items: center;

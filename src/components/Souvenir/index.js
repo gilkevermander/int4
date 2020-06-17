@@ -9,7 +9,7 @@ const Souvenir = ({ nextStep, values, setSouvenir, prevStep }) => {
   const saveAndContinue = (e) => {
     e.preventDefault()
     if (values.souvenir === "") {
-      setError("duid een souvenir aan")
+      setError("Duid een souvenir aan")
     } else {
       nextStep()
     }
@@ -66,7 +66,7 @@ const Souvenir = ({ nextStep, values, setSouvenir, prevStep }) => {
       <section className={style.container}>
         <form color='blue' >
           <h1 className={style.vraag}>Kies je souvenir</h1>
-          <p>{error}</p>
+          { values.souvenir === "" ? <p className={[style.error2, style.error]}>{error}</p> : <p className={style.error}></p>}
             <div className= {style.grid}>
             <label className={style.keuze}>
               <input className={style.keuze__mogelijkheid} type="radio" name="souvenir" value="sleutelhanger" onChange={e => setSouvenir(e.currentTarget.value)} /> <span className={style.keuze__sleutel}>sleutelhanger</span>
