@@ -114,7 +114,7 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
         </div>
       </div>
       <form onSubmit={handleSubmit} className={style.form}>
-        <h1 className={style.vraag}>Geef <span> jouw </span> gegevens in</h1>
+        <h1 className={style.vraag}>Geef <span className={style.vraag__bold}> jouw </span> gegevens in</h1>
         <div className={style.grid}>
           <div className={style.wrapper}>
             <div className={style.input__wrapper}>
@@ -199,8 +199,6 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
           </div>
         </div>
         <input type="submit" value="Volgende" className={values.keuze === "" ? style.next : style.next__active} />
-        <Button onClick={back}>Back</Button>
-        {/* <Button onClick={saveAndContinue}>Save And Continue </Button> */}
       </form>
     </div>
   )
