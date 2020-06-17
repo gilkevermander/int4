@@ -198,7 +198,9 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
             </div>
           </div>
         </div>
-        <input type="submit" value="Volgende" className={values.keuze === "" ? style.next : style.next__active} />
+
+        <Button onClick={handleSubmit} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </Button>
+        {/* <input type="submit" value="Volgende" className={values.keuze === "" ? style.next : style.next__active} /> */}
       </form>
     </div>
   )

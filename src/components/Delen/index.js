@@ -4,7 +4,7 @@ import { useObserver } from 'mobx-react-lite';
 import style from "./Delen.module.css";
 
 
-const Delen = ({ nextStep, values, setDelen }) => {
+const Delen = ({ nextStep, values, setDelen, prevStep, prevprevStep }) => {
 
   const [error, setError] = useState("");
 
@@ -18,10 +18,20 @@ const Delen = ({ nextStep, values, setDelen }) => {
 
   }
 
+  const back = (e) => {
+    e.preventDefault();
+    if (values.keuze === false) {
+      prevprevStep();
+    } else {
+      prevStep();
+    }
+
+  }
+
   return (
     <div>
       <div className={style.header}>
-
+      <Button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></Button>
         <div className={style.procesbar}>
 
           <div className={style.procesbar_lijn1}>

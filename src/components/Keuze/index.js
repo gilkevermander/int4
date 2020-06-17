@@ -41,7 +41,7 @@ const Keuze = ({ nextStep, values, setKeuze, prevStep, overStep }) => {
           </div>
 
           <div className={style.procesbar_lijn2}>
-            <div className={style.procesbar__item1}>
+            <div className={style.procesbar__item}>
               <p className={style.item__number}>2</p>
               <p className={style.item__text}>land</p>
             </div>
@@ -55,7 +55,7 @@ const Keuze = ({ nextStep, values, setKeuze, prevStep, overStep }) => {
           </div>
 
           <div className={style.procesbar_lijn4}>
-            <div className={style.procesbar__item}>
+            <div className={style.procesbar__item1}>
               <p className={style.item__number}>4</p>
               <p className={style.item__text}>Souvenir</p>
             </div>

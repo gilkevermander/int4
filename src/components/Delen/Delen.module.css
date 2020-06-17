@@ -269,4 +269,32 @@
   width: 117px;
   height: 353px;
 }
+
+.back{
+  composes: back from "../../styles/layouts.module.css";
+  border: none;
+  color: grey;
+  z-index: 100;
+}
+
+.back__text {
+  composes: back__text from "../../styles/layouts.module.css";
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  margin-right: 21rem;
+}
+
+.back__text::after {
+    content: "";
+    background-image: url('../../assets/img/button__circle.png');
+    width: 15vw;
+    height: 15vh;
+    background-position: 11rem 3.5rem;
+    position: absolute;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
   

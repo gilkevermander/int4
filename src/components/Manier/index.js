@@ -95,6 +95,7 @@ const Manier = () => {
         nextStep={nextStep}
         prevStep={prevStep}
         setDelen = {setDelen}
+        prevprevStep={prevprevStep}
       />
 
     case 8:
