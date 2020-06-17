@@ -118,3 +118,12 @@
     background-repeat: no-repeat;
 }
   
+.grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
