@@ -3,15 +3,20 @@ import QRCode from "react-qr-code";
 import TextInputGroup from "../TextInputGroup";
 import style from "./Qr.module.css";
 import QrReader from 'react-qr-reader'
+import { useHistory } from "react-router-dom";
+import InfoHeader from "../InfoHeader/InfoHeader";
 
 const Qr = () => {
 
   const [text, setText] = useState("");
   const [scan, setScan] = useState("");
+  const history = useHistory();
 
   const handleScan = data => {
     if (data) {
       setScan(data)
+      console.log(data);
+      history.push(data);
     }
   }
   const handleError = err => {
@@ -20,8 +25,7 @@ const Qr = () => {
 
   return (
     <>
-      <QRCode value={text} />
-
+      {/* <QRCode value={text} />
       <form className={style.form}>
         <TextInputGroup
           label="text"
@@ -31,8 +35,8 @@ const Qr = () => {
           value={text}
           onChange={(e) => setText(e.currentTarget.value)}
         />
-        <input type="submit" value="genereer qr code" className={style.button} />
-      </form>
+      </form> */}
+      <InfoHeader title={"Scan de QR-code"} />
       <QrReader
           delay={300}
           onError={handleError}

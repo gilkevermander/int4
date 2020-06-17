@@ -4,7 +4,7 @@ import style from "./ContentHeader.module.css";
 const ContentHeader = ({ title }) => {
   return (
     <header className={style.header}>
-      <h2 className={style.title}>{title}</h2>
+      <h1 className={style.title}>{title}</h1>
     </header>
   );
 };

@@ -7,6 +7,13 @@ const ROUTES = {
   ontvanger: "/ontvanger",
   video: "/:id",
   detailSouvenir: { path: "/detailSouvenir/:landId/:id", to: "/detailSouvenir/" },
+  login: "/login",
+  register: "/register",
+  locatie: "/locatie",
+  scan: "/scan",
+  message: "/message",
+  start: "/start",
+  kaart: "/kaart",
 };
 
 export { ROUTES };

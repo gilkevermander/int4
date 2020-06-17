@@ -2,13 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useStore } from "../../hooks/useStore";
 import { useObserver } from "mobx-react-lite";
+import ReactPlayer from 'react-player'
+import ContentHeader from "../ContentHeader/ContentHeader";
 
 import Empty from "../Empty/Empty";
-import Formpje from "../Formpje/index";
-import Kaart from "../Kaart/index";
-import style from "./DetailSouvenir.module.css";
-import LandStore from "../../stores/LandStore";
-import ReactPlayer from 'react-player'
+
 const DetailSouvenir = () => {
   const { id } = useParams();
   const { landId } = useParams();
@@ -47,7 +45,8 @@ const DetailSouvenir = () => {
         console.log(souvenir);
         console.log('yes')
         const user = userStore.resolveUser(souvenir.souvenirs[0].userId)
-        console.log(user);
+        console.log(user);//undefined
+        console.log(souvenir.souvenirs[0].userId);//null
         console.log(souvenir.delen)
         setUser(user);
         // setState(STATE_LOADING_MORE_DETAILS);
@@ -69,7 +68,7 @@ const DetailSouvenir = () => {
   return useObserver(() => {
     if (state === STATE_DOES_NOT_EXIST) {
       console.log(`${souvenir} is niet gevonden`);
-      return <Empty message={"Souvenir not found"} />;
+      return <Empty message={"Oei, dit souvenir bestaat niet. Probeer het eens opnieuw "} />;
 
     }
     if (state === STATE_LOADING) {
@@ -78,20 +77,18 @@ const DetailSouvenir = () => {
     }
     return (
       <>
-        <p>naam:{souvenir.souvenirs[0].naam}</p>
-        {/* <p>land:{souvenir.land.title}</p> */}
-        <p>userid:{souvenir.souvenirs[0].userId}</p>
-        <ReactPlayer
+      <ContentHeader title={"Luister naar de herinnering"} />
+      <ReactPlayer
           className='react-player'
           // url={souvenir.video}
           url={souvenir.souvenirs[0].video}
           width='100%'
           height='100%'
-          controls
-        />
-        <p>verstuurder:{user.gebruikersnaam}</p>
-        <p>voornaam: {user.voornaam}</p>
-        <p>souvenir:{souvenir.souvenirs[0].souvenir}</p>
+          controls/>
+        <p>Reisverhaal naar {souvenir.title}</p>
+        {/* <p>land:{souvenir.land.title}</p> */}
+        <p>{user.gebruikersnaam}</p>
+        
       </>
     );
   });

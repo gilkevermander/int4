@@ -1,41 +1,46 @@
 import React from "react";
-import Sidebar from "../../containers/Sidebar/Sidebar";
-import Content from "../../containers/Content/Content";
+import Content from "../Content/Content";
 import { Switch, Route, NavLink, Redirect } from "react-router-dom";
 import { ROUTES } from "../../consts";
 import LoginForm from "./LoginForm";
-import AppHeader from "../../containers/Sidebar/AppHeader";
+import Start from "../Start/index";
+import Manier from "../Manier/index";
 import style from "./Authentication.module.css";
 import RegisterForm from "./RegisterForm";
 import { useStore } from "../../hooks/useStore";
 import { useObserver } from "mobx-react-lite";
+import ContentHeader from "../ContentHeader/ContentHeader";
 
 const Authentication = () => {
   const { uiStore } = useStore();
   return useObserver(() => (
     <>
       <Switch>
+      <Route exact path={ROUTES.manier}>
+          <Manier />
+        </Route>
+        <Route exact path={ROUTES.start}>
+          <Start />
+        </Route>
         <Route exact path={ROUTES.login}>
           {uiStore.currentUser ? (
             <Redirect to={ROUTES.home} />
           ) : (
               <div className={style.wrapper}>
-                <AppHeader name="ThatsApp" title="Login" />
+                <ContentHeader title={"Login"} />
                 <LoginForm />
                 <NavLink to={ROUTES.register} className={style.textlink}>
-                  <span>Registeren?</span>
-                  <span>gilke is leuk</span>
+                  <span>Do you want to register?</span>
                 </NavLink>
               </div>
             )}
         </Route>
-
         <Route exact path={ROUTES.register}>
           {uiStore.currentUser ? (
             <Redirect to={ROUTES.home} />
           ) : (
               <div className={style.wrapper}>
-                <AppHeader name="ThatsApp" title="Register" />
+                <ContentHeader title={"Aanmelden"} />
                 <RegisterForm />
               </div>
             )}
@@ -43,7 +48,7 @@ const Authentication = () => {
         <Route path={ROUTES.home}>
           {uiStore.currentUser ? (
             <>
-              <Sidebar />
+              <ContentHeader name="Kabien" title="Home" />
               <Content />
             </>
           ) : (

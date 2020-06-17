@@ -17,7 +17,7 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
   }
   console.log(values);
   return (
-    <>
+    <div className={style.wrap}>
       <div className={style.procesbar}>
 
         <div className={style.procesbar_lijn1}>
@@ -69,7 +69,7 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
         <button className={values.selectedoption === "" ? style.next : style.next__active} onClick={saveAndContinue}> <p className={style.next__text}>Volgende</p></button>
       </form>
 
-    </>
+    </div>
   )
 
 }
