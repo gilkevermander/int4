@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Button } from 'semantic-ui-react';
 import Webcam from "react-webcam";
 import souvenir from "../../assets/img/souvenir.jpg"
 
@@ -37,7 +36,7 @@ const Pimp = ({ nextStep, values, prevStep }) => {
   return (
     <div >
       <div className={style.header}>
-        <Button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></Button>
+        <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
         <div className={style.procesbar}>
 
           <div className={style.procesbar_lijn1}>
@@ -95,7 +94,7 @@ const Pimp = ({ nextStep, values, prevStep }) => {
           />
         )}
         <img alt="tourist" className={style.souvenir} src={souvenir} width="400"></img>
-        <Button onClick={saveAndContinue} className={imgSrc === "" ? style.next__active : style.next}><p className={style.next__text}>Volgende</p> </Button>
+        <button onClick={saveAndContinue} className={imgSrc === "" ? style.next__active : style.next}><p className={style.next__text}>Volgende</p> </button>
       </section>
     </div>
   );

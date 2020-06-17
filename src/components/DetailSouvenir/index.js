@@ -8,7 +8,7 @@ import Formpje from "../Formpje/index";
 import Kaart from "../Kaart/index";
 import style from "./DetailSouvenir.module.css";
 import LandStore from "../../stores/LandStore";
-
+import ReactPlayer from 'react-player'
 const DetailSouvenir = () => {
   const { id } = useParams();
   const { landId } = useParams();
@@ -81,6 +81,14 @@ const DetailSouvenir = () => {
         <p>naam:{souvenir.souvenirs[0].naam}</p>
         {/* <p>land:{souvenir.land.title}</p> */}
         <p>userid:{souvenir.souvenirs[0].userId}</p>
+        <ReactPlayer
+          className='react-player'
+          // url={souvenir.video}
+          url={souvenir.souvenirs[0].video}
+          width='100%'
+          height='100%'
+          controls
+        />
         <p>verstuurder:{user.gebruikersnaam}</p>
         <p>voornaam: {user.voornaam}</p>
         <p>souvenir:{souvenir.souvenirs[0].souvenir}</p>

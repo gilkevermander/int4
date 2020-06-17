@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Button } from 'semantic-ui-react';
 import { useObserver } from 'mobx-react-lite';
 import { useHistory } from "react-router-dom";
 import { ROUTES } from "../../consts";
@@ -49,9 +48,9 @@ const Result = ({ nextStep, values, setSouvid }) => {
       <p>Je verstuurde 1 van de {aantal} opnames over <span>{values.land}</span></p>
       <p>We vonden een ervaring die past bij die van jou!</p>
       {/* <Link to={`${ROUTES.detailSouvenir.to}${souvenir.id}`}> */}
-        <Button onClick={saveAndContinue}>Beluister de ervaring </Button>
+        <button onClick={saveAndContinue}>Beluister de ervaring </button>
       {/* </Link> */}
-      <Button onClick={back}>Terug naar startscherm</Button>
+      <button onClick={back}>Terug naar startscherm</button>
     </>
   )
 

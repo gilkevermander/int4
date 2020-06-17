@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Form, Button } from 'semantic-ui-react';
 
 import style from "./Souvenir.module.css";
 
@@ -27,7 +26,7 @@ const Souvenir = ({ nextStep, values, setSouvenir, prevStep }) => {
     <>
     <div className= {style.container}>
     <div className={style.header}>
-    <Button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></Button>
+    <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
       <div className={style.procesbar}>
       
         <div className={style.procesbar_lijn1}>
@@ -65,10 +64,9 @@ const Souvenir = ({ nextStep, values, setSouvenir, prevStep }) => {
       </div>
       </div>
       <section className={style.container}>
-        <Form color='blue' >
+        <form color='blue' >
           <h1 className={style.vraag}>Kies je souvenir</h1>
           <p>{error}</p>
-          <Form>
             <div className= {style.grid}>
             <label className={style.keuze}>
               <input className={style.keuze__mogelijkheid} type="radio" name="souvenir" value="sleutelhanger" onChange={e => setSouvenir(e.currentTarget.value)} /> <span className={style.keuze__sleutel}>sleutelhanger</span>
@@ -80,9 +78,8 @@ const Souvenir = ({ nextStep, values, setSouvenir, prevStep }) => {
               <input className={style.keuze__mogelijkheid} type="radio" name="souvenir" value="sticker" onChange={e => setSouvenir(e.currentTarget.value)} /> <span className={style.keuze__sticker}>sticker</span>
             </label>
             </div>
-          </Form>
-          <Button className={values.souvenir === "" ? style.next : style.next__active} onClick={saveAndContinue}><p className={style.next__text}>Volgende</p> </Button>
-        </Form>
+          <button className={values.souvenir === "" ? style.next : style.next__active} onClick={saveAndContinue}><p className={style.next__text}>Volgende</p> </button>
+        </form>
       </section>
       </div>
     </>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'semantic-ui-react';
 import style from "./Land.module.css";
 
 
@@ -28,7 +27,7 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
   return (
     <div className={style.container}>
       <div className={style.header}>
-        <Button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></Button>
+        <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
         <div className={style.procesbar}>
 
           <div className={style.procesbar_lijn1}>
@@ -66,10 +65,10 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
         </div>
       </div>
 
-      <Form color='blue' className={style.form}>
+      <form color='blue' className={style.form}>
         <h1 className={style.vraag}>Kies het land van jouw herinnering</h1>
         <p>{error}</p>
-        <Form.Field className={style.form__select}>
+        <section className={style.form__select}>
             <select className={style.select__css} name="land" id="land" onChange={e => setLand(e.currentTarget.value)}>
               <option className={style.option} key="niks" id="land" name="land" value="" >Kies je land</option>
               {landStore.lands.map(land => (
@@ -77,10 +76,10 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
               ))}
             </select>
 
-        </Form.Field>
+        </section>
 
-        <Button onClick={saveAndContinue} className={values.land === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </Button>
-      </Form>
+        <button onClick={saveAndContinue} className={values.land === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
+      </form>
 
     </div>
   )

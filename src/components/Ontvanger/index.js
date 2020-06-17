@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Button } from 'semantic-ui-react';
 import TextInputGroup from "../TextInputGroup";
 import style from "./Ontvanger.module.css";
 import Souvenir from "../../models/Souvenir";
@@ -36,6 +35,8 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
       //foto op souvenir
       //filmpje of audio
       const land = await landStore.resolveLandId(values.land);
+      const video = values.video
+      console.log(video);
       setUserId(uiStore.currentUser.id)
       console.log(userId);
       const item = new Souvenir({
@@ -48,7 +49,8 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
         souvenir,
         delen,
         userId: uiStore.currentUser.id,
-        landId: land.id
+        landId: land.id,
+        video
       });
       item.create();
       nextStep();
@@ -143,8 +145,7 @@ return (
     />
     
     <input type="submit" value="Register" className={style.button} />
-    <Button onClick={back}>Back</Button>
-    <Button onClick={saveAndContinue}>Save And Continue </Button>
+    <button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
     </div>
   </form>
   </>

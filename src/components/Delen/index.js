@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'semantic-ui-react';
 import { useObserver } from 'mobx-react-lite';
 import style from "./Delen.module.css";
 import gsm from "../../assets/video/GSMgif.gif"
 
-const Delen = ({ nextStep, values, setDelen }) => {
+const Delen = ({ nextStep, values, setDelen, prevStep, prevprevStep }) => {
 
   const [error, setError] = useState("");
 
@@ -18,10 +17,20 @@ const Delen = ({ nextStep, values, setDelen }) => {
 
   }
 
+  const back = (e) => {
+    e.preventDefault();
+    if (values.keuze === false) {
+      prevprevStep();
+    } else {
+      prevStep();
+    }
+
+  }
+
   return (
     <div>
       <div className={style.header}>
-
+      <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
         <div className={style.procesbar}>
 
           <div className={style.procesbar_lijn1}>
@@ -58,7 +67,7 @@ const Delen = ({ nextStep, values, setDelen }) => {
           </div>
         </div>
       </div>
-      <Form >
+      <form >
         <div className={style.gif}>
           <img alt="gif kaart" src={gsm} width="177"></img>
         </div>
@@ -66,7 +75,6 @@ const Delen = ({ nextStep, values, setDelen }) => {
           <h2 className={style.subtitel}>Wil je jouw verhaal anoniem delen op
 de wereldkaart vol reisverhalen? </h2>
           <p>{error}</p>
-          <Form>
             <div className={style.grid}>
               <label className={style.keuze}>
                 <input className={style.keuze__mogelijkheid} type="radio" name="keuze" value="false" onChange={e => setDelen(false)} /> <span className={style.keuze__text1}>Nee, liever niet</span>
@@ -76,10 +84,9 @@ de wereldkaart vol reisverhalen? </h2>
 wereldkaart als audio</span>
               </label>
             </div>
-          </Form>
-        
-        <Button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Verstuur</p> </Button>
-      </Form>
+        </div>
+        <button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Verstuur</p> </button>
+      </form>
     </div>
   )
 

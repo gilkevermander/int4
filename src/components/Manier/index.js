@@ -21,6 +21,7 @@ const Manier = () => {
   const [keuze, setKeuze] = useState("");
   const [delen, setDelen] = useState("");
   const [souvid, setSouvid] = useState("");
+  const [video, setVideo] = useState("https://res.cloudinary.com/int4/video/upload/v1592396569/jjfba8egbdgvhvfkke1z.mp4");
 
   const { landStore } = useStore();
 
@@ -40,7 +41,7 @@ const Manier = () => {
     setStep(step + 2);
   }
 
-  const values = { land, selectedoption, souvenir, keuze, delen, souvid };
+  const values = { land, selectedoption, souvenir, keuze, delen, souvid, video };
   switch (step) {
     case 1:
       return <Opnemen
@@ -61,6 +62,7 @@ const Manier = () => {
         values={values}
         nextStep={nextStep}
         prevStep={prevStep}
+        setVideo={setVideo}
       />
 
     case 4:
@@ -93,6 +95,7 @@ const Manier = () => {
         nextStep={nextStep}
         prevStep={prevStep}
         setDelen = {setDelen}
+        prevprevStep={prevprevStep}
       />
 
     case 8:
