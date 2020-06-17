@@ -108,7 +108,7 @@
   composes: next from "../../styles/layouts.module.css";
   border: none;
   color: grey;
-  margin: -14rem 0 2rem 100rem;
+  margin: -13.1rem 0 2rem 100rem;
 }
 
 .next__text {
@@ -132,7 +132,7 @@
   border: none;
   background-color:  #FFDC61;
   display: flex;
-  margin: -14rem 0 2rem 100rem;
+  margin: -13.1rem 0 2rem 100rem;
 }
 
 .vraag{
@@ -249,14 +249,10 @@
   width: 70%;
 }
 
-
-
-
-
 .gif {
   margin-top: 10rem;
   margin-bottom: -65rem;
-  margin-left: -10rem;
+  margin-left: -19rem;
 }
 
 .back{

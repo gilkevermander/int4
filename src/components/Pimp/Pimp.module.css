@@ -47,9 +47,12 @@
   margin-top: spacer1;
 }
 
+
 .header{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  margin-right: 21.9rem;
+  width: 126rem;
 }
 
 .capture {
@@ -167,8 +170,7 @@
   composes: next from "../../styles/layouts.module.css";
   border: none;
   color: grey;
-
-  margin: 2rem 0 0rem 96rem;
+  margin: 3.5rem 0 0rem 108.9rem;
   z-index: 1;
 }
 
