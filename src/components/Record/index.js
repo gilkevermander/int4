@@ -3,6 +3,7 @@ import VideoRecorder from 'react-video-recorder';
 import style from "./Record.module.css";
 import { ReactMic } from 'react-mic';
 import palmboom from '../../assets/img/palmboom.png'
+import { ReactMediaRecorder } from "react-media-recorder";
 // import { saveAs } from 'file-saver';
 // import MicRecorder from 'mic-recorder-to-mp3';
 // import AudioRecorder from 'react-audio-recorder';
@@ -34,6 +35,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
     const [complete, setComplete] = useState(false);
     const [error, setError] = useState("");
     const [base, setBase] = useState("");
+    const [audioBlob, setAudioBlob] = useState("");
 
     const saveAndContinue = (e) => {
         e.preventDefault()
@@ -62,11 +64,15 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
 
     const onData = (recordedBlob) => {
         setComplete(true);
+        
         console.log('chunk of real-time data is: ', recordedBlob);
     }
 
     const onStop = (recordedBlob) => {
         console.log('recordedBlob is: ', recordedBlob);
+        console.log('stop')
+        console.log(recordedBlob.blobURL)
+        setAudioBlob(recordedBlob.blobURL)
     }
 
     if (values.selectedoption === 'video') {
@@ -111,12 +117,12 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                         </div>
                     </div>
                 </div>
-                { values.land === "" ? <p className={[style.error2, style.error]}>{error}</p> : <p className={style.error}></p>}
+                {values.land === "" ? <p className={[style.error2, style.error]}>{error}</p> : <p className={style.error}></p>}
                 <div className={style.container__video}>
-                    
+
                     <div className={style.video__content}>
 
-                        
+
                         <img className={style.content__palmboom} alt="palmboom" src={palmboom}></img>
                   [      <VideoRecorder className={style.video}
                             onRecordingComplete={(videoBlob, startedAt, thumbnailBlob, duration) => {
@@ -281,13 +287,13 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                         </div>
                     </div>
                 </div>
-                { values.land === "" ? <p className={style.error}>{error}</p> : <p className={style.error}></p>}
+                {values.record === "" ? <p className={style.error}>{error}</p> : <p className={style.error}></p>}
 
                 <img className={style.content__palmboom2} alt="palmboom" src={palmboom}></img>
 
-                
+
                 < div className={style.content_sound} >
-                
+
                     <ReactMic
                         record={record}
                         className={style.sound}
@@ -300,6 +306,18 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                         <button onClick={startRecording} type="button" className={style.start}></button>
                         <button onClick={stopRecording} type="button" className={style.stop}></button>
                     </div>
+                    <audio src={audioBlob} controls loop />
+                    {/* <ReactMediaRecorder
+                        audio
+                        render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
+                            <div>
+                                <p>{status}</p>
+                                <button onClick={startRecording}>Start Recording</button>
+                                <button onClick={stopRecording}>Stop Recording</button>
+                                <video src={mediaBlobUrl} controls autoplay loop />
+                            </div>
+                        )}
+                    /> */}
                 </div >
                 <div className="progress-bar" id="progress-bar">
                     <div className="progress" id="progress"></div>

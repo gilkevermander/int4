@@ -19,8 +19,11 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
   const [email, setEmail] = useState("");
   const [password, setPassWord] = useState("");
   const [passwordAgain, setPassWordAgain] = useState("");
-
   const [error, setError] = useState("");
+
+  if(voornaam.isNullOrEmpty){
+    setError("vul je naam in")
+  }
 
   const { uiStore } = useStore();
   const history = useHistory();
@@ -60,7 +63,7 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (values.password === values.passwordAgain) {
-      if (voornaam !== null && voornaam !== '') {
+      if (voornaam.isNullOrEmpty) {
         try {
           await uiStore.registerUser({ voornaam, achternaam, gebruikersnaam, email, password });
           nextStep();
@@ -121,8 +124,9 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
         <div className={style.grid}>
           <div className={style.wrapper}>
             <div className={style.input__wrapper}>
-              {voornaam !== null && voornaam !== '' ? <p className={style.error__input}>{error}</p> : <p className={style.error__input}></p>}
+              {/* {voornaam.isNullOrEmpty ? <p className={style.error__input}>{error}</p> : <p className={style.error__input}></p>} */}
               <label>Voornaam</label>
+              <p>{error}</p>
               <TextInputGroup
                 label="voornaam"
                 name="voornaam"
