@@ -167,7 +167,7 @@
   composes: next from "../../styles/layouts.module.css";
   border: none;
   color: grey;
-  margin: -3rem 0 0rem 108.5rem;
+  margin: 2rem 0 0rem 96rem;
   z-index: 1;
 }
 
@@ -189,7 +189,7 @@
     background-image: url('../../assets/img/button__line.png');
     width: 30vw;
     height: 15vh;
-    background-position: 9rem 1.5rem;
+    background-position: 13rem 1.5rem;
     position: absolute;
     display: inline-block;
     background-repeat: no-repeat;
@@ -224,5 +224,9 @@
   margin-top: spacer1;
   display: flex;
   justify-content: center;
+}
+
+.error {
+  composes: error from "../../styles/layouts.module.css";
 }
   

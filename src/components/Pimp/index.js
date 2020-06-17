@@ -74,7 +74,7 @@ const Pimp = ({ nextStep, values, prevStep }) => {
         </div>
       </div>
       <p className={style.name_souvenir}>U koos voor een: {values.souvenir}</p>
-      <p>{error}</p>
+      <p className={style.error}>{error}</p>
       <section className={style.container}>
         <div className={style.wrapper}>
         <Webcam
@@ -94,7 +94,7 @@ const Pimp = ({ nextStep, values, prevStep }) => {
           />
         )}
         <img alt="tourist" className={style.souvenir} src={souvenir} width="400"></img>
-        <button onClick={saveAndContinue} className={imgSrc === "" ? style.next__active : style.next}><p className={style.next__text}>Volgende</p> </button>
+        <button onClick={saveAndContinue} className={imgSrc ? style.next__active : style.next}><p className={style.next__text}>Volgende</p> </button>
       </section>
     </div>
   );
