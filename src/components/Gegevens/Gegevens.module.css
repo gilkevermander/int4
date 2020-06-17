@@ -164,7 +164,6 @@
 .input__wrapper{
   display: flex;
   flex-flow: column;
-  margin-top: 6rem;
 }
 
 .input__wrapper label{

@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { ROUTES } from "../../consts";
 import { useStore } from "../../hooks/useStore";
 import ReactPlayer from 'react-player'
+import style from "./Match.module.css";
 
 const Match = ({ nextStep, values }) => {
 
@@ -21,15 +22,14 @@ const Match = ({ nextStep, values }) => {
   console.log(values);
   return (
     <>
-      <h2 className="ui centered">Reisverhaal van {values.land}</h2>
-      <p>van anoniempje</p>
+      <h2 className={style.vraag}>Reisverhaal van {values.land}</h2>
       <ReactPlayer
           className='react-player'
           url='https://res.cloudinary.com/int4/video/upload/v1592396569/jjfba8egbdgvhvfkke1z.mp4'
           width='100%'
           height='100%'
         />
-      <button onClick={back}>Terug naar startscherm</button>
+     <button onClick={back} className={style.next__active}><p className={style.next__text}>Terug naar startscherm</p> </button>
     </>
   )
 

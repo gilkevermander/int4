@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useObserver } from 'mobx-react-lite';
 import style from "./Delen.module.css";
-
+import gsm from "../../assets/video/GSMgif.gif"
 
 const Delen = ({ nextStep, values, setDelen, prevStep, prevprevStep }) => {
 
@@ -69,6 +69,8 @@ const Delen = ({ nextStep, values, setDelen, prevStep, prevprevStep }) => {
       </div>
       <form >
         <div className={style.gif}>
+          <img alt="gif kaart" src={gsm} width="177"></img>
+        </div>
           <h2 className={style.vraag}>Nog één laatste vraagje</h2>
           <h2 className={style.subtitel}>Wil je jouw verhaal anoniem delen op
 de wereldkaart vol reisverhalen? </h2>
@@ -82,7 +84,6 @@ de wereldkaart vol reisverhalen? </h2>
 wereldkaart als audio</span>
               </label>
             </div>
-        </div>
         <button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Verstuur</p> </button>
       </form>
     </div>
