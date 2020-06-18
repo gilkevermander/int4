@@ -35,7 +35,7 @@ const RegisterForm = () => {
 
   return (
     <div className={style.container}>
-      {error === "The email address is already in use by another account." ? <p>Dit email is al in gebruik</p> : <p></p>}
+      {error === "The email address is already in use by another account." ? <p></p> : <p></p>}
       <form onSubmit={handleSubmit} className={style.form}>
         <TextInputGroup
           label="Voornaam"
