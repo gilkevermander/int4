@@ -3,11 +3,7 @@ import TextInputGroup from "../TextInputGroup";
 import style from "./Ontvanger.module.css";
 import Souvenir from "../../models/Souvenir";
 import { useStore } from "../../hooks/useStore";
-<<<<<<< HEAD
-import NumericInput from 'react-numeric-input';
-=======
 import envelop from "../../assets/img/envelop.png"
->>>>>>> 5489ef636308621535adb9b90d11bee2d6a914c8
 
 const Ontvanger = ({ nextStep, values, prevStep }) => {
 
