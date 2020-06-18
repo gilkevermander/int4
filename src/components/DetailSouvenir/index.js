@@ -77,18 +77,13 @@ const DetailSouvenir = () => {
     }
     return (
       <>
-      <ContentHeader title={"Luister naar de herinnering"} />
-      <ReactPlayer
-          className='react-player'
-          // url={souvenir.video}
-          url={souvenir.souvenirs[0].video}
-          width='100%'
-          height='100%'
-          controls/>
+        <ContentHeader title={"Luister naar de herinnering"} />
+        <audio src={souvenir.souvenirs[0].video} controls loop />
         <p>Reisverhaal naar {souvenir.title}</p>
         {/* <p>land:{souvenir.land.title}</p> */}
-        <p>{user.gebruikersnaam}</p>
-        
+        {/* <p>{user.gebruikersnaam}</p> */}
+        <p>gebruikersnaam</p>
+
       </>
     );
   });

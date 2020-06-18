@@ -13,19 +13,19 @@ const NavBar = () => {
         <li>
           <NavLink className={style.button} to={ROUTES.home}>
             <HomeLogo fill="white" />
-            <span className="visually-hidden">Home</span>
+            <span >Home</span>
           </NavLink>
         </li>
         <li>
-          <NavLink className={style.button} to={ROUTES.scan}>
+          <NavLink className={style.button} to={ROUTES.qr}>
             <ScanLogo fill="currentColor" />
-            <span className="visually-hidden">scan</span>
+            <span>scan</span>
           </NavLink>
         </li>
         <li>
           <NavLink className={style.button} to={ROUTES.message}>
             <MessageLogo fill="white" />
-            <span className="visually-hidden">Messages</span>
+            <span>Messages</span>
           </NavLink>
         </li>
       </ul>

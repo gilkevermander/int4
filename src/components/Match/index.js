@@ -23,13 +23,8 @@ const Match = ({ nextStep, values }) => {
   return (
     <>
       <h2 className={style.vraag}>Reisverhaal van {values.land}</h2>
-      <ReactPlayer
-          className='react-player'
-          url='https://res.cloudinary.com/int4/video/upload/v1592396569/jjfba8egbdgvhvfkke1z.mp4'
-          width='100%'
-          height='100%'
-        />
-     <button onClick={back} className={style.next__active}><p className={style.next__text}>Terug naar startscherm</p> </button>
+      <audio src='https://res.cloudinary.com/int4/video/upload/v1592396569/jjfba8egbdgvhvfkke1z.mp4' controls loop />
+      <button onClick={back} className={style.next__active}><p className={style.next__text}>Terug naar startscherm</p> </button>
     </>
   )
 
