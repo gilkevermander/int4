@@ -4,8 +4,6 @@ import { useStore } from "../../hooks/useStore";
 import { useObserver } from "mobx-react-lite";
 
 import Empty from "../Empty/Empty";
-import Formpje from "../Formpje/index";
-import Kaart from "../Kaart/index";
 import style from "./DetailLand.module.css";
 
 const DetailLand = () => {
@@ -62,7 +60,6 @@ const DetailLand = () => {
     }
     return (
       <>
-        <Kaart />
         <div className={style.container}>
           <section className={style.section}>
             <h3 className={style.subtitle}>{land.title}</h3>
@@ -78,7 +75,6 @@ const DetailLand = () => {
             ))}
           </section>
         </div>
-        <Formpje/>
       </>
     );
   });

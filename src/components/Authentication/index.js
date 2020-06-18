@@ -56,7 +56,6 @@ const Authentication = () => {
         <Route path={ROUTES.home}>
           {uiStore.currentUser ? (
             <>
-              <ContentHeader name="Kabien" title="Home" />
               <Content />
             </>
           ) : (
