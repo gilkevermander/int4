@@ -12,7 +12,7 @@ const Delen = ({ nextStep, values, setDelen, prevStep, prevprevStep }) => {
     if (values.delen === false || values.delen === true) {
       nextStep()
     } else {
-      setError("duid een optie aan")
+      setError("Duid een optie aan")
     }
 
   }
@@ -30,7 +30,7 @@ const Delen = ({ nextStep, values, setDelen, prevStep, prevprevStep }) => {
   return (
     <div>
       <div className={style.header}>
-      <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
+        <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
         <div className={style.procesbar}>
 
           <div className={style.procesbar_lijn1}>
@@ -75,17 +75,18 @@ const Delen = ({ nextStep, values, setDelen, prevStep, prevprevStep }) => {
           <h2 className={style.vraag}>Voor we verdergaan naar de gegevens:</h2>
           <h2 className={style.subtitel}>Wil je jouw verhaal anoniem delen op
 de wereldkaart vol reisverhalen? </h2>
-</div>
-          <p>{error}</p>
-            <div className={style.grid}>
-              <label className={style.keuze}>
-                <input className={style.keuze__mogelijkheid} type="radio" name="keuze" value="false" onChange={e => setDelen(false)} /> <span className={style.keuze__text1}>Nee, liever niet</span>
-              </label>
-              <label className={style.keuze}>
-                <input className={style.keuze__mogelijkheid} type="radio" name="keuze" value="true" onChange={e => setDelen(true)} /> <span className={style.keuze__text2}>Ja, het mag op <br />de
+        </div>
+        {values.delen === "" ? <p className={style.error}>{error} </p> : <p className={style.error}></p>}
+
+        <div className={style.grid}>
+          <label className={style.keuze}>
+            <input className={style.keuze__mogelijkheid} type="radio" name="keuze" value="false" onChange={e => setDelen(false)} /> <span className={style.keuze__text1}>Nee, liever niet</span>
+          </label>
+          <label className={style.keuze}>
+            <input className={style.keuze__mogelijkheid} type="radio" name="keuze" value="true" onChange={e => setDelen(true)} /> <span className={style.keuze__text2}>Ja, het mag op <br />de
 wereldkaart als audio</span>
-              </label>
-            </div>
+          </label>
+        </div>
         <button onClick={saveAndContinue} className={values.delen === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
       </form>
     </div>

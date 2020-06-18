@@ -74,7 +74,7 @@ const Pimp = ({ nextStep, values, prevStep }) => {
         </div>
       </div>
       <p className={style.name_souvenir}>U koos voor een: {values.souvenir}</p>
-      <p className={style.error}>{error}</p>
+      {imgSrc === null ? <p className={style.error}>{error}</p> : <p className={style.error}></p>}
       <section className={style.container}>
         <div className={style.wrapper}>
         <Webcam

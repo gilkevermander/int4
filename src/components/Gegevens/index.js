@@ -20,6 +20,7 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
   const [password, setPassWord] = useState("");
   const [passwordAgain, setPassWordAgain] = useState("");
   const [error, setError] = useState("");
+  const [errorWachtwoord, setErrorWachtwoord] = useState("");
 
   if(voornaam.isNullOrEmpty){
     setError("vul je naam in")
@@ -71,9 +72,11 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
           console.log(error);
         }
       } else {
-        setError("Neem eerst je verhaal op!")
+        setError("Vul alle gegevens in!")
       }
 
+    } else {
+      setErrorWachtwoord("Wachtwoord is niet gelijk")
     }
   };
 
@@ -185,6 +188,7 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
             </div>
             <div className={style.input__wrapper}>
               <label>Herhaal wachtwoord</label>
+              <p>{error}</p>
               <TextInputGroup
                 label="Passwordagain"
                 type="password"

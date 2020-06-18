@@ -69,7 +69,8 @@ const Keuze = ({ nextStep, values, setKeuze, prevStep, overStep }) => {
 
       <form >
         <h2 className={style.vraag}>Wil jij jouw souvenir pimpen met een foto?</h2>
-        <p className={style.error}>{error}</p>
+        {values.keuze === "" ? <p className={style.error}>{error} </p> : <p className={style.error}></p>}
+
           <div className={style.grid}>
             <label className={style.keuze}>
               <input className={style.keuze__mogelijkheid} type="radio" name="keuze" value="false" onChange={e => setKeuze(false)} /> <span className={style.keuze__text1}>Nee, liever niet</span>
