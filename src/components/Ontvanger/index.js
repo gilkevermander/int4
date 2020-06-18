@@ -117,7 +117,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
             label="naam"
             name="naam"
             type="naam"
-            placeholder="jhon Doe"
+            placeholder="John Doe"
             value={naam}
             onChange={(e) => setNaam(e.currentTarget.value)}
 
