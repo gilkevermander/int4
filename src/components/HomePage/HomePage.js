@@ -11,13 +11,13 @@ const HomePage = () => {
     innerRef.current && innerRef.current.getLocation();
   };
   return (
-    <section className={style.container}>
+    <section className={style.breedte}>
       <InfoHeader title={"Kabien"} />
       <NavLink className={style.add} to={ROUTES.qr}>
         <h2>Luister naar jouw souvenir</h2>
       </NavLink>
       <NavLink onClick={getLocation} className={style.add} to="/locatie">
-        <h2>Deel jouw ervaringen</h2>
+        <h2>Neem jouw herinnering op</h2>
       </NavLink>
       <NavLink className={style.add} to={ROUTES.kaart}>
         <h2>Ontdek verhalen van KABIEN</h2>
