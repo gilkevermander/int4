@@ -11,18 +11,17 @@ class QuizStore {
             v2_2: 1,
             v2_3: 2,
             v2_4: 4,
+            v3_1: 1,
+            v3_2: 4,
+            v3_3: 3,
+            v3_4: 2,
+            v4_1: 1,
+            v4_2: 2,
+            v4_3: 3,
+            v4_4: 4
         }
     }
 
-
-    setAnswer(channel, value){
-        this.vragen[channel] = value;
-
-    }
-
-    get answer1() {
-        return `${this.vragen.v1}`
-    }
 };
 
 decorate(QuizStore, {
