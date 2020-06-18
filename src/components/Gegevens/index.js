@@ -57,27 +57,30 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password === passwordAgain && password!== "" && voornaam !== "" && achternaam !== "" && gebruikersnaam !== "" && email !== "") {
+    if (password === passwordAgain && password !== "" && voornaam !== "" && achternaam !== "" && gebruikersnaam !== "" && email !== "") {
       try {
         await uiStore.registerUser({ voornaam, achternaam, gebruikersnaam, email, password });
         nextStep();
       } catch (error) {
         console.log(error);
         console.log(error.message);
+        if (error.message === "The email address is already in use by another account.") {
+          setError("Dit email is al in gebruik, gelieve een ander email op te geven")
+        } else if (error.message === "Password should be at least 6 characters") {
+          setError("Wachtwoord moet 6 karakters lang zijn")
+        }
       }
     } else if (password !== passwordAgain && (voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === "")) {
-      setError("Gelieve alle velden in te vullen. Paswoorden zijn niet gelijk")
-    } else if (password === "" || voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === ""){
+      setError("Gelieve alle velden in te vullen. Wachtwoorden zijn niet gelijk")
+    } else if (password === "" || voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === "") {
       setError("Gelieve alle velden in te vullen.")
-    } else if (password !== passwordAgain || passwordAgain !== password || (password !== "" && voornaam !== "" && achternaam !== "" && gebruikersnaam !== "" && email !== "" && passwordAgain === "")){
-      setError("Paswoorden zijn niet gelijk")
+    } else if (password !== passwordAgain || passwordAgain !== password || (password !== "" && voornaam !== "" && achternaam !== "" && gebruikersnaam !== "" && email !== "" && passwordAgain === "")) {
+      setError("Wachtwoorden zijn niet gelijk")
     }
 
-  // } else {
-  //   setError("Gelieve alle velden in te vullen.")
-  //   setError2("Gelieve alle velden in te vullen. Paswoorden zijn niet gelijk")
-  //   setError3("Paswoorden zijn niet gelijk")
-  // }
+    // } else if (error === "The email address is already in use by another account."){
+    //   setError("Dit email is al in gebruik, gelieve een ander email op te geven")
+    // }
   };
 
   console.log(values);
@@ -125,7 +128,7 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
       <form onSubmit={handleSubmit} className={style.form}>
         <h1 className={style.vraag}>Geef <span className={style.vraag__bold}> jouw </span> gegevens in</h1>
         {/* <p className={style.error}>{error}</p> */}
-        {(password !== passwordAgain && (voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === "")) || (password === "" || voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === "") || (password !== passwordAgain || passwordAgain !== password || (password !== "" && voornaam !== "" && achternaam !== "" && gebruikersnaam !== "" && email !== "" && passwordAgain === ""))? <p className={style.error}>{error} </p> : <p className={style.error}></p>}
+        { (error === "Wachtwoord moet 6 karakters lang zijn")||(error === "Dit email is al in gebruik, gelieve een ander email op te geven") || (password !== passwordAgain && (voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === "")) || (password === "" || voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === "") || (password !== passwordAgain || passwordAgain !== password || (password !== "" && voornaam !== "" && achternaam !== "" && gebruikersnaam !== "" && email !== "" && passwordAgain === "")) ? <p className={style.error}>{error} </p> : <p className={style.error}></p>}
         <div className={style.grid}>
           <div className={style.wrapper}>
             <div className={style.input__wrapper}>
@@ -176,7 +179,7 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
           </div>
           <div className={style.wrapper}>
             <div className={style.input__wrapper}>
-              <label>Wachtwoord</label>
+              <label>Wachtwoord (min 6 karakters)</label>
               <TextInputGroup
                 label="Password"
                 type="password"
