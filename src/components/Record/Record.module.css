@@ -316,4 +316,8 @@
   justify-content: center;
 }
 
+.buttonWrap {
+  display: contents;
+}
+
 

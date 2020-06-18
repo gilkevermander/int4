@@ -6,6 +6,7 @@ import bestand from '../../assets/video/intro.mp4'
 import style from "./Start.module.css";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../consts/index";
+import ReactPlayer from 'react-player'
 
 
 const Start = () => {
@@ -13,16 +14,15 @@ const Start = () => {
   return (
     <section className={style.container}>
       <div className={style.player}>
-        <Player
+        <video
           className={style.player}
           playsInline
           poster={intro}
           src={bestand}
           width="500"
-          contentStyle={{ padding: 0 }}
-        >
-        <BigPlayButton position="center" className={style.play}/>
-        </Player>
+          // contentStyle={{ padding: 0 }}
+          controls
+        />
         <link
           rel="stylesheet"
           href="https://video-react.github.io/assets/video-react.css"

@@ -3,6 +3,7 @@ import TextInputGroup from "../TextInputGroup";
 import style from "./Ontvanger.module.css";
 import Souvenir from "../../models/Souvenir";
 import { useStore } from "../../hooks/useStore";
+import NumericInput from 'react-numeric-input';
 
 const Ontvanger = ({ nextStep, values, prevStep }) => {
 
@@ -155,7 +156,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
               <TextInputGroup
                 label="postcode"
                 type="number"
-                maxLength={4}
+                max={9999}
                 name="postcode"
                 placeholder="8500"
                 value={postcode}

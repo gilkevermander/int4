@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import VideoRecorder from 'react-video-recorder';
 import style from "./Record.module.css";
 import { ReactMic } from 'react-mic';
 import palmboom from '../../assets/img/palmboom.png'
+import Timer from 'react-compound-timer'
 // import { ReactMediaRecorder } from "react-media-recorder";
 // import { saveAs } from 'file-saver';
 // import MicRecorder from 'mic-recorder-to-mp3';
@@ -36,6 +37,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
     const [error, setError] = useState("");
     const [base, setBase] = useState("");
     const [audioBlob, setAudioBlob] = useState("");
+    const [counter, setCounter] = useState(180);
 
     const saveAndContinue = (e) => {
         e.preventDefault()
@@ -55,20 +57,20 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
 
     const startRecording = () => {
         //this.setState({ record: true });
-        setRecord(true)
-    }
+        setRecord(true);
 
+    }
     const stopRecording = () => {
-        setRecord(false)
+        setRecord(false);
     }
 
     const onData = (recordedBlob) => {
-        setComplete(true);
 
         console.log('chunk of real-time data is: ', recordedBlob);
     }
 
     const onStop = (recordedBlob) => {
+        setComplete(true);
         console.log('recordedBlob is: ', recordedBlob);
         console.log('stop')
         console.log(recordedBlob.blobURL)
@@ -239,10 +241,10 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                             isFlipped={true}
 
                         />
-                        
+
                     </div>
                     <p className={style.video__regel}>Max. 3 minuten opnemen</p>
-                    
+
                 </div>
                 <button onClick={saveAndContinue} className={complete ? style.next__active2 : style.next2}><p className={style.next__text2}>Koppel jouw souvenir</p> </button>
             </div>
@@ -314,11 +316,37 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                         onData={onData}
                         strokeColor="#000000"
                         backgroundColor="#FFFFFF" />
-                    <p>Max. 3 minuten opnemen</p>
-                    <div className={style.wrapper}>
-                        <button onClick={startRecording} type="button" className={style.start}></button>
-                        <button onClick={stopRecording} type="button" className={style.stop}></button>
-                    </div>
+                    <Timer
+                        initialTime={180000}
+                        startImmediately={false}
+                        direction="backward"
+                    >
+                        {({ start, resume, pause, stop, reset, timerState }) => (
+                            <React.Fragment>
+                                <div>
+                                    <Timer.Minutes /> minutes
+                                    <Timer.Seconds /> seconds
+                                </div>
+                                <div>{timerState}</div>
+                                <p>Max. 3 minuten opnemen</p>
+                                <div className={style.wrapper}>
+                                    {/* <button onClick={start} className={style.buttonWrap}><button onClick={startRecording} type="button" className={style.start}></button></button> */}
+                                    {/* <button onClick={stop} className={style.buttonWrap}><button onClick={reset} className={style.buttonWrap}><button onClick={stopRecording} type="button" className={style.stop}></button></button></button> */}
+                                    <button onClick={() => {
+                                        startRecording();
+                                        start();
+                                    }} type="button" className={style.start}></button>
+                                    <button onClick={() => {
+                                        stopRecording();
+                                        stop();
+                                        reset();
+                                    }} type="button" className={style.stop}></button>
+                                </div>
+                            </React.Fragment>
+
+                        )}
+                    </Timer>
+
 
                     {/* <ReactMediaRecorder
                         audio
