@@ -11,6 +11,10 @@ class LandStore {
     });
   }
 
+  empty() {
+    this.lands = [];
+  }
+
   loadAllLands = async () => {
     const jsonLand = await this.landService.getAll();
     jsonLand.forEach((json) => this.updateLandFromServer(json));

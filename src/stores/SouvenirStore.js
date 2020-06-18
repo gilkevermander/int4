@@ -11,6 +11,10 @@ class SouvenirStore {
     console.log(this.souvenirs)
   }
 
+  empty() {
+    this.souvenirs = [];
+  }
+
   loadAllSouvenirs = async () => {
     const jsonSouvenirs = await this.souvenirService.getAll();
     jsonSouvenirs.forEach((json) => this.updateSouvenirFromServer(json));
