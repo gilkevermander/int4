@@ -6,8 +6,9 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
 
   const [error, setError] = useState("");
 
-  const saveAndContinue = (e) => {
+  const saveAndContinue = (e) => { 
     e.preventDefault()
+    nextStep()
     if (values.land === "") {
       setError("Kies een land")
     } else {

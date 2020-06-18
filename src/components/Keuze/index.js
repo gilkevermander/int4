@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useObserver } from 'mobx-react-lite';
 import style from "./Keuze.module.css";
 import cameras from '../../assets/img/camera.png'
 
