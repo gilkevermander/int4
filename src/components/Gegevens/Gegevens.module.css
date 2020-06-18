@@ -142,7 +142,7 @@
   border: none;
   background-color:  #FFDC61;
   display: flex;
-  margin: -8.7rem 0 0rem 100.0rem;
+  margin: 6.5rem 0 0rem 100.0rem;
 }
 
 .grid {
@@ -150,7 +150,7 @@
   grid-template-rows: 1fr 1fr 1fr;
   width: 110rem ;
   margin: 0 auto;
-  margin-top: 10rem;
+  margin-top: 8rem;
 }
 
 .wrapper {
