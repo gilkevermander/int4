@@ -23,7 +23,7 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink className={style.button} to={ROUTES.message}>
+          <NavLink className={style.button} to={ROUTES.chat}>
             <MessageLogo fill="white" />
             <span>Messages</span>
           </NavLink>

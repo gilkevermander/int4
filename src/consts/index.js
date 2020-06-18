@@ -11,7 +11,7 @@ const ROUTES = {
   register: "/register",
   locatie: "/locatie",
   scan: "/scan",
-  message: "/message",
+  chat: "/chat",
   start: "/start",
   kaart: "/kaart",
   souvenirWall: "/souvenirWall",
