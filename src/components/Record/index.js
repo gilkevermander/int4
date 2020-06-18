@@ -323,12 +323,10 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                     >
                         {({ start, resume, pause, stop, reset, timerState }) => (
                             <React.Fragment>
-                                <div>
-                                    <Timer.Minutes /> minutes
-                                    <Timer.Seconds /> seconds
+                                <div className={style.timer}>
+                                    <p className={style.timer__item}>Je hebt nog <Timer.Minutes /> minuten</p>
+                                   <p className={style.timer__item}>en <Timer.Seconds /> seconden over</p>
                                 </div>
-                                <div>{timerState}</div>
-                                <p>Max. 3 minuten opnemen</p>
                                 <div className={style.wrapper}>
                                     {/* <button onClick={start} className={style.buttonWrap}><button onClick={startRecording} type="button" className={style.start}></button></button> */}
                                     {/* <button onClick={stop} className={style.buttonWrap}><button onClick={reset} className={style.buttonWrap}><button onClick={stopRecording} type="button" className={style.stop}></button></button></button> */}
@@ -343,7 +341,6 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                                     }} type="button" className={style.stop}></button>
                                 </div>
                             </React.Fragment>
-
                         )}
                     </Timer>
 

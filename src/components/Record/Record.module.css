@@ -1,5 +1,5 @@
 @value tokens: "../../styles/tokens.module.css";
-@value fontTitel, spacer1 from tokens;
+@value fontTitel, fontSubtitel spacer1 from tokens;
 
 .error {
   composes: error from "../../styles/layouts.module.css";
@@ -140,7 +140,7 @@
   border: none;
   color: grey;
   display: flex;
-  margin: 6.8rem 0 0rem 101.5rem;
+  margin: 5.7rem 0 0rem 101.5rem;
 }
 
 .next__text {
@@ -164,7 +164,7 @@
   border: none;
   background-color:  #FFDC61;
   display: flex;
-  margin: 6.8rem 0 0rem 101.5rem;
+  margin: 5.7rem 0 0rem 101.5rem;
 }
 
 /* VIDEO */
@@ -251,7 +251,7 @@
   justify-content: space-between;
   height: 12rem;
   composes: semibold from "../../styles/typo.module.css";
-  composes: fontSubtitle from "../../styles/typo.module.css";
+  font-size: fontSubtitel;
 }
 
 .content__audio__blob {
@@ -320,4 +320,12 @@
   display: contents;
 }
 
+.timer {
+  display: flex;
+  font-size: 2.5rem;
+}
+
+.timer__item {
+  margin-right: 0.5rem;
+}
 
