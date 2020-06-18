@@ -1,0 +1,14 @@
+@value tokens: "../../styles/tokens.module.css";
+@value raleway from tokens;
+
+.header {
+    background-color: white;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    font-family: raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+}
