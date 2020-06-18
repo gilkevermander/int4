@@ -187,7 +187,7 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
                 label="Password"
                 type="password"
                 name="Password"
-                placeholder="Fill in your password."
+                placeholder="Vul je wachtwoord in"
                 value={password}
                 onChange={(e) => setPassWord(e.currentTarget.value)}
                 className={style.input}
@@ -199,7 +199,7 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
                 label="Passwordagain"
                 type="password"
                 name="Passwordagain"
-                placeholder="Fill in your password again."
+                placeholder="Herhaal je wachtwoord"
                 value={passwordAgain}
                 onChange={(e) => setPassWordAgain(e.currentTarget.value)}
                 className={style.input}

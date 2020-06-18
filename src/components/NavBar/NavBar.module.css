@@ -1,31 +1,94 @@
 @value tokens: "../../styles/tokens.module.css";
-@value background, hover, darkPrimary, solight, fontSizeMedium from tokens;
-
-.list {
-  display: flex;
-  align-items: center;
-  background-color: white;
-  height: 100%;
-}
+@value background, hover, darkPrimary, solight, fontSizeMedium, raleway from tokens;
 
 .active {
-  background-color: hover;
+  background-color: yellow;
+  color: yellow;
+  border: .2rem solid black;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 3fr 3fr;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 37.5rem;
+  z-index: 100;
+
+}
+
+.list__item {
+  display: flex;
+  justify-content: center;
+  grid-row: 2;
+  background-color: white;
+  height: 100%;
+  padding-bottom: 1rem;
+}
+
+.list_text {
+  font-family: raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: black;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  padding-top: .5rem;
+  
+}
+
+.list__item__scan {
+  width: 30rem
+}
+
+
+.button__scan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -3.5rem;
+  z-index: 100;
+  height: 8rem;
 }
 
 .button {
-  display: block;
   border: none;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-size: fontSizeMedium;
-  height: 5rem;
-  width: 5rem;
-
+  height: 6.8rem;
+  width: 100%;
+  background-color: white;
   color: darkPrimary;
 }
 
 .button:active {
   background-color: solight;
+  color: red;
 }
+.navbar {
+  height: 80rem
+}
+
+.scan {
+  width: 9rem;
+}
+
+
+
+
+
+
+

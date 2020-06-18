@@ -3,7 +3,11 @@ import TextInputGroup from "../TextInputGroup";
 import style from "./Ontvanger.module.css";
 import Souvenir from "../../models/Souvenir";
 import { useStore } from "../../hooks/useStore";
+<<<<<<< HEAD
 import NumericInput from 'react-numeric-input';
+=======
+import envelop from "../../assets/img/envelop.png"
+>>>>>>> 5489ef636308621535adb9b90d11bee2d6a914c8
 
 const Ontvanger = ({ nextStep, values, prevStep }) => {
 
@@ -118,7 +122,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
             label="naam"
             name="naam"
             type="naam"
-            placeholder="jhon Doe"
+            placeholder="John Doe"
             value={naam}
             onChange={(e) => setNaam(e.currentTarget.value)}
 
@@ -178,8 +182,11 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
             </div>
           </div>
 
+          <div>
+            <img className={style.backgroundimg} src={envelop} width="266" alt="enveloppen"></img>
+            <button onClick={handleSubmit} className={naam === "" || straat === "" || postcode === "" || nr === "" || stad === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
+          </div>
 
-          <button onClick={handleSubmit} className={naam === "" || straat === "" || postcode === "" || nr === "" || stad === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
         </div>
       </form >
     </div >

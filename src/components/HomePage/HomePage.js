@@ -11,17 +11,23 @@ const HomePage = () => {
     innerRef.current && innerRef.current.getLocation();
   };
   return (
-    <section className={style.container}>
-      <InfoHeader title={"Kabien"} />
+    <section className={style.breedte}>
+      <InfoHeader title={"Kabien"} className={style.title}/>
+      <div className={style.headwrapper}>
+      <div className={style.wrapper}>
       <NavLink className={style.add} to={ROUTES.qr}>
-        <h2>Luister naar jouw souvenir</h2>
+        <h2 className={style.link}>Luister naar jouw souvenir</h2>
       </NavLink>
       <NavLink onClick={getLocation} className={style.add} to="/locatie">
-        <h2>Deel jouw ervaringen</h2>
+        <h2 className={style.link}>Neem jouw herinnering op</h2>
       </NavLink>
+      </div>
+      <div className={style.wrapper}>
       <NavLink className={style.add} to={ROUTES.kaart}>
-        <h2>Ontdek verhalen van KABIEN</h2>
+        <h2 className={style.link}>Ontdek verhalen van KABIEN</h2>
       </NavLink>
+      </div>
+      </div>
 
     </section>
   );
