@@ -12,6 +12,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
   const [postcode, setPostcode] = useState("");
   const [stad, setStad] = useState("");
   const [userId, setUserId] = useState("");
+  const [error, setError] = useState("");
 
   const { uiStore, landStore, souvenirStore } = useStore();
 
@@ -31,32 +32,36 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      //foto op souvenir
-      //filmpje of audio
-      const land = await landStore.resolveLandId(values.land);
-      const video = values.video
-      console.log(video);
-      console.log('handlesubmit')
-      setUserId(uiStore.currentUser.id)
-      console.log(userId);
-      const item = new Souvenir({
-        store: souvenirStore,
-        naam,
-        straat,
-        nr,
-        postcode,
-        stad,
-        souvenir,
-        delen,
-        userId: uiStore.currentUser.id,
-        landId: land.id,
-        video
-      });
-      item.create();
-      nextStep();
-    } catch (error) {
-      console.log(error);
+    if (naam !== "" && straat !== "" && postcode !== "" && nr !== "" && stad !== "") {
+      try {
+        //foto op souvenir
+        //filmpje of audio
+        const land = await landStore.resolveLandId(values.land);
+        const video = values.video
+        console.log(video);
+        console.log('handlesubmit')
+        setUserId(uiStore.currentUser.id)
+        console.log(userId);
+        const item = new Souvenir({
+          store: souvenirStore,
+          naam,
+          straat,
+          nr,
+          postcode,
+          stad,
+          souvenir,
+          delen,
+          userId: uiStore.currentUser.id,
+          landId: land.id,
+          video
+        });
+        item.create();
+        nextStep();
+      } catch (error) {
+        console.log(error);
+      }
+    } else if (naam === "" || straat === "" || postcode === "" || nr === "" || stad === "") {
+      setError("Gelieve alle velden in te vullen.")
     }
   };
 
@@ -104,6 +109,8 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
 
       <form onSubmit={handleSubmit} className={style.form}>
         <h1 className={style.vraag}>Vul de gegevens van de <span className={style.vraag__bold}>ontvanger</span> in</h1>
+        <h2 className={style.subtitel}>Naar dit adres wordt jou souvenir opgestuurd!</h2>
+        {naam === "" || straat === "" || postcode === "" || nr === "" || stad === "" ? <p className={style.error}>{error} </p> : <p className={style.error}></p>}
         <div className={style.grid}>
           <label className={style.label}>Naam ontvanger</label>
           <TextInputGroup
@@ -118,7 +125,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
           />
           <div className={style.wrapper}>
             <div className={style.wrapper__item}>
-              <label className={[ style.label, style.wrapper__item__straat ,style.wrapper__item]}>Straat</label>
+              <label className={[style.label, style.wrapper__item__straat, style.wrapper__item]}>Straat</label>
               <TextInputGroup
                 label="straat"
                 name="straat"
@@ -129,11 +136,12 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
                 className={style.input}
               />
             </div>
-            <div className={[ style.wrapper__item__nummer ,style.wrapper__item]}>
+            <div className={[style.wrapper__item__nummer, style.wrapper__item]}>
               <label className={style.label}>nummer</label>
               <TextInputGroup
                 label="nr"
-                type="nr"
+                type="number"
+                placeholder="17"
                 name="nr"
                 value={nr}
                 onChange={(e) => setNr(e.currentTarget.value)}
@@ -141,27 +149,34 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
               />
             </div>
           </div>
-          <label className={style.label}>Postcode</label>
-          <TextInputGroup
-            label="postcode"
-            type="postcode"
-            name="postcode"
-            placeholder="8500"
-            value={postcode}
-            onChange={(e) => setPostcode(e.currentTarget.value)}
-            className={[style.input__postcode, style.input]}
-          />
-          <label className={style.label}>Stad/gemeente</label>
-          <TextInputGroup
-            label="Stad"
-            type="stad"
-            name="stad"
-            placeholder="Kortrijk"
-            value={stad}
-            onChange={(e) => setStad(e.currentTarget.value)}
-            className={style.input}
-          />
-          
+          <div className={style.wrapper}>
+            <div className={style.input__postcode}>
+              <label className={style.label}>Postcode</label>
+              <TextInputGroup
+                label="postcode"
+                type="number"
+                maxLength={4}
+                name="postcode"
+                placeholder="8500"
+                value={postcode}
+                onChange={(e) => setPostcode(e.currentTarget.value)}
+                className={style.input}
+              />
+            </div>
+            <div className={[style.wrapper__item__gemeente, style.wrapper__item]}>
+              <label className={style.label}>Stad/gemeente</label>
+              <TextInputGroup
+                label="Stad"
+                type="stad"
+                name="stad"
+                placeholder="Kortrijk"
+                value={stad}
+                onChange={(e) => setStad(e.currentTarget.value)}
+                className={style.input}
+              />
+            </div>
+          </div>
+
 
           <button onClick={handleSubmit} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
         </div>

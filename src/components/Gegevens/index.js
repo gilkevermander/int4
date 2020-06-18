@@ -113,13 +113,13 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
           </div>
 
           <div className={style.procesbar_lijn4}>
-            <div className={style.procesbar__item1}>
+            <div className={style.procesbar__item}>
               <p className={style.item__number}>4</p>
               <p className={style.item__text}>Souvenir</p>
             </div>
           </div>
 
-          <div className={style.procesbar__item}>
+          <div className={style.procesbar__item1}>
             <p className={style.item__number}>5</p>
             <p className={style.item__text}>Gegevens</p>
           </div>

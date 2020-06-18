@@ -8,7 +8,8 @@ const TextInputGroup = ({
   value,
   placeholder,
   type,
-  onChange
+  onChange,
+  // maxLength
 }) => {
   return (
     <>
@@ -21,6 +22,7 @@ const TextInputGroup = ({
         name={name}
         placeholder={placeholder}
         value={value}
+        // maxLength={maxLength}
         onChange={onChange}
         required="required"
         autoComplete="off"
