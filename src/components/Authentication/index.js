@@ -4,7 +4,9 @@ import { Switch, Route, NavLink, Redirect } from "react-router-dom";
 import { ROUTES } from "../../consts";
 import LoginForm from "./LoginForm";
 import Start from "../Start/index";
+import Quiz from "../Quiz/index";
 import Manier from "../Manier/index";
+import SouvenirWall from "../SouvenirWall/index";
 import style from "./Authentication.module.css";
 import RegisterForm from "./RegisterForm";
 import { useStore } from "../../hooks/useStore";
@@ -16,6 +18,12 @@ const Authentication = () => {
   return useObserver(() => (
     <>
       <Switch>
+      <Route exact path={ROUTES.souvenirWall}>
+          <SouvenirWall />
+        </Route>
+        <Route exact path={ROUTES.quiz}>
+          <Quiz />
+        </Route>
       <Route exact path={ROUTES.manier}>
           <Manier />
         </Route>

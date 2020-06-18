@@ -14,6 +14,8 @@ const ROUTES = {
   message: "/message",
   start: "/start",
   kaart: "/kaart",
+  souvenirWall: "/souvenirWall",
+  quiz: "/quiz"
 };
 
 export { ROUTES };
