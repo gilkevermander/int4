@@ -17,10 +17,10 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
   const { uiStore, landStore, souvenirStore } = useStore();
 
 
-  const saveAndContinue = (e) => {
-    e.preventDefault();
-    nextStep();
-  }
+  // const saveAndContinue = (e) => {
+  //   e.preventDefault();
+  //   nextStep();
+  // }
 
   const back = (e) => {
     e.preventDefault();
@@ -178,7 +178,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
           </div>
 
 
-          <button onClick={handleSubmit} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
+          <button onClick={handleSubmit} className={naam === "" || straat === "" || postcode === "" || nr === "" || stad === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
         </div>
       </form >
     </div >

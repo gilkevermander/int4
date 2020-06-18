@@ -3,7 +3,7 @@ import VideoRecorder from 'react-video-recorder';
 import style from "./Record.module.css";
 import { ReactMic } from 'react-mic';
 import palmboom from '../../assets/img/palmboom.png'
-import { ReactMediaRecorder } from "react-media-recorder";
+// import { ReactMediaRecorder } from "react-media-recorder";
 // import { saveAs } from 'file-saver';
 // import MicRecorder from 'mic-recorder-to-mp3';
 // import AudioRecorder from 'react-audio-recorder';

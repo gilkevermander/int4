@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import TextInputGroup from "../TextInputGroup";
 import style from "./Gegevens.module.css";
 import { useStore } from "../../hooks/useStore";
-import { useHistory } from "react-router-dom";
 
 
 const Gegevens = ({ nextStep, values, prevStep }) => {
@@ -21,7 +20,6 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
   const [error, setError] = useState("");
 
   const { uiStore } = useStore();
-  const history = useHistory();
 
 
   // const saveAndContinue = (e) => {
@@ -206,7 +204,7 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
 
         </div>
 
-        <button onClick={handleSubmit} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
+        <button onClick={handleSubmit} className={password === "" || passwordAgain === "" || password === "" || voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === ""? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
         {/* <input type="submit" value="Volgende" className={values.keuze === "" ? style.next : style.next__active} /> */}
       </form>
     </div>
