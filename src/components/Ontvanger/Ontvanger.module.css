@@ -122,7 +122,7 @@
   border: none;
   color: grey;
   display: flex;
-  margin: 10.5rem 0 0rem 70.0rem;
+  margin: 7.8rem 0 0rem 70.0rem;
 }
 
 .next__text {
@@ -146,7 +146,7 @@
   border: none;
   background-color:  #FFDC61;
   display: flex;
-  margin: 10.5rem 0 0rem 70.0rem;
+  margin: 7.8rem 0 0rem 70.0rem;
 }
 
 .back{
@@ -216,6 +216,13 @@
   justify-content: center;
   text-align: center;
   justify-content: center;
+}
+
+.backgroundimg {
+  z-index: 100;
+  margin-top: -10rem;
+  margin-left: -50rem;
+  margin-bottom: -10rem
 }
 
 

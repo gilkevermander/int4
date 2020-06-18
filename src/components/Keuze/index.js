@@ -70,17 +70,17 @@ const Keuze = ({ nextStep, values, setKeuze, prevStep, overStep }) => {
         <h2 className={style.vraag}>Wil jij jouw souvenir pimpen met een foto?</h2>
         {values.keuze === "" ? <p className={style.error}>{error} </p> : <p className={style.error}></p>}
 
-          <div className={style.grid}>
-            <label className={style.keuze}>
-              <input className={style.keuze__mogelijkheid} type="radio" name="keuze" value="false" onChange={e => setKeuze(false)} /> <span className={style.keuze__text1}>Nee, liever niet</span>
-            </label>
-            <label className={style.keuze}>
-              <input className={style.keuze__mogelijkheid} type="radio" name="keuze" value="true" onChange={e => setKeuze(true)} /> <span className={style.keuze__text2}>Ja, Superleuk!</span>
-            </label>
-          </div>
+        <div className={style.grid}>
+          <label className={style.keuze}>
+            <input className={style.keuze__mogelijkheid} type="radio" name="keuze" value="false" onChange={e => setKeuze(false)} /> <span className={style.keuze__text1}>Nee, liever niet</span>
+          </label>
+          <label className={style.keuze}>
+            <input className={style.keuze__mogelijkheid} type="radio" name="keuze" value="true" onChange={e => setKeuze(true)} /> <span className={style.keuze__text2}>Ja, Superleuk!</span>
+          </label>
+        </div>
         <div className={style.form__backgroundimg}>
-        <img className={style.backgroundimg} src={cameras} width="486" alt="tapes"></img>
-        <button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
+          <img className={style.backgroundimg} src={cameras} width="486" alt="Cameras"></img>
+          <button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
         </div>
       </form>
     </div >
