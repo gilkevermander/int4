@@ -1,3 +1,7 @@
+
+@value tokens: "../../styles/tokens.module.css";
+@value fontTitel, fontSubtitel, spacer1 from tokens; 
+
 .header{
 display: flex;
 flex-flow: column;
