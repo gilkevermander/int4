@@ -64,13 +64,19 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
       } catch (error) {
         console.log(error);
       }
-    } else if (password === "" || voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === ""){
-      setError("Gelieve alle velden in te vullen.")
     } else if (password !== passwordAgain && (voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === "")) {
       setError("Gelieve alle velden in te vullen. Paswoorden zijn niet gelijk")
-    } else if (password !== passwordAgain){
+    } else if (password === "" || voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === ""){
+      setError("Gelieve alle velden in te vullen.")
+    } else if (password !== passwordAgain || passwordAgain !== password || (password !== "" && voornaam !== "" && achternaam !== "" && gebruikersnaam !== "" && email !== "" && passwordAgain === "")){
       setError("Paswoorden zijn niet gelijk")
     }
+
+  // } else {
+  //   setError("Gelieve alle velden in te vullen.")
+  //   setError2("Gelieve alle velden in te vullen. Paswoorden zijn niet gelijk")
+  //   setError3("Paswoorden zijn niet gelijk")
+  // }
   };
 
   console.log(values);
@@ -118,7 +124,7 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
       <form onSubmit={handleSubmit} className={style.form}>
         <h1 className={style.vraag}>Geef <span className={style.vraag__bold}> jouw </span> gegevens in</h1>
         {/* <p className={style.error}>{error}</p> */}
-        {password === "" || voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === "" ? <p className={style.error}>{error} </p> : <p className={style.error}></p>}
+        {(password !== passwordAgain && (voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === "")) || (password === "" || voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === "") || (password !== passwordAgain || passwordAgain !== password || (password !== "" && voornaam !== "" && achternaam !== "" && gebruikersnaam !== "" && email !== "" && passwordAgain === ""))? <p className={style.error}>{error} </p> : <p className={style.error}></p>}
         <div className={style.grid}>
           <div className={style.wrapper}>
             <div className={style.input__wrapper}>
