@@ -1,5 +1,5 @@
 @value tokens: "../../styles/tokens.module.css";
-@value fontTitel, spacer1, geel from tokens;
+@value fontTitel, spacer1, geel, fontSubtitel from tokens;
 
 .vraag{
     composes: semibold from "../../styles/typo.module.css";
@@ -52,7 +52,7 @@
     composes: next from "../../styles/layouts.module.css";
     border: none;
     /* display: flex; */
-    margin: 9.4rem 0 -8rem 10rem;
+    margin: 8.4rem 0 -8rem 10rem;
   }
 
   .back__text {
@@ -72,8 +72,10 @@
   }
 
   .match {
-    margin-left: 108.5rem;
-    margin-top: 10rem;
+    margin-left: 105.2rem;
+    margin-top: 15rem;
+    margin-bottom: -5rem;
+    font-size: fontSubtitel;
 }
 
 .next__active {
@@ -81,7 +83,7 @@
     border: none;
     background-color:  #FFDC61;
     display: flex;
-    margin: 2.7rem 0 0rem 104.7rem;
+    margin: 1.4rem 0 0rem 100.2rem;
   }
 
   .next__text {

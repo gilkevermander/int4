@@ -47,7 +47,7 @@ const Result = ({ nextStep, values, setSouvid }) => {
       <p className={style.subtitle}>Je ontvangt een bevestiging via mail en toegang tot de wereldkaart vol reisverhalen.</p>
       <p className={style.info}>Je verstuurde <span className={style.big}>1</span> van de <span className={style.big}>{aantal}</span> opnames over </p>
       <p className={style.info}><span className={style.big2}>{values.land}</span></p>
-      <p className={style.match}>We vonden een ervaring die past bij die van jou!</p>
+      <p className={style.match}>We vonden een ervaring <br />die past bij die van jou!</p>
       <div className={style.wrapper__buttons}>
         <button onClick={back} className={style.back}><p className={style.back__text}>Terug naar startscherm</p></button>
         {/* <Link to={`${ROUTES.detailSouvenir.to}${souvenir.id}`}> */}

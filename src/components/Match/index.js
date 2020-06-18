@@ -6,6 +6,8 @@ import { useStore } from "../../hooks/useStore";
 import ReactPlayer from 'react-player'
 import style from "./Match.module.css";
 
+import wereldKaart from "../../assets/img/wereldKaart.png"
+
 const Match = ({ nextStep, values }) => {
 
   const history = useHistory();
@@ -21,11 +23,15 @@ const Match = ({ nextStep, values }) => {
 
   console.log(values);
   return (
-    <>
+    <div className={style.container}>
       <h2 className={style.vraag}>Reisverhaal van {values.land}</h2>
-      <audio src='https://res.cloudinary.com/int4/video/upload/v1592396569/jjfba8egbdgvhvfkke1z.mp4' controls loop />
+
+      <div className={style.header}>
+        <img src={wereldKaart} alt="werledkaart" height="486" width="900"></img>
+        <audio className={style.container__audio} src='https://res.cloudinary.com/int4/video/upload/v1592396569/jjfba8egbdgvhvfkke1z.mp4' controls loop />
+      </div>
       <button onClick={back} className={style.next__active}><p className={style.next__text}>Terug naar startscherm</p> </button>
-    </>
+    </div>
   )
 
 }

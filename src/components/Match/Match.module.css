@@ -1,3 +1,10 @@
+.header{
+display: flex;
+flex-flow: column;
+align-items: center;
+justify-content: space-around;
+}
+
 .vraag{
   composes: semibold from "../../styles/typo.module.css";
   font-size: fontTitel;
@@ -11,11 +18,16 @@
   border: none;
   background-color:  #FFDC61;
   display: flex;
-  margin: -7rem 0 0rem 108.5rem;
+  z-index: 1000;
+  margin: 0 auto 0
 }
 
 .next__text {
   composes: next__text from "../../styles/layouts.module.css";
+}
+
+.container__audio {
+  width: 70%;
 }
 
 
