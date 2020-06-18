@@ -247,6 +247,7 @@
   display: grid;
   grid-template-columns: 50% 50%;
   margin: 10rem auto 10rem;
+  width: 115rem;
 }
 
 
