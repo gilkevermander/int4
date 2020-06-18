@@ -2,13 +2,28 @@ import React from "react";
 import style from "./InfoHeader.module.css";
 import { useHistory } from "react-router-dom";
 import { ReactComponent as backLogo } from "./back.svg";
-import { Button } from 'semantic-ui-react';
+import { useStore } from "../../hooks/useStore";
+import { ROUTES } from "../../consts/index";
 
 const InfoHeader = ({ title }) => {
   const history = useHistory();
+  const { uiStore } = useStore();
+
+  const handleLogout = async (e) => {
+    e.preventDefault();
+    try {
+      await uiStore.logout();
+      history.push(ROUTES.home);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <header className={style.header}>
+      <button onClick={handleLogout} className={style.button}>
+        Logout
+        </button>
       <button onClick={history.goBack}>&#60;</button>
       <h1 className={style.title}>{title}</h1>
     </header>

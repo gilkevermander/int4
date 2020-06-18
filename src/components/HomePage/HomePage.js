@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import ContentHeader from "../ContentHeader/ContentHeader";
+import InfoHeader from "../InfoHeader/InfoHeader";
 import style from "./HomePage.module.css";
 import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../consts/index";
@@ -12,7 +12,7 @@ const HomePage = () => {
   };
   return (
     <section className={style.container}>
-      <ContentHeader title={"Kabien"} />
+      <InfoHeader title={"Kabien"} />
       <NavLink className={style.add} to={ROUTES.qr}>
         <h2>Luister naar jouw souvenir</h2>
       </NavLink>

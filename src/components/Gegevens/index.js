@@ -63,6 +63,7 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
         nextStep();
       } catch (error) {
         console.log(error);
+        console.log(error.message);
       }
     } else if (password !== passwordAgain && (voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === "")) {
       setError("Gelieve alle velden in te vullen. Paswoorden zijn niet gelijk")

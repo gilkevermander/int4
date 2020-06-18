@@ -13,6 +13,7 @@ const RegisterForm = () => {
   const [gebruikersnaam, setGebruikersnaam] = useState("");
   const [password, setPassWord] = useState("");
   const [passwordAgain, setPassWordAgain] = useState("");
+  const [error, setError] = useState("");
 
   const { uiStore } = useStore();
   const history = useHistory();
@@ -26,12 +27,15 @@ const RegisterForm = () => {
         history.push(ROUTES.home);
       } catch (error) {
         console.log(error);
+        console.log(error.message);
+        setError(error.message);
       }
     }
   };
 
   return (
     <div className={style.container}>
+      {error === "The email address is already in use by another account." ? <p>Dit email is al in gebruik</p> : <p></p>}
       <form onSubmit={handleSubmit} className={style.form}>
         <TextInputGroup
           label="Voornaam"
