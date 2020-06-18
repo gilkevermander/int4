@@ -7,7 +7,7 @@ class UserStore {
     this.rootStore = rootStore;
     this.users = [];
     this.usersService = new UserService({ firebase: this.rootStore.firebase });
-    this.loadAllUsers();
+    //this.loadAllUsers();
   }
 
   empty() {

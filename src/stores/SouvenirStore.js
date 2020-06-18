@@ -7,7 +7,7 @@ class SouvenirStore {
     this.rootStore = rootStore;
     this.souvenirs = [];
     this.souvenirService = new SouvenirService({ firebase: this.rootStore.firebase });
-    this.loadAllSouvenirs();
+    //this.loadAllSouvenirs();
     console.log(this.souvenirs)
   }
 
