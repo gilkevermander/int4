@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-import Message from "../../../components/Message/Message.js";
-import Form from "../../../components/Form/Form.js";
-import UnreadMessages from "../../../components/UnreadMessages/UnreadMessages.js";
-import Empty from "../../../components/Empty/Empty";
+import Message from "../Message/Message";
+import Form from "../Form/Form";
+import Empty from "../Empty/Empty";
 
 import { useObserver } from "mobx-react-lite";
-import { useStore } from "../../../hooks/useStore";
+import { useStore } from "../../hooks/useStore";
 import { useParams } from "react-router-dom";
 
 import style from "./Messages.module.css";
@@ -66,10 +65,6 @@ const Messages = () => {
                 height="50"
               />
               <h3 className={style.title}>{group.name}</h3>
-              <span className={style.unread}>
-                {group.users.length} members -{" "}
-                <UnreadMessages length={group.unreadLength} />
-              </span>
             </>
           )}
         </header>

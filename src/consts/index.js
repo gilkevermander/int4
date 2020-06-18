@@ -1,6 +1,7 @@
 const ROUTES = {
   home: "/",
   detailLand: { path: "/detailLand/:id", to: "/detailLand/" },
+  messages: { path: "/messages/:id", to: "/messages/" },
   camera: "/camera",
   qr: "/qr",
   manier: "/manier",
@@ -12,6 +13,7 @@ const ROUTES = {
   locatie: "/locatie",
   scan: "/scan",
   chat: "/chat",
+  addContact: '/addContact',
   start: "/start",
   kaart: "/kaart",
   souvenirWall: "/souvenirWall",

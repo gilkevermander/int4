@@ -7,12 +7,12 @@ import style from "./User.module.css";
 const User = ({ user }) => {
   return (
     <li>
-      <Link to={`${ROUTES.userDetail.to}${user.id}`}>
+      <Link to={`${ROUTES.messages.to}${user.id}`}>
         <div className={style.user}>
           <img
             className={style.img}
             src={user.avatar}
-            alt="group img"
+            alt="user_icon"
             width="50"
             height="50"
           />

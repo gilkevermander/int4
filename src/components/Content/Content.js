@@ -5,6 +5,8 @@ import Kaart from "../Kaart/Kaart";
 import Manier from "../Manier/index";
 import Qr from "../Qr/index";
 import Chat from "../Chat/index";
+import AddUser from "../AddUser/AddUser";
+import Messages from "../Messages/Messages";
 import Locatie from "../Locatie/Locatie";
 import DetailSouvenir from "../DetailSouvenir/index";
 import { useObserver } from "mobx-react-lite";
@@ -18,6 +20,9 @@ const Content = () => {
   return useObserver(() => (
     <section className={style.container}>
       <Switch>
+        <Route path={ROUTES.addContact}>
+          <AddUser />
+        </Route>
         <Route path={ROUTES.chat}>
           <Chat />
         </Route>
@@ -29,6 +34,9 @@ const Content = () => {
         </Route>
         <Route path={ROUTES.detailSouvenir.path}>
           <DetailSouvenir />
+        </Route>
+        <Route path={ROUTES.messages.path}>
+          <Messages />
         </Route>
         <Route path={ROUTES.qr}>
           <Qr />

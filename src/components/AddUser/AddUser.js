@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { useStore } from "../../../hooks/useStore.js";
-import ContentHeader from "../../../components/ContentHeader/ContentHeader.js";
+import { useStore } from "../../hooks/useStore";
+import InfoHeader from "../InfoHeader/InfoHeader";
 import style from "./AddUser.module.css";
 
 const AddUser = () => {
-  const [email, setEmail] = useState("");
+  const [gebruikersnaam, setGebruikersnaam] = useState("");
   const { uiStore, userStore } = useStore();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await userStore.createContactforUser(uiStore.currentUser, email);
+      await userStore.createContactforUser(uiStore.currentUser, gebruikersnaam);
     } catch (error) {
       console.log(error);
     }
@@ -18,19 +18,19 @@ const AddUser = () => {
 
   return (
     <>
-      <ContentHeader title={"Add contact"} />
+      <InfoHeader title={"Add contact"} />
       <div className={style.container}>
         <form onSubmit={handleSubmit} className={style.form}>
           <label htmlFor="name" className={style.label}>
-            Email:
+            Gebruikersnaam:
             <input
               className={style.input}
               type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={gebruikersnaam}
+              onChange={(e) => setGebruikersnaam(e.target.value)}
             />
           </label>
-          <input type="submit" value="Add contact" className={style.button} />
+          <input type="submit" value="Toevoegen" className={style.button} />
         </form>
       </div>
     </>

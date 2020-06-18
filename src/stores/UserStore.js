@@ -22,10 +22,10 @@ class UserStore {
     });
   };
 
-  createContactforUser = async (user, contactEmail) => {
+  createContactforUser = async (user, gebruikersnaam) => {
     const contact = await this.usersService.createContactForUser(
       user,
-      contactEmail
+      gebruikersnaam
     );
     this.updateUserFromServer(contact);
     return this.resolveUser(contact.id);
