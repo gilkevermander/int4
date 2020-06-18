@@ -114,7 +114,10 @@
 
   .container {
     width: 37.5rem;
+    background-image: url(../assets/img/textures.png);
     background-color: geel;
     margin-top: -6.5rem;
-
+    background-blend-mode: screen;
+    height: 100vh;
+    z-index: -99;
   }
