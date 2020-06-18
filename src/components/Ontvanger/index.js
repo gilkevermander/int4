@@ -3,6 +3,7 @@ import TextInputGroup from "../TextInputGroup";
 import style from "./Ontvanger.module.css";
 import Souvenir from "../../models/Souvenir";
 import { useStore } from "../../hooks/useStore";
+import envelop from "../../assets/img/envelop.png"
 
 const Ontvanger = ({ nextStep, values, prevStep }) => {
 
@@ -177,8 +178,11 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
             </div>
           </div>
 
+          <div>
+            <img className={style.backgroundimg} src={envelop} width="266" alt="enveloppen"></img>
+            <button onClick={handleSubmit} className={naam === "" || straat === "" || postcode === "" || nr === "" || stad === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
+          </div>
 
-          <button onClick={handleSubmit} className={naam === "" || straat === "" || postcode === "" || nr === "" || stad === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
         </div>
       </form >
     </div >
