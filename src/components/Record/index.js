@@ -117,7 +117,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                         </div>
                     </div>
                 </div>
-                {values.land === "" ? <p className={[style.error2, style.error]}>{error}</p> : <p className={style.error}></p>}
+                {complete === false ? <p className={[style.error2, style.error]}>{error}</p> : <p className={style.error}></p>}
                 <div className={style.container__video}>
 
                     <div className={style.video__content}>
@@ -239,7 +239,10 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                             isFlipped={true}
 
                         />
+                        
                     </div>
+                    <p className={style.video__regel}>Max. 3 minuten opnemen</p>
+                    
                 </div>
                 <button onClick={saveAndContinue} className={complete ? style.next__active2 : style.next2}><p className={style.next__text2}>Koppel jouw souvenir</p> </button>
             </div>
@@ -292,6 +295,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                 <img className={style.content__palmboom2} alt="palmboom" src={palmboom}></img>
 
                 < div className={style.content_sound} >
+                    {complete === false ? <p className={style.error}>{error} </p> : <p className={style.error}></p>}
 
                     {complete === true ?
                         <div className={style.content__sound__herbeluister}>
@@ -299,10 +303,10 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                             <audio className={style.content__audio__blob} src={audioBlob} controls loop />
                         </div>
 
-                        :  <div className={style.content__sound__herbeluister}>
-                        <p></p>
-                        <audio className={style.content__audio__blob} src="" />
-                    </div>}
+                        : <div className={style.content__sound__herbeluister}>
+                            <p></p>
+                            <audio className={style.content__audio__blob} src="" />
+                        </div>}
                     <ReactMic
                         record={record}
                         className={style.sound}

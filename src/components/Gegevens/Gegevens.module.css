@@ -3,7 +3,7 @@
 @value fontTitel, fontSubtitel, spacer1 from tokens;
 
 .error {
-  composes: error__input from "../../styles/layouts.module.css";
+  composes: error from "../../styles/layouts.module.css";
 }
 
 .vraag__bold {
@@ -142,21 +142,22 @@
   border: none;
   background-color:  #FFDC61;
   display: flex;
-  margin: -2.8rem 0 0rem 100.0rem;
+  margin: 6.5rem 0 0rem 100.0rem;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   width: 110rem ;
   margin: 0 auto;
-  margin-top: 4rem;
+  margin-top: 8rem;
 }
 
 .wrapper {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  margin: 0 2rem;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+  width: 100rem ;
 }
 
 .header{
@@ -168,6 +169,7 @@
 .input__wrapper{
   display: flex;
   flex-flow: column;
+  margin-right: 3rem;
 }
 
 .input__wrapper label{

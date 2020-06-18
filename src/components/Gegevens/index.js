@@ -4,10 +4,9 @@ import TextInputGroup from "../TextInputGroup";
 import style from "./Gegevens.module.css";
 import { useStore } from "../../hooks/useStore";
 import { useHistory } from "react-router-dom";
-import { ROUTES } from "../../consts";
 
 
-const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
+const Gegevens = ({ nextStep, values, prevStep }) => {
 
   // const [errorVoor, setErrorVoor] = useState("");
   // const [errorAchter, setErrorAchter] = useState("");
@@ -20,10 +19,6 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
   const [password, setPassWord] = useState("");
   const [passwordAgain, setPassWordAgain] = useState("");
   const [error, setError] = useState("");
-
-  if(voornaam.isNullOrEmpty){
-    setError("vul je naam in")
-  }
 
   const { uiStore } = useStore();
   const history = useHistory();
@@ -62,18 +57,19 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (values.password === values.passwordAgain) {
-      if (voornaam.isNullOrEmpty) {
-        try {
-          await uiStore.registerUser({ voornaam, achternaam, gebruikersnaam, email, password });
-          nextStep();
-        } catch (error) {
-          console.log(error);
-        }
-      } else {
-        setError("Neem eerst je verhaal op!")
+    if (password === passwordAgain && password!== "" && voornaam !== "" && achternaam !== "" && gebruikersnaam !== "" && email !== "") {
+      try {
+        await uiStore.registerUser({ voornaam, achternaam, gebruikersnaam, email, password });
+        nextStep();
+      } catch (error) {
+        console.log(error);
       }
-
+    } else if (password === "" || voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === ""){
+      setError("Gelieve alle velden in te vullen.")
+    } else if (password !== passwordAgain && (voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === "")) {
+      setError("Gelieve alle velden in te vullen. Paswoorden zijn niet gelijk")
+    } else if (password !== passwordAgain){
+      setError("Paswoorden zijn niet gelijk")
     }
   };
 
@@ -121,12 +117,12 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
       </div>
       <form onSubmit={handleSubmit} className={style.form}>
         <h1 className={style.vraag}>Geef <span className={style.vraag__bold}> jouw </span> gegevens in</h1>
+        {/* <p className={style.error}>{error}</p> */}
+        {password === "" || voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === "" ? <p className={style.error}>{error} </p> : <p className={style.error}></p>}
         <div className={style.grid}>
           <div className={style.wrapper}>
             <div className={style.input__wrapper}>
-              {/* {voornaam.isNullOrEmpty ? <p className={style.error__input}>{error}</p> : <p className={style.error__input}></p>} */}
               <label>Voornaam</label>
-              <p>{error}</p>
               <TextInputGroup
                 label="voornaam"
                 name="voornaam"
@@ -138,36 +134,23 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
               />
             </div>
             <div className={style.input__wrapper}>
-              <label>Gebruikersnaam</label>
+              <label>Achternaam</label>
               <TextInputGroup
-                placeholder='Gebruikersnaam'
-                onChange={e => setGebruikersnaam(e.currentTarget.value)}
-                defaultValue={values.gebruikersnaam}
+                placeholder='Achternaam'
+                onChange={e => setAchternaam(e.currentTarget.value)}
+                defaultValue={achternaam}
                 required
-                placeholder="kabien_kortrijk"
-                className={style.input}
-              />
-            </div>
-            <div className={style.input__wrapper}>
-              <label>Wachtwoord</label>
-              <TextInputGroup
-                label="Password"
-                type="password"
-                name="Password"
-                placeholder="Fill in your password."
-                value={password}
-                onChange={(e) => setPassWord(e.currentTarget.value)}
                 className={style.input}
               />
             </div>
           </div>
           <div className={style.wrapper}>
             <div className={style.input__wrapper}>
-              <label>Achternaam</label>
+              <label>Gebruikersnaam</label>
               <TextInputGroup
-                placeholder='Achternaam'
-                onChange={e => setAchternaam(e.currentTarget.value)}
-                defaultValue={values.achternaam}
+                placeholder='Kabien_kortrijk'
+                onChange={e => setGebruikersnaam(e.currentTarget.value)}
+                defaultValue={gebruikersnaam}
                 required
                 className={style.input}
               />
@@ -177,9 +160,23 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
               <TextInputGroup
                 placeholder='kabien@kortrijk.be'
                 onChange={e => setEmail(e.currentTarget.value)}
-                defaultValue={values.email}
+                defaultValue={email}
                 type="email"
                 required
+                className={style.input}
+              />
+            </div>
+          </div>
+          <div className={style.wrapper}>
+            <div className={style.input__wrapper}>
+              <label>Wachtwoord</label>
+              <TextInputGroup
+                label="Password"
+                type="password"
+                name="Password"
+                placeholder="Fill in your password."
+                value={password}
+                onChange={(e) => setPassWord(e.currentTarget.value)}
                 className={style.input}
               />
             </div>
@@ -196,6 +193,7 @@ const Gegevens = ({ nextStep, values, prevStep, prevprevStep }) => {
               />
             </div>
           </div>
+
         </div>
 
         <button onClick={handleSubmit} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
