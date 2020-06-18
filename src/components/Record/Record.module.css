@@ -11,11 +11,11 @@
 }
 
 .container__video {
-  height: 60.1rem;
+  height: 53.1rem;
   width: 110rem;
   margin-top: 5rem;
   margin: 0 auto;
-  padding: 10rem 10rem 0;
+  padding: 7rem 10rem 0;
 }
 
 .video__content {
@@ -25,7 +25,7 @@
 
 .content__palmboom {
   margin-left: -51rem;
-  margin-top: -9.5rem;
+  margin-top: -13.3rem;
   width: 50.7rem;
   height: 85.4rem;
 }
@@ -241,8 +241,23 @@
 
 }
 
+.content__sound__herbeluister {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 12rem;
+  composes: semibold from "../../styles/typo.module.css";
+  composes: fontSubtitle from "../../styles/typo.module.css";
+}
+
+.content__audio__blob {
+  margin-bottom: 3rem;
+  height: 5rem;
+}
+
 .content_sound {
-  margin-top: -65rem;
+  margin-top: -77.0rem;
   display: flex;
   justify-content: center;
   flex-direction: column;

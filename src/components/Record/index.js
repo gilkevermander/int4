@@ -64,7 +64,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
 
     const onData = (recordedBlob) => {
         setComplete(true);
-        
+
         console.log('chunk of real-time data is: ', recordedBlob);
     }
 
@@ -291,9 +291,18 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
 
                 <img className={style.content__palmboom2} alt="palmboom" src={palmboom}></img>
 
-
                 < div className={style.content_sound} >
 
+                    {complete === true ?
+                        <div className={style.content__sound__herbeluister}>
+                            <p>Herbeluister je opname</p>
+                            <audio className={style.content__audio__blob} src={audioBlob} controls loop />
+                        </div>
+
+                        :  <div className={style.content__sound__herbeluister}>
+                        <p></p>
+                        <audio className={style.content__audio__blob} src="" />
+                    </div>}
                     <ReactMic
                         record={record}
                         className={style.sound}
@@ -306,7 +315,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                         <button onClick={startRecording} type="button" className={style.start}></button>
                         <button onClick={stopRecording} type="button" className={style.stop}></button>
                     </div>
-                    <audio src={audioBlob} controls loop />
+
                     {/* <ReactMediaRecorder
                         audio
                         render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
