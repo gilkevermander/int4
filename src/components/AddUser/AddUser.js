@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useStore } from "../../hooks/useStore";
-import InfoHeader from "../InfoHeader/InfoHeader";
+import AppHeader from "../AppHeader/index";
 import style from "./AddUser.module.css";
+import { ROUTES } from "../../consts";
 
 const AddUser = () => {
   const [gebruikersnaam, setGebruikersnaam] = useState("");
@@ -20,8 +21,8 @@ const AddUser = () => {
 
   return (
     <>
-      <InfoHeader title={"Add contact"} />
-      <div className={style.container}>
+    <div className={style.container}>
+      <AppHeader title={"Add contact"} prevStep={ROUTES.chat}/>
         <form onSubmit={handleSubmit} className={style.form}>
           <label htmlFor="name" className={style.label}>
             Gebruikersnaam:
@@ -29,12 +30,13 @@ const AddUser = () => {
               className={style.input}
               type="text"
               value={gebruikersnaam}
+              placeholder="Gebruikersnaam invullen"
               onChange={(e) => setGebruikersnaam(e.target.value)}
             />
           </label>
-          <input type="submit" value="Toevoegen" className={style.button} />
+          <input type="submit" value="+" className={style.button} />
         </form>
-        <p>{message}</p>
+        <p className={style.message}>{message}</p>
       </div>
     </>
   );

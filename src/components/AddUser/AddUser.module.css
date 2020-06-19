@@ -1,1 +1,44 @@
+@value tokens: "../../styles/tokens.module.css";
+@value raleway from tokens;
 
+.container {
+    composes: container from "../../styles/layouts.module.css";
+}
+
+.input {
+    composes: inputApp from "../../styles/components.module.css";
+    width: 70vw;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    font-family: raleway;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;  
+}
+
+.form {
+    display: flex;
+    justify-content: center;  
+}
+
+.button {
+    background-color: #89D0CA;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: none;
+    align-self: center;
+    margin-left: 2rem;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 4.3rem;
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+}
