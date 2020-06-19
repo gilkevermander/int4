@@ -1,0 +1,7 @@
+.container {
+    composes: container from "../../styles/layouts.module.css";
+}
+
+.QR {
+    margin-top: 6rem;
+}

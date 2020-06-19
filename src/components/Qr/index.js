@@ -36,15 +36,18 @@ const Qr = () => {
           onChange={(e) => setText(e.currentTarget.value)}
         />
       </form> */}
+      <div className={style.container}>
       <InfoHeader title={"Scan de QR-code"} />
       <QrReader
+          className={style.QR}
           delay={300}
           onError={handleError}
           onScan={handleScan}
-          style={{ width: '40%' }}
+          style={{ width: '100%' }}
           mirrored={true}
         />
         <p>{scan}</p>
+        </div>
     </>
 
   );
