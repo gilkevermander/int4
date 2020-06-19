@@ -54,6 +54,7 @@ class UserStore {
     const messages = await this.usersService.getMessagesForUser(
       gebruikersnaam, this.onMessageAdded
     );
+    console.log(user);
     console.log(messages);
     return messages
   };

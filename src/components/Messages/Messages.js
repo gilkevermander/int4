@@ -82,7 +82,8 @@ const Messages = () => {
           )}
         </header>
         <ul className={style.list}>
-          {user.messages.map((message) => (
+          {console.log(user._messages)}
+          {user._messages.map((message) => (
             <Message message={message} key={message.id} />
           ))}
         </ul>
