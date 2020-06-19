@@ -32,7 +32,7 @@ const Form = () => {
   };
 
   return useObserver(() => (
-    <form onSubmit={handleFormSubmit}>
+    <form onSubmit={handleFormSubmit} className={style.form}>
       <section className={style.form}>
         <input
           className={style.input}

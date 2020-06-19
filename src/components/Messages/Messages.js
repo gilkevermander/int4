@@ -67,20 +67,16 @@ const Messages = () => {
     }
     return (
       <>
+        <div className={style.container}>
         <header className={style.header}>
+          
           {user && (
             <>
-              <img
-                className={style.img}
-                src={user.pic}
-                alt="Group img"
-                width="50"
-                height="50"
-              />
               <h3 className={style.title}>{user.gebruikersnaam}</h3>
             </>
           )}
         </header>
+        <div className={style.wrapper}>
         <ul className={style.list}>
           {console.log(user._messages)}
           {user._messages.map((message) => (
@@ -88,6 +84,8 @@ const Messages = () => {
           ))}
         </ul>
         <Form />
+        </div>
+        </div>
       </>
     );
   });
