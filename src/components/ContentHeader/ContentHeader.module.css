@@ -11,12 +11,10 @@
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  margin-top: -6.5rem;
 }
 
 .title {
   composes: title1 from "../../styles/typo.module.css";
-  padding: spacer1;
   text-transform: capitalize;
   color: notblack;
   text-transform: uppercase;

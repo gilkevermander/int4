@@ -84,9 +84,18 @@ const Vraag2 = ({ setAnswer2, nextStep, values }) => {
             </div>
           </label>
         </div>
-        <p>{error}</p>
+        <p className={style.error}>{error}</p>
 
-        <button onClick={saveAndContinue}> <p>Volgende</p></button>
+        <div className={style.progress}>
+
+          <span className={style.dot}></span>
+          <span className={style.dot__active}></span>
+          <span className={style.dot}></span>
+          <span className={style.dot}></span>
+
+        </div>
+
+        <button onClick={saveAndContinue} className={style.button}> <p className={style.button__next}>Volgende</p></button>
 
       </div>
     </section>
