@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from "./Authentication.module.css";
-import TextInputGroup from "../TextInputGroup";
+import TextInputGroupApp from "../TextInputGroupApp";
 import { useStore } from "../../hooks/useStore";
 import { useHistory } from "react-router-dom";
 import { ROUTES } from "../../consts";
@@ -25,23 +25,33 @@ const LoginForm = () => {
   return (
     <div className={style.container}>
       <form onSubmit={handleSubmit} className={style.form}>
-        <TextInputGroup
-          label="Email"
-          name="email"
-          type="email"
-          placeholder="Fill in your email."
-          value={email}
-          onChange={(e) => setEmail(e.currentTarget.value)}
-        />
-        <TextInputGroup
-          label="Password"
-          type="password"
-          name="Password"
-          placeholder="Fill in your password."
-          value={password}
-          onChange={(e) => setPassword(e.currentTarget.value)}
-        />
-        <input type="submit" value="Login" className={style.button} />
+        <div className={style.form__wrapper}>
+          <h2 className={style.form__titel}>E-mail</h2>
+          <TextInputGroupApp
+            className={style.form__input}
+            label="Email"
+            name="email"
+            type="email"
+            placeholder="Fill in your email."
+            value={email}
+            onChange={(e) => setEmail(e.currentTarget.value)}
+          />
+        </div>
+        <div className={style.form__wrapper}>
+          <h2 className={style.form__titel}>Wachtwoord (min 6 karakters)</h2>
+          <TextInputGroupApp
+            label="Password"
+            type="password"
+            name="Password"
+            placeholder="Fill in your password."
+            value={password}
+            onChange={(e) => setPassword(e.currentTarget.value)}
+          />
+        </div>
+        <div>
+          <input type="submit" value="Aanmelden" className={style.button} />
+          <p>Wachtwoord vergeten?</p>
+        </div>
       </form>
     </div>
   );

@@ -1,10 +1,21 @@
 @value tokens: "../../styles/tokens.module.css";
-@value colorPrimary,darkPrimary,solight, spacer1, spacer2 from tokens;
+@value colorPrimary, fontSubtitel, darkPrimary, solight, spacer1, spacer2 from tokens;
 
 .container {
-  /* composes: content from "../../styles/layouts.module.css"; */
-  grid-template-columns: 1fr;
+  composes: container from "../../styles/layouts.module.css";
 }
+
+.form__wrapper {
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto;
+  width: 95%;
+}
+
+.form__input {
+  width: 3rem;
+}
+
 a.textlink,
 a.textlink:link,
 a.textlink:visited,
@@ -17,16 +28,29 @@ a.textlink:hover {
   color: darkPrimary;
 }
 .wrapper {
+  composes: container from "../../styles/layouts.module.css";
   display: flex;
-  flex-direction: column;
-  background-color: solight;
+  flex-flow: column;
 }
 .form {
   /* composes: column from "../../styles/layouts.module.css"; */
   display: grid;
   grid-auto-rows: max-content;
+  margin: 3rem auto 0;
+
 }
-.button {
-  composes: button from "../../styles/components.module.css";
-  margin: spacer1 0;
+.button{
+  composes: buttonApp from "../../styles/components.module.css";
+  margin: spacer1 auto;
 }
+
+.title {
+  background-color: oranje;
+  text-transform: uppercase;   
+}
+
+.form__titel {
+  margin-bottom: 1rem;
+  font-size: fontSubtitel;
+}
+

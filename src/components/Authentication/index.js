@@ -18,13 +18,13 @@ const Authentication = () => {
   return useObserver(() => (
     <>
       <Switch>
-      <Route exact path={ROUTES.souvenirWall}>
+        <Route exact path={ROUTES.souvenirWall}>
           <SouvenirWall />
         </Route>
         <Route exact path={ROUTES.quiz}>
           <Quiz />
         </Route>
-      <Route exact path={ROUTES.manier}>
+        <Route exact path={ROUTES.manier}>
           <Manier />
         </Route>
         <Route exact path={ROUTES.start}>
@@ -35,10 +35,10 @@ const Authentication = () => {
             <Redirect to={ROUTES.home} />
           ) : (
               <div className={style.wrapper}>
-                <ContentHeader title={"Login"} />
+                <ContentHeader title={"Login"} className={style.title} />
                 <LoginForm />
                 <NavLink to={ROUTES.register} className={style.textlink}>
-                  <span>Do you want to register?</span>
+                  <span>Nog geen account? Registreer</span>
                 </NavLink>
               </div>
             )}
