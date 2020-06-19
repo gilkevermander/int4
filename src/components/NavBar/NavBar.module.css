@@ -5,7 +5,7 @@
 .list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 3fr 3fr;
+  grid-template-rows: 1.5fr 3fr;
   align-items: center;
   width: 100vw;
   justify-content: center;
