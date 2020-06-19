@@ -3,7 +3,6 @@
 
 .header {
   background-color: white;
-  text-transform: uppercase;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 2fr 1fr;
@@ -11,7 +10,6 @@
   font-family: raleway;
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
   top: 0;
   left: 0;
   right: 0;
@@ -24,11 +22,22 @@
   color: notblack;
   text-transform: uppercase;
   text-align: center;
+  overflow: visible;
+  font-size: 2rem;
+}
+
+
+.subtitle {
+  composes: title1 from "../../styles/typo.module.css";
+  text-transform: none;
+  color: notblack;
+  text-align: center;
+  overflow: visible;
+  font-size: 1.8rem;
 }
 
 .back{
   border: none;
   background-color:transparent;
-
   font-size: 2.5rem;
 }

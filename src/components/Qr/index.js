@@ -4,7 +4,8 @@ import TextInputGroup from "../TextInputGroup";
 import style from "./Qr.module.css";
 import QrReader from 'react-qr-reader'
 import { useHistory } from "react-router-dom";
-import InfoHeader from "../InfoHeader/InfoHeader";
+import AppHeader from "../AppHeader";
+import { ROUTES } from "../../consts";
 
 const Qr = () => {
 
@@ -37,7 +38,7 @@ const Qr = () => {
         />
       </form> */}
       <div className={style.container}>
-      <InfoHeader title={"Scan de QR-code"} />
+      <AppHeader title={"Scan de QR-code"} prevStep={ROUTES.home} />
       <QrReader
           className={style.QR}
           delay={300}
