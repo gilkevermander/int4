@@ -1,10 +1,6 @@
 @value tokens: "../../styles/tokens.module.css";
 @value colorPrimary, fontSubtitel, spacer1, spacer2 from tokens;
 
-.container {
-  composes: container from "../../styles/layouts.module.css";
-}
-
 .form__wrapper {
   display: flex;
   flex-flow: column;
@@ -24,10 +20,9 @@ a.textlink:hover {
   color: darkPrimary;
 }
 .wrapper {
-  composes: container from "../../styles/layouts.module.css";
-  display: flex;
-  flex-flow: column;
+    composes: container from "../../styles/layouts.module.css";
 }
+
 .form {
   /* composes: column from "../../styles/layouts.module.css"; */
   display: grid;
