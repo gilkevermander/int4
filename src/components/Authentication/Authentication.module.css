@@ -1,10 +1,13 @@
 @value tokens: "../../styles/tokens.module.css";
-@value colorPrimary,darkPrimary,solight, spacer1, spacer2 from tokens;
+@value colorPrimary, fontSubtitel, spacer1, spacer2 from tokens;
 
-.container {
-  /* composes: content from "../../styles/layouts.module.css"; */
-  grid-template-columns: 1fr;
+.form__wrapper {
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto;
+  width: 95%;
 }
+
 a.textlink,
 a.textlink:link,
 a.textlink:visited,
@@ -17,16 +20,54 @@ a.textlink:hover {
   color: darkPrimary;
 }
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  background-color: solight;
+    composes: container from "../../styles/layouts.module.css";
 }
+
 .form {
   /* composes: column from "../../styles/layouts.module.css"; */
   display: grid;
   grid-auto-rows: max-content;
+  margin: 3rem auto 0;
+
 }
-.button {
-  composes: button from "../../styles/components.module.css";
-  margin: spacer1 0;
+.button{
+  composes: buttonApp from "../../styles/components.module.css";
+  margin: 0 auto 2rem;
 }
+
+.title {
+  background-color: oranje;
+  text-transform: uppercase;   
+}
+
+.form__titel {
+  margin-bottom: 1rem;
+  font-size: fontSubtitel;
+}
+
+.form__button {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.form__vergeten {
+  font-size: fontSubtitel;
+  border-bottom: 0.1rem solid black;
+  padding-bottom: 0.5rem;
+}
+
+.form__info {
+  font-size: 1.6rem;
+
+  text-align: center;
+  padding: 3rem;
+  line-height: 2rem;
+  color: black;
+}
+
+.form__info__bold {
+  font-size: 1.8rem;
+  composes: bold from "../../styles/typo.module.css";
+}
+

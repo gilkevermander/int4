@@ -2,14 +2,20 @@
 @value background, spacer1, notblack from tokens;
 
 .header {
-  background-color: background;
+  background-color: white;
+  text-transform: uppercase;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 .title {
   composes: title1 from "../../styles/typo.module.css";
-  padding: spacer1;
   text-transform: capitalize;
   color: notblack;
+  text-transform: uppercase;
 }

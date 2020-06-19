@@ -15,5 +15,9 @@
 }
 
 .svg {
-	width: 50%;
+	background-color: #EFEFEE;
+}
+
+.container {
+	composes: container from "../../styles/layouts.module.css";
 }

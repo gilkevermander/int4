@@ -18,13 +18,13 @@ const Authentication = () => {
   return useObserver(() => (
     <>
       <Switch>
-      <Route exact path={ROUTES.souvenirWall}>
+        <Route exact path={ROUTES.souvenirWall}>
           <SouvenirWall />
         </Route>
         <Route exact path={ROUTES.quiz}>
           <Quiz />
         </Route>
-      <Route exact path={ROUTES.manier}>
+        <Route exact path={ROUTES.manier}>
           <Manier />
         </Route>
         <Route exact path={ROUTES.start}>
@@ -35,10 +35,10 @@ const Authentication = () => {
             <Redirect to={ROUTES.home} />
           ) : (
               <div className={style.wrapper}>
-                <ContentHeader title={"Login"} />
+                <ContentHeader title={"Login"} className={style.title} />
                 <LoginForm />
                 <NavLink to={ROUTES.register} className={style.textlink}>
-                  <span>Do you want to register?</span>
+                  <span className={[style.form__info__bold, style.form__info].join(" ")}>Nog geen account? Registreer</span>
                 </NavLink>
               </div>
             )}
@@ -48,8 +48,11 @@ const Authentication = () => {
             <Redirect to={ROUTES.home} />
           ) : (
               <div className={style.wrapper}>
-                <ContentHeader title={"Aanmelden"} />
+                <ContentHeader title={"Registreren"} />
                 <RegisterForm />
+                <NavLink to={ROUTES.register} className={style.textlink}>
+                  <span className={[style.form__info__bold, style.form__info].join(" ")}>Nog geen account? Registreer</span>
+                </NavLink>
               </div>
             )}
         </Route>

@@ -9877,6 +9877,14 @@ react-svg-inline@^2.1.0:
     classnames "^2.2.1"
     prop-types "^15.5.8"
 
+react-svg-pan-zoom@^3.8.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/react-svg-pan-zoom/-/react-svg-pan-zoom-3.8.0.tgz#5724c71d257a07233c9cc511a5c6498d80bb397a"
+  integrity sha512-s92QDFJuRrp784aQZKX8qxukMY/85IpOXO5Bjbn1G/CoNapdHCRVAHynPP6Ea9cyMmycSmu6paPqUIAW3i5s9Q==
+  dependencies:
+    prop-types "^15.7.2"
+    transformation-matrix "^2.2.0"
+
 react-video-recorder@^3.17.1:
   version "3.17.1"
   resolved "https://registry.yarnpkg.com/react-video-recorder/-/react-video-recorder-3.17.1.tgz#0cd918c726c275ae1e4c8e088aff784d42471f85"
@@ -11411,6 +11419,11 @@ tr46@^1.0.1:
   integrity sha1-qLE/1r/SSJUZZ0zN5VujaTtwbQk=
   dependencies:
     punycode "^2.1.0"
+
+transformation-matrix@^2.2.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/transformation-matrix/-/transformation-matrix-2.3.0.tgz#568a0be8698c204efbfc799516b8714a6e4708de"
+  integrity sha512-iXgfTkswsqHyG3SzL04mfniI4z6/XUDBiWmMv/+YSDFIjoF4Ugy3AwkoL8ed+cCak1uLfb70wQbIkATNS6fgPA==
 
 ts-pnp@1.1.5, ts-pnp@^1.1.2:
   version "1.1.5"
