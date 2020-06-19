@@ -7,6 +7,7 @@ import Start from "../Start/index";
 import Quiz from "../Quiz/index";
 import Manier from "../Manier/index";
 import SouvenirWall from "../SouvenirWall/index";
+import SideBar from "../SideBar/index";
 import style from "./Authentication.module.css";
 import RegisterForm from "./RegisterForm";
 import { useStore } from "../../hooks/useStore";
@@ -70,6 +71,7 @@ const Authentication = () => {
           {uiStore.currentUser ? (
             <>
               <Content />
+              <SideBar />
             </>
           ) : (
               <Redirect to={ROUTES.login} />

@@ -1,6 +1,7 @@
 const ROUTES = {
   home: "/",
   detailLand: { path: "/detailLand/:id", to: "/detailLand/" },
+  kaart: { path: "/kaart/:id", to: "/kaart/" },
   messages: { path: "/messages/:id", to: "/messages/" },
   camera: "/camera",
   qr: "/qr",

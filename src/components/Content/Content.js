@@ -32,6 +32,9 @@ const Content = () => {
         <Route path={ROUTES.kaart}>
           <Kaart />
         </Route>
+        <Route path={ROUTES.kaart.path}>
+          <Kaart />
+        </Route>
         <Route path={ROUTES.detailSouvenir.path}>
           <DetailSouvenir />
         </Route>

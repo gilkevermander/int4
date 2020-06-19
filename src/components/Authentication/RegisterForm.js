@@ -9,7 +9,7 @@ import { ROUTES } from "../../consts";
 const RegisterForm = () => {
   const [email, setEmail] = useState("");
   const [voornaam, setVoornaam] = useState("");
-  // const [achternaam, setAchternaam] = useState("");
+  const [achternaam, setAchternaam] = useState("default");
   const [gebruikersnaam, setGebruikersnaam] = useState("");
   const [password, setPassWord] = useState("");
   const [passwordAgain, setPassWordAgain] = useState("");
@@ -26,7 +26,8 @@ const RegisterForm = () => {
     if (password === passwordAgain) {
       try {
         console.log('works yes')
-        await uiStore.register({ voornaam, email, password, gebruikersnaam });
+        console.log(voornaam, email, password, gebruikersnaam, achternaam);
+        await uiStore.register({ voornaam, email, password, gebruikersnaam, achternaam });
         history.push(ROUTES.home);
       } catch (error) {
         console.log(error);
