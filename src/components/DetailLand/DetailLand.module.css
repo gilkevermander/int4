@@ -4,7 +4,7 @@
 
 .container {
   composes: container from "../../styles/layouts.module.css";
-  height: 40vh;
+  height: 45vh;
   bottom: 0;
   position: absolute;
   margin-left: -37.5rem;
@@ -36,6 +36,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  
 }
 
 .list__text::before {
@@ -47,6 +48,7 @@
 
 .souvenirs__list {
   z-index: 103;
-  overflow: scroll;
-  height: 10rem;
+  overflow: auto;
+  height: 12rem;
+  /* box-shadow: inset 0px -4px 4px rgba(0, 0, 0, 0.12); */
 }
