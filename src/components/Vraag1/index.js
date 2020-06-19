@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import InfoHeader from "../InfoHeader/InfoHeader";
+import ContentHeader from "../ContentHeader/ContentHeader";
 import QuizStore from "../../stores/QuizStore";
 import style from "./Vraag1.module.css";
 import sushi from "../../assets/img/sushi.png";
@@ -26,7 +26,7 @@ const Vraag1 = ({ setAnswer1, nextStep, values }) => {
   return (
     <section>
       <div className={style.container}>
-        <InfoHeader title={"Ontdek jouw favoriete land"} />
+        <ContentHeader title={"Ontdek jouw favoriete land"} />
         <h2 className={style.question}>#1 Wat eet je het liefst op reis?</h2>
 
         <div className={style.grid}>
@@ -67,10 +67,10 @@ const Vraag1 = ({ setAnswer1, nextStep, values }) => {
               name="v1"
               value={quizStore.vragen.v1_3}
               onChange={e => setAnswer1(e.currentTarget.value)}/>
-              <span className={style.answer__text}>
+              <div className={style.answer__text}>
                 <img src={mosselen} alt="mosselen" width="106" height="98" />
                 <p className={style.text}>Mosselen met friet</p>
-              </span>
+              </div>
   
           </label>
 
@@ -84,7 +84,8 @@ const Vraag1 = ({ setAnswer1, nextStep, values }) => {
               onChange={e => setAnswer1(e.currentTarget.value)} />
             <div className={style.answer__text}>
               <img src={spaghetti} alt="spaghetti" width="86" height="81" />
-              <p className={style.text}>Pasta</p></div>
+              <p className={style.text}>Pasta</p>
+            </div>
           </label>
 
         </div>

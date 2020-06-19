@@ -1,0 +1,133 @@
+@value tokens: "../../styles/tokens.module.css";
+@value raleway roze from tokens;
+
+.container {
+    composes: container from "../../styles/layouts.module.css";
+}
+
+.question {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    margin-top: 2rem;;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 15.3rem 15.3rem;
+    height: 31.7rem;
+    width: 31.7rem;
+    grid-gap: 1.1rem;
+    margin: 4rem auto
+}
+
+.text {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 0 .5rem;
+}
+
+.answer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 10rem;
+    cursor: pointer;
+}
+
+.answer__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 15.3rem;
+    width: 15.3rem;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.25);
+    composes: medium from "../../styles/typo.module.css";
+}
+
+.answer .answer__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.answer:hover input ~ .answer__text {
+    border: 5px solid #89D0CA;
+}
+
+.answer input:checked ~ .answer__text {
+    border: 5px solid #89D0CA;
+  }  
+
+  .dot {
+    height: 1.5rem;
+    width: 1.5rem;
+    background: rgba(255, 255, 255, 0.51);
+    border-radius: 50%;
+    display: inline-block;
+    margin: 1rem .5rem
+  }
+
+  .dot__active {
+    height: 1.5rem;
+    width: 1.5rem;
+    background: white;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 1rem .5rem
+  }
+
+  .progress {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+  }
+
+  .button {
+    width: 33.5rem;
+    height: 5.4rem;
+    border-radius: 8rem;
+    border: none;
+    background-color: #89D0CA;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    margin: 2rem auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button__next {
+    font-family: raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    text-align: center;
+  }
+
+  .button__next:checked {
+    border: 1rem solid white;
+    border-radius: 8rem;
+  }
+
+  .button__next::after {
+    content: '\003E';
+    position: absolute;
+    left: 32.7rem;
+  }
+
+  .error {
+    color: red;
+    display: flex;
+    justify-content: center;
+    margin-top: -3rem;
+  }

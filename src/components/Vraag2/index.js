@@ -1,75 +1,96 @@
-import React, {useState} from "react";
-
-import InfoHeader from "../InfoHeader/InfoHeader";
+import React, { useState } from "react";
+import style from "./Vraag2.module.css";
+import ContentHeader from "../ContentHeader/ContentHeader";
 import QuizStore from "../../stores/QuizStore";
+import cultuur from "../../assets/img/cultuur.png";
+import spel from "../../assets/img/spel.png";
+import concert from "../../assets/img/concert.png";
+import parasol from "../../assets/img/parasol.png";
 const quizStore = new QuizStore();
 
-const Vraag2 = ({setAnswer2, nextStep, values}) => {
+const Vraag2 = ({ setAnswer2, nextStep, values }) => {
 
   const [error, setError] = useState("");
 
-    const saveAndContinue = (e) => {
-        e.preventDefault()
-        if (values.answer2 === "") {
-          setError("Duid een optie aan")
-        } else {
-          nextStep()
-        }
-    
-      }
-  
+  const saveAndContinue = (e) => {
+    e.preventDefault()
+    if (values.answer2 === "") {
+      setError("Duid een optie aan")
+    } else {
+      nextStep()
+    }
+
+  }
+
   return (
     <section >
-      <InfoHeader title={"quiz"} />
-      <h2>#1 Wat eet je het liefst op reis?</h2>
+      <div className={style.container}>
+        <ContentHeader title={"Ontdek jouw favoriete land"} />
 
-      <h2>#2 Welke activiteit doe je het liefst?</h2>
+        <h2 className={style.question}>#2 Welke activiteit doe je het liefst?</h2>
 
-      <label htmlFor="antwoord2-1">
-        <input 
-          className="input__hidden" 
-          type="radio" 
-          id="antwoord2-1" 
-          value={quizStore.vragen.v2_1}
-          onChange={e => setAnswer2( e.currentTarget.value)} />
-        <p>Concert</p>
-      </label>
+        <div className={style.grid}>
 
-      <label htmlFor="antwoord2-2">
-        <input 
-          className="input__hidden" 
-          type="radio" 
-          id="antwoord2-2" 
-          value={quizStore.vragen.v2_2}
-          onChange={e => setAnswer2( e.currentTarget.value)} />
-        <p>Aan het strand/zwembad liggen</p>
-      </label>
+          <label htmlFor="antwoord2-1" className={style.answer}>
+            <input
+              className={style.answer__input}
+              type="radio"
+              id="antwoord2-1"
+              value={quizStore.vragen.v2_1}
+              onChange={e => setAnswer2(e.currentTarget.value)} />
+            <div className={style.answer__text}>
+              <img src={concert} alt="concert" width="75" height="92" />
+              <p className={style.text}>Concert</p>
+            </div>
+          </label>
 
-      <label htmlFor="antwoord2-3">
-        <input 
-          className="input__hidden" 
-          type="radio" 
-          id="antwoord2-3" 
-          value={quizStore.vragen.v2_3}
-          onChange={e => setAnswer2( e.currentTarget.value)} />
-        <p>Cultuur opsnuiven</p>
-      </label>
+          <label htmlFor="antwoord2-2" className={style.answer}>
+            <input
+              className={style.answer__input}
+              type="radio"
+              id="antwoord2-2"
+              value={quizStore.vragen.v2_2}
+              onChange={e => setAnswer2(e.currentTarget.value)} />
 
-      <label htmlFor="antwoord2-4">
-        <input 
-          className="input__hidden" 
-          type="radio" 
-          id="antwoord2-4" 
-          value={quizStore.vragen.v2_4}
-          onChange={e => setAnswer2( e.currentTarget.value)}/>
-        <p>Gezelschapsspelletjes spelen</p>
-      </label>
-      <p>{error}</p>
-      
-      <button onClick={saveAndContinue}> <p>Volgende</p></button>
-   
-      
+            <div className={style.answer__text}>
+              <img src={parasol} alt="parasol" width="94" height="96" />
+              <p className={style.text}>Aan het strand/zwembad liggen</p>
+            </div>
+          </label>
+
+          <label htmlFor="antwoord2-3" className={style.answer}>
+            <input
+              className={style.answer__input}
+              type="radio"
+              id="antwoord2-3"
+              value={quizStore.vragen.v2_3}
+              onChange={e => setAnswer2(e.currentTarget.value)} />
+             <div className={style.answer__text}>
+              <img src={cultuur} alt="cultuur" width="77" height="100" />
+              <p className={style.text}>Cultuur opsnuiven</p>
+            </div>
+          </label>
+
+          <label htmlFor="antwoord2-4" className={style.answer}>
+            <input
+              className={style.answer__input}
+              type="radio"
+              id="antwoord2-4"
+              value={quizStore.vragen.v2_4}
+              onChange={e => setAnswer2(e.currentTarget.value)} />
+             <div className={style.answer__text}>
+              <img src={spel} alt="spel" width="67" height="84" />
+              <p className={style.text}>Gezelschapsspelletjes spelen</p>
+            </div>
+          </label>
+        </div>
+        <p>{error}</p>
+
+        <button onClick={saveAndContinue}> <p>Volgende</p></button>
+
+      </div>
     </section>
+
   );
 };
 
