@@ -10,7 +10,6 @@ const RegisterForm = () => {
   const [email, setEmail] = useState("");
   const [voornaam, setVoornaam] = useState("");
   const [achternaam, setAchternaam] = useState("");
-  const [gebruikersnaam, setGebruikersnaam] = useState("");
   const [password, setPassWord] = useState("");
   const [passwordAgain, setPassWordAgain] = useState("");
   const [error, setError] = useState("");
@@ -23,7 +22,7 @@ const RegisterForm = () => {
     if (password === passwordAgain) {
       try {
         console.log('works yes')
-        await uiStore.register({ voornaam, achternaam, gebruikersnaam, email, password });
+        await uiStore.register({ voornaam, achternaam, email, password });
         history.push(ROUTES.home);
       } catch (error) {
         console.log(error);
@@ -52,14 +51,6 @@ const RegisterForm = () => {
           placeholder="Vul je achternaam in."
           value={achternaam}
           onChange={(e) => setAchternaam(e.currentTarget.value)}
-        />
-        <TextInputGroup
-          label="Gebruikersnaam"
-          name="gebruikersnaam"
-          type="gebruikersnaam"
-          placeholder="Vul je gebruikersnaam in."
-          value={gebruikersnaam}
-          onChange={(e) => setGebruikersnaam(e.currentTarget.value)}
         />
         <TextInputGroup
           label="Email"
