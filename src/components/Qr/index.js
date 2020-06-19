@@ -26,6 +26,7 @@ const Qr = () => {
 
   return (
     <>
+    {/* commentaar */}
       {/* <QRCode value={text} />
       <form className={style.form}>
         <TextInputGroup
@@ -37,6 +38,7 @@ const Qr = () => {
           onChange={(e) => setText(e.currentTarget.value)}
         />
       </form> */}
+      {/* commentaar */}
       <div className={style.container}>
         <AppHeader title={"Scan de QR-code"} prevStep={ROUTES.home} />
 

@@ -1,0 +1,29 @@
+.container {
+  composes: container from "../../styles/layouts.module.css";
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 6rem;
+  align-items: center;
+}
+
+.verhaal {
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  margin-top: 3rem;
+}
+
+.reiziger {
+  font-weight: 800;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  margin-bottom: 7rem;
+}
+
+.image {
+  margin-bottom: 2rem;
+}

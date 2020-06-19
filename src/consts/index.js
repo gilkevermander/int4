@@ -18,6 +18,7 @@ const ROUTES = {
   start: "/start",
   kaart: "/kaart",
   souvenirWall: "/souvenirWall",
+  souvenirWallDetail: { path: "/souvenirWall/:landId/:id", to: "/souvenirWall/" },
   quiz: "/quiz",
   detaillandS: { path: "/detailLandS/:landId/:id", to: "/detailLandS/" },
 };

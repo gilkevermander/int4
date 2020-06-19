@@ -3,11 +3,15 @@ import { useParams } from "react-router-dom";
 import { useStore } from "../../hooks/useStore";
 import { useObserver } from "mobx-react-lite";
 import ReactPlayer from 'react-player'
+import { Link } from "react-router-dom";
+import { ROUTES } from "../../consts/index";
+import style from "./SouvenirWallDetail.module.css";
+import kaart from "../../assets/img/kaart.png";
 import ContentHeader from "../ContentHeader/ContentHeader";
 
 import Empty from "../Empty/Empty";
 
-const DetailSouvenir = () => {
+const SouvenirWallDetail = () => {
   const { id } = useParams();
   const { landId } = useParams();
   console.log(id);
@@ -34,13 +38,20 @@ const DetailSouvenir = () => {
         console.log('hihi')
         //const souvenir = await souvenirStore.loadSouvenir(id); //resolveLand
         const souvenir = await landStore.loadSouvenirFromUrl(id, landId);
+        console.log('hoi');
+        console.log(id);
         if (!souvenir || souvenir === undefined) {
           setState(STATE_DOES_NOT_EXIST);
           console.log('geen souvenir gevonden');
           return;
         }
         setSouvenir(souvenir);
+        console.log(souvenir);
+        console.log('yes')
         const user = userStore.resolveUser(souvenir.souvenirs[0].userId)
+        console.log(user);//undefined
+        console.log(souvenir.souvenirs[0].userId);//null
+        console.log(souvenir.delen)
         setUser(user);
         // setState(STATE_LOADING_MORE_DETAILS);
         // //await souvenirStore.loadLandVerhalen(id); //hier blijft hij op wachten maar er komt niets
@@ -71,15 +82,18 @@ const DetailSouvenir = () => {
     return (
       <>
         <ContentHeader title={"Luister naar de herinnering"} />
-        <audio src={souvenir.souvenirs[0].video} controls loop />
-        <p>Reisverhaal naar {souvenir.title}</p>
-        {/* <p>land:{souvenir.land.title}</p> */}
-        {/* <p>{user.gebruikersnaam}</p> */}
-        <p>gebruikersnaam</p>
-
+        <div className={style.detail}>
+          <img alt="kaart" src={kaart} width="272" className={style.image} />
+          <p className={style.verhaal}>Reisverhaal naar {souvenir.title}</p>
+          <p className={style.reiziger}>Onbekende reiziger</p>
+          <audio src={souvenir.souvenirs[0].video} controls loop />
+          <Link className={style.button} to={ROUTES.quiz}>
+            <span className={style.button__text}>Ontdek jouw favoriete land</span>
+          </Link>
+        </div>
       </>
     );
   });
 };
 
-export default DetailSouvenir;
+export default SouvenirWallDetail;
