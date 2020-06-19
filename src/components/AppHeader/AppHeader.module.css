@@ -1,8 +1,9 @@
 @value tokens: "../../styles/tokens.module.css";
-@value background,fontSubtitel, spacer1, notblack from tokens;
+@value background, spacer1, notblack from tokens;
 
 .header {
   background-color: white;
+  text-transform: uppercase;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   padding: 2rem;
@@ -16,11 +17,6 @@
   width: 100vw;
 }
 
-.button__text {
-    font-size: 1.8rem;
-    text-transform: none;
-}
-
 .title {
   composes: title1 from "../../styles/typo.module.css";
   text-transform: capitalize;
@@ -28,5 +24,3 @@
   text-transform: uppercase;
   text-align: center;
 }
-
-

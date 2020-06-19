@@ -23,7 +23,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className={style.container}>
+    <>
       <form onSubmit={handleSubmit} className={style.form}>
 
         <div className={style.form__wrapper}>
@@ -56,7 +56,7 @@ const LoginForm = () => {
         </div>
 
       </form>
-    </div>
+    </>
   );
 };
 

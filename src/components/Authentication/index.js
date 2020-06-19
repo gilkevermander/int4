@@ -12,6 +12,8 @@ import RegisterForm from "./RegisterForm";
 import { useStore } from "../../hooks/useStore";
 import { useObserver } from "mobx-react-lite";
 import ContentHeader from "../ContentHeader/ContentHeader";
+import AppHeader from "../AppHeader"
+
 
 const Authentication = () => {
   const { uiStore } = useStore();
@@ -48,7 +50,7 @@ const Authentication = () => {
             <Redirect to={ROUTES.home} />
           ) : (
               <div className={style.wrapper}>
-                <ContentHeader title={"Registreren"} />
+                <AppHeader title={"Registreren"} />
                 <RegisterForm />
                 <NavLink to={ROUTES.login} className={style.textlink}>
                   {/* <span className={[style.form__info__bold, style.form__info].join(" ")}>Al een account? Login</span> */}

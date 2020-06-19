@@ -36,7 +36,7 @@ const RegisterForm = () => {
   return (
     <div className={style.container}>
       {error === "The email address is already in use by another account." ? <p></p> : <p></p>}
-      <form onSubmit={handleSubmit} className={style.form}>
+      <form onSubmit={handleSubmit} className={[style.form__register, style.form ].join(" ")}>
         <div className={style.form__wrapper}>
           <h2 className={style.form__titel}>Naam</h2>
           <TextInputGroupApp
@@ -109,7 +109,7 @@ const RegisterForm = () => {
             onChange={(e) => setPassWordAgain(e.currentTarget.value)}
           />
         </div>
-        <input type="submit" value="Registeer" className={style.button} />
+        <input type="submit" value="Registeer" className={[style.button,style.button__register].join (" ")} />
       </form>
     </div>
   );
