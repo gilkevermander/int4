@@ -36,6 +36,7 @@ const Vraag2 = ({ setAnswer2, nextStep, values }) => {
               className={style.answer__input}
               type="radio"
               id="antwoord2-1"
+              name="v2"
               value={quizStore.vragen.v2_1}
               onChange={e => setAnswer2(e.currentTarget.value)} />
             <div className={style.answer__text}>
@@ -49,12 +50,13 @@ const Vraag2 = ({ setAnswer2, nextStep, values }) => {
               className={style.answer__input}
               type="radio"
               id="antwoord2-2"
+              name="v2"
               value={quizStore.vragen.v2_2}
               onChange={e => setAnswer2(e.currentTarget.value)} />
 
             <div className={style.answer__text}>
               <img src={parasol} alt="parasol" width="94" height="96" />
-              <p className={style.text}>Aan het strand/zwembad liggen</p>
+              <p className={style.text}>Aan het strand/ zwembad liggen</p>
             </div>
           </label>
 
@@ -63,6 +65,7 @@ const Vraag2 = ({ setAnswer2, nextStep, values }) => {
               className={style.answer__input}
               type="radio"
               id="antwoord2-3"
+              name="v2"
               value={quizStore.vragen.v2_3}
               onChange={e => setAnswer2(e.currentTarget.value)} />
              <div className={style.answer__text}>
@@ -76,11 +79,12 @@ const Vraag2 = ({ setAnswer2, nextStep, values }) => {
               className={style.answer__input}
               type="radio"
               id="antwoord2-4"
+              name="v2"
               value={quizStore.vragen.v2_4}
               onChange={e => setAnswer2(e.currentTarget.value)} />
              <div className={style.answer__text}>
               <img src={spel} alt="spel" width="67" height="84" />
-              <p className={style.text}>Gezelschapsspelletjes spelen</p>
+              <p className={style.text}>Gezelschaps- spelletjes spelen</p>
             </div>
           </label>
         </div>
