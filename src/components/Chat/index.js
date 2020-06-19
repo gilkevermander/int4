@@ -9,10 +9,12 @@ const Chat = () => {
   return (
     <section className={style.container}>
       <ContentHeader title={"Gesprekken"} />
-      <UsersList/>
-      <Link className={style.button} to={ROUTES.addContact}>
-        <span className={style.button__text}>+</span>
-      </Link>
+      <div className={style.container__content}>
+        <UsersList />
+        <Link className={style.button} to={ROUTES.addContact}>
+          <span className={style.button__text}>+</span>
+        </Link>
+      </div>
     </section>
   );
 };

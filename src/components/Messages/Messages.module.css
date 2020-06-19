@@ -2,9 +2,10 @@
   display: flex;
   flex-flow: column;
   padding: spacer1 2em 0 spacer1;
-  overflow-y: scroll;
+  overflow: auto;
   background-color: solight;
   margin-top: 2rem;
+  height: 37rem;
 }
 
 .header {

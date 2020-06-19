@@ -7,16 +7,25 @@
 
 .list {
   border-bottom: 0.2rem solid white;
+  width: 90%;
+  max-width: 60rem;
+  margin: 0 auto;
+  overflow: visible;
+  font-weight: 600;
 }
 
 .list__link {
   display: flex;
   display: grid;
   color: black;
-  grid-template-columns: 1fr 2fr 0.5fr;
-  width: 100vw;
+  grid-template-columns: 0.7fr 2fr 0.5fr;
+  max-width: 60rem;
   font-size: 1.8rem;
   align-items: center;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
+}
+
+.list__icon {
+  text-align: end;
 }
 
