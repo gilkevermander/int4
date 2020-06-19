@@ -38,16 +38,19 @@ const Qr = () => {
         />
       </form> */}
       <div className={style.container}>
-      <AppHeader title={"Scan de QR-code"} prevStep={ROUTES.home} />
-      <QrReader
-          className={style.scannen}
-          delay={300}
-          onError={handleError}
-          onScan={handleScan}
-          mirrored={true}
-        />
-        <p>{scan}</p>
+        <AppHeader title={"Scan de QR-code"} prevStep={ROUTES.home} />
+
+        <div className={style.container__scan}>
+          <QrReader
+            className={style.scannen}
+            delay={300}
+            onError={handleError}
+            onScan={handleScan}
+            mirrored={true}
+          />
+          <p>{scan}</p>
         </div>
+      </div>
     </>
 
   );

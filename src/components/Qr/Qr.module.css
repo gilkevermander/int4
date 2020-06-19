@@ -1,3 +1,10 @@
 .container {
     composes: container from "../../styles/layouts.module.css";
 }
+
+.container__scan {
+    max-width: 55.7rem;
+    margin: 10% auto;
+    display: flex;
+    flex-flow: column;
+}

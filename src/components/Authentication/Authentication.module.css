@@ -24,6 +24,10 @@ a.textlink:hover {
     composes: container from "../../styles/layouts.module.css";
 }
 
+.form__login {
+  margin-top: 8rem;
+}
+
 .form {
   /* composes: column from "../../styles/layouts.module.css"; */
   display: grid;
@@ -96,4 +100,5 @@ a.textlink:hover {
   margin-left: 2rem;
   margin-top: 0.5rem;
 }
+
 

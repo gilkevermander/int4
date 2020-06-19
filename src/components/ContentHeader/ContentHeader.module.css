@@ -16,6 +16,22 @@
   right: 0;
   width: 100vw;
 }
+.headerScroll {
+  background-color: white;
+  text-transform: uppercase;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  padding: 2rem;
+  font-family: raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+}
 
 .title {
   composes: title1 from "../../styles/typo.module.css";

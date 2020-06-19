@@ -2,18 +2,20 @@
 @value background, notblack, hover, fontSizeLarge, spacer1 from tokens;
 
 .form {
-  position: absolute;
+  position: fixed;
   bottom: 4rem;
   width: 90vw;
   display: flex;
   justify-content: center;
   margin: 0 auto;
   left: 0;
+  bottom: 13%;
   right: 0;
   z-index: 101;
 }
 
 .input {
-  composes: input from "../../styles/components.module.css";
+  composes: inputApp from "../../styles/components.module.css";
+  margin-top: -1rem;
 }
 

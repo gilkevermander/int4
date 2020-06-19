@@ -16,30 +16,35 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await uiStore.login(email, password);
-      history.push(ROUTES.home);
-    } catch (error) {
-      console.log(error);
-      if (error.message === "There is no user record corresponding to this identifier. The user may have been deleted.") {
-        setError1("Dit email bestaat nog niet")
-      } else if (error.message === "The password is invalid or the user does not have a password.") {
-        setError2("Verkeerd wachtwoord")
-      } else if (error.message === "The email address is badly formatted.") {
-        setError1("Geef een correct email in")
-      }
+    if (email !== "" || password !== "") {
+      try {
+        await uiStore.login(email, password);
+        history.push(ROUTES.home);
+      } catch (error) {
+        console.log(error);
+        if (error.message === "There is no user record corresponding to this identifier. The user may have been deleted.") {
+          setError1("Dit email bestaat nog niet")
+        } else if (error.message === "The password is invalid or the user does not have a password.") {
+          setError2("Verkeerd wachtwoord")
+        } else if (error.message === "The email address is badly formatted.") {
+          setError1("Geef een correct email in")
+        }
 
+      }
+    } else if (email === "" || password === "") {
+      setError2("Vul dit veld in")
+      setError1("Vul dit veld in")
     }
-  };
+  }
 
   return (
-    <>
+    < div className={style.form__login}>
       <form onSubmit={handleSubmit} className={style.form}>
 
         <div className={style.form__wrapper}>
           <div className={style.form__validatie}>
             <h2 className={style.form__titel}>E-mail</h2>
-            <p className={style.form__error}>{error1}</p>
+            {error1 === "Dit email bestaat nog niet" || error1 === "Geef een correct email in" ? <p className={style.form__error}>{error1}</p> : <p className={style.form__error}></p>}
           </div>
           <TextInputGroupApp
             className={style.form__input}
@@ -67,12 +72,12 @@ const LoginForm = () => {
         </div>
         <p className={style.form__info}>Log in om jouw herinnering te<br /> beluisteren</p>
         <div className={style.form__button}>
-          <button  className={style.button} onclick={handleSubmit}>Aanmelden</button>
+          <button className={style.button} onclick={handleSubmit}>Aanmelden</button>
           <p className={style.form__vergeten}>Wachtwoord vergeten?</p>
         </div>
 
       </form>
-    </>
+    </div>
   );
 };
 

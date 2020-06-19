@@ -3,15 +3,34 @@
 
 .container {
   composes: container from "../../styles/layouts.module.css";
+
 }
 
 .container__content {
   display: flex;
   flex-flow: column;
+  overflow: scroll;
+  height: 70%;
+  margin-top: 5rem;
+  box-shadow: inset 0px -4px 4px rgba(0, 0, 0, 0.12);
 }
 
-.button__text{
+.button{
   background-color:groen;
   border-radius: 50%;
-  padding: 1rem;
+  width: 51px;
+  height: 51px;
+  align-self: flex-end;
+  font-size: 5rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  right: 8%;
+  bottom: 13%;
+  z-index: 100;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  color:black;
+  padding-top: 0.2rem;
 }

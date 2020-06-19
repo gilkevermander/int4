@@ -4,8 +4,8 @@
   padding: spacer1 2em 0 spacer1;
   overflow: auto;
   background-color: solight;
-  margin-top: 2rem;
-  height: 37rem;
+  height: 40rem;
+  box-shadow: inset 0px -4px 4px rgba(0, 0, 0, 0.12);
 }
 
 .header {
