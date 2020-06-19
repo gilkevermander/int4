@@ -1,14 +1,32 @@
 @value tokens: "../../styles/tokens.module.css";
-@value raleway from tokens;
+@value background,fontSubtitel, spacer1, notblack from tokens;
 
 .header {
-    background-color: white;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-    font-family: raleway;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding: 2rem;
+  font-family: raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
 }
+
+.button__text {
+    font-size: 1.8rem;
+    text-transform: none;
+}
+
+.title {
+  composes: title1 from "../../styles/typo.module.css";
+  text-transform: capitalize;
+  color: notblack;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+

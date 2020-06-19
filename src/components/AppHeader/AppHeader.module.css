@@ -4,8 +4,8 @@
 .header {
   background-color: white;
   text-transform: uppercase;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   padding: 2rem;
   font-family: raleway;
   font-style: normal;
@@ -22,4 +22,5 @@
   text-transform: capitalize;
   color: notblack;
   text-transform: uppercase;
+  text-align: center;
 }

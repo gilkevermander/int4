@@ -23,7 +23,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className={style.container}>
+    <>
       <form onSubmit={handleSubmit} className={style.form}>
 
         <div className={style.form__wrapper}>
@@ -49,13 +49,14 @@ const LoginForm = () => {
             onChange={(e) => setPassword(e.currentTarget.value)}
           />
         </div>
-        <p className={style.form__info}>Log in om jouw herinnering te<br / > beluisteren</p>
+        <p className={style.form__info}>Log in om jouw herinnering te<br /> beluisteren</p>
         <div className={style.form__button}>
           <input type="submit" value="Aanmelden" className={style.button} />
           <p className={style.form__vergeten}>Wachtwoord vergeten?</p>
         </div>
+
       </form>
-    </div>
+    </>
   );
 };
 

@@ -19,20 +19,29 @@ a.textlink:active {
 a.textlink:hover {
   color: darkPrimary;
 }
+
 .wrapper {
     composes: container from "../../styles/layouts.module.css";
+    overflow: scroll;
 }
 
 .form {
   /* composes: column from "../../styles/layouts.module.css"; */
   display: grid;
   grid-auto-rows: max-content;
-  margin: 3rem auto 0;
-
+  margin: 3rem auto 3rem;
 }
+.form__register {
+  margin: 1rem auto 3rem;
+}
+
 .button{
   composes: buttonApp from "../../styles/components.module.css";
   margin: 0 auto 2rem;
+}
+
+.button__register{
+  margin: 0 auto -1rem;
 }
 
 .title {
@@ -49,6 +58,7 @@ a.textlink:hover {
   display: flex;
   flex-flow: column;
   align-items: center;
+  margin: 7% 0;
 }
 
 .form__vergeten {
@@ -59,7 +69,8 @@ a.textlink:hover {
 
 .form__info {
   font-size: 1.6rem;
-
+  display: flex;
+  justify-content: center;
   text-align: center;
   padding: 3rem;
   line-height: 2rem;
@@ -69,5 +80,6 @@ a.textlink:hover {
 .form__info__bold {
   font-size: 1.8rem;
   composes: bold from "../../styles/typo.module.css";
+  line-height: 2.5rem;
 }
 

@@ -21,11 +21,12 @@ const InfoHeader = ({ title }) => {
 
   return (
     <header className={style.header}>
-      <button onClick={handleLogout} className={style.button}>
-        Logout
-        </button>
+   
       <button onClick={history.goBack}>&#60;</button>
       <h1 className={style.title}>{title}</h1>
+      <button onClick={handleLogout} className={style.button}>
+        <p className={style.button__text}>Logout</p>
+      </button>
     </header>
   );
 };

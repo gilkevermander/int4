@@ -44,8 +44,21 @@
   border: none;
   border-radius: fontTitel;
   color: notblack;
-  height: 5.5rem;
+  height: 6.8rem;
   padding-left: 3rem;
   font-size: fontSubtitel;
   margin-bottom: 4rem;
+}
+
+.inputApp {
+  width: 95vw;
+  left: 0;
+  right: 0;
+  border: none;
+  border-radius: fontTitel;
+  color: notblack;
+  height: 4.5rem;
+  padding-left: 3rem;
+  font-size: fontSubtitel;
+  margin-bottom: 3rem;
 }
