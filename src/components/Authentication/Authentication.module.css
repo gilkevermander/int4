@@ -1,5 +1,5 @@
 @value tokens: "../../styles/tokens.module.css";
-@value colorPrimary, fontSubtitel, darkPrimary, solight, spacer1, spacer2 from tokens;
+@value colorPrimary, fontSubtitel, spacer1, spacer2 from tokens;
 
 .container {
   composes: container from "../../styles/layouts.module.css";
@@ -10,10 +10,6 @@
   flex-flow: column;
   margin: 0 auto;
   width: 95%;
-}
-
-.form__input {
-  width: 3rem;
 }
 
 a.textlink,
@@ -41,7 +37,7 @@ a.textlink:hover {
 }
 .button{
   composes: buttonApp from "../../styles/components.module.css";
-  margin: spacer1 auto;
+  margin: 0 auto 2rem;
 }
 
 .title {
@@ -52,5 +48,31 @@ a.textlink:hover {
 .form__titel {
   margin-bottom: 1rem;
   font-size: fontSubtitel;
+}
+
+.form__button {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.form__vergeten {
+  font-size: fontSubtitel;
+  border-bottom: 0.1rem solid black;
+  padding-bottom: 0.5rem;
+}
+
+.form__info {
+  font-size: 1.6rem;
+
+  text-align: center;
+  padding: 3rem;
+  line-height: 2rem;
+  color: black;
+}
+
+.form__info__bold {
+  font-size: 1.8rem;
+  composes: bold from "../../styles/typo.module.css";
 }
 

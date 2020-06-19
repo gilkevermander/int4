@@ -25,6 +25,7 @@ const LoginForm = () => {
   return (
     <div className={style.container}>
       <form onSubmit={handleSubmit} className={style.form}>
+
         <div className={style.form__wrapper}>
           <h2 className={style.form__titel}>E-mail</h2>
           <TextInputGroupApp
@@ -48,9 +49,10 @@ const LoginForm = () => {
             onChange={(e) => setPassword(e.currentTarget.value)}
           />
         </div>
-        <div>
+        <p className={style.form__info}>Log in om jouw herinnering te<br / > beluisteren</p>
+        <div className={style.form__button}>
           <input type="submit" value="Aanmelden" className={style.button} />
-          <p>Wachtwoord vergeten?</p>
+          <p className={style.form__vergeten}>Wachtwoord vergeten?</p>
         </div>
       </form>
     </div>
