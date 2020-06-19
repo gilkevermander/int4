@@ -7,7 +7,7 @@ import style from "./User.module.css";
 
 const User = ({ user }) => {
   return (
-    <li>
+    <li className={style.list}>
       <Link to={`${ROUTES.messages.to}${user.id}`}>
         <div className={style.list__link}>
           <img

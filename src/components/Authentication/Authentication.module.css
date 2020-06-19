@@ -22,7 +22,6 @@ a.textlink:hover {
 
 .wrapper {
     composes: container from "../../styles/layouts.module.css";
-    overflow: scroll;
 }
 
 .form {

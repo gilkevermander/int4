@@ -138,7 +138,7 @@ const RegisterForm = () => {
             onChange={(e) => setPassWordAgain(e.currentTarget.value)}
           />
         </div>
-        <input type="submit" value="Registeer" className={[style.button, style.button__register].join(" ")} />
+        <button  className={[style.button, style.button__register].join(" ")}onclick={handleSubmit}>Registreer</button>
       </form>
     </div>
   );

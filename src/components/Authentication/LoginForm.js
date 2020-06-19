@@ -67,7 +67,7 @@ const LoginForm = () => {
         </div>
         <p className={style.form__info}>Log in om jouw herinnering te<br /> beluisteren</p>
         <div className={style.form__button}>
-          <input type="submit" value="Aanmelden" className={style.button} />
+          <button  className={style.button} onclick={handleSubmit}>Aanmelden</button>
           <p className={style.form__vergeten}>Wachtwoord vergeten?</p>
         </div>
 

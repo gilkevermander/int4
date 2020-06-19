@@ -26,6 +26,10 @@
   font-size: 2rem;
 }
 
+.back__text{
+  color: black;
+}
+
 
 .subtitle {
   composes: title1 from "../../styles/typo.module.css";
