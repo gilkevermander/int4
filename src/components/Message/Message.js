@@ -15,7 +15,7 @@ const Message = ({ message }) => {
       {message.user !== uiStore.currentUser && (
         <p className={styles.user}>{message.user.name}</p>
       )}
-      <p>{message.content}</p>
+      <p className={styles.bubble}>{message.content}</p>
     </li>
   ));
 };

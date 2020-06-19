@@ -4,10 +4,10 @@
 .bubble {
   max-width: 75%;
   margin: 0.5rem 0;
-  background: colorPrimary;
-  padding: 1rem 1.3rem;
+  
+  padding: .2rem .8rem;
   font-weight: 500;
-  color: white;
+  color: black;
   position: relative;
   border-radius: 1.5rem;
   line-height: 1.4;
@@ -17,46 +17,28 @@
   composes: bubble;
   align-self: flex-start;
   margin-left: spacer2;
+  background: white;
 }
 
 .right {
   composes: bubble;
   align-self: flex-end;
-  background: colorBubbleMe;
+  background: #89D0CA;
+  margin-right: 2rem;
 }
 
-.unread {
-  font-weight: normal;
-  font-style: italic;
-}
-
-.user {
-  font-weight: bold;
-  margin-bottom: 0.7rem;
-}
-
-.left::after {
+.left::before {
   content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  border-left: 1.5rem solid transparent;
-  border-right: 1.5rem solid transparent;
-  border-top: 1.5rem solid colorPrimary;
-  border-bottom: 1.5rem solid transparent;
-  left: -1.4rem;
-  top: 0;
+  background-image: url(../../assets/img/user_icon.png);
+  width: 3.2rem;
+  height: 3.2rem;
+  background-position: 1rem 2rem;
 }
 
-.right::after {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  border-left: 1.5rem solid transparent;
-  border-right: 1.5rem solid transparent;
-  border-top: 1.5rem solid colorBubbleMe;
-  border-bottom: 1.5rem solid transparent;
-  right: -1.6rem;
-  top: 0;
-}
+
+
+
+
+
+
+

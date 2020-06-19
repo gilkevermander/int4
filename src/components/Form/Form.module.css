@@ -2,19 +2,18 @@
 @value background, notblack, hover, fontSizeLarge, spacer1 from tokens;
 
 .form {
+  position: absolute;
+  bottom: 4rem;
+  width: 90vw;
   display: flex;
-  background-color: background;
-  padding: 1rem;
+  justify-content: center;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 101;
 }
 
 .input {
   composes: input from "../../styles/components.module.css";
 }
 
-.emoji {
-  border: none;
-  border-radius: 0.5rem;
-  background-color: hover;
-  font-size: fontSizeLarge;
-  margin-right: spacer1;
-}
