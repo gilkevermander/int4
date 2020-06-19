@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../consts";
+import userIcon from "../../assets/img/user_icon.png"
 
 import style from "./User.module.css";
 
@@ -8,10 +9,10 @@ const User = ({ user }) => {
   return (
     <li>
       <Link to={`${ROUTES.messages.to}${user.id}`}>
-        <div className={style.user}>
+        <div className={style.list__link}>
           <img
             className={style.img}
-            src={user.avatar}
+            src={userIcon}
             alt="user_icon"
             width="50"
             height="50"

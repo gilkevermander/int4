@@ -1,15 +1,21 @@
 @value tokens: "../../styles/tokens.module.css";
 @value spacer1 from tokens;
 
-.user {
-  display: grid;
-  grid-template-columns: 0.5fr 2fr 1fr;
-  grid-template-areas: "img user";
-  width: 100%;
-  font-weight: bold;
-}
-
 .img {
   border-radius: 50%;
+}
+
+.list__link {
+  border-bottom: 0.2rem solid white;
+  width: 95%;
+  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr 0.5fr;
+  color: black;
+  grid-template-areas: "img user";
+  width: 100%;
+  font-size: 1.8rem;
+  align-items: center;
+  padding: 2rem;
 }
 
