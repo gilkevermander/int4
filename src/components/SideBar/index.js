@@ -12,7 +12,7 @@ const SideBar = () => {
   return useObserver(() => (
     <section className={style.container}>
       <Switch>
-        <Route path={ROUTES.kaart.path}>
+        <Route path={ROUTES.kaartD.path}>
           <DetailLand />
         </Route>
       </Switch>

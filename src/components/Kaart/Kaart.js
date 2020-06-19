@@ -28,7 +28,7 @@ const Kaart = () => {
 
                 <rect width="100%" height="100%" className={style.svg} />
                 {landStore.lands.map(land => (
-                  <NavLink activeClassName="selected" key={land.id} to={`${ROUTES.kaart.to}${land.id}`}>
+                  <NavLink activeClassName="selected" key={land.id} to={`${ROUTES.kaartD.to}${land.id}`}>
                     <path key={land.id} id={land.id} title={land.title} className={style.land} d={land.svg} />
                   </NavLink>
                 ))}
