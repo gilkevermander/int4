@@ -18,7 +18,7 @@ const User = ({ user }) => {
             height="50"
           />
           <p>{user.gebruikersnaam}</p>
-          <p>&#62;</p>
+          <p className={style.list__icon}>&#62;</p>
         </div>
       </Link>
     </li>

@@ -1,6 +1,17 @@
 @value tokens: "../../styles/tokens.module.css";
-@value raleway roze from tokens;
+@value raleway, roze, groen from tokens;
 
 .container {
   composes: container from "../../styles/layouts.module.css";
+}
+
+.container__content {
+  display: flex;
+  flex-flow: column;
+}
+
+.button__text{
+  background-color:groen;
+  border-radius: 50%;
+  padding: 1rem;
 }
