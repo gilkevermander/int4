@@ -66,13 +66,13 @@ const DetailLand = () => {
             <h3 className={style.subtitle}>{land.title}</h3>
           </section>
           <section>
-            <h3>souvenirs:</h3>
-            <ul>
+            <h3 className={style.souvenirs}>Souvenirs:</h3>
+            <ul className={style.souvenirs__list}>
               {land.souvenirs.map(souvenir => (
                 souvenir.delen &&
                 <Link to={`${ROUTES.detaillandS.to}${land.id}/${souvenir.id}`} key={souvenir.id}>
                   <li key={souvenir.id} className={style.list} >
-                    <p>Reisverhaal</p>
+                    <p className={style.list__text}>Reisverhaal</p>
                   </li>
                 </Link>
               ))}
