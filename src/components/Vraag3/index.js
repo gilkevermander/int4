@@ -9,11 +9,11 @@ const Vraag3 = ({setAnswer3, nextStep, values}) => {
 
     const saveAndContinue = (e) => {
         e.preventDefault()
-        if (values.answer1 === "") {
-          setError("Duid een optie aan")
-        } else {
+        // if (values.answer1 === "") {
+        //   setError("Duid een optie aan")
+        // } else {
           nextStep()
-        }
+        //}
     
       }
   
