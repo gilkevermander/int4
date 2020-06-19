@@ -38,7 +38,7 @@ const RegisterForm = () => {
       {error === "The email address is already in use by another account." ? <p></p> : <p></p>}
       <form onSubmit={handleSubmit} className={style.form}>
         <div className={style.form__wrapper}>
-          <h2 className={style.form__titel}>Voornaam</h2>
+          <h2 className={style.form__titel}>Naam</h2>
           <TextInputGroupApp
             className={style.form__input}
             label="Voornaam"
@@ -49,7 +49,7 @@ const RegisterForm = () => {
             onChange={(e) => setVoornaam(e.currentTarget.value)}
           />
         </div>
-        <div className={style.form__wrapper}>
+        {/* <div className={style.form__wrapper}>
           <h2 className={style.form__titel}>Achternaam</h2>
           <TextInputGroupApp
             className={style.form__input}
@@ -60,7 +60,7 @@ const RegisterForm = () => {
             value={achternaam}
             onChange={(e) => setAchternaam(e.currentTarget.value)}
           />
-        </div>
+        </div> */}
         <div className={style.form__wrapper}>
           <h2 className={style.form__titel}>Gebruikersnaam</h2>
           <TextInputGroupApp
@@ -109,7 +109,7 @@ const RegisterForm = () => {
             onChange={(e) => setPassWordAgain(e.currentTarget.value)}
           />
         </div>
-        <input type="submit" value="Register" className={style.button} />
+        <input type="submit" value="Registeer" className={style.button} />
       </form>
     </div>
   );

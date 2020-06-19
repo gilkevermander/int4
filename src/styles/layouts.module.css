@@ -112,7 +112,7 @@
   }
 
   .container {
-    width: 37.5rem;
+    width: 100vw;
     background-image: url(../assets/img/textures.png);
     background-color: geel;
     margin-top: -6.5rem;

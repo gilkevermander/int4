@@ -2,7 +2,7 @@
 @value spacer1 from tokens;
 
 .input {
-  composes: input from "../../styles/components.module.css";
+  composes: inputApp from "../../styles/components.module.css";
   display: flex;
   justify-content: center;
 }

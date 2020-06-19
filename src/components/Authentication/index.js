@@ -50,8 +50,8 @@ const Authentication = () => {
               <div className={style.wrapper}>
                 <ContentHeader title={"Registreren"} />
                 <RegisterForm />
-                <NavLink to={ROUTES.register} className={style.textlink}>
-                  <span className={[style.form__info__bold, style.form__info].join(" ")}>Nog geen account? Registreer</span>
+                <NavLink to={ROUTES.login} className={style.textlink}>
+                  <span className={[style.form__info__bold, style.form__info].join(" ")}>Al een account? Login</span>
                 </NavLink>
               </div>
             )}
