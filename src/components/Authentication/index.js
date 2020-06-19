@@ -38,7 +38,7 @@ const Authentication = () => {
                 <ContentHeader title={"Login"} className={style.title} />
                 <LoginForm />
                 <NavLink to={ROUTES.register} className={style.textlink}>
-                  <span>Nog geen account? Registreer</span>
+                  <span className={[style.form__info__bold, style.form__info].join(" ")}>Nog geen account? Registreer</span>
                 </NavLink>
               </div>
             )}
@@ -48,8 +48,11 @@ const Authentication = () => {
             <Redirect to={ROUTES.home} />
           ) : (
               <div className={style.wrapper}>
-                <ContentHeader title={"Aanmelden"} />
+                <ContentHeader title={"Registreren"} />
                 <RegisterForm />
+                <NavLink to={ROUTES.register} className={style.textlink}>
+                  <span className={[style.form__info__bold, style.form__info].join(" ")}>Nog geen account? Registreer</span>
+                </NavLink>
               </div>
             )}
         </Route>
