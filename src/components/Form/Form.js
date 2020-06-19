@@ -7,19 +7,24 @@ import style from "./Form.module.css";
 
 const Form = () => {
   const [content, setContent] = useState("");
-  const { uiStore, groupStore, messageStore } = useStore();
+  const { uiStore, userStore, messageStore } = useStore();
   const { id } = useParams();
 
   const handleFormSubmit = e => {
     e.preventDefault();
     if (content !== "") {
-      const group = groupStore.resolveGroup(id);
+      const user = userStore.resolveUser(id);
+      const curUser = userStore.resolveUser(uiStore.currentUser.id)
       const message = new Message({
         store: messageStore,
         content,
         userId: uiStore.currentUser.id,
-        groupId: group.id
+        gebruikersnaamMe: curUser.gebruikersnaam,
+        gebruikersnaam: user.gebruikersnaam
       });
+      console.log(user);
+      console.log(message.gebruikersnaam)
+      console.log(message.gebruikersnaamMe);
       message.create();
 
       setContent("");
@@ -29,11 +34,6 @@ const Form = () => {
   return useObserver(() => (
     <form onSubmit={handleFormSubmit}>
       <section className={style.form}>
-        <button className={style.emoji}>
-          <span role="img" aria-label="Smiley">
-            😃
-          </span>
-        </button>
         <input
           className={style.input}
           id="content"

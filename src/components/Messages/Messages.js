@@ -12,29 +12,42 @@ import style from "./Messages.module.css";
 
 const Messages = () => {
   const { id } = useParams();
-  const { groupStore } = useStore();
+  const { userStore, uiStore } = useStore();
 
   const STATE_LOADING = "loading";
   const STATE_DOES_NOT_EXIST = "doesNotExist";
   const STATE_LOADING_MORE_DETAILS = "loadingMoreDetails";
   const STATE_FULLY_LOADED = "fullyLoaded";
 
-  const [group, setGroup] = useState(groupStore.resolveGroup(id));
+  const [user, setUser] = useState(userStore.resolveUser(id));
   const [state, setState] = useState(
-    group ? STATE_LOADING_MORE_DETAILS : STATE_LOADING
+    user ? STATE_LOADING_MORE_DETAILS : STATE_LOADING
   );
 
   useEffect(() => {
-    const loadGroup = async (id) => {
+    const loadUser = async (id) => {
       try {
-        const group = await groupStore.resolveGroup(id);
-        if (!group) {
+        console.log('test')
+        const user = await userStore.resolveUser(id);
+        const me = await userStore.resolveUser(uiStore.currentUser.id);
+        console.log(user);
+        console.log('test')
+        console.log(me);
+        const messages = await userStore.loadMessagesForUser(user);
+        console.log(messages);
+        if (!user) {
+          console.log('wrong')
           setState(STATE_DOES_NOT_EXIST);
           return;
         }
-        setGroup(group);
+        setUser(user);
         //setState(STATE_LOADING_MORE_DETAILS);
         //await groupStore.loadGroupUsers(id);
+        
+        
+        console.log(user);
+        console.log('test')
+        console.log(me);
         setState(STATE_FULLY_LOADED);
       } catch (error) {
         /*if (error.response && error.response.status === 404) {
@@ -42,8 +55,8 @@ const Messages = () => {
         }*/
       }
     };
-    loadGroup(id);
-  }, [id, groupStore, setGroup]);
+    loadUser(id);
+  }, [id, userStore, setUser]);
 
   return useObserver(() => {
     if (state === STATE_DOES_NOT_EXIST) {
@@ -55,21 +68,21 @@ const Messages = () => {
     return (
       <>
         <header className={style.header}>
-          {group && (
+          {user && (
             <>
               <img
                 className={style.img}
-                src={group.pic}
+                src={user.pic}
                 alt="Group img"
                 width="50"
                 height="50"
               />
-              <h3 className={style.title}>{group.name}</h3>
+              <h3 className={style.title}>{user.gebruikersnaam}</h3>
             </>
           )}
         </header>
         <ul className={style.list}>
-          {group.messages.map((message) => (
+          {user.messages.map((message) => (
             <Message message={message} key={message.id} />
           ))}
         </ul>

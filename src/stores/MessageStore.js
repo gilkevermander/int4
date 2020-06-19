@@ -21,6 +21,7 @@ class MessageStore {
 
   createMessage = async (message) => {
     await this.messagesService.createMessage(message);
+    await this.messagesService.createMessageRound(message)
   };
 
   updateMessage = async (message) => {
@@ -29,22 +30,27 @@ class MessageStore {
   };
 
   updateMessageFromServer(json) {
+    console.log(this.messages);
     let message = this.messages.find((message) => message.id === json.id);
+    console.log(message);
     if (!message) {
       message = new Message({
         id: json.id,
         store: this.rootStore.messageStore,
-        groupId: json.groupId,
         userId: json.userId,
         content: json.content,
         unread: json.unread,
+        gebruikersnaam: json.gebruikersnaam,
+        gebruikersnaamMe: json.gebruikersnaamMe
       });
     }
     if (json.isDeleted) {
       this.messages.remove(message);
     } else {
       message.updateFromJson(json);
+      console.log(message)
     }
+    console.log(message)
     return message;
   }
 

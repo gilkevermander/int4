@@ -1,13 +1,10 @@
 import { decorate, observable, action, computed } from "mobx";
-
+import { v4 } from "uuid";
 
 class Message {
-  constructor({ id, store, content, date = new Date(), unread = false, groupId, userId }) {
+  constructor({ id = v4(), store, content, date = new Date(), gebruikersnaam,gebruikersnaamMe, unread = false, userId }) {
     if (!store) {
       throw new Error("voorzie een store");
-    }
-    if (!groupId) {
-      throw new Error("A message must have a groupId");
     }
     if (!userId) {
       throw new Error("A message must have a userId");
@@ -22,8 +19,9 @@ class Message {
       content,
       date,
       unread,
-      groupId,
-      userId
+      userId,
+      gebruikersnaam,
+      gebruikersnaamMe
     });
 
     this.store.addMessage(this);
@@ -33,17 +31,17 @@ class Message {
 
   update = async () => this.store.updateMessage(this.asJson);
 
-  setGroup(group) {
-    if (this.group) {
-      this.group.unlinkMessage(this);
-    }
-    if (group) {
-      this.groupId = group.id;
-      this.group.linkMessage(this);
-    } else {
-      this.groupId = null;
-    }
-  }
+  // setGroup(group) {
+  //   if (this.group) {
+  //     this.group.unlinkMessage(this);
+  //   }
+  //   if (group) {
+  //     this.groupId = group.id;
+  //     this.group.linkMessage(this);
+  //   } else {
+  //     this.groupId = null;
+  //   }
+  // }
 
   setUser(user) {
     if (this.user) {
@@ -57,9 +55,9 @@ class Message {
     }
   }
 
-  get group() {
-    return this.store.rootStore.groupStore.resolveGroup(this.groupId);
-  }
+  // get group() {
+  //   return this.store.rootStore.groupStore.resolveGroup(this.groupId);
+  // }
 
   get user() {
     return this.store.rootStore.userStore.resolveUser(this.userId);
@@ -69,11 +67,15 @@ class Message {
     content = undefined,
     date = undefined,
     userId = undefined,
-    groupId = undefined,
-    unread = undefined
+    unread = undefined,
+    gebruikersnaam = undefined,
+    gebruikersnaamMe = undefined
   }) => {
     this.content = (content !== undefined) ? content : this.content;
+    console.log(this.content)
     this.unread = (unread !== undefined) ? unread : this.unread;
+    this.gebruikersnaam = (gebruikersnaam !== undefined) ? gebruikersnaam : this.gebruikersnaam;
+    this.gebruikersnaamMe = (gebruikersnaamMe !== undefined) ? gebruikersnaamMe : this.gebruikersnaamMe;
 
     if (date instanceof Date) {
       date = date.toISOString();
@@ -83,9 +85,6 @@ class Message {
     if (userId !== undefined) {
       this.setUser(this.store.rootStore.userStore.resolveUser(userId));
     }
-    if (groupId !== undefined) {
-      this.setGroup(this.store.rootStore.groupStore.resolveGroup(groupId));
-    }
   };
 
   get asJson() {
@@ -94,8 +93,9 @@ class Message {
       content: this.content,
       date: this.date.toISOString(),
       userId: this.userId,
-      groupId: this.groupId,
-      unread: this.unread
+      unread: this.unread,
+      gebruikersnaam: this.gebruikersnaam,
+      gebruikersnaamMe: this.gebruikersnaamMe
     };
   }
 
@@ -106,12 +106,12 @@ class Message {
 
 decorate(Message, {
   userId: observable,
-  groupId: observable,
+  gebruikersnaam: observable,
+  gebruikersnaamMe: observable,
   unread: observable,
   setUnread: action,
   updateFromJson: action,
   asJson: computed,
-  group: computed,
   user: computed
 });
 

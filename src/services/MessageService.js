@@ -8,14 +8,27 @@ class MessageService {
   }
 
   createMessage = async (message) => {
+    console.log(message)
     message.timestamp = firestore.Timestamp.fromDate(new Date(message.date));
     await this.db
-      .collection("groups")
-      .doc(message.groupId)
+      .collection("users")
+      .doc(message.gebruikersnaamMe)
       .collection("messages")
-      .doc(message.id)
+      .doc(message.gebruikersnaam)
       .set(message);
   };
+
+  createMessageRound = async (message) => {
+    console.log(message)
+    message.timestamp = firestore.Timestamp.fromDate(new Date(message.date));
+    await this.db
+      .collection("users")
+      .doc(message.gebruikersnaam)
+      .collection("messages")
+      .doc(message.gebruikersnaamMe)
+      .set(message);
+  };
+  //hier kan ik nog es dezelfde functie doen maar omgekeerd he
 }
 
 export default MessageService;
