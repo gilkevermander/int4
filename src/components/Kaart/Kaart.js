@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../consts/index";
 import { useStore } from "../../hooks/useStore";
 import SideBar from "../SideBar/index";
-import InfoHeader from "../InfoHeader/InfoHeader";
+import AppHeader from "../AppHeader";
 import { UncontrolledReactSVGPanZoom } from 'react-svg-pan-zoom'
 import { MapInteractionCSS } from 'react-map-interaction';
 const Kaart = () => {
@@ -17,10 +17,16 @@ const Kaart = () => {
   return useObserver(() => (
     <>
       <div className={style.container}>
+<<<<<<< HEAD
         <InfoHeader title={"Verhalen van Kabien"} />
         
         {/* <MapInteractionCSS> */}
           <UncontrolledReactSVGPanZoom
+=======
+        <AppHeader title={"Verhalen van Kabien"} prevStep={ROUTES.home} />
+        <SideBar />
+        {/* <UncontrolledReactSVGPanZoom
+>>>>>>> 1bf7782db6ab8145c3be2a5129e9562c74e2d3be
         width={375} height={530}
         onClick={event => console.log(event.x, event.y, event.originalEvent)}>
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1016.12 650.64"   >
