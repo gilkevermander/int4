@@ -1,12 +1,19 @@
 import React from "react";
 import style from "./AppHeader.module.css";
+import { NavLink } from "react-router-dom";
+import { ROUTES } from "../../consts";
 
-const ContentHeader = ({ title }) => {
+const ContentHeader = ({ title, prevStep }) => {
+
+  // const back = (e) => {
+  //   e.preventDefault();
+  //   prevStep();
+  // }
+
   return (
     <header className={style.header}>
-      <p>&lt;</p>
-      <h1 className={style.title}>{title}</h1>
-      <h2>Logout</h2>
+      <NavLink to={prevStep} className={style.back}><p className={style.back__text}>&lt;</p></NavLink>
+      <h1 className={ROUTES === "home" || ROUTES === "login" || ROUTES === "register" || ROUTES === "qr" ? style.title : style.subtitle}>{title}</h1>
     </header>
   );
 };

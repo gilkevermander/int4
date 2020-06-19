@@ -33,9 +33,9 @@ const DetailLand = () => {
         }
         setLand(land);
         setState(STATE_LOADING_MORE_DETAILS);
-        await landStore.loadLandVerhalen(id); //hier blijft hij op wachten maar er komt niets
+        await landStore.loadLandSouvenirs(id); //hier blijft hij op wachten maar er komt niets
         setState(STATE_FULLY_LOADED);
-        console.log(land.verhalen);
+        console.log(land.souvenirs);
       } catch (error) {
         if (error.response && error.response.status === 404) {
           setState(STATE_DOES_NOT_EXIST);
@@ -66,8 +66,8 @@ const DetailLand = () => {
             <p className={style.subtitle}>{land.id}</p>
           </section>
           <section>
-            <h3>verhalen:</h3>
-            {land.verhalen.map(verhaal => (
+            <h3>souvenirs:</h3>
+            {land.souvenirs.map(verhaal => (
               <article key={verhaal.id}>
                 <p>naam: {verhaal.naam} </p>
                 <p>bestand:{verhaal.verhaal} </p>

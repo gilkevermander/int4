@@ -118,4 +118,5 @@
     margin-top: -6.5rem;
     background-blend-mode: screen;
     height: 100vh;
+    overflow: scroll;
   }
