@@ -6,7 +6,6 @@ const ContentHeader = ({ title }) => {
     <header className={style.header}>
       <p>&lt;</p>
       <h1 className={style.title}>{title}</h1>
-      <h2>Logout</h2>
     </header>
   );
 };
