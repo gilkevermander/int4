@@ -17,6 +17,7 @@ const TextInputGroup = ({
         {label}
       </label>
       <input
+        noValidate
         className={style.input}
         type={type}
         name={name}
@@ -27,6 +28,7 @@ const TextInputGroup = ({
         required="required"
         autoComplete="off"
         max={max}
+        
       />
     </>
   );

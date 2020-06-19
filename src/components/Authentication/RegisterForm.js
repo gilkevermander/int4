@@ -59,7 +59,7 @@ const RegisterForm = () => {
             className={style.form__input}
             label="Voornaam"
             name="voornaam"
-            type="voornaam"
+            type="text"
             placeholder="Vul je voornaam in."
             value={voornaam}
             onChange={(e) => setVoornaam(e.currentTarget.value)}
@@ -86,7 +86,7 @@ const RegisterForm = () => {
             className={style.form__input}
             label="Gebruikersnaam"
             name="gebruikersnaam"
-            type="gebruikersnaam"
+            type="text"
             placeholder="Vul je gebruikersnaam in."
             value={gebruikersnaam}
             onChange={(e) => setGebruikersnaam(e.currentTarget.value)}
@@ -101,7 +101,7 @@ const RegisterForm = () => {
             className={style.form__input}
             label="Email"
             name="email"
-            type="email"
+            type="text"
             placeholder="Vul je e-mail in."
             value={email}
             onChange={(e) => setEmail(e.currentTarget.value)}

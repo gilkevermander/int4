@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Content from "../Content/Content";
 import { Switch, Route, NavLink, Redirect } from "react-router-dom";
 import { ROUTES } from "../../consts";
@@ -16,7 +16,15 @@ import AppHeader from "../AppHeader"
 
 
 const Authentication = () => {
+
+  const [step, setStep] = useState(1);
+
   const { uiStore } = useStore();
+
+  const prevStep = () => {
+    setStep(step - 1);
+  }
+
   return useObserver(() => (
     <>
       <Switch>
@@ -50,7 +58,7 @@ const Authentication = () => {
             <Redirect to={ROUTES.home} />
           ) : (
               <div className={style.wrapper}>
-                <AppHeader title={"Registreren"} />
+                <AppHeader title={"Registreren"}  prevStep={ROUTES.login}/>
                 <RegisterForm />
                 <NavLink to={ROUTES.login} className={style.textlink}>
                   {/* <span className={[style.form__info__bold, style.form__info].join(" ")}>Al een account? Login</span> */}
