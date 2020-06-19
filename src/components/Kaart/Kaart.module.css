@@ -22,3 +22,8 @@
 .container {
 	composes: container from "../../styles/layouts.module.css";
 }
+
+.wrap {
+	width: 37.5rem; 
+	height: 53rem;
+}
