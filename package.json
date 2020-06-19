@@ -31,6 +31,7 @@
     "react-qr-reader": "^2.2.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
+    "react-svg-pan-zoom": "^3.8.0",
     "react-video": "^1.5.3",
     "react-video-recorder": "^3.17.1",
     "react-webcam": "^5.1.0",
