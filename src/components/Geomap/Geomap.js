@@ -4,6 +4,7 @@ import "leaflet/dist/images/marker-shadow.png";
 import "leaflet/dist/images/marker-icon-2x.png";
 //import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import style from "./Geomap.module.css"
 
 delete L.Icon.Default.prototype._getIconUrl;
 
@@ -12,6 +13,8 @@ L.Icon.Default.mergeOptions({
   iconUrl: require('leaflet/dist/images/marker-icon.png'),
   shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
+
+
 
 const Geomap = () => {
 
@@ -32,7 +35,7 @@ const Geomap = () => {
 
     return (
 
-      <Map center={position} zoom={zoom} style={{ height: 400 }}>
+      <Map center={position} zoom={zoom} style={{ height: 490 }} className={style.kaart}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
