@@ -16,7 +16,8 @@ const User = ({ user }) => {
             width="50"
             height="50"
           />
-          {user.gebruikersnaam}
+          <p>{user.gebruikersnaam}</p>
+          <p>&#62;</p>
         </div>
       </Link>
     </li>

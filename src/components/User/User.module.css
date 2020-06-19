@@ -3,21 +3,13 @@
 
 .user {
   display: grid;
-  grid-template-columns: 70px 1fr;
+  grid-template-columns: 0.5fr 2fr 1fr;
   grid-template-areas: "img user";
-  align-items: center;
-  padding: spacer1;
-
   width: 100%;
-  border-bottom: 0.1rem solid var(--hover);
-
   font-weight: bold;
-}
-
-.user:hover {
-  background-color: var(--hover);
 }
 
 .img {
   border-radius: 50%;
 }
+
