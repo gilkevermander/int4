@@ -1,0 +1,6 @@
+@value tokens: "../../styles/tokens.module.css";
+@value raleway roze from tokens;
+
+.container {
+  composes: container from "../../styles/layouts.module.css";
+}
