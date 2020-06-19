@@ -7,10 +7,12 @@ import Empty from "../Empty/Empty";
 import { useObserver } from "mobx-react-lite";
 import { useStore } from "../../hooks/useStore";
 import { useParams } from "react-router-dom";
+import AppHeader from "../AppHeader/index";
+import { ROUTES } from "../../consts";
 
 import style from "./Messages.module.css";
 
-const Messages = () => {
+const Messages = ({prevStep}) => {
   const { id } = useParams();
   const { userStore, uiStore } = useStore();
 
@@ -72,7 +74,7 @@ const Messages = () => {
           
           {user && (
             <>
-              <h3 className={style.title}>{user.gebruikersnaam}</h3>
+              <AppHeader className={style.title} title={user.gebruikersnaam} prevStep={ROUTES.chat} />
             </>
           )}
         </header>
