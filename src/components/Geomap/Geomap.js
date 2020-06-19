@@ -35,7 +35,7 @@ const Geomap = () => {
 
     return (
 
-      <Map center={position} zoom={zoom} style={{ height: 490 }} className={style.kaart}>
+      <Map center={position} zoom={zoom} className={style.kaart}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
