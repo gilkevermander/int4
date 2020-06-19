@@ -27,6 +27,7 @@
     "react-mic": "^12.4.6",
     "react-multimedia-capture": "^1.2.4",
     "react-numeric-input": "^2.2.3",
+    "react-pinch-and-zoom": "^1.2.5",
     "react-player": "^2.2.0",
     "react-qr-code": "^1.0.2",
     "react-qr-reader": "^2.2.1",
@@ -36,11 +37,13 @@
     "react-video": "^1.5.3",
     "react-video-recorder": "^3.17.1",
     "react-webcam": "^5.1.0",
+    "react-zoom-pan-pinch": "^1.6.1",
     "redux": "^4.0.5",
     "semantic-ui-react": "^0.88.2",
     "styled-components": "^5.1.1",
     "uuid": "^8.0.0",
-    "video-react": "^0.14.1"
+    "video-react": "^0.14.1",
+    "zoomable-svg": "^5.0.1"
   },
   "proxy": "http://localhost:80",
   "scripts": {

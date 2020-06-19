@@ -5,6 +5,7 @@
 	stroke-opacity: 1;
 	stroke-width:0.75;
 	transition: 0.1s;
+
 }
 
 .land:hover {
@@ -15,17 +16,25 @@
 	fill: yellow;
 }
 
+.svg__card {
+	width: 101.6rem;
+	height: 80.6rem;
+}
+
 .svg {
 	fill: lightblue;
-	width: 800.6rem;
-	height: 800.6rem;
+	width: 101.6rem;
+	height: 80.6rem;
 }
 
 .container {
 	composes: container from "../../styles/layouts.module.css";
 }
 
-.container__panzoom {
+.tools {
 	width: 100%;
 	height: 100%;
 }
+
+
+

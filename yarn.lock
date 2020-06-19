@@ -9743,6 +9743,11 @@ react-numeric-input@^2.2.3:
   resolved "https://registry.yarnpkg.com/react-numeric-input/-/react-numeric-input-2.2.3.tgz#4bf5918c3eafed851a80df1eb992d941002bb552"
   integrity sha1-S/WRjD6v7YUagN8euZLZQQArtVI=
 
+react-pinch-and-zoom@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/react-pinch-and-zoom/-/react-pinch-and-zoom-1.2.5.tgz#2b3fa151fe874aea650dfaf3142ad84f32255a74"
+  integrity sha512-z469MmfQU69sZMKzOG/le6zH5KkwqjTiEHO6ggxpl8tP50G1zD6TqhYSvjdEP60NgzOf+MAp6o+bicvU6wZllA==
+
 react-player@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/react-player/-/react-player-2.2.0.tgz#dfda060ce0fe87d6d41b168fc53eede449f3ffd4"
@@ -9906,6 +9911,11 @@ react-webcam@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/react-webcam/-/react-webcam-5.1.0.tgz#6aaf3909b47beecc6663c4c9c7ca522ada808467"
   integrity sha512-nx5uNCc7g5affz+K+hEWgtKCKyZIcqJS/HsnhDHU1l2B/dSRdJ4Ex0QknwfN4AZGDvqa+iUeH924P3zBT0Bixg==
+
+react-zoom-pan-pinch@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/react-zoom-pan-pinch/-/react-zoom-pan-pinch-1.6.1.tgz#da16267c258ab37e8ebcdc7c252794a9633e91ec"
+  integrity sha512-J2eM0gZ04XiUWvmKZrOhSAB2zjyoK7kw2POIeN1X0yTTlmp6HPGV0zYfjnlkhgt8nQwpvXAbsF/oAnkuiwk1kA==
 
 react@^16.13.1:
   version "16.13.1"
@@ -12367,3 +12377,8 @@ yargs@^13.3.0:
     which-module "^2.0.0"
     y18n "^4.0.0"
     yargs-parser "^13.1.1"
+
+zoomable-svg@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/zoomable-svg/-/zoomable-svg-5.0.1.tgz#1ca542d22e020f9c17ccc6ad74cf681fde478055"
+  integrity sha512-YipcJoC0zWi5PWXZEUPcQoO2/Tk8IM5AFziRDh0rQCW+zZTYneu+/xgu1defGfBCAujtrDQR3Tipve0oQtoj2A==
