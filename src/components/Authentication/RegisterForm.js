@@ -23,7 +23,7 @@ const RegisterForm = () => {
     if (password === passwordAgain) {
       try {
         console.log('works yes')
-        await uiStore.register({ voornaam, achternaam, gebruikersnaam, email, password });
+        await uiStore.register({ voornaam, achternaam, email, password, gebruikersnaam });
         history.push(ROUTES.home);
       } catch (error) {
         console.log(error);
