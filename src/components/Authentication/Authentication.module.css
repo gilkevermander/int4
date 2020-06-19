@@ -88,7 +88,7 @@ a.textlink:hover {
 
 .form__validatie {
   display: flex;
-  width: 100vw;
+  width: 100%;
 }
 
 .form__error{

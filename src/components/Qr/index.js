@@ -40,11 +40,10 @@ const Qr = () => {
       <div className={style.container}>
       <AppHeader title={"Scan de QR-code"} prevStep={ROUTES.home} />
       <QrReader
-          className={style.QR}
+          className={style.scannen}
           delay={300}
           onError={handleError}
           onScan={handleScan}
-          style={{ width: '100%' }}
           mirrored={true}
         />
         <p>{scan}</p>

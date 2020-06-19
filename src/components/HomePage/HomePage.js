@@ -25,17 +25,17 @@ const HomePage = () => {
             </div>
           </NavLink>
           <NavLink onClick={getLocation} className={style.add} to="/locatie">
-            <div className={style.link}>
+          <div className={[style.link, style.linktext__right].join(" ")}>
               <img src={cabine} alt="cabine" className={style.image} />
               <h2 className={style.linktext}>Neem jouw herinnering op</h2>
             </div>
           </NavLink>
         </div>
-        <div className={style.wrapper}>
+        <div className={[style.wrapper, style.wrapper__kaart].join(" ")}>
           <NavLink className={style.add} to={ROUTES.kaart}>
-            <div className={style.link}>
+            <div className={[style.link, style.link__bottom].join(" ")}>
               <img src={verhalen} alt="verhalen" className={style.image} />
-              <h2 className={style.linktext}>Ontdek verhalen van KABIEN</h2>
+              <h2 className={[style.linktext, style.linktext__bottom]}>Ontdek verhalen van KABIEN</h2>
             </div>
           </NavLink>
         </div>

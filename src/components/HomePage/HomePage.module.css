@@ -12,11 +12,11 @@
 
 .link {
     background-color: white;
-    width: 16.5rem;
-    height: 16.5rem;
     border-radius: 2rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
+    height: 13.5rem;
+    min-height: 105%;
     flex-direction: column;
     align-items: center;
     align-content: center;
@@ -25,13 +25,31 @@
     font-family: raleway;
     font-style: normal;
     font-weight: normal;
-    font-size: 2rem;
-    line-height: 2.3rem;
+    font-size: 1.6rem;
+    line-height: 2rem;
     text-align: center;
     padding: 1rem;
     align-items: flex-end;
     color: black;
 }
+
+.link__bottom {
+    margin: 0 7rem;
+}
+
+.linktext__bottom {
+    width: 100%;
+}
+
+.linktext__right {
+    margin-top: 0.2rem;
+}
+
+.wrapper__kaart {
+    width: 95%;
+    min-height: 20%;
+}
+
 
 .wrapper {
     display: flex;
@@ -40,9 +58,13 @@
 }
 
 .headwrapper {
-    margin-top: 10rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
 }
 
 .image {
-    margin: 0 auto;
+    margin: 0 auto 1rem;
 }
