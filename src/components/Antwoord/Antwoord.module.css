@@ -1,3 +1,45 @@
 .container {
     composes: container from "../../styles/layouts.module.css";
 }
+
+.favo {
+    display: flex;
+    justify-content: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    text-align: center;
+    width: 80vw;
+    margin: 0 auto 3rem;
+}
+
+.uitleg {
+    display: flex;
+    justify-content: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    text-align: center;
+    width: 90vw;
+    margin: 0 auto 3rem;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto 2rem;
+}
+
+.actie {
+    display: flex;
+    justify-content: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    width: 60vw;
+    margin: 0 auto 3rem;
+}
