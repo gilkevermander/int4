@@ -18,7 +18,8 @@ const ROUTES = {
   start: "/start",
   kaart: "/kaart",
   souvenirWall: "/souvenirWall",
-  quiz: "/quiz"
+  quiz: "/quiz",
+  detaillandS: { path: "/detailLandS/:landId/:id", to: "/detailLandS/" },
 };
 
 export { ROUTES };

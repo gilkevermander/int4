@@ -7,6 +7,7 @@ import Qr from "../Qr/index";
 import Chat from "../Chat/index";
 import AddUser from "../AddUser/AddUser";
 import Messages from "../Messages/Messages";
+import DetailLandS from "../DetailLandS/index";
 import Locatie from "../Locatie/Locatie";
 import DetailSouvenir from "../DetailSouvenir/index";
 import { useObserver } from "mobx-react-lite";
@@ -46,6 +47,9 @@ const Content = () => {
         </Route>
         <Route path={ROUTES.locatie}>
           <Locatie />
+        </Route>
+        <Route path={ROUTES.detaillandS.path}>
+          <DetailLandS />
         </Route>
         <Route exact strict path={ROUTES.home}>
           <HomePage />

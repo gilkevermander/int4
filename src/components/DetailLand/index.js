@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useStore } from "../../hooks/useStore";
 import { useObserver } from "mobx-react-lite";
+import { Link } from "react-router-dom";
+import { ROUTES } from "../../consts/index";
 
 import Empty from "../Empty/Empty";
 import style from "./DetailLand.module.css";
@@ -52,7 +54,6 @@ const DetailLand = () => {
     if (state === STATE_DOES_NOT_EXIST) {
       console.log(`${land} is niet gevonden`);
       return <Empty message={"land not found"} />;
-
     }
     if (state === STATE_LOADING) {
       console.log(land);
@@ -63,16 +64,20 @@ const DetailLand = () => {
         <div className={style.container}>
           <section className={style.section}>
             <h3 className={style.subtitle}>{land.title}</h3>
-            <p className={style.subtitle}>{land.id}</p>
           </section>
           <section>
             <h3>souvenirs:</h3>
-            {land.souvenirs.map(verhaal => (
-              <article key={verhaal.id}>
-                <p>naam: {verhaal.naam} </p>
-                <p>bestand:{verhaal.verhaal} </p>
-              </article>
-            ))}
+            <ul>
+              {land.souvenirs.map(souvenir => (
+                souvenir.delen &&
+                <Link to={`${ROUTES.detaillandS.to}${land.id}/${souvenir.id}`} key={souvenir.id}>
+                  <li key={souvenir.id} className={style.list} >
+                    <p>Reisverhaal</p>
+                  </li>
+                </Link>
+              ))}
+            </ul>
+
           </section>
         </div>
       </>
