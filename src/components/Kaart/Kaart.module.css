@@ -1,13 +1,14 @@
 .land {
-  fill: #CCCCCC;
+	fill: #F6F9FF;
 	fill-opacity: 1;
-	stroke:white;
+	stroke:darkgray;
 	stroke-opacity: 1;
-	stroke-width:0.5;
+	stroke-width:0.75;
+	transition: 0.1s;
 }
 
 .land:hover {
-  fill: fuchsia;
+	fill: #FFAD65;
 }
 
 .selected {
@@ -15,7 +16,7 @@
 }
 
 .svg {
-	background-color: #EFEFEE;
+	fill: lightblue;
 }
 
 .container {

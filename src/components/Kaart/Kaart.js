@@ -21,8 +21,10 @@ const Kaart = () => {
       <UncontrolledReactSVGPanZoom
         width={375} height={530}
         onClick={event => console.log(event.x, event.y, event.originalEvent)}>
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1016.12 650.64" className={style.svg}  >
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1016.12 650.64"   >
         <g>
+
+        <rect width="100%" height="100%" className={style.svg}/> 
           {landStore.lands.map(land => (
             <NavLink activeClassName="selected" key={land.id} to={`${ROUTES.detailLand.to}${land.id}`}>
               <path key={land.id} id={land.id} title={land.title} className={style.land} d={land.svg} />

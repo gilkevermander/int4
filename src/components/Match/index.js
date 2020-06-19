@@ -15,7 +15,7 @@ const Match = ({ nextStep, values }) => {
 
   const back = (e) => {
     e.preventDefault();
-    history.push(ROUTES.home);
+    history.push(ROUTES.start);
   }
 
   //const souvenirs = landStore.loadLandSouvenirs(values.souvid);
