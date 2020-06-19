@@ -14,7 +14,7 @@ class MessageService {
       .collection("users")
       .doc(message.gebruikersnaamMe)
       .collection("messages")
-      .doc(message.gebruikersnaam)
+      .doc(message.id)
       .set(message);
   };
 
@@ -25,7 +25,7 @@ class MessageService {
       .collection("users")
       .doc(message.gebruikersnaam)
       .collection("messages")
-      .doc(message.gebruikersnaamMe)
+      .doc(message.id)
       .set(message);
   };
   //hier kan ik nog es dezelfde functie doen maar omgekeerd he

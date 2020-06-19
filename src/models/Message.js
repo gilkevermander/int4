@@ -48,6 +48,7 @@ class Message {
       this.user.unlinkMessage(this);
     }
     if (user) {
+      console.log(user);
       this.userId = user.id;
       this.user.linkMessage(this);
     } else {
