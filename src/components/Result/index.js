@@ -29,7 +29,7 @@ const Result = ({ nextStep, values, setSouvid }) => {
   }
   const back = (e) => {
     e.preventDefault();
-    history.push(ROUTES.home);
+    history.push(ROUTES.start);
 
   }
   //CODE HIERONDER ZORGT VOOR LOOP ???

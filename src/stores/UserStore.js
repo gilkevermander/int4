@@ -16,10 +16,64 @@ class UserStore {
 
   loadContactsForUser = async (user) => {
     const contacts = await this.usersService.getContactsForUser(user);
-
     contacts.forEach((contact) => {
       this.updateUserFromServer(contact);
     });
+    // await this.usersService.getMessagesForUser(
+    //   user.id,
+    //   this.onMessageAdded
+    // );
+
+  };
+
+  loadContactsForUser2 = async (user) => {
+    //parameter van dese functie
+
+    return await this.usersService.getContactsForUser2(
+      user.id,
+      async (userId) => {
+        console.log(userId)
+        console.log("dit is het userId", userId);
+        if (!userId) {
+          console.log("het is gedelete dit userId", userId);
+          this.groups.remove(userId);
+        }
+        // await this.loadGroup(userId.id);
+        // await this.loadGroupUsers(userId.id);
+        //die is een callback functie(de volgende)
+        await this.usersService.getMessagesForUser(
+          userId,
+          this.onMessageAdded
+        );
+      }
+    );
+  };
+
+  loadMessagesForUser = async (user) => {
+    const gebruikersnaam = user.gebruikersnaam
+    const messages = await this.usersService.getMessagesForUser(
+      gebruikersnaam, this.onMessageAdded
+    );
+    console.log(messages);
+    return messages
+  };
+
+  // loadContactsForUser = async (user) => {
+  //   const contacts = await this.usersService.getContactsForUser(user);
+  //   contacts.forEach((contact) => {
+  //     this.updateUserFromServer(contact);
+  //   });
+  //   await this.userService.getMessagesForUser(
+  //     user.gebruikersnaam,
+  //     this.onMessageAdded
+  //   );
+  // };
+
+  onMessageAdded = async (json) => {
+    console.log(json);
+    console.log(this.rootStore.messageStore.updateMessageFromServer(json))
+    this.rootStore.messageStore.updateMessageFromServer(json);
+    
   };
 
   createContactforUser = async (user, gebruikersnaam) => {
@@ -86,6 +140,7 @@ class UserStore {
   // };
 
   resolveUser = (id) => this.users.find((user) => user.id === id);
+  resolveUserg = (gebruikersnaam) => this.users.find((user) => user.gebruikersnaam === gebruikersnaam);
 
   addUser = (user) => {
     this.users.push(user);

@@ -2,17 +2,38 @@ import { decorate, action, computed, observable } from "mobx";
 
 
 class User {
-  constructor({ id, store, ...json }) {
+  constructor({ id, store, messages = [], ...json }) {
     if (!store) {
       throw new Error("voorzie een store");
     }
     this.id = id;
     this.store = store;
     this.souvenirs= []
-
+    this._messages = messages;
     this.updateFromJson(json);
 
     this.store.addUser(this);
+  }
+
+  linkMessage(message) {
+    !this._messages.includes(message) && this._messages.push(message);
+  }
+
+  unlinkMessage(message) {
+    const index = this._messages.findIndex(test => test.id === message.id);
+    if (index !== -1) {
+      this._messages.splice(index, 1);
+    }
+  }
+
+  get messages() {
+    return this._messages.slice().sort((a, b) => a.date - b.date);
+  }
+
+  get lastMessageContent() {
+    return this.messages.length > 0
+      ? this.messages[this.messages.length - 1].content
+      : "";
   }
 
   create = async () => this.store.createUser(this.asJson);
@@ -65,6 +86,8 @@ class User {
 }
 
 decorate(User, {
+  _messages: observable,
+  messages: computed,
   updateFromJson: action,
   asJson: computed,
   souvenirs: observable,

@@ -58,6 +58,8 @@ class UiStore {
       const user = this.rootStore.userStore.updateUserFromServer(data);
       // await this.rootStore.groupStore.loadGroupsForUser(user);
       // await this.rootStore.userStore.loadContactsForUser(user);
+      console.log(user)
+      await this.rootStore.userStore.loadContactsForUser(user);//2 wel of niet
       this.setCurrentUser(user);
       console.log(user);
     } else {

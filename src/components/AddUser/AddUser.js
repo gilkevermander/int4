@@ -5,12 +5,14 @@ import style from "./AddUser.module.css";
 
 const AddUser = () => {
   const [gebruikersnaam, setGebruikersnaam] = useState("");
+  const [message, setMessage] = useState("");
   const { uiStore, userStore } = useStore();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await userStore.createContactforUser(uiStore.currentUser, gebruikersnaam);
+      setMessage(`${gebruikersnaam} is succesvol toegevoegd`)
     } catch (error) {
       console.log(error);
     }
@@ -32,6 +34,7 @@ const AddUser = () => {
           </label>
           <input type="submit" value="Toevoegen" className={style.button} />
         </form>
+        <p>{message}</p>
       </div>
     </>
   );

@@ -40,6 +40,39 @@ class UserService {
     return contacts.docs.map((u) => u.data());
   };
 
+  getContactsForUser2 = async (userId, onUserAdded) => {
+    console.log(userId)
+    return await this.db
+      .collectionGroup("contacts")
+      .where("id", "==", userId)
+      .onSnapshot(async (snapshot) => {
+        snapshot.docChanges().forEach(async (change) => {
+          console.log(change);
+          if (change.type === "added") {
+            const groupId = change.doc.ref.parent.parent;
+            console.log(groupId);
+            onUserAdded(groupId);
+          }
+        });
+      });
+  };
+
+  getMessagesForUser = async (gebruikersnaam, onMessageAdded) => {
+    this.db
+      .collectionGroup("messages")
+      .where("gebruikersnaam", "==", gebruikersnaam)
+      .orderBy("timestamp")
+      .onSnapshot(async (snapshot) => {
+        snapshot.docChanges().forEach(async (change) => {
+          console.log(change);
+          if (change.type === "added") {
+            console.log(onMessageAdded(change.doc.data()));
+            onMessageAdded(change.doc.data());
+          }
+        });
+      });
+  };
+
   createContactForUser = async (user, gebruikersnaam) => {
     const contact = await this.getUserByGebruikersnaam(gebruikersnaam);
     if (!contact) {
