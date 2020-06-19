@@ -9,11 +9,14 @@ import { ROUTES } from "../../consts";
 const RegisterForm = () => {
   const [email, setEmail] = useState("");
   const [voornaam, setVoornaam] = useState("");
-  const [achternaam, setAchternaam] = useState("");
+  // const [achternaam, setAchternaam] = useState("");
   const [gebruikersnaam, setGebruikersnaam] = useState("");
   const [password, setPassWord] = useState("");
   const [passwordAgain, setPassWordAgain] = useState("");
-  const [error, setError] = useState("");
+  const [error1, setError1] = useState("");
+  const [error2, setError2] = useState("");
+  const [error3, setError3] = useState("");
+  const [error4, setError4] = useState("");
 
   const { uiStore } = useStore();
   const history = useHistory();
@@ -23,22 +26,35 @@ const RegisterForm = () => {
     if (password === passwordAgain) {
       try {
         console.log('works yes')
-        await uiStore.register({ voornaam, achternaam, email, password, gebruikersnaam });
+        await uiStore.register({ voornaam, email, password, gebruikersnaam });
         history.push(ROUTES.home);
       } catch (error) {
         console.log(error);
         console.log(error.message);
-        setError(error.message);
+        if (error.message === "The email address is already in use by another account.") {
+          setError1("Email is al in gebruik")
+        } else if (error.message === "Password should be at least 6 characters") {
+          setError2("Wachtwoord moet 6 karakters lang zijn")
+        }
+        else if (error.message === "The email address is badly formatted.") {
+          setError1("Geef een correct email in")
+        }
       }
+    } else if (voornaam === "" || gebruikersnaam === "" || email === "") {
+      setError3("Vul dit veld in")
+    } else if (password !== passwordAgain || passwordAgain !== password || (password !== "" && voornaam !== "" && gebruikersnaam !== "" && email !== "" && passwordAgain === "")) {
+      setError4("Wachtwoorden zijn niet gelijk")
     }
   };
 
   return (
     <div className={style.container}>
-      {error === "The email address is already in use by another account." ? <p></p> : <p></p>}
-      <form onSubmit={handleSubmit} className={[style.form__register, style.form ].join(" ")}>
+      <form onSubmit={handleSubmit} className={[style.form__register, style.form].join(" ")}>
         <div className={style.form__wrapper}>
-          <h2 className={style.form__titel}>Naam</h2>
+          <div className={style.form__validatie}>
+            <h2 className={style.form__titel}>Naam</h2>
+            <p className={style.form__error}>{error3}</p>
+          </div>
           <TextInputGroupApp
             className={style.form__input}
             label="Voornaam"
@@ -62,7 +78,10 @@ const RegisterForm = () => {
           />
         </div> */}
         <div className={style.form__wrapper}>
-          <h2 className={style.form__titel}>Gebruikersnaam</h2>
+          <div className={style.form__validatie}>
+            <h2 className={style.form__titel}>Gebruikersnaam</h2>
+            <p className={style.form__error}>{error3}</p>
+          </div>
           <TextInputGroupApp
             className={style.form__input}
             label="Gebruikersnaam"
@@ -74,7 +93,10 @@ const RegisterForm = () => {
           />
         </div>
         <div className={style.form__wrapper}>
-          <h2 className={style.form__titel}>E-mail</h2>
+          <div className={style.form__validatie}>
+            <h2 className={style.form__titel}>E-mail</h2>
+            <p className={style.form__error}>{error1 ? error1 : error3}</p>
+          </div>
           <TextInputGroupApp
             className={style.form__input}
             label="Email"
@@ -86,7 +108,10 @@ const RegisterForm = () => {
           />
         </div>
         <div className={style.form__wrapper}>
-          <h2 className={style.form__titel}>Wachtwoord</h2>
+          <div className={style.form__validatie}>
+            <h2 className={style.form__titel}>Wachtwoord <span className={style.form__titel__info}>(min 6 karakters)</span></h2>
+            <p className={style.form__error}>{error2 ? error2 : error3}</p>
+          </div>
           <TextInputGroupApp
             className={style.form__input}
             label="Password"
@@ -98,7 +123,10 @@ const RegisterForm = () => {
           />
         </div>
         <div className={style.form__wrapper}>
+        <div className={style.form__validatie}>
           <h2 className={style.form__titel}>Herhaal wachtwoord</h2>
+          <p className={style.form__error}>{error4}</p>
+          </div>
           <TextInputGroupApp
             className={style.form__input}
             label="Passwordagain"
@@ -109,7 +137,7 @@ const RegisterForm = () => {
             onChange={(e) => setPassWordAgain(e.currentTarget.value)}
           />
         </div>
-        <input type="submit" value="Registeer" className={[style.button,style.button__register].join (" ")} />
+        <input type="submit" value="Registeer" className={[style.button, style.button__register].join(" ")} />
       </form>
     </div>
   );
