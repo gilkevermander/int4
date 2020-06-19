@@ -1,11 +1,6 @@
 @value tokens: "../../styles/tokens.module.css";
 @value background, hover, darkPrimary, solight, fontSizeMedium, raleway from tokens;
 
-.active {
-  background-color: yellow;
-  color: yellow;
-  border: .2rem solid black;
-}
 
 .list {
   display: grid;
@@ -73,12 +68,6 @@
   background-color: white;
   color: darkPrimary;
 }
-
-.button:active {
-  background-color: solight;
-  color: red;
-}
-
 
 .scan {
   width: 9rem;
