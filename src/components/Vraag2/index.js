@@ -6,6 +6,7 @@ import cultuur from "../../assets/img/cultuur.png";
 import spel from "../../assets/img/spel.png";
 import concert from "../../assets/img/concert.png";
 import parasol from "../../assets/img/parasol.png";
+import NavBarSouvenir from "../NavBarSouvenir/index";
 const quizStore = new QuizStore();
 
 const Vraag2 = ({ setAnswer2, nextStep, values }) => {
@@ -102,6 +103,7 @@ const Vraag2 = ({ setAnswer2, nextStep, values }) => {
         <button onClick={saveAndContinue} className={style.button}> <p className={style.button__next}>Volgende</p></button>
 
       </div>
+      <NavBarSouvenir/>
     </section>
 
   );

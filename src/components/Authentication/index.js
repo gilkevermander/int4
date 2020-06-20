@@ -3,6 +3,7 @@ import Content from "../Content/Content";
 import { Switch, Route, NavLink, Redirect } from "react-router-dom";
 import { ROUTES } from "../../consts";
 import LoginForm from "./LoginForm";
+import SouvenirWallDetail from "../SouvenirWallDetail/index";
 import Start from "../Start/index";
 import Quiz from "../Quiz/index";
 import Manier from "../Manier/index";
@@ -29,6 +30,9 @@ const Authentication = () => {
   return useObserver(() => (
     <>
       <Switch>
+      <Route path={ROUTES.souvenirWallDetail.path}>
+          <SouvenirWallDetail />
+        </Route>
         <Route exact path={ROUTES.souvenirWall}>
           <SouvenirWall />
         </Route>

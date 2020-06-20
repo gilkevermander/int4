@@ -7,7 +7,7 @@ import style from "./Result.module.css";
 const Result = ({ nextStep, values, setSouvid }) => {
 
   const history = useHistory();
-  const { landStore, souvenirStore } = useStore();
+  const { landStore } = useStore();
 
   const [aantal, setAantal] = useState(233);
   const [landId, setLandId] = useState(landStore.resolveLandId(values.land));
@@ -15,7 +15,7 @@ const Result = ({ nextStep, values, setSouvid }) => {
   const saveAndContinue = (e) => {
     e.preventDefault()
     try {
-      const land = landStore.resolveLandId(values.land);
+      // const land = landStore.resolveLandId(values.land);
       console.log(landId.id);
       console.log(values.land.id);
       const souvenirs = landStore.loadLandSouvenirs(landId.id);

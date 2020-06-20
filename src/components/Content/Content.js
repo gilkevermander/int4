@@ -43,9 +43,9 @@ const Content = () => {
         <Route path={ROUTES.messages.path}>
           <Messages />
         </Route>
-        <Route path={ROUTES.souvenirWallDetail.path}>
+        {/* <Route path={ROUTES.souvenirWallDetail.path}>
           <SouvenirWallDetail />
-        </Route>
+        </Route> */}
         <Route path={ROUTES.qr}>
           <Qr />
         </Route>

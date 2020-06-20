@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
-import { useObserver } from 'mobx-react-lite';
+import React from 'react';
 import { useHistory } from "react-router-dom";
 import { ROUTES } from "../../consts";
-import { useStore } from "../../hooks/useStore";
-import ReactPlayer from 'react-player'
 import style from "./Match.module.css";
 
 import wereldKaart from "../../assets/img/wereldKaart.png"
 
-const Match = ({ nextStep, values }) => {
+const Match = ({ values }) => {
 
   const history = useHistory();
-  const { landStore } = useStore();
 
   const back = (e) => {
     e.preventDefault();

@@ -6,6 +6,7 @@ import sushi from "../../assets/img/sushi.png";
 import hamburger from "../../assets/img/hamburger.png";
 import mosselen from "../../assets/img/mosselen.png";
 import spaghetti from "../../assets/img/spaghetti.png";
+import NavBarSouvenir from "../NavBarSouvenir/index";
 
 const quizStore = new QuizStore();
 
@@ -102,6 +103,7 @@ const Vraag1 = ({ setAnswer1, nextStep, values }) => {
 
         <button onClick={saveAndContinue} className={style.button}> <p className={style.button__next}>Volgende</p></button>
       </div>
+      <NavBarSouvenir/>
     </section>
   );
 };

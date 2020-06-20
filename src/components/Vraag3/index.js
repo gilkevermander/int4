@@ -6,6 +6,7 @@ import zonnebril from "../../assets/img/zonnebril.png";
 import bikini from "../../assets/img/bikini.png";
 import koptelefoon from "../../assets/img/koptelefoon.png";
 import camera from "../../assets/img/cameraroze.png";
+import NavBarSouvenir from "../NavBarSouvenir/index";
 const quizStore = new QuizStore();
 
 const Vraag3 = ({ setAnswer3, nextStep, values }) => {
@@ -99,6 +100,7 @@ const Vraag3 = ({ setAnswer3, nextStep, values }) => {
         <button onClick={saveAndContinue} className={style.button}> <p className={style.button__next}>Volgende</p></button>
 
       </div>
+      <NavBarSouvenir/>
     </section>
   );
 };

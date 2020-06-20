@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useStore } from "../../hooks/useStore";
 import { useObserver } from "mobx-react-lite";
-import ReactPlayer from 'react-player'
 import AppHeader from "../AppHeader/index";
 import kaart from "../../assets/img/kaart.png";
 import style from "./DetailLandS.module.css";
