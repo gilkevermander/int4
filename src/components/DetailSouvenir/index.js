@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import { useStore } from "../../hooks/useStore";
 import { useObserver } from "mobx-react-lite";
 import ContentHeader from "../ContentHeader/ContentHeader";
+import { Link } from "react-router-dom";
+import { ROUTES } from "../../consts/index";
+import style from "./DetailSouvenir.module.css"
 
 import Empty from "../Empty/Empty";
 
@@ -67,13 +70,23 @@ const DetailSouvenir = () => {
     }
     return (
       <>
+      <div className={style.container}>
         <ContentHeader title={"Luister naar de herinnering"} />
+        <div className={style.detail}>
         {souvenir.souvenirs[0].video.endsWith(".mp4") ?
-        <video src={souvenir.souvenirs[0].video} controls loop /> : <audio src={souvenir.souvenirs[0].video} controls loop />}
-        <p>Reisverhaal naar {souvenir.title}</p>
+        <video className={style.video} src={souvenir.souvenirs[0].video} controls loop /> : <audio src={souvenir.souvenirs[0].video} controls loop />}
+        <p className={style.verhaal} >Reisverhaal naar {souvenir.title}</p>
         {/* <p>land:{souvenir.land.title}</p> */}
         {/* <p>{user.gebruikersnaam}</p> */}
-        <p>gebruikersnaam</p>
+        <p className={style.reiziger}>gebruikersnaam</p>
+        <Link className={style.button} to={ROUTES.chat}>
+            <span className={style.button__text}>Bedank met een berichtje</span>
+          </Link>
+          <Link className={style.button2} to={ROUTES.kaart}>
+            <span className={style.button__text}>Beluister andere verhalen</span>
+          </Link>
+        </div>
+        </div>
 
       </>
     );
