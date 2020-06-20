@@ -28,9 +28,7 @@ const DetailSouvenir = () => {
 
   useEffect(() => {
     const loadSouvenir = async (landId, id) => {
-      console.log('haha')
       try {
-        console.log('hihi')
         //const souvenir = await souvenirStore.loadSouvenir(id); //resolveLand
         const souvenir = await landStore.loadSouvenirFromUrl(id, landId);
         if (!souvenir || souvenir === undefined) {
@@ -44,7 +42,7 @@ const DetailSouvenir = () => {
         // setState(STATE_LOADING_MORE_DETAILS);
         // //await souvenirStore.loadLandVerhalen(id); //hier blijft hij op wachten maar er komt niets
         setState(STATE_FULLY_LOADED);
-        //console.log(souvenir.verhalen);
+        console.log(souvenir);
       } catch (error) {
         if (error.response && error.response.status === 404) {
           setState(STATE_DOES_NOT_EXIST);
@@ -70,7 +68,8 @@ const DetailSouvenir = () => {
     return (
       <>
         <ContentHeader title={"Luister naar de herinnering"} />
-        <audio src={souvenir.souvenirs[0].video} controls loop />
+        {souvenir.souvenirs[0].video.endsWith(".mp4") ?
+        <video src={souvenir.souvenirs[0].video} controls loop /> : <audio src={souvenir.souvenirs[0].video} controls loop />}
         <p>Reisverhaal naar {souvenir.title}</p>
         {/* <p>land:{souvenir.land.title}</p> */}
         {/* <p>{user.gebruikersnaam}</p> */}
