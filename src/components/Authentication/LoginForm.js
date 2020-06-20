@@ -14,6 +14,16 @@ const LoginForm = () => {
   const [error2, setError2] = useState("");
   const history = useHistory();
 
+  const clearEmail = (e) => {
+    e.preventDefault()
+    setEmail("")
+  }
+
+  const clearPassword = (e) => {
+    e.preventDefault()
+    setPassword("")
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (email !== "" || password !== "") {
@@ -46,29 +56,45 @@ const LoginForm = () => {
             <h2 className={style.form__titel}>E-mail</h2>
             {error1 === "Dit email bestaat nog niet" || error1 === "Geef een correct email in" ? <p className={style.form__error}>{error1}</p> : <p className={style.form__error}></p>}
           </div>
-          <TextInputGroupApp
-            className={style.form__input}
-            label="Email"
-            name="email"
-            type="email"
-            placeholder="kabien@kortrijk.be"
-            value={email}
-            onChange={(e) => setEmail(e.currentTarget.value)}
-          />
+          <div className={style.form__wrapper__input}>
+            <TextInputGroupApp
+              className={style.form__input}
+              label="Email"
+              name="email"
+              type="email"
+              placeholder="kabien@kortrijk.be"
+              value={email}
+              onChange={(e) => setEmail(e.currentTarget.value)}
+            />
+            {email !== "" &&
+              <div className={style.form__wrapper__input__item__clear1}>
+                <button className={style.form__clearButton} onClick={clearEmail}> x </button>
+              </div>
+            }
+          </div>
+
         </div>
         <div className={style.form__wrapper}>
           <div className={style.form__validatie}>
             <h2 className={style.form__titel}>Wachtwoord</h2>
             <p className={style.form__error}>{error2}</p>
           </div>
-          <TextInputGroupApp
-            label="Password"
-            type="password"
-            name="Password"
-            placeholder="Vul je wachtwoord in"
-            value={password}
-            onChange={(e) => setPassword(e.currentTarget.value)}
-          />
+          <div className={style.form__wrapper__input}>
+            <TextInputGroupApp
+              className={style.form__wrapper__input__item}
+              label="Password"
+              type="password"
+              name="Password"
+              placeholder="Vul je wachtwoord in"
+              value={password}
+              onChange={(e) => setPassword(e.currentTarget.value)}
+            />
+            {password !== "" &&
+              <div className={style.form__wrapper__input__item__clear2}>
+                <button className={style.form__clearButton} onClick={clearPassword}> x </button>
+              </div>
+            }
+          </div>
         </div>
         <p className={style.form__info}>Log in om jouw herinnering te<br /> beluisteren</p>
         <div className={style.form__button}>
