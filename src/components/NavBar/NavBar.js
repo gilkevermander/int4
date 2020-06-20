@@ -10,24 +10,29 @@ const NavBar = () => {
   return (
     <nav className={style.navbar}>
       <ul className={style.list}>
-        <li className={style.list__item}>
-          <NavLink activeClassName={style.active} className={style.button}  to={ROUTES.home}>
+
+        <NavLink activeClassName={style.active} className={style.list__item} to={ROUTES.home}>
+          <li className={style.button}>
             <HomeLogo fill="white" />
             <span className={style.list_text}>Home</span>
-          </NavLink>
-        </li>
-        <li className={style.list__item}>
-          <NavLink className={style.button__scan} activeClassName={style.active} to={ROUTES.qr}>
-            <img src={scan} alt="scan"/>
-            <span className={ style.list_text}>Scan je verhaal</span>
-          </NavLink>
-        </li>
-        <li className={style.list__item}>
-          <NavLink className={style.button} activeClassName={style.active} to={ROUTES.chat}>
+          </li>
+        </NavLink>
+
+
+        <NavLink className={style.list__item} to={ROUTES.qr}>
+          <li className={style.button__scan}>
+            <img src={scan} alt="scan" />
+            <span className={style.list_text}>Scan je verhaal</span>
+          </li>
+        </NavLink>
+
+
+        <NavLink className={style.list__item} activeClassName={style.active} to={ROUTES.chat}>
+          <li className={style.button} >
             <MessageLogo fill="white" />
             <span className={style.list_text}>Berichten</span>
-          </NavLink>
-        </li>
+          </li>
+        </NavLink>
       </ul>
     </nav>
   );

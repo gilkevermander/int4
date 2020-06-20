@@ -1,5 +1,5 @@
 @value tokens: "../../styles/tokens.module.css";
-@value background, hover, darkPrimary, solight, fontSizeMedium, raleway from tokens;
+@value background, hover,geel,  darkPrimary, solight, fontSizeMedium, raleway from tokens;
 
 
 .list {
@@ -27,6 +27,15 @@
   padding-bottom: 1rem;
 }
 
+.list__item {
+  display: flex;
+  justify-content: center;
+  grid-row: 2;
+  background-color: white;
+  height: 100%;
+  padding-bottom: 1rem;
+}
+
 .list_text {
   font-family: raleway;
   font-style: normal;
@@ -40,9 +49,44 @@
   
 }
 
-.list__item__scan {
-  width: 30rem
+.active{
+  display: flex;
+  justify-content: center;
+  grid-row: 2;
+  background-color: geel;
+  z-index: 100;
+  height: 100%;
+  padding-bottom: 1rem;
 }
+
+.list_textHome {
+  font-family: raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: black;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  padding-top: .5rem;
+}
+
+.active1 {
+  font-family: raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: black;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
+  margin-bottom: -2rem;
+  border-bottom: 0.6rem solid geel;
+  padding-bottom: 1.3rem;
+}
+
+
 
 
 .button__scan {

@@ -55,7 +55,7 @@ const Content = () => {
         <Route path={ROUTES.detaillandS.path}>
           <DetailLandS />
         </Route>
-        <Route exact strict path={ROUTES.home}>
+        <Route exact path={ROUTES.home}>
           <HomePage />
         </Route>
       </Switch>
