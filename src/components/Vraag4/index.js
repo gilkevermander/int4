@@ -2,10 +2,6 @@ import React from "react";
 import style from "./Vraag4.module.css";
 import ContentHeader from "../ContentHeader/ContentHeader";
 import QuizStore from "../../stores/QuizStore";
-import benb from "../../assets/img/benb.png";
-import camping from "../../assets/img/camping.png";
-import hotel from "../../assets/img/hotel.png";
-import airbnb from "../../assets/img/airbnb.png";
 import NavBarSouvenir from "../NavBarSouvenir/index";
 const quizStore = new QuizStore();
 
@@ -26,7 +22,7 @@ const Vraag4 = ({setAnswer4, antwoord, submitQuiz, error}) => {
           value={quizStore.vragen.v4_1}
           onChange={e => setAnswer4( e.currentTarget.value)} />
          <div className={style.answer__text}>
-              <img src={camping} alt="camping" width="130" />
+              <img src="assets/img/camping.png" alt="camping" width="130" />
               <p className={style.text}>Camping</p>
             </div>
       </label>
@@ -40,7 +36,7 @@ const Vraag4 = ({setAnswer4, antwoord, submitQuiz, error}) => {
           value={quizStore.vragen.v4_2}
           onChange={e => setAnswer4( e.currentTarget.value)} />
         <div className={style.answer__text}>
-              <img src={hotel} alt="hotel" width="71" />
+              <img src="assets/img/hotel.png" alt="hotel" width="71" />
               <p className={style.text}>Hotel</p>
             </div>
       </label>
@@ -54,7 +50,7 @@ const Vraag4 = ({setAnswer4, antwoord, submitQuiz, error}) => {
           value={quizStore.vragen.v4_3}
           onChange={e => setAnswer4( e.currentTarget.value)} />
         <div className={style.answer__text}>
-              <img src={benb} alt="benb" width="106" />
+              <img src="assets/img/benb.png"alt="benb" width="106" />
               <p className={style.text}>Bed en breakfast</p>
             </div>
       </label>
@@ -68,7 +64,7 @@ const Vraag4 = ({setAnswer4, antwoord, submitQuiz, error}) => {
           value={quizStore.vragen.v4_4}
           onChange={e => setAnswer4( e.currentTarget.value)}/>
         <div className={style.answer__text}>
-              <img src={airbnb} alt="airbnb" width="139" />
+              <img src="assets/img/airbnb.png" alt="airbnb" width="139" />
               <p className={style.text}>Airbnb</p>
             </div>
       </label>

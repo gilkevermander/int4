@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { useStore } from "../../hooks/useStore";
 import { useObserver } from "mobx-react-lite";
 import AppHeader from "../AppHeader/index";
-import kaart from "../../assets/img/kaart.png";
 import style from "./DetailLandS.module.css";
 import { ROUTES } from "../../consts";
 
@@ -82,7 +81,7 @@ const DetailLandS = () => {
       <div className={style.container}>
         <AppHeader title={"Luister naar de herinnering"} prevStep={ROUTES.kaart}/>
         <div className={style.detail}>
-        <img alt="kaart" src={kaart} width="272" className={style.image}/>
+        <img alt="kaart" src="assets/img/kaart.png" width="272" className={style.image}/>
         <p className={style.verhaal}>Reisverhaal naar {souvenir.title}</p>
         <p className={style.reiziger}>Onbekende reiziger</p>
         <audio src={souvenir.video} controls loop />

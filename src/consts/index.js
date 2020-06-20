@@ -11,6 +11,7 @@ const ROUTES = {
   detailSouvenir: { path: "/detailSouvenir/:landId/:id", to: "/detailSouvenir/" },
   login: "/login",
   register: "/register",
+  // reset: "/reset",
   locatie: "/locatie",
   scan: "/scan",
   chat: "/chat",

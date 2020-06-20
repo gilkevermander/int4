@@ -18,6 +18,10 @@ class UiStore {
     return await this.authService.logout();
   };
 
+  // resetPassword = async (email) => {
+  //   return await this.authService.resetPassword(email);
+  // };
+
   register = async (user) => {
     const result = await this.authService.register(user);
     user.id = result.uid;

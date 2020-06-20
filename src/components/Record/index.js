@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import VideoRecorder from 'react-video-recorder';
 import style from "./Record.module.css";
 import { ReactMic } from 'react-mic';
-import palmboom from '../../assets/img/palmboom.png'
 import Timer from 'react-compound-timer'
 // import { ReactMediaRecorder } from "react-media-recorder";
 // import { saveAs } from 'file-saver';
@@ -125,7 +124,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                     <div className={style.video__content}>
 
 
-                        <img className={style.content__palmboom} alt="palmboom" src={palmboom}></img>
+                        <img className={style.content__palmboom} alt="palmboom" src="assets/img/palmboom.png"></img>
                   [      <VideoRecorder className={style.video}
                             onRecordingComplete={(videoBlob, startedAt, thumbnailBlob, duration) => {
                                 const urlCreator = window.URL || window.webkitURL
@@ -294,7 +293,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                 </div>
                 {values.record === "" ? <p className={style.error}>{error}</p> : <p className={style.error}></p>}
 
-                <img className={style.content__palmboom2} alt="palmboom" src={palmboom}></img>
+                <img className={style.content__palmboom2} alt="palmboom" src="assets/img/palmboom.png"></img>
 
                 < div className={style.content_sound} >
                     {complete === false ? <p className={style.error}>{error} </p> : <p className={style.error}></p>}

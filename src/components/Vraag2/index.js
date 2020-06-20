@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import style from "./Vraag2.module.css";
 import ContentHeader from "../ContentHeader/ContentHeader";
 import QuizStore from "../../stores/QuizStore";
-import cultuur from "../../assets/img/cultuur.png";
-import spel from "../../assets/img/spel.png";
-import concert from "../../assets/img/concert.png";
-import parasol from "../../assets/img/parasol.png";
 import NavBarSouvenir from "../NavBarSouvenir/index";
 const quizStore = new QuizStore();
 
@@ -41,7 +37,7 @@ const Vraag2 = ({ setAnswer2, nextStep, values }) => {
               value={quizStore.vragen.v2_1}
               onChange={e => setAnswer2(e.currentTarget.value)} />
             <div className={style.answer__text}>
-              <img src={concert} alt="concert" width="75" height="92" />
+              <img src="assets/img/concert.png" alt="concert" width="75" height="92" />
               <p className={style.text}>Concert</p>
             </div>
           </label>
@@ -56,7 +52,7 @@ const Vraag2 = ({ setAnswer2, nextStep, values }) => {
               onChange={e => setAnswer2(e.currentTarget.value)} />
 
             <div className={style.answer__text}>
-              <img src={parasol} alt="parasol" width="94" height="96" />
+              <img src="assets/img/parasol.png" alt="parasol" width="94" height="96" />
               <p className={style.text}>Aan het strand/ zwembad liggen</p>
             </div>
           </label>
@@ -70,7 +66,7 @@ const Vraag2 = ({ setAnswer2, nextStep, values }) => {
               value={quizStore.vragen.v2_3}
               onChange={e => setAnswer2(e.currentTarget.value)} />
              <div className={style.answer__text}>
-              <img src={cultuur} alt="cultuur" width="77" height="100" />
+              <img src="assets/img/cultuur.png" alt="cultuur" width="77" height="100" />
               <p className={style.text}>Cultuur opsnuiven</p>
             </div>
           </label>
@@ -84,7 +80,7 @@ const Vraag2 = ({ setAnswer2, nextStep, values }) => {
               value={quizStore.vragen.v2_4}
               onChange={e => setAnswer2(e.currentTarget.value)} />
              <div className={style.answer__text}>
-              <img src={spel} alt="spel" width="67" height="84" />
+              <img src="assets/img/spel.png" alt="spel" width="67" height="84" />
               <p className={style.text}>Gezelschaps- spelletjes spelen</p>
             </div>
           </label>

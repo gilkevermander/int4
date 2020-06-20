@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import style from "./Keuze.module.css";
-import cameras from '../../assets/img/camera.png'
 
 const Keuze = ({ nextStep, values, setKeuze, prevStep, overStep }) => {
 
@@ -79,7 +78,7 @@ const Keuze = ({ nextStep, values, setKeuze, prevStep, overStep }) => {
           </label>
         </div>
         <div className={style.form__backgroundimg}>
-          <img className={style.backgroundimg} src={cameras} width="486" alt="Cameras"></img>
+          <img className={style.backgroundimg} src="assets/img/camera.png" width="486" alt="Cameras"></img>
           <button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
         </div>
       </form>

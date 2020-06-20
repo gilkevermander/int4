@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "./Authentication.module.css";
 import TextInputGroupApp from "../TextInputGroupApp";
 import { useStore } from "../../hooks/useStore";
-import { useHistory } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 import { ROUTES } from "../../consts";
 
 const LoginForm = () => {
@@ -73,7 +73,7 @@ const LoginForm = () => {
             }
           </div>
         </div>
-        
+
         <div className={style.form__wrapper}>
           <div className={style.form__validatie}>
             <h2 className={style.form__titel}>Wachtwoord</h2>
@@ -99,7 +99,9 @@ const LoginForm = () => {
         <p className={style.form__info}>Log in om jouw herinnering te<br /> beluisteren</p>
         <div className={style.form__button}>
           <button className={style.button} onClick={handleSubmit}>Aanmelden</button>
-          <p className={style.form__vergeten}>Wachtwoord vergeten?</p>
+          {/* <NavLink to={ROUTES.reset} className={style.textlink}> */}
+            <p className={style.form__vergeten}>Wachtwoord vergeten?</p>
+          {/* </NavLink> */}
         </div>
 
       </form>

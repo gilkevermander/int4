@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./NavBar.module.css";
 import { ReactComponent as MessageLogo } from "./message.svg";
-import scan from "../../assets/img/scan.png";
 import { ReactComponent as HomeLogo } from "./home.svg";
 import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../consts";
@@ -21,7 +20,7 @@ const NavBar = () => {
 
         <NavLink className={style.list__item} to={ROUTES.qr}>
           <li className={style.button__scan}>
-            <img src={scan} alt="scan" />
+            <img src="assets/img/scan.png" alt="scan" />
             <span className={style.list_text}>Scan je verhaal</span>
           </li>
         </NavLink>
