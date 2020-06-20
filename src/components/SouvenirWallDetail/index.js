@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useStore } from "../../hooks/useStore";
 import { useObserver } from "mobx-react-lite";
-import ReactPlayer from 'react-player'
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../consts/index";
 import style from "./SouvenirWallDetail.module.css";
 import kaart from "../../assets/img/kaart.png";
 import ContentHeader from "../ContentHeader/ContentHeader";
+import NavBarSouvenir from "../NavBarSouvenir/index";
 
 import Empty from "../Empty/Empty";
 
@@ -91,6 +91,7 @@ const SouvenirWallDetail = () => {
             <span className={style.button__text}>Ontdek jouw favoriete land</span>
           </Link>
         </div>
+        <NavBarSouvenir/>
       </>
     );
   });

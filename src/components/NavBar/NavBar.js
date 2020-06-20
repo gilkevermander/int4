@@ -17,7 +17,7 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li className={style.list__item}>
-          <NavLink className={[style.button__scan]} activeClassName={style.active} to={ROUTES.qr}>
+          <NavLink className={style.button__scan} activeClassName={style.active} to={ROUTES.qr}>
             <img src={scan} alt="scan"/>
             <span className={ style.list_text}>Scan je verhaal</span>
           </NavLink>

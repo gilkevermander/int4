@@ -6,6 +6,7 @@ import benb from "../../assets/img/benb.png";
 import camping from "../../assets/img/camping.png";
 import hotel from "../../assets/img/hotel.png";
 import airbnb from "../../assets/img/airbnb.png";
+import NavBarSouvenir from "../NavBarSouvenir/index";
 const quizStore = new QuizStore();
 
 const Vraag4 = ({setAnswer4, antwoord, submitQuiz}) => {
@@ -85,6 +86,7 @@ const Vraag4 = ({setAnswer4, antwoord, submitQuiz}) => {
       <p>{antwoord}</p>
 
       </div>
+      <NavBarSouvenir/>
     </section>
   );
 };
