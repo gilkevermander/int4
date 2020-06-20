@@ -29,6 +29,9 @@
 
 .container {
 	composes: container from "../../styles/layouts.module.css";
+	display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .tools {
