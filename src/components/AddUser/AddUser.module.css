@@ -39,11 +39,13 @@
     margin-top: 4.3rem;
 }
 
-.message {
-    composes: succes from "../../styles/layouts.module.css";
-}
-
 .messageFalse {
     composes: succes from "../../styles/layouts.module.css";
     color:red;
 }
+
+.message {
+    composes: succes from "../../styles/layouts.module.css";
+}
+
+
