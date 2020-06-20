@@ -124,6 +124,25 @@ align-items: center;
   top: 224px; 
 }
 
+.form__wrapper__input__item__clear3 {
+  position: absolute;
+  right: 25px; 
+  top: 324px; 
+}
+
+.form__wrapper__input__item__clear4 {
+  position: absolute;
+  right: 25px; 
+  top: 427px; 
+}
+
+.form__wrapper__input__item__clear5 {
+  position: absolute;
+  right: 25px; 
+  top: 528px; 
+}
+
+
 .form__wrapper__input {
   display: flex;
 }

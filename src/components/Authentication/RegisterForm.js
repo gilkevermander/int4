@@ -99,19 +99,7 @@ const RegisterForm = () => {
             }
           </div>
         </div>
-        {/* </div> */}
-        {/* <div className={style.form__wrapper}>
-          <h2 className={style.form__titel}>Achternaam</h2>
-          <TextInputGroupApp
-            className={style.form__input}
-            label="Achternaam"
-            name="achternaam"
-            type="achternaam"
-            placeholder="Vul je achternaam in."
-            value={achternaam}
-            onChange={(e) => setAchternaam(e.currentTarget.value)}
-          />
-        </div> */}
+
         <div className={style.form__wrapper}>
           <div className={style.form__validatie}>
             <h2 className={style.form__titel}>Gebruikersnaam</h2>
@@ -135,52 +123,54 @@ const RegisterForm = () => {
             }
           </div>
         </div>
+
         <div className={style.form__wrapper}>
           <div className={style.form__validatie}>
             <h2 className={style.form__titel}>E-mail</h2>
             <p className={style.form__error}>{error1 ? error1 : error3}</p>
           </div>
           <div className={style.form__wrapper__input}>
-            <div className={style.form__wrapper__input}>
-              <TextInputGroupApp
-                className={style.form__input}
-                label="Email"
-                name="email"
-                type="text"
-                placeholder="Vul je e-mail in."
-                value={email}
-                onChange={(e) => setEmail(e.currentTarget.value)}
-              />
-              {email !== "" &&
-                <div className={style.form__wrapper__input__item__clear2}>
-                  <button className={style.form__clearButton} onClick={clearEmail}> x </button>
-                </div>
-              }
-            </div>
-          </div>
-          <div className={style.form__wrapper}>
-            <div className={style.form__validatie}>
-              <h2 className={style.form__titel}>Wachtwoord <span className={style.form__titel__info}>(min 6 karakters)</span></h2>
-              <p className={style.form__error}>{error2 ? error2 : error3}</p>
-            </div>
-            <div className={style.form__wrapper__input}></div>
             <TextInputGroupApp
               className={style.form__input}
-              label="Password"
-              type="password"
-              name="Password"
-              placeholder="Vul je wachtwoord in."
-              value={password}
-              onChange={(e) => setPassWord(e.currentTarget.value)}
+              label="Email"
+              name="email"
+              type="text"
+              placeholder="Vul je e-mail in."
+              value={email}
+              onChange={(e) => setEmail(e.currentTarget.value)}
             />
-            {password !== "" &&
-              <div className={style.form__wrapper__input__item__clear2}>
-                <button className={style.form__clearButton} onClick={clearPassword}> x </button>
+            {email !== "" &&
+              <div className={style.form__wrapper__input__item__clear3}>
+                <button className={style.form__clearButton} onClick={clearEmail}> x </button>
               </div>
             }
-
           </div>
         </div>
+
+
+        <div className={style.form__wrapper}>
+          <div className={style.form__validatie}>
+            <h2 className={style.form__titel}>Wachtwoord <span className={style.form__titel__info}>(min 6 karakters)</span></h2>
+            <p className={style.form__error}>{error2 ? error2 : error3}</p>
+          </div>
+          <div className={style.form__wrapper__input}>
+          <TextInputGroupApp
+            className={style.form__input}
+            label="Password"
+            type="password"
+            name="Password"
+            placeholder="Vul je wachtwoord in."
+            value={password}
+            onChange={(e) => setPassWord(e.currentTarget.value)}
+          />
+          {password !== "" &&
+            <div className={style.form__wrapper__input__item__clear4}>
+              <button className={style.form__clearButton} onClick={clearPassword}> x </button>
+            </div>
+          }
+           </div>
+        </div>
+
         <div className={style.form__wrapper}>
           <div className={style.form__validatie}>
             <h2 className={style.form__titel}>Herhaal wachtwoord</h2>
@@ -198,14 +188,15 @@ const RegisterForm = () => {
           />
 
           {passwordAgain !== "" &&
-            <div className={style.form__wrapper__input__item__clear2}>
+            <div className={style.form__wrapper__input__item__clear5}>
               <button className={style.form__clearButton} onClick={clearPasswordAgain}> x </button>
             </div>
           }
         </div>
+
         <button className={[style.button, style.button__register].join(" ")} onclick={handleSubmit}>Registreer</button>
       </form >
-    </div>
+    </div >
   );
 };
 

@@ -48,7 +48,7 @@ const LoginForm = () => {
   }
 
   return (
-    < div className={style.form__login}>
+    <div className={style.form__login}>
       <form onSubmit={handleSubmit} className={style.form}>
 
         <div className={style.form__wrapper}>
@@ -72,8 +72,8 @@ const LoginForm = () => {
               </div>
             }
           </div>
-
         </div>
+        
         <div className={style.form__wrapper}>
           <div className={style.form__validatie}>
             <h2 className={style.form__titel}>Wachtwoord</h2>
