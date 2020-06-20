@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import User from "../User/User";
 
 
@@ -7,6 +7,8 @@ import { useObserver } from "mobx-react-lite";
 import { useStore } from "../../hooks/useStore";
 
 const UsersList = () => {
+
+
   const { userStore, uiStore } = useStore();
   const contacts = userStore.loadContactsForUser(uiStore.currentUser); //FOUT kan hier
   console.log(contacts)
@@ -14,6 +16,7 @@ const UsersList = () => {
     <>
       <ul>
         {userStore.users.map(user => (
+          user !== uiStore.currentUser &&
           <User user={user} key={user.id} />
         ))}
       </ul>

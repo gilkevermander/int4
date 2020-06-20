@@ -6,15 +6,19 @@ import { ROUTES } from "../../consts/index";
 import luisteren from "../../assets/img/luisteren.png";
 import cabine from "../../assets/img/cabine.png"
 import verhalen from "../../assets/img/verhalen.png"
+import { useStore } from "../../hooks/useStore";
 
 const HomePage = () => {
   const innerRef = useRef();
+
+  const { uiStore } = useStore();
 
   const getLocation = () => {
     innerRef.current && innerRef.current.getLocation();
   };
   return (
     <section className={style.breedte}>
+      <p>{uiStore.currentUser.gebruikersnaam}</p>
       <InfoHeader title={"Kabien"} className={style.title} />
       <div className={style.headwrapper}>
         <div className={style.wrapper}>

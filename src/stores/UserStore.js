@@ -103,6 +103,10 @@ class UserStore {
       user,
       gebruikersnaam
     );
+    const contact2 = await this.usersService.createContactForUser2(
+      user,
+      gebruikersnaam
+    );
     this.updateUserFromServer(contact);
     return this.resolveUser(contact.id);
   };
