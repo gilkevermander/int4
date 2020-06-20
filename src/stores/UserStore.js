@@ -49,15 +49,36 @@ class UserStore {
     );
   };
 
-  loadMessagesForUser = async (user) => {
+  // loadMessagesForUser = async (user, me) => {//zonder me
+  //   const gebruikersnaam = user.gebruikersnaam
+  //   const messages = await this.usersService.getMessagesForUser(
+  //     gebruikersnaam, this.onMessageAdded
+  //   );
+  //   console.log(user);
+  //   console.log(messages);
+  //   return messages
+  // };
+
+  loadMessagesForUser = async (user, me) => {//zonder me
     const gebruikersnaam = user.gebruikersnaam
+    const gebruikersnaamMe = me.gebruikersnaam
     const messages = await this.usersService.getMessagesForUser(
-      gebruikersnaam, this.onMessageAdded
+      gebruikersnaam, gebruikersnaamMe, this.onMessageAdded
     );
-    console.log(user);
-    console.log(messages);
+    console.log(messages)
     return messages
   };
+
+  loadMessagesForUser2 = async (user, me) => {//zonder me
+    const gebruikersnaam = user.gebruikersnaam
+    const gebruikersnaamMe = me.gebruikersnaam
+    const messages = await this.usersService.getMessagesForUser2(
+      gebruikersnaam, gebruikersnaamMe, this.onMessageAdded
+    );
+    console.log(messages)
+    return messages
+  };
+
 
   // loadContactsForUser = async (user) => {
   //   const contacts = await this.usersService.getContactsForUser(user);

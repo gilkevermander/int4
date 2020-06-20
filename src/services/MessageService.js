@@ -8,7 +8,6 @@ class MessageService {
   }
 
   createMessage = async (message) => {
-    console.log(message)
     message.timestamp = firestore.Timestamp.fromDate(new Date(message.date));
     await this.db
       .collection("users")
@@ -19,7 +18,6 @@ class MessageService {
   };
 
   createMessageRound = async (message) => {
-    console.log(message)
     message.timestamp = firestore.Timestamp.fromDate(new Date(message.date));
     await this.db
       .collection("users")

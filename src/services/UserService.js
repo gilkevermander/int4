@@ -14,7 +14,6 @@ class UserService {
 
   getUserByGebruikersnaam = async (gebruikersnaam) => {
     const data = (await this.db.collection("users").doc(gebruikersnaam).get()).data();
-    console.log(data);
     if (!data.id) {
       data.id = data.userId; // quick fix to make it compatible with koens db
     }
@@ -41,7 +40,6 @@ class UserService {
   };
 
   getContactsForUser2 = async (userId, onUserAdded) => {
-    console.log(userId)
     return await this.db
       .collectionGroup("contacts")
       .where("id", "==", userId)
@@ -50,23 +48,54 @@ class UserService {
           console.log(change);
           if (change.type === "added") {
             const groupId = change.doc.ref.parent.parent;
-            console.log(groupId);
             onUserAdded(groupId);
           }
         });
       });
   };
 
-  getMessagesForUser = async (gebruikersnaam, onMessageAdded) => {
+  // getMessagesForUser = async (gebruikersnaam, onMessageAdded) => {
+  //   this.db
+  //     .collectionGroup("messages")
+  //     .where("gebruikersnaam", "==", gebruikersnaam)
+  //     .orderBy("timestamp")
+  //     .onSnapshot(async (snapshot) => {
+  //       snapshot.docChanges().forEach(async (change) => {
+  //         console.log(change);
+  //         if (change.type === "added") {
+  //           console.log(onMessageAdded(change.doc.data()));
+  //           onMessageAdded(change.doc.data());
+  //         }
+  //       });
+  //     });
+  // };
+
+  getMessagesForUser = async (gebruikersnaam, gebruikersnaamMe, onMessageAdded) => {
     this.db
       .collectionGroup("messages")
       .where("gebruikersnaam", "==", gebruikersnaam)
+      .where("gebruikersnaamMe", "==", gebruikersnaamMe)
       .orderBy("timestamp")
       .onSnapshot(async (snapshot) => {
         snapshot.docChanges().forEach(async (change) => {
           console.log(change);
           if (change.type === "added") {
-            console.log(onMessageAdded(change.doc.data()));
+            onMessageAdded(change.doc.data());
+          }
+        });
+      });
+  };
+
+  getMessagesForUser2 = async (gebruikersnaam, gebruikersnaamMe, onMessageAdded) => {
+    this.db
+      .collectionGroup("messages")
+      .where("gebruikersnaam", "==", gebruikersnaamMe)
+      .where("gebruikersnaamMe", "==", gebruikersnaam)
+      .orderBy("timestamp")
+      .onSnapshot(async (snapshot) => {
+        snapshot.docChanges().forEach(async (change) => {
+          console.log(change);
+          if (change.type === "added") {
             onMessageAdded(change.doc.data());
           }
         });

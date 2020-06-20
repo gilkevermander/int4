@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import Message from "../Message/Message";
 import Form from "../Form/Form";
@@ -12,7 +12,7 @@ import { ROUTES } from "../../consts";
 
 import style from "./Messages.module.css";
 
-const Messages = ({prevStep}) => {
+const Messages = ({ prevStep }) => {
   const { id } = useParams();
   const { userStore, uiStore } = useStore();
 
@@ -29,14 +29,14 @@ const Messages = ({prevStep}) => {
   useEffect(() => {
     const loadUser = async (id) => {
       try {
-        console.log('test')
         const user = await userStore.resolveUser(id);
         const me = await userStore.resolveUser(uiStore.currentUser.id);
         console.log(user);
-        console.log('test')
         console.log(me);
-        const messages = await userStore.loadMessagesForUser(user);
+        const messages = await userStore.loadMessagesForUser(user, me);//zonder me
+        const messages2 = await userStore.loadMessagesForUser2(user, me);//zonder me
         console.log(messages);
+        console.log(messages2);
         if (!user) {
           console.log('wrong')
           setState(STATE_DOES_NOT_EXIST);
@@ -45,11 +45,7 @@ const Messages = ({prevStep}) => {
         setUser(user);
         //setState(STATE_LOADING_MORE_DETAILS);
         //await groupStore.loadGroupUsers(id);
-        
-        
-        console.log(user);
-        console.log('test')
-        console.log(me);
+        console.log(user)
         setState(STATE_FULLY_LOADED);
       } catch (error) {
         /*if (error.response && error.response.status === 404) {
@@ -67,26 +63,26 @@ const Messages = ({prevStep}) => {
     if (state === STATE_LOADING) {
       return <Empty message={"Loading Conversation"} />;
     }
+
     return (
       <>
         <div className={style.container}>
-        <header className={style.header}>
-          
-          {user && (
-            <>
-              <AppHeader className={style.title} title={user.gebruikersnaam} prevStep={ROUTES.chat} />
-            </>
-          )}
-        </header>
-        <div className={style.wrapper}>
-        <ul className={style.list}>
-          {console.log(user._messages)}
-          {user._messages.map((message) => (
-            <Message message={message} key={message.id} />
-          ))}
-        </ul>
-        <Form />
-        </div>
+          <header className={style.header}>
+
+            {user && (
+              <>
+                <AppHeader className={style.title} title={user.gebruikersnaam} prevStep={ROUTES.chat} />
+              </>
+            )}
+          </header>
+          <div className={style.wrapper}>
+            <ul className={style.list}>
+              {user._messages.map((message) => (
+                <Message message={message} key={message.id} />
+              ))}
+            </ul>
+            <Form />
+          </div>
         </div>
       </>
     );

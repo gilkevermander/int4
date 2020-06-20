@@ -16,8 +16,6 @@ class User {
   }
 
   linkMessage(message) {
-    console.log(message)
-    console.log(this._messages)
     !this._messages.includes(message) && this._messages.push(message);
   }
 

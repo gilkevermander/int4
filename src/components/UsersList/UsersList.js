@@ -7,7 +7,9 @@ import { useObserver } from "mobx-react-lite";
 import { useStore } from "../../hooks/useStore";
 
 const UsersList = () => {
-  const { userStore } = useStore();
+  const { userStore, uiStore } = useStore();
+  const contacts = userStore.loadContactsForUser(uiStore.currentUser); //FOUT kan hier
+  console.log(contacts)
   return useObserver(() => (
     <>
       <ul>

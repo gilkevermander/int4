@@ -9,11 +9,11 @@ const Message = ({ message }) => {
   return useObserver(() => (
     <li
       className={
-        message.gebruikersnaamMe === uiStore.currentUser ? styles.right : styles.left
+        message.gebruikersnaamMe === uiStore.currentUser.gebruikersnaam ? styles.right : styles.left
       }
     >
-      {message.user !== uiStore.currentUser && (
-        <p className={styles.user}>{message.user.name}</p>
+      {message.gebruikersnaamMe !== uiStore.currentUser && (
+        <p className={styles.user}>{message.gebruikersnaamMe}</p>
       )}
       <p className={styles.bubble}>{message.content}</p>
     </li>

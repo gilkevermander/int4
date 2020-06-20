@@ -48,7 +48,6 @@ class Message {
       this.user.unlinkMessage(this);
     }
     if (user) {
-      console.log(user);
       this.userId = user.id;
       this.user.linkMessage(this);
     } else {
@@ -73,7 +72,6 @@ class Message {
     gebruikersnaamMe = undefined
   }) => {
     this.content = (content !== undefined) ? content : this.content;
-    console.log(this.content)
     this.unread = (unread !== undefined) ? unread : this.unread;
     this.gebruikersnaam = (gebruikersnaam !== undefined) ? gebruikersnaam : this.gebruikersnaam;
     this.gebruikersnaamMe = (gebruikersnaamMe !== undefined) ? gebruikersnaamMe : this.gebruikersnaamMe;

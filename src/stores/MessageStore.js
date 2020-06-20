@@ -30,9 +30,7 @@ class MessageStore {
   };
 
   updateMessageFromServer(json) {
-    console.log(this.messages);
     let message = this.messages.find((message) => message.id === json.id);
-    console.log(message);
     if (!message) {
       message = new Message({
         id: json.id,
@@ -48,9 +46,7 @@ class MessageStore {
       this.messages.remove(message);
     } else {
       message.updateFromJson(json);
-      console.log(message)
     }
-    console.log(message)
     return message;
   }
 
