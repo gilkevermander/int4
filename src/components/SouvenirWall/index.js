@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import style from "./SouvenirWall.module.css";
-import InfoHeader from "../InfoHeader/InfoHeader";
+import ContentHeader from "../ContentHeader/ContentHeader";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../consts/index";
 import QrReader from 'react-qr-reader'
@@ -26,8 +26,9 @@ const SouvenirWall = () => {
   }
   return (
     <>
+      <ContentHeader title={"SouvenirWall"} />
       <section className={style.container}>
-        <InfoHeader title={"SouvenirWall"} />
+        
         <QrReader
           className={style.scannen}
           delay={300}

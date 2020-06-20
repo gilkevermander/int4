@@ -81,6 +81,7 @@ const SouvenirWallDetail = () => {
     }
     return (
       <>
+      <div className={style.container}>
         <ContentHeader title={"Luister naar de herinnering"} />
         <div className={style.detail}>
           <img alt="kaart" src={kaart} width="272" className={style.image} />
@@ -90,6 +91,7 @@ const SouvenirWallDetail = () => {
           <Link className={style.button} to={ROUTES.quiz}>
             <span className={style.button__text}>Ontdek jouw favoriete land</span>
           </Link>
+        </div>
         </div>
         <NavBarSouvenir/>
       </>

@@ -1,0 +1,22 @@
+.navbar {
+    position: absolute;
+    bottom: 0;
+}
+
+.button__scan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: black;
+}
+
+.list__text {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.img {
+    margin-bottom: 1rem;
+}
