@@ -90,7 +90,8 @@ const Vraag1 = ({ setAnswer1, nextStep, values }) => {
           </label>
 
         </div>
-        <p className={style.error}>{error}</p>
+        {values.answer1 === "" ?  <p className={style.error}>{error}</p> :  <p className={style.error}></p>}
+       
 
         <div className={style.progress}>
 

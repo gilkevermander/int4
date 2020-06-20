@@ -7,6 +7,7 @@ import { ROUTES } from "../../consts";
 const AddUser = () => {
   const [gebruikersnaam, setGebruikersnaam] = useState("");
   const [message, setMessage] = useState("");
+  const [messageFalse, setMessageFalse] = useState("");
   const { uiStore, userStore } = useStore();
 
   const handleSubmit = async (e) => {
@@ -16,6 +17,7 @@ const AddUser = () => {
       setMessage(`${gebruikersnaam} is succesvol toegevoegd`)
     } catch (error) {
       console.log(error);
+      setMessageFalse(`${gebruikersnaam} bestaat niet`)
     }
   };
 
@@ -36,7 +38,8 @@ const AddUser = () => {
           </label>
           <input type="submit" value="+" className={style.button} />
         </form>
-        <p className={style.message}>{message}</p>
+        {message ? <p className={style.message}>{message}</p> : <p className={style.messageFalse}>{messageFalse}</p>}
+        
       </div>
     </>
   );

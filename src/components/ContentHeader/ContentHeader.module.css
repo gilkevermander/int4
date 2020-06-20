@@ -39,3 +39,12 @@
   color: notblack;
   text-transform: uppercase;
 }
+
+.subtitle {
+  composes: title1 from "../../styles/typo.module.css";
+  text-transform: none;
+  color: notblack;
+  text-align: center;
+  overflow: visible;
+  font-size: 1.8rem;
+}

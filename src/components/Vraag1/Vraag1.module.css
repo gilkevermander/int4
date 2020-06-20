@@ -15,20 +15,19 @@
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 15.3rem 15.3rem;
-    height: 31.7rem;
-    width: 31.7rem;
-    grid-gap: 1.1rem;
-    margin: 4rem auto
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 15.3rem 15.3rem;
+  height: 31.7rem;
+  width: 31.7rem;
+  grid-gap: 1.1rem;
+  margin: 4rem auto
 }
 
 .text {
     margin-top: 1rem;
     font-size: 1.8rem;
     text-align: center;
-    padding: 0 .5rem;
 }
 
 .answer {
@@ -124,10 +123,6 @@
     position: absolute;
     left: 32.7rem;
   }
-
   .error {
-    color: red;
-    display: flex;
-    justify-content: center;
-    margin-top: -3rem;
+    composes: errorApp from "../../styles/layouts.module.css";
   }

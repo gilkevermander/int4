@@ -9,7 +9,7 @@ import airbnb from "../../assets/img/airbnb.png";
 import NavBarSouvenir from "../NavBarSouvenir/index";
 const quizStore = new QuizStore();
 
-const Vraag4 = ({setAnswer4, antwoord, submitQuiz}) => {
+const Vraag4 = ({setAnswer4, antwoord, submitQuiz, error}) => {
   
   return (
     <section >
@@ -73,6 +73,7 @@ const Vraag4 = ({setAnswer4, antwoord, submitQuiz}) => {
             </div>
       </label>
       </div>
+      <p className={style.error}>{error}</p>
 
       <div className={style.progress}>
 

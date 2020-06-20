@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 //import style from "./Quiz.module.css";
 //import InfoHeader from "../InfoHeader/InfoHeader";
@@ -15,42 +15,48 @@ const Quiz = () => {
   const [answer2, setAnswer2] = useState("");
   const [answer3, setAnswer3] = useState("");
   const [answer4, setAnswer4] = useState("");
+  const [error, setError] = useState("");
   const [step, setStep] = useState(1);
 
   const nextStep = () => {
     setStep(step + 1);
   }
 
+
+
+
+
   const submitQuiz = e => {
+    if (answer4 !== "") {
+      e.preventDefault();
+      console.log("TEST IN QUIZ FUNC");
 
-    e.preventDefault();
-    console.log("TEST IN QUIZ FUNC");
+      console.log(answer1)
+      console.log(answer2)
+      console.log(answer3)
+      console.log(answer4)
 
-    console.log(answer1)
-    console.log(answer2)
-    console.log(answer3)
-    console.log(answer4)
+      const result = parseInt(answer1) + parseInt(answer2) + parseInt(answer3) + parseInt(answer4);
+      console.log(result)
 
-    const result = parseInt(answer1) + parseInt(answer2) + parseInt(answer3) + parseInt(answer4) ;
-    console.log(result)
-  
 
-    if (result >= 4) {
-      setAntwoord("Italië")
-    } if (result >= 7) {
-      setAntwoord("Japan")
-    } if (result >= 10) {
-      setAntwoord("VS")
-    } if (result >= 13) {
-      setAntwoord("België")
+      if (result >= 4) {
+        setAntwoord("Italië")
+      } if (result >= 7) {
+        setAntwoord("Japan")
+      } if (result >= 10) {
+        setAntwoord("VS")
+      } if (result >= 13) {
+        setAntwoord("België")
+      }
+      setStep(step + 1);
+    } else {
+      setError("Duid een optie aan")
     }
-
-    setStep(step + 1);
-    
   }
 
 
-  const values = { answer1, answer2, answer3, answer4, antwoord};
+  const values = { answer1, answer2, answer3, answer4, antwoord };
   switch (step) {
     case 1:
       return <Vraag1
@@ -74,16 +80,17 @@ const Quiz = () => {
     case 4:
       return <Vraag4
         values={values}
-        setAnswer4={setAnswer4}      
+        setAnswer4={setAnswer4}
         submitQuiz={submitQuiz}
+        error={values.answer4 === "" ? error : ""}
       />
 
     case 5:
-        return <Antwoord
-          nextStep={nextStep}
-          antwoord={antwoord}
-        />
-      
+      return <Antwoord
+        nextStep={nextStep}
+        antwoord={antwoord}
+      />
+
 
 
     default:

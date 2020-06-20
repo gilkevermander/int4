@@ -19,6 +19,7 @@
     margin-top: 5rem;  
 }
 
+
 .form {
     display: flex;
     justify-content: center;  
@@ -39,6 +40,10 @@
 }
 
 .message {
-    display: flex;
-    justify-content: center;
+    composes: succes from "../../styles/layouts.module.css";
+}
+
+.messageFalse {
+    composes: succes from "../../styles/layouts.module.css";
+    color:red;
 }
