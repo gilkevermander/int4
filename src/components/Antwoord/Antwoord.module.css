@@ -43,3 +43,30 @@
     width: 60vw;
     margin: 0 auto 3rem;
 }
+
+.button {
+    width: 33.5rem;
+      height: 5.4rem;
+      border-radius: 8rem;
+      border: none;
+      background-color: #89D0CA;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      display: flex;
+      margin: 2rem auto;
+      justify-content: center;
+      align-items: center;
+      color: black;
+  }
+  
+  .button__text {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 2rem;
+      line-height: 2.3rem;
+      text-align: center;
+  }
+  
+  .button__text:checked {
+    border: 1rem solid white;
+    border-radius: 8rem;
+  }
