@@ -9,9 +9,9 @@ const NavBarSouvenir = () => {
     <nav className={style.navbar}>
       <ul className={style.list}>
         <li className={style.list__item}>
-          <NavLink className={style.button__scan} activeClassName={style.active} to={ROUTES.qr}>
-            <img src={scan} alt="scan"/>
-            <span className={ style.list_text}>Scan je verhaal</span>
+          <NavLink className={style.button__scan} activeClassName={style.active} to={ROUTES.souvenirWall} >
+            <img src={scan} alt="scan" width="82" height="82" className={style.img}/>
+            <span className={style.list__text}>Scan je souvenir</span>
           </NavLink>
         </li>
       </ul>

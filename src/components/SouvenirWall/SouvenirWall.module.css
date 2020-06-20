@@ -1,0 +1,9 @@
+.container {
+    composes: container from "../../styles/layouts.module.css";
+  }
+
+  .scannen {
+      display: flex;
+      align-items: center;
+      margin-top: 12rem;
+  }

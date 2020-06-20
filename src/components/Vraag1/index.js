@@ -102,8 +102,9 @@ const Vraag1 = ({ setAnswer1, nextStep, values }) => {
         </div>
 
         <button onClick={saveAndContinue} className={style.button}> <p className={style.button__next}>Volgende</p></button>
+        <NavBarSouvenir/>
       </div>
-      <NavBarSouvenir/>
+     
     </section>
   );
 };

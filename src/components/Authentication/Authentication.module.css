@@ -101,4 +101,54 @@ a.textlink:hover {
   margin-top: 0.5rem;
 }
 
+.form__clearButton {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: none;
+  background: lightgray;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.form__wrapper__input__item__clear1 {
+  position: absolute;
+  right: 25px; 
+  top: 120px; 
+}
+
+.form__wrapper__input__item__clear2 {
+  position: absolute;
+  right: 25px; 
+  top: 224px; 
+}
+
+.form__wrapper__input__item__clear3 {
+  position: absolute;
+  right: 25px; 
+  top: 324px; 
+}
+
+.form__wrapper__input__item__clear4 {
+  position: absolute;
+  right: 25px; 
+  top: 427px; 
+}
+
+.form__wrapper__input__item__clear5 {
+  position: absolute;
+  right: 25px; 
+  top: 528px; 
+}
+
+
+.form__wrapper__input {
+  display: flex;
+}
+
+.form__wrapper__input__item {
+  position: relative;
+}
+
 
