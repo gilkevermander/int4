@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-
 import style from "./SouvenirWall.module.css";
 import ContentHeader from "../ContentHeader/ContentHeader";
-import { Link } from "react-router-dom";
-import { ROUTES } from "../../consts/index";
 import QrReader from 'react-qr-reader'
 import { useHistory } from "react-router-dom";
 import NavBarSouvenir from "../NavBarSouvenir/index";
