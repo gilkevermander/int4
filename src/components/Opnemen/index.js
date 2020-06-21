@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import style from "./Opnemen.module.css";
-import tapes from "../../assets/img/tapes.png"
 
 const Opnemen = ({ nextStep, values, setSelectedOption }) => {
 
@@ -65,7 +64,7 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
             <input className={style.keuze__mogelijkheid} type="radio" name="manier" value="video" onChange={e => setSelectedOption(e.target.value)} /> <span className={style.keuze__text2}>Video</span>
           </label>
         </div>
-        <img className={style.backgroundimg} src={tapes} width="486" alt="tapes"></img>
+        <img className={style.backgroundimg} src="assets/img/tapes.png" width="486" alt="tapes"></img>
         <button className={values.selectedoption === "" ? style.next : style.next__active} onClick={saveAndContinue}> <p className={style.next__text}>Volgende</p></button>
       </form>
 

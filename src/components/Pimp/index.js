@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Webcam from "react-webcam";
-import souvenir from "../../assets/img/souvenir.jpg"
 
 import style from "./Pimp.module.css";
 
@@ -93,7 +92,7 @@ const Pimp = ({ nextStep, values, prevStep }) => {
             src={imgSrc} alt="foto" className={style.img}
           />
         )}
-        <img alt="tourist" className={style.souvenir} src={souvenir} width="400"></img>
+        <img alt="tourist" className={style.souvenir} src="assets/img/souvenir.jpg" width="400"></img>
         <button onClick={saveAndContinue} className={ imgSrc === null ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
       </section>
     </div>

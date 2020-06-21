@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 
-//import style from "./Quiz.module.css";
-//import InfoHeader from "../InfoHeader/InfoHeader";
-//const quizStore = new QuizStore();
 import Vraag1 from "../Vraag1/index";
 import Vraag2 from "../Vraag2/index";
 import Vraag3 from "../Vraag3/index";
@@ -21,11 +18,6 @@ const Quiz = () => {
   const nextStep = () => {
     setStep(step + 1);
   }
-
-
-
-
-
   const submitQuiz = e => {
     if (answer4 !== "") {
       e.preventDefault();

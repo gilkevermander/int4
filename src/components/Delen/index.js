@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { useObserver } from 'mobx-react-lite';
 import style from "./Delen.module.css";
-import gsm from "../../assets/video/GSMgif.gif"
 
 const Delen = ({ nextStep, values, setDelen, prevStep, prevprevStep }) => {
 
@@ -69,7 +67,7 @@ const Delen = ({ nextStep, values, setDelen, prevStep, prevprevStep }) => {
       </div>
       <form >
         <div className={style.gif}>
-          <img alt="gif kaart" src={gsm} width="300"></img>
+          <img alt="gif kaart" src="assets/video/GSMgif.gif" width="300"></img>
         </div>
         <div className={style.vragen}>
           <h2 className={style.vraag}>Voor we verdergaan naar de gegevens:</h2>

@@ -45,6 +45,9 @@ const Authentication = () => {
         <Route exact path={ROUTES.start}>
           <Start />
         </Route>
+        {/* <Route exact path={ROUTES.reset}>
+          <Reset />
+        </Route> */}
         <Route exact path={ROUTES.login}>
           {uiStore.currentUser ? (
             <Redirect to={ROUTES.home} />

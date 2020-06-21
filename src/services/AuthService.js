@@ -17,9 +17,16 @@ class AuthService {
     return data;
   };
 
+  // resetPassword = async (email) => {
+  //   const data = await this.auth.sendPasswordResetEmail(email);
+  //   return data;
+  // };
+
   logout = async () => {
     return await this.auth.signOut();
   };
+
+ 
 
   // register = async ({ name, email, password, avatar }) => {
   //   const userCredential = await this.auth.createUserWithEmailAndPassword(
@@ -32,6 +39,7 @@ class AuthService {
   //   });
   //   return userCredential.user;
   // };
+
 
   register = async ({ gebruikersnaam, email, password }) => {
     const userCredential = await this.auth.createUserWithEmailAndPassword(
