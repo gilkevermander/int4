@@ -77,17 +77,15 @@ const DetailLandS = () => {
       return <Empty message={"Loading Souvenir"} />;
     }
     return (
-      <>
-      <div className={style.container}>
-        <AppHeader title={"Luister naar de herinnering"} prevStep={ROUTES.kaart}/>
-        <div className={style.detail}>
-        <img alt="kaart" src="assets/img/kaart.png" width="272" className={style.image}/>
-        <p className={style.verhaal}>Reisverhaal naar {souvenir.title}</p>
-        <p className={style.reiziger}>Onbekende reiziger</p>
-        <audio src={souvenir.video} controls loop />
+        <div className={style.container}>
+          <AppHeader title={"Luister naar de herinnering"} prevStep={ROUTES.kaart} />
+          <div className={style.detail}>
+            <img alt="kaart" src="assets/img/kaart.png" width="272" className={style.image} />
+            <p className={style.verhaal}>Reisverhaal naar {souvenir.title}</p>
+            <p className={style.reiziger}>Onbekende reiziger</p>
+            <audio src={souvenir.video} controls loop />
+          </div>
         </div>
-        </div>
-      </>
     );
   });
 };
