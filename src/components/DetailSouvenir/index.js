@@ -69,26 +69,23 @@ const DetailSouvenir = () => {
       return <Empty message={"Loading Souvenir"} />;
     }
     return (
-      <>
-      <div className={style.container}>
+      <section className={style.container}>
         <ContentHeader title={"Luister naar de herinnering"} />
         <div className={style.detail}>
-        {souvenir.souvenirs[0].video.endsWith(".mp4") ?
-        <video className={style.video} src={souvenir.souvenirs[0].video} controls loop /> : <audio src={souvenir.souvenirs[0].video} controls loop />}
-        <p className={style.verhaal} >Reisverhaal naar {souvenir.title}</p>
-        {/* <p>land:{souvenir.land.title}</p> */}
-        {/* <p>{user.gebruikersnaam}</p> */}
-        <p className={style.reiziger}>gebruikersnaam</p>
-        <Link className={style.button} to={ROUTES.chat}>
-            <span className={style.button__text}>Bedank met een berichtje</span>
+          {souvenir.souvenirs[0].video.endsWith(".mp4") ?
+            <video className={style.video} src={souvenir.souvenirs[0].video} controls loop /> : <audio src={souvenir.souvenirs[0].video} controls loop />}
+          <h3 className={style.verhaal} >Reisverhaal naar {souvenir.title}</h3>
+          {/* <p>land:{souvenir.land.title}</p> */}
+          {/* <p>{user.gebruikersnaam}</p> */}
+          <p className={style.reiziger}>Gebruikersnaam</p>
+          <Link className={style.button} to={ROUTES.chat}>
+            <h3 className={style.button__text}>Bedank met een berichtje</h3>
           </Link>
           <Link className={style.button2} to={ROUTES.kaart}>
-            <span className={style.button__text}>Beluister andere verhalen</span>
+            <h3 className={style.button__text}>Beluister andere verhalen</h3>
           </Link>
         </div>
-        </div>
-
-      </>
+      </section>
     );
   });
 };

@@ -34,6 +34,7 @@ const Form = () => {
   return useObserver(() => (
     <form onSubmit={handleFormSubmit} className={style.form}>
       <section className={style.form}>
+        <h3 className={style.hidden}>Typ een bericht</h3>
         <input
           className={style.input}
           id="content"

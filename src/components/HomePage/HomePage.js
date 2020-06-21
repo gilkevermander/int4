@@ -18,13 +18,13 @@ const HomePage = () => {
           <NavLink className={style.add} to={ROUTES.qr}>
             <div className={style.link}>
               <img src="assets/img/luisteren.png" alt="luisteren" className={style.image}/>
-              <h2 className={style.linktext}>Luister naar jouw souvenir</h2>
+              <h3 className={style.linktext}>Luister naar jouw souvenir</h3>
             </div>
           </NavLink>
           <NavLink onClick={getLocation} className={style.add} to="/locatie">
           <div className={[style.link, style.linktext__right].join(" ")}>
               <img src="assets/img/cabine.png" alt="cabine" className={style.image} />
-              <h2 className={style.linktext}>Neem jouw herinnering op</h2>
+              <h3 className={style.linktext}>Neem jouw herinnering op</h3>
             </div>
           </NavLink>
         </div>
@@ -32,7 +32,7 @@ const HomePage = () => {
           <NavLink className={style.add} to={ROUTES.kaart}>
             <div className={[style.link, style.link__bottom].join(" ")}>
               <img src="assets/img/verhalen.png" alt="verhalen" className={style.image} />
-              <h2 className={[style.linktext, style.linktext__bottom]}>Ontdek verhalen van KABIEN</h2>
+              <h3 className={[style.linktext, style.linktext__bottom]}>Ontdek verhalen van KABIEN</h3>
             </div>
           </NavLink>
         </div>

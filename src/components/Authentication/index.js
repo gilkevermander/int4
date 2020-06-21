@@ -29,6 +29,7 @@ const Authentication = () => {
 
   return useObserver(() => (
     <>
+      <h1 className={style.hidden}>KABIEN</h1>
       <Switch>
       <Route path={ROUTES.souvenirWallDetail.path}>
           <SouvenirWallDetail />
@@ -56,7 +57,7 @@ const Authentication = () => {
                 <ContentHeader title={"Login"} className={style.title} />
                 <LoginForm />
                 <NavLink to={ROUTES.register} className={style.textlink}>
-                  <span className={[style.form__info__bold, style.form__info].join(" ")}>Nog geen account? Registreer</span>
+                  <h2 className={[style.form__info__bold, style.form__info].join(" ")}>Nog geen account? Registreer</h2>
                 </NavLink>
               </div>
             )}
@@ -76,10 +77,10 @@ const Authentication = () => {
         </Route>
         <Route path={ROUTES.home}>
           {uiStore.currentUser ? (
-            <>
+            <div>
               <Content />
               <SideBar />
-            </>
+            </div>
           ) : (
               <Redirect to={ROUTES.login} />
             )}

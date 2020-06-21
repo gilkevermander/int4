@@ -15,7 +15,7 @@ const ROUTES = {
   locatie: "/locatie",
   scan: "/scan",
   chat: "/chat",
-  addContact: '/addContact',
+  addContact: '/toevoegen',
   start: "/start",
   kaart: "/kaart",
   souvenirWall: "/souvenirWall",

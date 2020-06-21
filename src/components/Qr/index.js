@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import QRCode from "react-qr-code";
-import TextInputGroup from "../TextInputGroup";
 import style from "./Qr.module.css";
 import QrReader from 'react-qr-reader'
 import { useHistory } from "react-router-dom";
@@ -9,7 +7,6 @@ import { ROUTES } from "../../consts";
 
 const Qr = () => {
 
-  const [text, setText] = useState("");
   const [scan, setScan] = useState("");
   const history = useHistory();
 
@@ -25,24 +22,12 @@ const Qr = () => {
   }
 
   return (
-    <>
-    {/* commentaar */}
-      {/* <QRCode value={text} />
-      <form className={style.form}>
-        <TextInputGroup
-          label="text"
-          name="text"
-          type="text"
-          placeholder="Fill in your text."
-          value={text}
-          onChange={(e) => setText(e.currentTarget.value)}
-        />
-      </form> */}
-      {/* commentaar */}
-      <div className={style.container}>
-        <AppHeader title={"Scan de QR-code"} prevStep={ROUTES.home} />
 
-        <div className={style.container__scan}>
+    <section className={style.container}>
+      <AppHeader title={"Scan de QR-code"} prevStep={ROUTES.home} />
+      <div className={style.container__scan}>
+
+        <h3> <span className={style.hidden}>Camera</span>
           <QrReader
             className={style.scannen}
             delay={300}
@@ -51,9 +36,10 @@ const Qr = () => {
             mirrored={true}
           />
           <p>{scan}</p>
-        </div>
+        </h3>
       </div>
-    </>
+    </section>
+
 
   );
 

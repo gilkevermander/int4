@@ -16,9 +16,10 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
   }
   console.log(values);
   return (
-    <div className={style.wrap}>
+    <section className={style.wrap}>
+      <h2 className={style.hidden}>Scherm - Hoe vertellen?</h2>
       <div className={style.procesbar}>
-
+        <h3 className={style.hidden}>Procesbar</h3>
         <div className={style.procesbar_lijn1}>
           <div className={[style.procesbar__item1]}>
             <p className={style.item__number}>1</p>
@@ -53,8 +54,8 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
         </div>
 
       </div>
-      <h2 className={style.vraag}>Kies op welke manier jij jouw reisverhaal wilt vertellen</h2>
-     { values.selectedoption === "" ? <p className={style.error}>{error}</p> : <p className={style.error}></p>}
+      <h3 className={style.vraag}>Kies op welke manier jij jouw reisverhaal wilt vertellen</h3>
+      {values.selectedoption === "" ? <p className={style.error}>{error}</p> : <p className={style.error}></p>}
       <form>
         <div className={style.grid}>
           <label className={style.keuze}>
@@ -65,10 +66,10 @@ const Opnemen = ({ nextStep, values, setSelectedOption }) => {
           </label>
         </div>
         <img className={style.backgroundimg} src="assets/img/tapes.png" width="486" alt="tapes"></img>
-        <button className={values.selectedoption === "" ? style.next : style.next__active} onClick={saveAndContinue}> <p className={style.next__text}>Volgende</p></button>
+        <button className={values.selectedoption === "" ? style.next : style.next__active} onClick={saveAndContinue}> <h3 className={style.next__text}>Volgende</h3></button>
       </form>
 
-    </div>
+    </section>
   )
 
 }

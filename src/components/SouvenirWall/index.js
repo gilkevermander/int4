@@ -25,20 +25,21 @@ const SouvenirWall = () => {
     console.error(err)
   }
   return (
-    <>
+    <section className={style.container}>
       <ContentHeader title={"SouvenirWall"} />
-      <section className={style.container}>
-        
-        <QrReader
-          className={style.scannen}
-          delay={300}
-          onError={handleError}
-          onScan={handleScan}
-          mirrored={true}
-        />
-      </section>
+      <div className={style.container__scan}>
+        <h3> <span className={style.hidden}>Camera</span>
+          <QrReader
+            className={style.scannen}
+            delay={300}
+            onError={handleError}
+            onScan={handleScan}
+            mirrored={true}
+          />
+        </h3>
+      </div>
       <NavBarSouvenir />
-    </>
+    </section>
   );
 };
 

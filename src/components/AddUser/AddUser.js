@@ -29,9 +29,9 @@ const AddUser = () => {
   };
 
   return (
-    <>
       <div className={style.container}>
-        <AppHeader title={"Add contact"} prevStep={ROUTES.chat} />
+        <AppHeader title={"Voeg een contact toe"} prevStep={ROUTES.chat} />
+        <h4 className= {style.hidden}>Gebruikersnaam invullen</h4>
         <form onSubmit={handleSubmit} className={style.form}>
           <label htmlFor="name" className={style.label}>
             Gebruikersnaam:
@@ -43,6 +43,7 @@ const AddUser = () => {
               onChange={(e) => setGebruikersnaam(e.target.value)}
             />
           </label>
+          <h4 className= {style.hidden}>Voeg toe</h4>
           <input type="submit" value="+" className={style.button} />
         </form>
         {/* {message === `${gebruikersnaam} bestaat niet` || (message === "Geef een gebruikersnaam op." && gebruikersnaam === "") ? <p className={style.messageFalse}>{message}</p> : <p className={style.message}></p>} */}
@@ -51,7 +52,6 @@ const AddUser = () => {
 
         {gebruikersnaam === "" || message=== `${gebruikersnaam} bestaat niet` ? <p className={style.messageFalse}>{message}</p> : <p className={style.messageFalse}></p> }
       </div>
-    </>
   );
 };
 

@@ -54,7 +54,7 @@ const Messages = ({ prevStep }) => {
       }
     };
     loadUser(id);
-  }, [id, userStore, setUser]);
+  }, [id, userStore, setUser, uiStore.currentUser.id]);
 
   return useObserver(() => {
     if (state === STATE_DOES_NOT_EXIST) {
@@ -65,17 +65,18 @@ const Messages = ({ prevStep }) => {
     }
 
     return (
-      <>
-        <div className={style.container}>
+        <section className={style.container}>
           <header className={style.header}>
-
             {user && (
               <>
+                <h2 className={style.hidden}>Gesprek</h2>
                 <AppHeader className={style.title} title={user.gebruikersnaam} prevStep={ROUTES.chat} />
+               
               </>
             )}
           </header>
           <div className={style.wrapper}>
+            <h3 className={style.hidden}>Berichten</h3>
             <ul className={style.list}>
               {user._messages.map((message) => (
                 <Message message={message} key={message.id} />
@@ -83,8 +84,7 @@ const Messages = ({ prevStep }) => {
             </ul>
             <Form />
           </div>
-        </div>
-      </>
+        </section>
     );
   });
 };

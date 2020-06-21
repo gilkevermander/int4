@@ -1,10 +1,8 @@
 import React from "react";
 import User from "../User/User";
-
-
 import { useObserver } from "mobx-react-lite";
-
 import { useStore } from "../../hooks/useStore";
+
 
 const UsersList = () => {
   const { userStore, uiStore } = useStore();

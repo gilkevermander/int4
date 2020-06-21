@@ -20,7 +20,7 @@ import style from "./Content.module.css";
 const Content = () => {
 
   return useObserver(() => (
-    <section className={style.container}>
+    <div className={style.container}>
       <Switch>
         <Route path={ROUTES.addContact}>
           <AddUser />
@@ -60,7 +60,7 @@ const Content = () => {
         </Route>
       </Switch>
       <NavBar />
-    </section>
+    </div>
   ));
 };
 

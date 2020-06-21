@@ -13,7 +13,12 @@ const ContentHeader = ({ title, prevStep }) => {
   return (
     <header className={style.header}>
       <NavLink to={prevStep} className={style.back}><p className={style.back__text}>&lt;</p></NavLink>
-      <h1 className={ROUTES === "home" || ROUTES === "login" || ROUTES === "register" || ROUTES === "qr" ? style.title : style.subtitle}>{title}</h1>
+      {ROUTES.messages.path === "/messages/:id" ? 
+       <h3 className={style.subtitle}>{title}</h3>  
+      : 
+      <h2 className={ROUTES === "home" || ROUTES === "login" || ROUTES === "register" || ROUTES === "qr" ? style.title : style.subtitle}>{title}</h2>
+    }
+     
     </header>
   );
 };

@@ -193,7 +193,7 @@ const RegisterForm = () => {
             </div>
           }
         </div>
-
+        <h2 className={style.hidden}>Registreer</h2>
         <button className={[style.button, style.button__register].join(" ")} onclick={handleSubmit}>Registreer</button>
       </form >
     </div >

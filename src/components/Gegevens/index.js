@@ -89,11 +89,12 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
   console.log(values);
 
   return (
-    <div className={style.container}>
+    <section className={style.container}>
+      <h2 className={style.hidden}>Scherm - Gegevens</h2>
       <div className={style.header}>
         <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
         <div className={style.procesbar}>
-
+        <h3 className={style.hidden}>Procesbar</h3>
           <div className={style.procesbar_lijn1}>
             <div className={style.procesbar__item}>
               <p className={style.item__number}>1</p>
@@ -129,12 +130,14 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
         </div>
       </div>
       <form onSubmit={handleSubmit} className={style.form}>
-        <h1 className={style.vraag}>Geef <span className={style.vraag__bold}> jouw </span> gegevens in</h1>
+        <h3 className={style.vraag}>Vul <span className={style.vraag__bold}> jouw </span> gegevens in</h3>
+        <p className={style.subtitel}>Log hiermee in op www.kabien.be </p>
         {/* <p className={style.error}>{error}</p> */}
         { (error === "Geef een correct email in")|| (error === "Wachtwoord moet 6 karakters lang zijn")||(error === "Dit email is al in gebruik, gelieve een ander email op te geven") || (password !== passwordAgain && (voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === "")) || (password === "" || voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === "") || (password !== passwordAgain || passwordAgain !== password || (password !== "" && voornaam !== "" && achternaam !== "" && gebruikersnaam !== "" && email !== "" && passwordAgain === "")) ? <p className={style.error}>{error} </p> : <p className={style.error}></p>}
         <div className={style.grid}>
           <div className={style.wrapper}>
             <div className={style.input__wrapper}>
+              <h4 className={style.hidden}>Voornaam</h4>
               <label>Voornaam</label>
               <TextInputGroup
                 label="voornaam"
@@ -147,6 +150,7 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
               />
             </div>
             <div className={style.input__wrapper}>
+            <h4 className={style.hidden}>Achternaam</h4>
               <label>Achternaam</label>
               <TextInputGroup
                 placeholder='Achternaam'
@@ -159,6 +163,7 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
           </div>
           <div className={style.wrapper}>
             <div className={style.input__wrapper}>
+            <h4 className={style.hidden}>Gebruikersnaam</h4>
               <label>Gebruikersnaam</label>
               <TextInputGroup
                 placeholder='Kabien_kortrijk'
@@ -169,6 +174,7 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
               />
             </div>
             <div className={style.input__wrapper}>
+            <h4 className={style.hidden}>E-mail</h4>
               <label>E-mail</label>
               <TextInputGroup
                 placeholder='kabien@kortrijk.be'
@@ -182,7 +188,8 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
           </div>
           <div className={style.wrapper}>
             <div className={style.input__wrapper}>
-              <label>Wachtwoord (min 6 karakters)</label>
+            <h4 className={style.hidden}>Wachtwoord</h4>
+              <label> (min 6 karakters)</label>
               <TextInputGroup
                 label="Password"
                 type="password"
@@ -194,6 +201,7 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
               />
             </div>
             <div className={style.input__wrapper}>
+              <h4 className={style.hidden}>Herhaal wachtwoord</h4>
               <label>Herhaal wachtwoord</label>
               <TextInputGroup
                 label="Passwordagain"
@@ -209,10 +217,10 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
 
         </div>
 
-        <button onClick={handleSubmit} className={password === "" || passwordAgain === "" || password === "" || voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === ""? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
+        <button onClick={handleSubmit} className={password === "" || passwordAgain === "" || password === "" || voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === ""? style.next : style.next__active}><h3 className={style.next__text}>Volgende</h3> </button>
         {/* <input type="submit" value="Volgende" className={values.keuze === "" ? style.next : style.next__active} /> */}
       </form>
-    </div>
+    </section>
   )
 }
 

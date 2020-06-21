@@ -6,7 +6,7 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
 
   const [error, setError] = useState("");
 
-  const saveAndContinue = (e) => { 
+  const saveAndContinue = (e) => {
     e.preventDefault()
     if (values.land === "") {
       setError("Kies een land")
@@ -24,11 +24,12 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
   console.log(landStore.lands);
 
   return (
-    <div className={style.container}>
+    <section className={style.container}>
+      <h2 className={style.hidden}>Scherm - land</h2>
       <div className={style.header}>
         <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
         <div className={style.procesbar}>
-
+          <h3 className={style.hidden}>Procesbar</h3>
           <div className={style.procesbar_lijn1}>
             <div className={style.procesbar__item}>
               <p className={style.item__number}>1</p>
@@ -65,22 +66,22 @@ const Land = ({ nextStep, values, setLand, landStore, prevStep }) => {
       </div>
 
       <form color='blue' className={style.form}>
-        <h1 className={style.vraag}>Kies het land van jouw herinnering</h1>
-      { values.land === "" ? <p className={style.error}>{error}</p> : <p className={style.error}></p>}
+        <h3 className={style.vraag}>Kies het land van jouw herinnering</h3>
+        {values.land === "" ? <p className={style.error}>{error}</p> : <p className={style.error}></p>}
         <section className={style.form__select}>
-            <select className={style.select__css} name="land" id="land" onChange={e => setLand(e.currentTarget.value)}>
-              <option className={style.option} key="niks" id="land" name="land" value="" >Kies je land</option>
-              {landStore.lands.map(land => (
-                <option className={style.option} key={land.id} id="land" name="land" value={land.title} >{land.title}</option>
-              ))}
-            </select>
-
+          <h3 className={style.hidden}>Geef je land in</h3>
+          <select className={style.select__css} name="land" id="land" onChange={e => setLand(e.currentTarget.value)}>
+            <option className={style.option} key="niks" id="land" name="land" value="" >Kies je land</option>
+            {landStore.lands.map(land => (
+              <option className={style.option} key={land.id} id="land" name="land" value={land.title} >{land.title}</option>
+            ))}
+          </select>
         </section>
 
-        <button onClick={saveAndContinue} className={values.land === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
+        <button onClick={saveAndContinue} className={values.land === "" ? style.next : style.next__active}><h3 className={style.next__text}>Volgende</h3> </button>
       </form>
 
-    </div>
+    </section>
   )
 }
 

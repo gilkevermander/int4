@@ -10,13 +10,13 @@ import style from "./SideBar.module.css";
 const SideBar = () => {
 
   return useObserver(() => (
-    <section className={style.container}>
+    <div className={style.container}>
       <Switch>
         <Route path={ROUTES.kaartD.path}>
           <DetailLand />
         </Route>
       </Switch>
-    </section>
+    </div>
   ));
 };
 

@@ -41,20 +41,20 @@ const Result = ({ nextStep, values, setSouvid }) => {
   // const souvenirs = souvenirStore.loadLandSouvenir(landId)
   // console.log(souvenirs);
   return (
-    <div>
-
-      <h2 className={style.vraag}>Bedankt om je verhaal op te sturen!</h2>
-      <p className={style.subtitle}>Je ontvangt een bevestiging via mail en toegang tot de wereldkaart vol reisverhalen.</p>
+    <section>
+      <h2 className={style.hidden}>Scherm - Resultaat</h2>
+      <h3 className={style.vraag}>Bedankt om je verhaal op te sturen!</h3>
+      <h4 className={style.subtitle}>Je ontvangt een bevestiging via mail en toegang tot de wereldkaart vol reisverhalen.</h4>
       <p className={style.info}>Je verstuurde <span className={style.big}>1</span> van de <span className={style.big}>{aantal}</span> opnames over </p>
       <p className={style.info}><span className={style.big2}>{values.land}</span></p>
       <p className={style.match}>We vonden een ervaring <br />die past bij die van jou!</p>
       <div className={style.wrapper__buttons}>
-        <button onClick={back} className={style.back}><p className={style.back__text}>Terug naar startscherm</p></button>
+        <button onClick={back} className={style.back}><h3 className={style.back__text}>Terug naar startscherm</h3></button>
         {/* <Link to={`${ROUTES.detailSouvenir.to}${souvenir.id}`}> */}
-        <button onClick={saveAndContinue} className={style.next__active}><p className={style.next__text}>Beluister de ervaring</p> </button>
+        <button onClick={saveAndContinue} className={style.next__active}><h3 className={style.next__text}>Beluister de ervaring</h3> </button>
         {/* </Link> */}
       </div>
-    </div>
+    </section>
   )
 
 }

@@ -26,11 +26,12 @@ const Delen = ({ nextStep, values, setDelen, prevStep, prevprevStep }) => {
   }
 
   return (
-    <div>
+    <section>
+      <h2 className={style.hidden}>Scherm - Keuze delen verhaal</h2>
       <div className={style.header}>
         <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
         <div className={style.procesbar}>
-
+          <h3 className={style.hidden}>Procesbar</h3>
           <div className={style.procesbar_lijn1}>
             <div className={style.procesbar__item}>
               <p className={style.item__number}>1</p>
@@ -70,9 +71,9 @@ const Delen = ({ nextStep, values, setDelen, prevStep, prevprevStep }) => {
           <img alt="gif kaart" src="assets/video/GSMgif.gif" width="300"></img>
         </div>
         <div className={style.vragen}>
-          <h2 className={style.vraag}>Voor we verdergaan naar de gegevens:</h2>
-          <h2 className={style.subtitel}>Wil je jouw verhaal anoniem delen op
-de wereldkaart vol reisverhalen? </h2>
+          <p className={style.vraag}>Voor we verdergaan naar de gegevens:</p>
+          <h3 className={style.subtitel}>Wil je jouw verhaal anoniem delen op
+de wereldkaart vol reisverhalen? </h3>
         </div>
         {values.delen === "" ? <p className={style.error}>{error} </p> : <p className={style.error}></p>}
 
@@ -85,9 +86,9 @@ de wereldkaart vol reisverhalen? </h2>
 wereldkaart als audio</span>
           </label>
         </div>
-        <button onClick={saveAndContinue} className={values.delen === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
+        <button onClick={saveAndContinue} className={values.delen === "" ? style.next : style.next__active}><h3 className={style.next__text}>Volgende</h3> </button>
       </form>
-    </div>
+    </section>
   )
 
 }

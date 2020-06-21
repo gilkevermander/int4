@@ -1,6 +1,11 @@
 @value tokens: "../../styles/tokens.module.css";
 @value colorPrimary, fontSubtitel, spacer1, spacer2 from tokens;
 
+
+.hidden {
+  display: none;
+}
+
 .form__wrapper {
   display: flex;
   flex-flow: column;

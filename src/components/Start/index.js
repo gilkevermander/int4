@@ -13,6 +13,7 @@ const Start = () => {
 
   return (
     <section className={style.container}>
+      <h2 className={style.hidden}>Scherm - Introvideo</h2>
       <div className={style.player}>
         <video
           className={style.player}
@@ -28,7 +29,7 @@ const Start = () => {
           href="https://video-react.github.io/assets/video-react.css"
         />
         <Link className={style.button} to={ROUTES.manier}>
-          <span className={style.button__text}>Start</span>
+          <h2 className={style.button__text}>Start</h2>
         </Link>
       </div>
     </section>

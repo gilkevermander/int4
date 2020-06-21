@@ -79,10 +79,12 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
     if (values.selectedoption === 'video') {
         console.log('video');
         return (
-            <div className={style.container}>
+            <section className={style.container}>
+                <h2 className={style.hidden}>Scherm - video opnemen</h2>
                 <div className={style.header}>
                     <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
                     <div className={style.procesbar}>
+                        <h3 className={style.hidden}>Procesbar</h3>
 
                         <div className={style.procesbar_lijn1}>
                             <div className={style.procesbar__item}>
@@ -118,6 +120,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                         </div>
                     </div>
                 </div>
+                <h3 className={style.hidden}>Neem je video op</h3>
                 {complete === false ? <p className={[style.error2, style.error]}>{error}</p> : <p className={style.error}></p>}
                 <div className={style.container__video}>
 
@@ -245,17 +248,19 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                     <p className={style.video__regel}>Max. 3 minuten opnemen</p>
 
                 </div>
-                <button onClick={saveAndContinue} className={complete ? style.next__active2 : style.next2}><p className={style.next__text2}>Koppel jouw souvenir</p> </button>
-            </div>
+                <button onClick={saveAndContinue} className={complete ? style.next__active2 : style.next2}><h3 className={style.next__text2}>Koppel jouw souvenir</h3> </button>
+            </section>
         )
 
     } else {
         console.log('audio');
         return (
-            <div className={style.container}>
+            <section className={style.container}>
+                <h2 className={style.hidden}>Scherm - video opnemen</h2>
                 <div className={style.header2}>
                     <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
                     <div className={style.procesbar}>
+                        <h3 className={style.hidden}>Procesbar</h3>
 
                         <div className={style.procesbar_lijn1}>
                             <div className={style.procesbar__item}>
@@ -291,6 +296,9 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                         </div>
                     </div>
                 </div>
+
+                <h3 className={style.hidden}>Neem je podcast op</h3>
+
                 {values.record === "" ? <p className={style.error}>{error}</p> : <p className={style.error}></p>}
 
                 <img className={style.content__palmboom2} alt="palmboom" src="assets/img/palmboom.png"></img>
@@ -324,7 +332,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                             <React.Fragment>
                                 <div className={style.timer}>
                                     <p className={style.timer__item}>Je hebt nog <Timer.Minutes /> minuten</p>
-                                   <p className={style.timer__item}>en <Timer.Seconds /> seconden over</p>
+                                    <p className={style.timer__item}>en <Timer.Seconds /> seconden over</p>
                                 </div>
                                 <div className={style.wrapper}>
                                     {/* <button onClick={start} className={style.buttonWrap}><button onClick={startRecording} type="button" className={style.start}></button></button> */}
@@ -359,8 +367,8 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                 <div className="progress-bar" id="progress-bar">
                     <div className="progress" id="progress"></div>
                 </div>
-                <button onClick={saveAndContinue} className={complete ? style.next__active : style.next}><p className={style.next__text}>Koppel jouw souvenir</p></button>
-            </div>
+                <button onClick={saveAndContinue} className={complete ? style.next__active : style.next}><h3 className={style.next__text}>Koppel jouw souvenir</h3></button>
+            </section>
 
         )
     }

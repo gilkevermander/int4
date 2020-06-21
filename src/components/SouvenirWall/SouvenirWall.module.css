@@ -2,8 +2,13 @@
     composes: container from "../../styles/layouts.module.css";
   }
 
-  .scannen {
-      display: flex;
-      align-items: center;
-      margin-top: 12rem;
-  }
+  .container__scan {
+    max-width: 55.7rem;
+    margin: 10% auto;
+    display: flex;
+    flex-flow: column;
+}
+
+  .hidden {
+    display: none;
+}

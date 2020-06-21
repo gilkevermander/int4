@@ -25,11 +25,12 @@ const Keuze = ({ nextStep, values, setKeuze, prevStep, overStep }) => {
   }
   console.log(values);
   return (
-    <div>
+    <section>
+       <h2 className={style.hidden}>Scherm - Keuze pimpen</h2>
       <div className={style.header}>
         <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
         <div className={style.procesbar}>
-
+        <h3 className={style.hidden}>Procesbar</h3>
           <div className={style.procesbar_lijn1}>
             <div className={style.procesbar__item}>
               <p className={style.item__number}>1</p>
@@ -66,7 +67,7 @@ const Keuze = ({ nextStep, values, setKeuze, prevStep, overStep }) => {
       </div>
 
       <form >
-        <h2 className={style.vraag}>Wil jij jouw souvenir pimpen met een foto?</h2>
+        <h3 className={style.vraag}>Wil jij jouw souvenir pimpen met een foto?</h3>
         {values.keuze === "" ? <p className={style.error}>{error} </p> : <p className={style.error}></p>}
 
         <div className={style.grid}>
@@ -79,10 +80,10 @@ const Keuze = ({ nextStep, values, setKeuze, prevStep, overStep }) => {
         </div>
         <div className={style.form__backgroundimg}>
           <img className={style.backgroundimg} src="assets/img/camera.png" width="486" alt="Cameras"></img>
-          <button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
+          <button onClick={saveAndContinue} className={values.keuze === "" ? style.next : style.next__active}><h3 className={style.next__text}>Volgende</h3> </button>
         </div>
       </form>
-    </div >
+    </section>
   )
 
 }

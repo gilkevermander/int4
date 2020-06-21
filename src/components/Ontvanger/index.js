@@ -68,10 +68,12 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
   console.log(values);
 
   return (
-    <div className={style.container}>
+    <section className={style.container}>
+      <h2 className={style.hidden}>Scherm - Gegevens</h2>
       <div className={style.header}>
         <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
         <div className={style.procesbar}>
+          <h3 className={style.hidden}>Procesbar</h3>
           <div className={style.procesbar_lijn1}>
             <div className={style.procesbar__item}>
               <p className={style.item__number}>1</p>
@@ -108,10 +110,12 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
       </div>
 
       <form onSubmit={handleSubmit} className={style.form}>
-        <h1 className={style.vraag}>Vul de gegevens van de <span className={style.vraag__bold}>ontvanger</span> in</h1>
-        <h2 className={style.subtitel}>Naar dit adres wordt jou souvenir opgestuurd!</h2>
+        <h3 className={style.vraag}>Vul de gegevens van de <span className={style.vraag__bold}>ontvanger</span> in</h3>
+        <p className={style.subtitel}>Naar dit adres wordt jouw souvenir opgestuurd!</p>
         {naam === "" || straat === "" || postcode === "" || nr === "" || stad === "" ? <p className={style.error}>{error} </p> : <p className={style.error}></p>}
         <div className={style.grid}>
+
+          <h4 className={style.hidden}>Naam ontvanger</h4>
           <label className={style.label}>Naam ontvanger</label>
           <TextInputGroup
             label="naam"
@@ -125,6 +129,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
           />
           <div className={style.wrapper}>
             <div className={style.wrapper__item}>
+              <h4 className={style.hidden}>Straat</h4>
               <label className={[style.label, style.wrapper__item__straat, style.wrapper__item]}>Straat</label>
               <TextInputGroup
                 label="straat"
@@ -137,6 +142,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
               />
             </div>
             <div className={[style.wrapper__item__nummer, style.wrapper__item]}>
+              <h4 className={style.hidden}>nummer</h4>
               <label className={style.label}>nummer</label>
               <TextInputGroup
                 label="nr"
@@ -151,6 +157,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
           </div>
           <div className={style.wrapper}>
             <div className={style.input__postcode}>
+              <h4 className={style.hidden}>postcode</h4>
               <label className={style.label}>Postcode</label>
               <TextInputGroup
                 label="postcode"
@@ -164,6 +171,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
               />
             </div>
             <div className={[style.wrapper__item__gemeente, style.wrapper__item]}>
+              <h4 className={style.hidden}>Stad/gemeente</h4>
               <label className={style.label}>Stad/gemeente</label>
               <TextInputGroup
                 label="Stad"
@@ -179,12 +187,12 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
 
           <div>
             <img className={style.backgroundimg} src="assets/img/envelop.png" width="266" alt="enveloppen"></img>
-            <button onClick={handleSubmit} className={naam === "" || straat === "" || postcode === "" || nr === "" || stad === "" ? style.next : style.next__active}><p className={style.next__text}>Volgende</p> </button>
+            <button onClick={handleSubmit} className={naam === "" || straat === "" || postcode === "" || nr === "" || stad === "" ? style.next : style.next__active}><h3 className={style.next__text}>Volgende</h3> </button>
           </div>
 
         </div>
       </form >
-    </div >
+    </section >
   )
 }
 

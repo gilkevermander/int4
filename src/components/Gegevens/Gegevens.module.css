@@ -18,6 +18,18 @@
   justify-content: center;
 }
 
+
+.subtitel {
+  composes: medium from "../../styles/typo.module.css";
+  font-size: 3rem;
+  margin: 2rem auto -2rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  justify-content: center;
+}
+
+
 .vraag{
   composes: semibold from "../../styles/typo.module.css";
   font-size: fontTitel;

@@ -11,12 +11,12 @@ const User = ({ user }) => {
         <div className={style.list__link}>
           <img
             className={style.img}
-            src="ssets/img/user_icon.png"
+            src="assets/img/user_icon.png"
             alt="user_icon"
             width="50"
             height="50"
           />
-          <p>{user.gebruikersnaam}</p>
+          <h3>{user.gebruikersnaam}</h3>
           <p className={style.list__icon}>&#62;</p>
         </div>
       </Link>

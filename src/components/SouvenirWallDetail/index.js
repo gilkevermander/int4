@@ -81,19 +81,19 @@ const SouvenirWallDetail = () => {
     }
     return (
       <>
-      <div className={style.container}>
-        <ContentHeader title={"Luister naar de herinnering"} />
-        <div className={style.detail}>
-          <img alt="kaart" src={kaart} width="272" className={style.image} />
-          <p className={style.verhaal}>Reisverhaal naar {souvenir.title}</p>
-          <p className={style.reiziger}>Onbekende reiziger</p>
-          <audio src={souvenir.souvenirs[0].video} controls loop />
-          <Link className={style.button} to={ROUTES.quiz}>
-            <span className={style.button__text}>Ontdek jouw favoriete land</span>
-          </Link>
-        </div>
-        </div>
-        <NavBarSouvenir/>
+        <section className={style.container}>
+          <ContentHeader title={"Luister naar de herinnering"} />
+          <div className={style.detail}>
+            <img alt="kaart" src={kaart} width="272" className={style.image} />
+            <h3 className={style.verhaal}>Reisverhaal naar {souvenir.title}</h3>
+            <p className={style.reiziger}>Onbekende reiziger</p>
+            <audio src={souvenir.souvenirs[0].video} controls loop />
+            <Link className={style.button} to={ROUTES.quiz}>
+              <h3 className={style.button__text}>Ontdek jouw favoriete land</h3>
+            </Link>
+          </div>
+        </section>
+        <NavBarSouvenir />
       </>
     );
   });

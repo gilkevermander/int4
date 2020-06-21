@@ -12,6 +12,7 @@ const Chat = () => {
       <div className={style.container__content}>
         <UsersList />
         <Link className={style.button} to={ROUTES.addContact}>
+          <h3 className={style.hidden}>Voeg een contact toe</h3>
           <span className={style.button__text}>+</span>
         </Link>
       </div>

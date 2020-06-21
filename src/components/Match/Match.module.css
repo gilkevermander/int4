@@ -10,6 +10,10 @@
   height: 60rem;
 }
 
+.hidden {
+  display: none;
+}
+
 .vraag{
   composes: semibold from "../../styles/typo.module.css";
   font-size: fontTitel;

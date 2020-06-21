@@ -36,7 +36,7 @@ const Vraag3 = ({ setAnswer3, nextStep, values }) => {
               onChange={e => setAnswer3(e.currentTarget.value)} />
             <div className={style.answer__text}>
               <img src="assets/img/bikini.png" alt="bikini" width="80" />
-              <p className={style.text}>Zonnecrème en bikini</p>
+              <h3 className={style.text}>Zonnecrème en bikini</h3>
             </div>
           </label>
 
@@ -50,7 +50,7 @@ const Vraag3 = ({ setAnswer3, nextStep, values }) => {
               onChange={e => setAnswer3(e.currentTarget.value)} />
             <div className={style.answer__text}>
               <img src="assets/img/koptelefoon.png" alt="koptelefoon" width="100" />
-              <p className={style.text}>Koptelefoon en jogging</p>
+              <h3 className={style.text}>Koptelefoon en jogging</h3>
             </div>
           </label>
 
@@ -64,7 +64,7 @@ const Vraag3 = ({ setAnswer3, nextStep, values }) => {
               onChange={e => setAnswer3(e.currentTarget.value)} />
             <div className={style.answer__text}>
               <img src="assets/img/zonnebril.png" alt="zonnebril" width="129" />
-              <p className={style.text}>Avondkledij en zonnebril</p>
+              <h3 className={style.text}>Avondkledij en zonnebril</h3>
             </div>
           </label>
 
@@ -78,7 +78,7 @@ const Vraag3 = ({ setAnswer3, nextStep, values }) => {
               onChange={e => setAnswer3(e.currentTarget.value)} />
             <div className={style.answer__text}>
               <img src="assets/img/cameraroze.png" alt="camera" width="103" />
-              <p className={style.text}>Camera en slippers</p>
+              <h3 className={style.text}>Camera en slippers</h3>
             </div>
           </label>
         </div>
@@ -93,7 +93,7 @@ const Vraag3 = ({ setAnswer3, nextStep, values }) => {
 
         </div>
 
-        <button onClick={saveAndContinue} className={style.button}> <p className={style.button__next}>Volgende</p></button>
+        <button onClick={saveAndContinue} className={style.button}> <h3 className={style.button__next}>Volgende</h3></button>
 
       </div>
       <NavBarSouvenir/>

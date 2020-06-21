@@ -48,4 +48,8 @@
     composes: succes from "../../styles/layouts.module.css";
 }
 
+.hidden {
+    display: none;
+}
+
 
