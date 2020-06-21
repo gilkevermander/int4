@@ -102,6 +102,22 @@ class UserService {
       });
   };
 
+  createContactForUser2 = async (user, gebruikersnaam) => {
+    const contact = await this.getUserByGebruikersnaam(gebruikersnaam);
+    console.log(contact)
+    if (!contact) {
+      throw new Error(`User ${gebruikersnaam} does not exist`);
+    }
+    await this.db
+      .collection("users")
+      .doc(contact.gebruikersnaam)
+      .collection("contacts")
+      .doc(user.gebruikersnaam)
+      .set(contact);
+
+    return contact;
+  };
+
   createContactForUser = async (user, gebruikersnaam) => {
     const contact = await this.getUserByGebruikersnaam(gebruikersnaam);
     if (!contact) {

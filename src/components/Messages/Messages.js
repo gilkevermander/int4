@@ -78,6 +78,7 @@ const Messages = ({ prevStep }) => {
           <div className={style.wrapper}>
             <h3 className={style.hidden}>Berichten</h3>
             <ul className={style.list}>
+              {console.log(user._messages)}
               {user._messages.map((message) => (
                 <Message message={message} key={message.id} />
               ))}

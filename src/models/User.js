@@ -8,7 +8,8 @@ class User {
     }
     this.id = id;
     this.store = store;
-    this.souvenirs= []
+    this.contacts = [];
+    this.souvenirs= [];
     this._messages = messages;
     this.updateFromJson(json);
 

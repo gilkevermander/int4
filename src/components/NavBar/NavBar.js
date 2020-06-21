@@ -10,7 +10,7 @@ const NavBar = () => {
     <nav className={style.navbar}>
       <ul className={style.list}>
 
-        <NavLink activeClassName={style.active} className={style.list__item} to={ROUTES.home}>
+        <NavLink className={style.list__item} activeClassName={style.active} to={ROUTES.home}>
           <li className={style.button}>
             <HomeLogo fill="white" />
             <span className={style.list_text}>Home</span>
