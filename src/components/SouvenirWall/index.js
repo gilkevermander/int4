@@ -26,7 +26,7 @@ const SouvenirWall = () => {
   }
   return (
     <section className={style.container}>
-      <ContentHeader title={"SouvenirWall"} />
+      <ContentHeader title={"Souvenir Wall"} />
       <div className={style.container__scan}>
         <h3> <span className={style.hidden}>Camera</span>
           <QrReader

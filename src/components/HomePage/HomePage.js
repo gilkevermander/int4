@@ -15,7 +15,7 @@ const HomePage = () => {
   };
   return (
     <section className={style.breedte}>
-      <p>{uiStore.currentUser.gebruikersnaam}</p>
+      {/* <p>{uiStore.currentUser.gebruikersnaam}</p> */}
       <InfoHeader title={"Kabien"} className={style.title} />
       <div className={style.headwrapper}>
         <div className={style.wrapper}>
