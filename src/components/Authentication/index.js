@@ -8,6 +8,7 @@ import Start from "../Start/index";
 import Quiz from "../Quiz/index";
 import Manier from "../Manier/index";
 import SouvenirWall from "../SouvenirWall/index";
+import QrGenerator from "../QrGenerator/index";
 import SideBar from "../SideBar/index";
 import style from "./Authentication.module.css";
 import RegisterForm from "./RegisterForm";
@@ -31,7 +32,10 @@ const Authentication = () => {
     <>
       <h1 className={style.hidden}>KABIEN</h1>
       <Switch>
-      <Route path={ROUTES.souvenirWallDetail.path}>
+        <Route path={ROUTES.qrgenerator}>
+          <QrGenerator />
+        </Route>
+        <Route path={ROUTES.souvenirWallDetail.path}>
           <SouvenirWallDetail />
         </Route>
         <Route exact path={ROUTES.souvenirWall}>
@@ -67,7 +71,7 @@ const Authentication = () => {
             <Redirect to={ROUTES.home} />
           ) : (
               <div className={style.wrapper}>
-                <AppHeader title={"Registreren"}className={style.title} prevStep={ROUTES.login}/>
+                <AppHeader title={"Registreren"} className={style.title} prevStep={ROUTES.login} />
                 <RegisterForm />
                 <NavLink to={ROUTES.login} className={style.textlink}>
                   {/* <span className={[style.form__info__bold, style.form__info].join(" ")}>Al een account? Login</span> */}

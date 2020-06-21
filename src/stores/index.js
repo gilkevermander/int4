@@ -2,10 +2,8 @@ import * as firebase from "firebase/app";
 
 import MessageStore from "./MessageStore";
 import UserStore from "./UserStore";
-import GroupStore from "./GroupStore";
 import UiStore from "./UiStore";
 import LandStore from "./LandStore";
-import VerhaalStore from "./VerhaalStore";
 import SouvenirStore from "./SouvenirStore";
 import { decorate, computed } from "mobx";
 
@@ -14,18 +12,9 @@ class RootStore {
     this.firebase = getFirebase();
     this.messageStore = new MessageStore(this);
     this.userStore = new UserStore(this);
-    this.groupStore = new GroupStore(this);
     this.uiStore = new UiStore(this);
     this.landStore = new LandStore(this);
-    this.verhaalStore = new VerhaalStore(this);
     this.souvenirStore = new SouvenirStore(this);
-  }
-
-  get unreadLength() {
-    return this.groupStore.groups.reduce(
-      (total, group) => (total += group.unreadLength),
-      0
-    );
   }
 }
 

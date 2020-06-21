@@ -1,0 +1,20 @@
+.qrgen {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem 0
+}
+
+.temp {
+  margin: 2rem;
+  font-size: 2rem;
+  color: black;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}

@@ -14,6 +14,7 @@ const ROUTES = {
   // reset: "/reset",
   locatie: "/locatie",
   scan: "/scan",
+  qrgenerator: "/qrgenerator",
   chat: "/chat",
   addContact: '/toevoegen',
   start: "/start",
