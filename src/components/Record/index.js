@@ -12,8 +12,8 @@ import Timer from 'react-compound-timer'
 import cloudinary from 'cloudinary-core';
 
 const cl = new cloudinary.Cloudinary({ cloud_name: "int4", secure: true });
-const uploadUrl = 'https://res.cloudinary.com/int4/video/upload/sample.webm';
-
+const uploadUrl = 'https://res.cloudinary.com/int4/video/upload/sample.mp4';
+const uploadUrlmp3 = 'https://res.cloudinary.com/int4/video/upload/sample.mp3';
 const cloudName = 'int4';
 const unsignedUploadPreset = 'guaqui4h';
 
@@ -36,6 +36,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
     const [error, setError] = useState("");
     const [base, setBase] = useState("");
     const [audioBlob, setAudioBlob] = useState("");
+    const [blob, setBlob] = useState("");
     const [counter, setCounter] = useState(180);
 
     const saveAndContinue = (e) => {
@@ -64,7 +65,6 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
     }
 
     const onData = (recordedBlob) => {
-
         console.log('chunk of real-time data is: ', recordedBlob);
     }
 
@@ -73,7 +73,56 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
         console.log('recordedBlob is: ', recordedBlob);
         console.log('stop')
         console.log(recordedBlob.blobURL)
+        console.log(recordedBlob.blob)
+        const blob = recordedBlob.blob
+        setBlob(recordedBlob.blob)
         setAudioBlob(recordedBlob.blobURL)
+        function uploadFile(blob) {
+            var url = `https://api.cloudinary.com/v1_1/${cloudName}/upload`;
+            var xhr = new XMLHttpRequest();
+            var fd = new FormData();
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+
+            xhr.onreadystatechange = function (e) {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // File uploaded successfully
+                    var response = JSON.parse(xhr.responseText);
+                    // https://res.cloudinary.com/cloudName/image/upload/v1483481128/public_id.jpg
+                    var url = response.secure_url;
+                    // Create a thumbnail of the uploaded image, with 150px width
+                    console.log(url);
+                    setVideo(url);
+                    // var tokens = url.split('/');
+                    // tokens.splice(-2, 0, 'w_150,c_scale');
+                    // var img = new Image(); // HTML5 Constructor
+                    // img.src = tokens.join('/');
+                    // img.alt = response.public_id;
+                    // document.getElementById('gallery').appendChild(img);
+                }
+            };
+
+            var reader = new FileReader();
+
+            reader.onloadend = function () {
+                var base64 = reader.result;
+                console.log('file read complete');
+
+                fd.append('upload_preset', unsignedUploadPreset);
+                fd.append('tags', 'browser_upload'); // Optional - add tag for image admin in Cloudinary
+                fd.append('file', base64);
+                xhr.send(fd);
+            };
+            console.log(blob)
+            reader.readAsDataURL(blob);
+        }
+        uploadFile(blob);
+        // **** Handle selected files ******* //
+        // var handleFiles = function (files) {
+        //     for (var i = 0; i < files.length; i++) {
+        //         uploadFile(files[i]); // call the function to upload the file
+        //     }
+        // };
     }
 
     if (values.selectedoption === 'video') {
@@ -129,7 +178,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
 
                         <img className={style.content__palmboom} alt="palmboom" src="assets/img/palmboom.png"></img>
                   [      <VideoRecorder className={style.video}
-                            mimeType="video/webm"
+                            mimeType="video/webm"//video/webm
                             onRecordingComplete={(videoBlob, startedAt, thumbnailBlob, duration) => {
                                 const urlCreator = window.URL || window.webkitURL
                                 const thumbUrl = thumbnailBlob && urlCreator.createObjectURL(thumbnailBlob)
@@ -150,48 +199,13 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                                 reader.readAsDataURL(videoBlob);
                                 reader.onloadend = function () {
                                     var base64data = reader.result;
-                                    // console.log(base64data);
                                     setBase(base64data);
-                                    // cl.cloudinary.v2.uploader.unsigned_upload(base,
-                                    //     function (error, result) { console.log(result, error); });
-                                    ////
-                                    // var xhr = new XMLHttpRequest();
-                                    // var fd = new FormData();
-                                    // xhr.open('POST', uploadUrl, true);
-                                    // xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-                                    // xhr.onreadystatechange = function (e) {
-                                    //     if (xhr.readyState == 4 && xhr.status == 200) {
-                                    //         // File uploaded successfully
-                                    //         var response = JSON.parse(xhr.responseText);
-                                    //         // https://res.cloudinary.com/cloudName/image/upload/v1483481128/public_id.jpg
-                                    //         var url = response.secure_url;
-                                    //         console.log(url);
-                                    //     }
-                                    // };
-
-                                    // fd.append('upload_preset', 'guaqui4h');
-                                    // //   fd.append('tags', 'browser_upload'); // Optional - add tag for image admin in Cloudinary
-                                    // fd.append('file', base64data);
-                                    // xhr.send(fd);
-
                                     function uploadFile(file) {
                                         var url = `https://api.cloudinary.com/v1_1/${cloudName}/upload`;
                                         var xhr = new XMLHttpRequest();
                                         var fd = new FormData();
                                         xhr.open('POST', url, true);
                                         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-
-                                        // // Reset the upload progress bar
-                                        // document.getElementById('progress').style.width = 0;
-
-                                        // // Update progress (can be used to show progress indicator)
-                                        // xhr.upload.addEventListener("progress", function (e) {
-                                        //     var progress = Math.round((e.loaded * 100.0) / e.total);
-                                        //     document.getElementById('progress').style.width = progress + "%";
-
-                                        //     console.log(`fileuploadprogress data.loaded: ${e.loaded},
-                                        // data.total: ${e.total}`);
-                                        // });
 
                                         xhr.onreadystatechange = function (e) {
                                             if (xhr.readyState == 4 && xhr.status == 200) {
@@ -222,7 +236,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                                             fd.append('file', base64);
                                             xhr.send(fd);
                                         };
-
+                                        console.log(file);
                                         reader.readAsDataURL(file);
 
                                     }
@@ -319,6 +333,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                             <audio className={style.content__audio__blob} src="" />
                         </div>}
                     <ReactMic
+                        mimeType="audio/webm"
                         record={record}
                         className={style.sound}
                         onStop={onStop}

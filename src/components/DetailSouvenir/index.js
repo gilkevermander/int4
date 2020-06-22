@@ -78,7 +78,7 @@ const DetailSouvenir = () => {
         <section className={style.container}>
           <ContentHeader title={"Luister naar de herinnering"} />
           <div className={style.detail}>
-            {souvenir.souvenirs[0].video.endsWith(".mp4") ?
+            {souvenir.souvenirs[0].video.endsWith(".mkv") ?
               <video className={style.video} src={souvenir.souvenirs[0].video} controls loop /> : <audio src={souvenir.souvenirs[0].video} controls loop />}
             <h3 className={style.verhaal} >Reisverhaal naar {souvenir.title}</h3>
             {/* <p>land:{souvenir.land.title}</p> */}
