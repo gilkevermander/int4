@@ -70,10 +70,6 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
 
     const onStop = (recordedBlob) => {
         setComplete(true);
-        console.log('recordedBlob is: ', recordedBlob);
-        console.log('stop')
-        console.log(recordedBlob.blobURL)
-        console.log(recordedBlob.blob)
         const blob = recordedBlob.blob
         setBlob(recordedBlob.blob)
         setAudioBlob(recordedBlob.blobURL)

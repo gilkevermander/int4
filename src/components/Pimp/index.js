@@ -30,6 +30,17 @@ const Pimp = ({ nextStep, values, prevStep }) => {
   const capture = React.useCallback(() => {
     const imageSrc = webcamRef.current.getScreenshot();
     setImgSrc(imageSrc);
+    console.log(imageSrc);
+    console.log(webcamRef);
+    // const mediaRecorderRef = new MediaRecorder(webcamRef.current.stream, {
+    //   mimeType: "video/webm"
+    // });
+    // console.log(mediaRecorderRef)
+    // console.log(webcamRef.current)
+    // const canvas = webcamRef.current.getCanvas()
+    // console.log(webcamRef.current.getCanvas());
+    // console.log(canvas.toBlob)
+    // console.log(canvas.toBlob(webcamRef.current.getCanvas()))
   }, [webcamRef, setImgSrc]);
 
   return (
@@ -38,7 +49,7 @@ const Pimp = ({ nextStep, values, prevStep }) => {
       <div className={style.header}>
         <button onClick={back} className={style.back}><p className={style.back__text}>&lt;</p></button>
         <div className={style.procesbar}>
-        <h3 className={style.hidden}>Procesbar</h3>
+          <h3 className={style.hidden}>Procesbar</h3>
           <div className={style.procesbar_lijn1}>
             <div className={style.procesbar__item}>
               <p className={style.item__number}>1</p>
@@ -76,18 +87,19 @@ const Pimp = ({ nextStep, values, prevStep }) => {
       <h3 className={style.name_souvenir}>U koos voor een: {values.souvenir}</h3>
       {imgSrc === null ? <p className={style.error}>{error}</p> : <p className={style.error}></p>}
       <section className={style.container}>
-      <h3 className={style.hidden}>Maak een foto</h3>
+        <h3 className={style.hidden}>Maak een foto</h3>
         <div className={style.wrapper}>
-        <Webcam
-          audio={false}
-          ref={webcamRef}
-          screenshotFormat="image/jpeg"
-          width={700}
-          radius={4}
-          className={style.mask}
-          mirrored={true}
-        />
-        <button onClick={capture} className={style.capture}></button>
+          <Webcam
+            mimeType="image/jpeg"
+            audio={false}
+            ref={webcamRef}
+            screenshotFormat="image/jpeg"
+            width={700}
+            radius={4}
+            className={style.mask}
+            mirrored={true}
+          />
+          <button onClick={capture} className={style.capture}></button>
         </div>
         {imgSrc && (
           <img
@@ -95,7 +107,7 @@ const Pimp = ({ nextStep, values, prevStep }) => {
           />
         )}
         <img alt="tourist" className={style.souvenir} src="assets/img/souvenir.jpg" width="400"></img>
-        <button onClick={saveAndContinue} className={ imgSrc === null ? style.next : style.next__active}><h3 className={style.next__text}>Volgende</h3> </button>
+        <button onClick={saveAndContinue} className={imgSrc === null ? style.next : style.next__active}><h3 className={style.next__text}>Volgende</h3> </button>
       </section>
     </section>
   );
