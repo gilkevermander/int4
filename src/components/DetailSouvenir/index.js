@@ -79,7 +79,7 @@ const DetailSouvenir = () => {
           <ContentHeader title={"Luister naar de herinnering"} />
           <div className={style.detail}>
             {souvenir.souvenirs[0].video.endsWith(".mp4") ?
-              <video className={style.video} src={souvenir.souvenirs[0].video} controls loop /> : <audio src={souvenir.souvenirs[0].video} controls loop />}
+              <video className={style.video} src={souvenir.souvenirs[0].video} poster="assets/img/poster.png" controls loop /> : <audio src={souvenir.souvenirs[0].video} controls loop />}
             <h3 className={style.verhaal} >Reisverhaal naar {souvenir.title}</h3>
             {/* <p>land:{souvenir.land.title}</p> */}
             {/* <p>{user.gebruikersnaam}</p> */}
