@@ -22,7 +22,7 @@
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  background-image: url('../../assets/img/procesbar_active.png');
+  background-image: url('/assets/img/procesbar_active.png');
   background-repeat: no-repeat; 
   height: 8.7rem;
   width: 7.5rem;
@@ -45,7 +45,7 @@
 }
 
 .procesbar_lijn1::after {
-  content: url('../../assets/img/procesbar_lijn1.png');
+  content: url('/assets/img/procesbar_lijn1.png');
   width: 9rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -57,7 +57,7 @@
 }
 
 .procesbar_lijn2::after {
-  content: url('../../assets/img/procesbar_lijn2.png');
+  content: url('/assets/img/procesbar_lijn2.png');
   width: 9rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -68,7 +68,7 @@
 }
 
 .procesbar_lijn3::after {
-  content: url('../../assets/img/procesbar_lijn3.png');
+  content: url('/assets/img/procesbar_lijn3.png');
   width: 9rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -80,7 +80,7 @@
 }
 
 .procesbar_lijn4::after {
-  content: url('../../assets/img/procesbar_lijn4.png');
+  content: url('/assets/img/procesbar_lijn4.png');
   width: 9rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -113,7 +113,7 @@
 
 .next__text::after {
     content: "";
-    background-image: url('../../assets/img/button__line.png');
+    background-image: url('/assets/img/button__line.png');
     width: 30vw;
     height: 15vh;
     background-position: 13rem 1.5rem;
@@ -161,7 +161,7 @@
 
 .keuze__text1::before{
   content: "";
-  background-image: url('../../assets/img/podcast.png');
+  background-image: url('/assets/img/podcast.png');
   width: 10.2rem;
   height: 11.6rem;
   margin-bottom: 2rem;
@@ -169,7 +169,7 @@
 
 .keuze__text2::before{
   content: "";
-  background-image: url('../../assets/img/video.png');
+  background-image: url('/assets/img/video.png');
   width: 12.8rem;
   height: 8.9rem;
   margin-bottom: 2rem;

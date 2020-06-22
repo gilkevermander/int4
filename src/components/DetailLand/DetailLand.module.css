@@ -39,7 +39,7 @@
 }
 
 .list__text::before {
-  content: url('../../assets/img/souvenirplay.png');
+  content: url('/assets/img/souvenirplay.png');
   width: 2.8rem;
   height: 2.8rem;
   margin-right: 3rem ;

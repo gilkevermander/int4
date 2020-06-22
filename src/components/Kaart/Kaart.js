@@ -18,7 +18,7 @@ const Kaart = () => {
 
         <h3 className={style.hidden}>Kaart met Verhalen</h3>
         <UncontrolledReactSVGPanZoom
-
+        
           className={style.container__panzoom}
           width={375} height={530}
           viewerHeight={806} viewerWidth={1016}

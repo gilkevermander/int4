@@ -37,7 +37,7 @@
 
 .button__text::after {
   content: "";
-  background-image: url('../../assets/img/button__line.png');
+  background-image: url('/assets/img/button__line.png');
   width: 30vw;
   height: 15vh;
   background-position: 13rem 1.5rem;

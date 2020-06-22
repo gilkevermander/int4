@@ -23,7 +23,7 @@
 }
 
 .procesbar_lijn1::after {
-  content: url('../../assets/img/procesbar_lijn1.png');
+  content: url('/assets/img/procesbar_lijn1.png');
   width: 9rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -34,7 +34,7 @@
 }
 
 .procesbar_lijn2::after {
-  content: url('../../assets/img/procesbar_lijn2.png');
+  content: url('/assets/img/procesbar_lijn2.png');
   width: 9rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -45,7 +45,7 @@
 }
 
 .procesbar_lijn3::after {
-  content: url('../../assets/img/procesbar_lijn3.png');
+  content: url('/assets/img/procesbar_lijn3.png');
   width: 9rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -57,7 +57,7 @@
 }
 
 .procesbar_lijn4::after {
-  content: url('../../assets/img/procesbar_lijn4.png');
+  content: url('/assets/img/procesbar_lijn4.png');
   width: 9rem;
   margin-left: 2rem;
   margin-right: 2rem;

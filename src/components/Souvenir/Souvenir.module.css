@@ -25,7 +25,7 @@
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  background-image: url('../../assets/img/procesbar_active.png');
+  background-image: url('/assets/img/procesbar_active.png');
   background-repeat: no-repeat; 
   height: 8.7rem;
   width: 7.5rem;
@@ -56,7 +56,7 @@
 }
 
 .procesbar_lijn1::after {
-  content: url('../../assets/img/procesbar_lijn1.png');
+  content: url('/assets/img/procesbar_lijn1.png');
   width: 9rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -68,7 +68,7 @@
 }
 
 .procesbar_lijn2::after {
-  content: url('../../assets/img/procesbar_lijn2.png');
+  content: url('/assets/img/procesbar_lijn2.png');
   width: 9rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -79,7 +79,7 @@
 }
 
 .procesbar_lijn3::after {
-  content: url('../../assets/img/procesbar_lijn3.png');
+  content: url('/assets/img/procesbar_lijn3.png');
   width: 9rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -91,7 +91,7 @@
 }
 
 .procesbar_lijn4::after {
-  content: url('../../assets/img/procesbar_lijn4.png');
+  content: url('/assets/img/procesbar_lijn4.png');
   width: 9rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -117,7 +117,7 @@
 
 .next__text::after {
     content: "";
-    background-image: url('../../assets/img/button__line.png');
+    background-image: url('/assets/img/button__line.png');
     width: 30vw;
     height: 15vh;
     background-position: 13rem 1.5rem;
@@ -198,21 +198,21 @@
 
 .keuze__magneet::before{
   content: "";
-  background-image: url('../../assets/img/magneet.png');
+  background-image: url('/assets/img/magneet.png');
   width: 25.6rem;
   height: 24.6rem;
 }
 
 .keuze__sleutel::before{
   content: "";
-  background-image: url('../../assets/img/sleutel.png');
+  background-image: url('/assets/img/sleutel.png');
   width: 130px;
   height: 245px;
 }
 
 .keuze__sticker::before{
   content: "";
-  background-image: url('../../assets/img/sticker.png');
+  background-image: url('/assets/img/sticker.png');
   width: 24.8rem;
   height: 21.4rem;
   margin-bottom: 2rem;
@@ -283,7 +283,7 @@
 
 .back__text::after {
     content: "";
-    background-image: url('../../assets/img/button__circle.png');
+    background-image: url('/assets/img/button__circle.png');
     width: 15vw;
     height: 15vh;
     background-position: 11rem 3.5rem;
