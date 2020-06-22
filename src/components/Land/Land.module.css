@@ -24,7 +24,7 @@
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  background-image: url('../../assets/img/procesbar_active.png');
+  background-image: url('/assets/img/procesbar_active.png');
   background-repeat: no-repeat; 
   height: 8.7rem;
   width: 7.5rem;

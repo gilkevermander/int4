@@ -21,7 +21,7 @@ const Manier = () => {
   const [keuze, setKeuze] = useState("");
   const [delen, setDelen] = useState("");
   const [souvid, setSouvid] = useState("");
-  const [video, setVideo] = useState("https://res.cloudinary.com/int4/video/upload/v1592396569/jjfba8egbdgvhvfkke1z.mp4");
+  const [video, setVideo] = useState("");
 
   const { landStore } = useStore();
 

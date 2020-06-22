@@ -10,7 +10,7 @@ const NavBar = () => {
     <nav className={style.navbar}>
       <ul className={style.list}>
 
-        <NavLink className={style.list__item} activeClassName={style.active} to={ROUTES.home}>
+        <NavLink className={style.list__item} exact activeClassName={style.active} to={ROUTES.home}>
           <li className={style.button}>
             <HomeLogo fill="white" />
             <span className={style.list_text}>Home</span>
@@ -26,7 +26,7 @@ const NavBar = () => {
         </NavLink>
 
 
-        <NavLink className={style.list__item} activeClassName={style.active} to={ROUTES.chat}>
+        <NavLink className={style.list__item} exact activeClassName={style.active} to={ROUTES.chat}>
           <li className={style.button} >
             <MessageLogo fill="white" />
             <span className={style.list_text}>Berichten</span>

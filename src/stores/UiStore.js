@@ -69,7 +69,6 @@ class UiStore {
     } else {
       console.log("niet ingelogd");
       this.setCurrentUser(undefined);
-      this.rootStore.groupStore.empty();
       this.rootStore.userStore.empty();
       this.rootStore.messageStore.empty();
       this.rootStore.landStore.empty();

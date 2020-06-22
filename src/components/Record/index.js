@@ -129,6 +129,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
 
                         <img className={style.content__palmboom} alt="palmboom" src="assets/img/palmboom.png"></img>
                   [      <VideoRecorder className={style.video}
+                            mimeType="video/webm"
                             onRecordingComplete={(videoBlob, startedAt, thumbnailBlob, duration) => {
                                 const urlCreator = window.URL || window.webkitURL
                                 const thumbUrl = thumbnailBlob && urlCreator.createObjectURL(thumbnailBlob)
@@ -200,6 +201,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                                                 var url = response.secure_url;
                                                 // Create a thumbnail of the uploaded image, with 150px width
                                                 console.log(url);
+                                                setVideo(url);
                                                 // var tokens = url.split('/');
                                                 // tokens.splice(-2, 0, 'w_150,c_scale');
                                                 // var img = new Image(); // HTML5 Constructor
