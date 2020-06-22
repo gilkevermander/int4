@@ -73,8 +73,8 @@ class UserService {
   getMessagesForUser = async (gebruikersnaam, gebruikersnaamMe, onMessageAdded) => {
     this.db
       .collectionGroup("messages")
-      .where("gebruikersnaamMe", "==", gebruikersnaam)
-      .where("gebruikersnaam", "==", gebruikersnaamMe)
+      .where("gebruikersnaam", "==", gebruikersnaam)
+      .where("gebruikersnaamMe", "==", gebruikersnaamMe)
       .orderBy("timestamp")
       .onSnapshot(async (snapshot) => {
         snapshot.docChanges().forEach(async (change) => {

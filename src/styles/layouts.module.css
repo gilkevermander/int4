@@ -29,7 +29,7 @@
   
   .button__text::after {
     content: "";
-    background-image: url('../assets/img/button__line.png');
+    background-image: url('/assets/img/button__line.png');
     width: 30vw;
     height: 15vh;
     background-position: 9rem 1.5rem;
@@ -123,7 +123,7 @@
 
   .container {
     width: 100vw;
-    background-image: url(../assets/img/textures.png);
+    background-image: url('/assets/img/textures.png');
     background-color: geel;
     margin-top: -6.5rem;
     background-blend-mode: screen;
