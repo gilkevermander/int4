@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import style from "./Procesbar.module.css";
-import { ROUTES } from "../../consts/index";
 
 
 const Qr = () => {

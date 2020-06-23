@@ -2,7 +2,6 @@ import React from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import HomePage from "../HomePage/HomePage";
 import Kaart from "../Kaart/Kaart";
-import SouvenirWallDetail from "../SouvenirWallDetail/index";
 import Manier from "../Manier/index";
 import Qr from "../Qr/index";
 import Chat from "../Chat/index";
@@ -43,9 +42,6 @@ const Content = () => {
         <Route path={ROUTES.messages.path}>
           <Messages />
         </Route>
-        {/* <Route path={ROUTES.souvenirWallDetail.path}>
-          <SouvenirWallDetail />
-        </Route> */}
         <Route path={ROUTES.qr}>
           <Qr />
         </Route>

@@ -5,11 +5,6 @@ import { ROUTES } from "../../consts";
 
 const ContentHeader = ({ title, prevStep }) => {
 
-  // const back = (e) => {
-  //   e.preventDefault();
-  //   prevStep();
-  // }
-
   return (
     <header className={style.header}>
       <NavLink to={prevStep} className={style.back}><p className={style.back__text}>&lt;</p></NavLink>

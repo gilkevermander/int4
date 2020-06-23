@@ -7,10 +7,6 @@ import { useStore } from "../../hooks/useStore";
 
 const Gegevens = ({ nextStep, values, prevStep }) => {
 
-  // const [errorVoor, setErrorVoor] = useState("");
-  // const [errorAchter, setErrorAchter] = useState("");
-  // const [errorGebruiker, setErrorGebruiker] = useState("");
-  // const [errorEmail, setErrorEmail] = useState("");
   const [voornaam, setVoornaam] = useState("");
   const [achternaam, setAchternaam] = useState("");
   const [gebruikersnaam, setGebruikersnaam] = useState("");
@@ -21,36 +17,9 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
 
   const { uiStore } = useStore();
 
-
-  // const saveAndContinue = (e) => {
-  //   e.preventDefault();
-  //   //let formIsValid = true
-  //   // if (!values.voornaam) {
-  //   //   //formIsValid = false;
-  //   //   setErrorVoor("vul een voornaam in")
-  //   // } 
-  //   // if (!values.achternaam) {
-  //   //   //formIsValid = false;
-  //   //   setErrorAchter("vul een achternaam in")
-  //   // } 
-  //   // if (!values.gebruikersnaam) {
-  //   //   //formIsValid = false;
-  //   //   setErrorGebruiker("vul een gebruikersnaam in")
-  //   // } 
-  //   // if (!values.email) {
-  //   //   //formIsValid = false;
-  //   //   setErrorEmail("vul een E-mail in")
-  //   // } 
-
-  //   // else {
-  //     nextStep();
-  //   // }
-  // }
-
   const back = (e) => {
     e.preventDefault();
     prevStep();
-
   }
 
   const handleSubmit = async (e) => {
@@ -80,10 +49,6 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
     } else if (password !== passwordAgain || passwordAgain !== password || (password !== "" && voornaam !== "" && achternaam !== "" && gebruikersnaam !== "" && email !== "" && passwordAgain === "")) {
       setError("Wachtwoorden zijn niet gelijk")
     }
-
-    // } else if (error === "The email address is already in use by another account."){
-    //   setError("Dit email is al in gebruik, gelieve een ander email op te geven")
-    // }
   };
 
   console.log(values);
@@ -132,7 +97,6 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
       <form onSubmit={handleSubmit} className={style.form}>
         <h3 className={style.vraag}>Vul <span className={style.vraag__bold}> jouw </span> gegevens in</h3>
         <p className={style.subtitel}>Log hiermee in op www.kabien.be </p>
-        {/* <p className={style.error}>{error}</p> */}
         { (error === "Geef een correct email in")|| (error === "Wachtwoord moet 6 karakters lang zijn")||(error === "Dit email is al in gebruik, gelieve een ander email op te geven") || (password !== passwordAgain && (voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === "")) || (password === "" || voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === "") || (password !== passwordAgain || passwordAgain !== password || (password !== "" && voornaam !== "" && achternaam !== "" && gebruikersnaam !== "" && email !== "" && passwordAgain === "")) ? <p className={style.error}>{error} </p> : <p className={style.error}></p>}
         <div className={style.grid}>
           <div className={style.wrapper}>
@@ -218,7 +182,6 @@ const Gegevens = ({ nextStep, values, prevStep }) => {
         </div>
 
         <button onClick={handleSubmit} className={password === "" || passwordAgain === "" || password === "" || voornaam === "" || achternaam === "" || gebruikersnaam === "" || email === ""? style.next : style.next__active}><h3 className={style.next__text}>Volgende</h3> </button>
-        {/* <input type="submit" value="Volgende" className={values.keuze === "" ? style.next : style.next__active} /> */}
       </form>
     </section>
   )

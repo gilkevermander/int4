@@ -31,7 +31,6 @@ const RegisterForm = () => {
     setGebruikersnaam("")
   }
 
-
   const clearEmail = (e) => {
     e.preventDefault()
     setEmail("")

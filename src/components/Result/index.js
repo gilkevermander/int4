@@ -50,9 +50,7 @@ const Result = ({ nextStep, values, setSouvid }) => {
       <p className={style.match}>We vonden een ervaring <br />die past bij die van jou!</p>
       <div className={style.wrapper__buttons}>
         <button onClick={back} className={style.back}><h3 className={style.back__text}>Terug naar startscherm</h3></button>
-        {/* <Link to={`${ROUTES.detailSouvenir.to}${souvenir.id}`}> */}
         <button onClick={saveAndContinue} className={style.next__active}><h3 className={style.next__text}>Beluister de ervaring</h3> </button>
-        {/* </Link> */}
       </div>
     </section>
   )

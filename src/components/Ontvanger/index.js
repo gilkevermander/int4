@@ -15,13 +15,7 @@ const Ontvanger = ({ nextStep, values, prevStep }) => {
   const [error, setError] = useState("");
 
   const { uiStore, landStore, souvenirStore } = useStore();
-
-
-  // const saveAndContinue = (e) => {
-  //   e.preventDefault();
-  //   nextStep();
-  // }
-
+  
   const back = (e) => {
     e.preventDefault();
     prevStep();

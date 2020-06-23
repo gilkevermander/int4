@@ -1,19 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import VideoRecorder from 'react-video-recorder';
 import style from "./Record.module.css";
 import { ReactMic } from 'react-mic';
 import Timer from 'react-compound-timer'
-// import { ReactMediaRecorder } from "react-media-recorder";
-// import { saveAs } from 'file-saver';
-// import MicRecorder from 'mic-recorder-to-mp3';
-// import AudioRecorder from 'react-audio-recorder';
-//let cloudinary = require('cloudinary/lib/cloudinary');
-//let cloudinary = require('cloudinary').v2;
-import cloudinary from 'cloudinary-core';
+// import cloudinary from 'cloudinary-core';
 
-const cl = new cloudinary.Cloudinary({ cloud_name: "int4", secure: true });
-const uploadUrl = 'https://res.cloudinary.com/int4/video/upload/sample.mp4';
-const uploadUrlmp3 = 'https://res.cloudinary.com/int4/video/upload/sample.mp3';
+// const cl = new cloudinary.Cloudinary({ cloud_name: "int4", secure: true });
+// const uploadUrl = 'https://res.cloudinary.com/int4/video/upload/sample.mp4';
+// const uploadUrlmp3 = 'https://res.cloudinary.com/int4/video/upload/sample.mp3';
 const cloudName = 'int4';
 const unsignedUploadPreset = 'guaqui4h';
 
@@ -37,7 +31,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
     const [base, setBase] = useState("");
     const [audioBlob, setAudioBlob] = useState("");
     const [blob, setBlob] = useState("");
-    const [counter, setCounter] = useState(180);
+    // const [counter, setCounter] = useState(180);
 
     const saveAndContinue = (e) => {
         e.preventDefault()
@@ -81,20 +75,11 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
             xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
             xhr.onreadystatechange = function (e) {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    // File uploaded successfully
+                if (xhr.readyState === 4 && xhr.status === 200) {
                     var response = JSON.parse(xhr.responseText);
-                    // https://res.cloudinary.com/cloudName/image/upload/v1483481128/public_id.jpg
                     var url = response.secure_url;
-                    // Create a thumbnail of the uploaded image, with 150px width
                     console.log(url);
                     setVideo(url);
-                    // var tokens = url.split('/');
-                    // tokens.splice(-2, 0, 'w_150,c_scale');
-                    // var img = new Image(); // HTML5 Constructor
-                    // img.src = tokens.join('/');
-                    // img.alt = response.public_id;
-                    // document.getElementById('gallery').appendChild(img);
                 }
             };
 
@@ -105,7 +90,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                 console.log('file read complete');
 
                 fd.append('upload_preset', unsignedUploadPreset);
-                fd.append('tags', 'browser_upload'); // Optional - add tag for image admin in Cloudinary
+                fd.append('tags', 'browser_upload');
                 fd.append('file', base64);
                 xhr.send(fd);
             };
@@ -113,12 +98,6 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
             reader.readAsDataURL(blob);
         }
         uploadFile(blob);
-        // **** Handle selected files ******* //
-        // var handleFiles = function (files) {
-        //     for (var i = 0; i < files.length; i++) {
-        //         uploadFile(files[i]); // call the function to upload the file
-        //     }
-        // };
     }
 
     if (values.selectedoption === 'video') {
@@ -180,8 +159,6 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                                 const thumbUrl = thumbnailBlob && urlCreator.createObjectURL(thumbnailBlob)
                                 const videoUrl = urlCreator.createObjectURL(videoBlob)
 
-                                //let url = videoBlob.toBlobUrl();
-                                //console.log(url);
                                 console.log(urlCreator);
                                 console.log(thumbUrl);
                                 console.log(videoUrl);
@@ -204,20 +181,12 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                                         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
                                         xhr.onreadystatechange = function (e) {
-                                            if (xhr.readyState == 4 && xhr.status == 200) {
-                                                // File uploaded successfully
+                                            if (xhr.readyState === 4 && xhr.status === 200) {
                                                 var response = JSON.parse(xhr.responseText);
-                                                // https://res.cloudinary.com/cloudName/image/upload/v1483481128/public_id.jpg
                                                 var url = response.secure_url;
-                                                // Create a thumbnail of the uploaded image, with 150px width
+                                            
                                                 console.log(url);
                                                 setVideo(url);
-                                                // var tokens = url.split('/');
-                                                // tokens.splice(-2, 0, 'w_150,c_scale');
-                                                // var img = new Image(); // HTML5 Constructor
-                                                // img.src = tokens.join('/');
-                                                // img.alt = response.public_id;
-                                                // document.getElementById('gallery').appendChild(img);
                                             }
                                         };
 
@@ -228,7 +197,7 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                                             console.log('file read complete');
 
                                             fd.append('upload_preset', unsignedUploadPreset);
-                                            fd.append('tags', 'browser_upload'); // Optional - add tag for image admin in Cloudinary
+                                            fd.append('tags', 'browser_upload'); 
                                             fd.append('file', base64);
                                             xhr.send(fd);
                                         };
@@ -236,18 +205,12 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                                         reader.readAsDataURL(file);
 
                                     }
-
-                                    // **** Handle selected files ******* //
-                                    var handleFiles = function (files) {
-                                        for (var i = 0; i < files.length; i++) {
-                                            uploadFile(files[i]); // call the function to upload the file
-                                        }
-                                    };
+                                    // var handleFiles = function (files) {
+                                    //     for (var i = 0; i < files.length; i++) {
+                                    //         uploadFile(files[i]);
+                                    //     }
+                                    // };
                                     uploadFile(videoBlob);
-                                    //   var dt = e.dataTransfer;
-                                    //   var files = dt.files;
-                                    //   handleFiles(files);
-                                    //dsqfsd
                                 }
 
                             }}
@@ -348,8 +311,6 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                                     <p className={style.timer__item}>en <Timer.Seconds /> seconden over</p>
                                 </div>
                                 <div className={style.wrapper}>
-                                    {/* <button onClick={start} className={style.buttonWrap}><button onClick={startRecording} type="button" className={style.start}></button></button> */}
-                                    {/* <button onClick={stop} className={style.buttonWrap}><button onClick={reset} className={style.buttonWrap}><button onClick={stopRecording} type="button" className={style.stop}></button></button></button> */}
                                     <button onClick={() => {
                                         startRecording();
                                         start();
@@ -363,19 +324,6 @@ const Record = ({ nextStep, prevStep, values, setVideo }) => {
                             </React.Fragment>
                         )}
                     </Timer>
-
-
-                    {/* <ReactMediaRecorder
-                        audio
-                        render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
-                            <div>
-                                <p>{status}</p>
-                                <button onClick={startRecording}>Start Recording</button>
-                                <button onClick={stopRecording}>Stop Recording</button>
-                                <video src={mediaBlobUrl} controls autoplay loop />
-                            </div>
-                        )}
-                    /> */}
                 </div >
                 <div className="progress-bar" id="progress-bar">
                     <div className="progress" id="progress"></div>

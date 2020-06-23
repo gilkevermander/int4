@@ -8,12 +8,10 @@ import NavBarSouvenir from "../NavBarSouvenir/index";
 
 const SouvenirWall = () => {
 
-  const [scan, setScan] = useState("");
   const history = useHistory();
 
   const handleScan = data => {
     if (data) {
-      setScan(data)
       console.log(data);
       history.push(data);
     }

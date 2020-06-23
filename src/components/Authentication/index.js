@@ -20,13 +20,7 @@ import AppHeader from "../AppHeader"
 
 const Authentication = () => {
 
-  const [step, setStep] = useState(1);
-
   const { uiStore } = useStore();
-
-  const prevStep = () => {
-    setStep(step - 1);
-  }
 
   return useObserver(() => (
     <>
@@ -50,9 +44,6 @@ const Authentication = () => {
         <Route exact path={ROUTES.start}>
           <Start />
         </Route>
-        {/* <Route exact path={ROUTES.reset}>
-          <Reset />
-        </Route> */}
         <Route exact path={ROUTES.login}>
           {uiStore.currentUser ? (
             <Redirect to={ROUTES.home} />
@@ -74,7 +65,6 @@ const Authentication = () => {
                 <AppHeader title={"Registreren"} className={style.title} prevStep={ROUTES.login} />
                 <RegisterForm />
                 <NavLink to={ROUTES.login} className={style.textlink}>
-                  {/* <span className={[style.form__info__bold, style.form__info].join(" ")}>Al een account? Login</span> */}
                 </NavLink>
               </div>
             )}

@@ -32,15 +32,6 @@ const Pimp = ({ nextStep, values, prevStep }) => {
     setImgSrc(imageSrc);
     console.log(imageSrc);
     console.log(webcamRef);
-    // const mediaRecorderRef = new MediaRecorder(webcamRef.current.stream, {
-    //   mimeType: "video/webm"
-    // });
-    // console.log(mediaRecorderRef)
-    // console.log(webcamRef.current)
-    // const canvas = webcamRef.current.getCanvas()
-    // console.log(webcamRef.current.getCanvas());
-    // console.log(canvas.toBlob)
-    // console.log(canvas.toBlob(webcamRef.current.getCanvas()))
   }, [webcamRef, setImgSrc]);
 
   return (

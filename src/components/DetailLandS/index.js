@@ -33,7 +33,6 @@ const DetailLandS = () => {
       console.log('haha')
       try {
         console.log('hihi')
-        //const souvenir = await souvenirStore.loadSouvenir(id); //resolveLand
         const souvenir = await landStore.loadSouvenirFromUrl(id, landId);
         console.log('hoi');
         console.log(id);
@@ -46,14 +45,11 @@ const DetailLandS = () => {
         console.log(souvenir);
         console.log('yes')
         const user = userStore.resolveUser(souvenir.souvenirs[0].userId)
-        console.log(user);//undefined
-        console.log(souvenir.souvenirs[0].userId);//null
+        console.log(user);
+        console.log(souvenir.souvenirs[0].userId);
         console.log(souvenir.delen)
         setUser(user);
-        // setState(STATE_LOADING_MORE_DETAILS);
-        // //await souvenirStore.loadLandVerhalen(id); //hier blijft hij op wachten maar er komt niets
         setState(STATE_FULLY_LOADED);
-        //console.log(souvenir.verhalen);
       } catch (error) {
         if (error.response && error.response.status === 404) {
           setState(STATE_DOES_NOT_EXIST);
@@ -80,7 +76,7 @@ const DetailLandS = () => {
         <div className={style.container}>
           <AppHeader title={"Luister naar de herinnering"} prevStep={ROUTES.kaart} />
           <div className={style.detail}>
-            <img alt="kaart" src="assets/img/kaart.png" width="272" className={style.image} />
+            <img alt="kaart" src="/assets/img/kaart.png" width="272" className={style.image} />
             <p className={style.verhaal}>Reisverhaal naar {souvenir.title}</p>
             <p className={style.reiziger}>Onbekende reiziger</p>
             <audio src={souvenir.video} controls loop />

@@ -26,7 +26,7 @@ const DetailLand = () => {
   useEffect(() => {
     const loadLand = async (id) => {
       try {
-        const land = await landStore.loadLand(id); //resolveLand
+        const land = await landStore.loadLand(id);
         console.log(land);
         console.log(id);
         if (!land || land === undefined) {
@@ -36,7 +36,7 @@ const DetailLand = () => {
         }
         setLand(land);
         setState(STATE_LOADING_MORE_DETAILS);
-        await landStore.loadLandSouvenirs(id); //hier blijft hij op wachten maar er komt niets
+        await landStore.loadLandSouvenirs(id);
         setState(STATE_FULLY_LOADED);
         console.log(land.souvenirs);
         setLength(land.souvenirs.length)
@@ -51,7 +51,6 @@ const DetailLand = () => {
   }, [id, landStore, setLand]);
 
   console.log(state);
-  //console.log(land.verhalen);
 
   return useObserver(() => {
     if (state === STATE_DOES_NOT_EXIST) {

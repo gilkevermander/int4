@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 import Message from "../Message/Message";
 import Form from "../Form/Form";
@@ -43,14 +43,12 @@ const Messages = ({ prevStep }) => {
           return;
         }
         setUser(user);
-        //setState(STATE_LOADING_MORE_DETAILS);
-        //await groupStore.loadGroupUsers(id);
         console.log(user)
         setState(STATE_FULLY_LOADED);
       } catch (error) {
-        /*if (error.response && error.response.status === 404) {
+        if (error.response && error.response.status === 404) {
           setState(STATE_DOES_NOT_EXIST);
-        }*/
+        }
       }
     };
     loadUser(id);

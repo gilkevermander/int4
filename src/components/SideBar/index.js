@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../../components/NavBar/NavBar";
 import DetailLand from "../DetailLand/index";
 import { useObserver } from "mobx-react-lite";
 import { Switch, Route } from "react-router-dom";

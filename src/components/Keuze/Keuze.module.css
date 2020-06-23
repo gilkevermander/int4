@@ -196,7 +196,7 @@
 
 .keuze__text1::before{
   content: "";
-  background-image: url('../../assets/img/kruis.png');
+  background-image: url('/assets/img/kruis.png');
   background-repeat: no-repeat;
   width: 8.3rem;
   height: 9.1rem;

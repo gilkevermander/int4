@@ -5,7 +5,6 @@ import { useObserver } from "mobx-react-lite";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../consts/index";
 import style from "./SouvenirWallDetail.module.css";
-import kaart from "../../assets/img/kaart.png";
 import ContentHeader from "../ContentHeader/ContentHeader";
 import NavBarSouvenir from "../NavBarSouvenir/index";
 
@@ -84,7 +83,7 @@ const SouvenirWallDetail = () => {
         <section className={style.container}>
           <ContentHeader title={"Luister naar de herinnering"} />
           <div className={style.detail}>
-            <img alt="kaart" src={kaart} width="272" className={style.image} />
+            <img alt="kaart" src="assets/img/kaart.png" width="272" className={style.image} />
             <h3 className={style.verhaal}>Reisverhaal naar {souvenir.title}</h3>
             <p className={style.reiziger}>Onbekende reiziger</p>
             <audio src={souvenir.souvenirs[0].video} controls loop />

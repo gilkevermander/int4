@@ -48,13 +48,13 @@ body {
 
 @font-face {
   font-family: Luna;
-  src: url(assets/fonts/Luna.woff2) format('woff2'), url(assets/fonts/Luna.woff) format('woff');
+  src: url(/assets/fonts/Luna.woff2) format('woff2'), url(/assets/fonts/Luna.woff) format('woff');
 }
 
 #root {
   height: 100vh;
   width: 100%;
-  background-image: url('./assets/img/textures.png');
+  background-image: url('/assets/img/textures.png');
   background-color: #8bd1cb;
   background-blend-mode: screen;
   display: flex;

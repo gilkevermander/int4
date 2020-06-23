@@ -1,11 +1,6 @@
 import React from "react";
 import ContentHeader from "../ContentHeader/ContentHeader";
 import style from "./Antwoord.module.css";
-// import vs from "../../assets/img/vs.png";
-// import belgie from "../../assets/img/belgie.png"
-// import italie from "../../assets/img/italie.png"
-// import japan from "../../assets/img/japan.png"
-import NavBarSouvenir from "../NavBarSouvenir/index";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../consts/index";
 

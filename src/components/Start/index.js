@@ -1,12 +1,7 @@
 import React from "react";
-import { Player, BigPlayButton } from 'video-react';
-
-import intro from '../../assets/img/poster.png'
-import bestand from '../../assets/video/intro.mp4'
 import style from "./Start.module.css";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../consts/index";
-import ReactPlayer from 'react-player'
 
 
 const Start = () => {
@@ -18,10 +13,9 @@ const Start = () => {
         <video
           className={style.player}
           playsInline
-          poster={intro}
-          src={bestand}
+          poster="assets/video/intro.mp4"
+          src="assets/video/intro.mp4"
           width="500"
-          // contentStyle={{ padding: 0 }}
           controls
         />
         <link

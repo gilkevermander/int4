@@ -8,7 +8,6 @@ import { useHistory } from "react-router-dom";
 const AddUser = () => {
   const [gebruikersnaam, setGebruikersnaam] = useState("");
   const [message, setMessage] = useState("");
-  // const [messageFalse, setMessageFalse] = useState("");
   const { uiStore, userStore } = useStore();
   const history = useHistory();
 
@@ -17,7 +16,6 @@ const AddUser = () => {
     if (gebruikersnaam !== "") {
       try {
         await userStore.createContactforUser(uiStore.currentUser, gebruikersnaam);
-        // setMessage(`${gebruikersnaam} is succesvol toegevoegd`)
         history.push(ROUTES.chat)
       } catch (error) {
         console.log(error);
@@ -46,10 +44,6 @@ const AddUser = () => {
           <h4 className= {style.hidden}>Voeg toe</h4>
           <input type="submit" value="+" className={style.button} />
         </form>
-        {/* {message === `${gebruikersnaam} bestaat niet` || (message === "Geef een gebruikersnaam op." && gebruikersnaam === "") ? <p className={style.messageFalse}>{message}</p> : <p className={style.message}></p>} */}
-        {/* {gebruikersnaam === "" ||  message === `${gebruikersnaam} bestaat niet` ? <p className={style.messageFalse}>{message}</p> : <p className={style.messageFalse}></p> } */}
-        {/* <p className={message === `${gebruikersnaam} is succesvol toegevoegd` ? style.message : style.messageFalse} >{message}</p> */}
-
         {gebruikersnaam === "" || message=== `${gebruikersnaam} bestaat niet` ? <p className={style.messageFalse}>{message}</p> : <p className={style.messageFalse}></p> }
       </div>
   );

@@ -3,19 +3,15 @@ import InfoHeader from "../InfoHeader/InfoHeader";
 import style from "./HomePage.module.css";
 import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../consts/index";
-import { useStore } from "../../hooks/useStore";
 
 const HomePage = () => {
   const innerRef = useRef();
-
-  const { uiStore } = useStore();
 
   const getLocation = () => {
     innerRef.current && innerRef.current.getLocation();
   };
   return (
     <section className={style.breedte}>
-      {/* <p>{uiStore.currentUser.gebruikersnaam}</p> */}
       <InfoHeader title={"Kabien"} className={style.title} />
       <div className={style.headwrapper}>
         <div className={style.wrapper}>
