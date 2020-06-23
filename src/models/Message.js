@@ -6,9 +6,10 @@ class Message {
     if (!store) {
       throw new Error("voorzie een store");
     }
-    if (!userId) {
-      throw new Error("A message must have a userId");
-    }
+    // if (!userId) {
+    //   console.log(userId)
+    //   throw new Error("A message must have a userId");
+    // }
     if (!content || content === "") {
       throw new Error("A message must have some content");
     }
@@ -31,18 +32,6 @@ class Message {
 
   update = async () => this.store.updateMessage(this.asJson);
 
-  // setGroup(group) {
-  //   if (this.group) {
-  //     this.group.unlinkMessage(this);
-  //   }
-  //   if (group) {
-  //     this.groupId = group.id;
-  //     this.group.linkMessage(this);
-  //   } else {
-  //     this.groupId = null;
-  //   }
-  // }
-
   setUser(user) {
     if (this.user) {
       this.user.unlinkMessage(this);
@@ -54,10 +43,6 @@ class Message {
       this.userId = null;
     }
   }
-
-  // get group() {
-  //   return this.store.rootStore.groupStore.resolveGroup(this.groupId);
-  // }
 
   get user() {
     return this.store.rootStore.userStore.resolveUser(this.userId);
@@ -75,13 +60,12 @@ class Message {
     this.unread = (unread !== undefined) ? unread : this.unread;
     this.gebruikersnaam = (gebruikersnaam !== undefined) ? gebruikersnaam : this.gebruikersnaam;
     this.gebruikersnaamMe = (gebruikersnaamMe !== undefined) ? gebruikersnaamMe : this.gebruikersnaamMe;
-
     if (date instanceof Date) {
       date = date.toISOString();
     }
     this.date = (date !== undefined) ? new Date(date) : this.date;
-
     if (userId !== undefined) {
+      console.log(userId)
       this.setUser(this.store.rootStore.userStore.resolveUser(userId));
     }
   };

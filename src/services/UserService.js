@@ -73,8 +73,8 @@ class UserService {
   getMessagesForUser = async (gebruikersnaam, gebruikersnaamMe, onMessageAdded) => {
     this.db
       .collectionGroup("messages")
-      .where("gebruikersnaam", "==", gebruikersnaam)
       .where("gebruikersnaamMe", "==", gebruikersnaamMe)
+      .where("gebruikersnaam", "==", gebruikersnaam)
       .orderBy("timestamp")
       .onSnapshot(async (snapshot) => {
         snapshot.docChanges().forEach(async (change) => {
@@ -86,17 +86,17 @@ class UserService {
       });
   };
 
-  getMessagesForUser2 = async (gebruikersnaam, gebruikersnaamMe, onMessageAdded) => {
+  getMessagesForUser2 = async (gebruikersnaam, gebruikersnaamMe, onMessageAdded2) => {
     this.db
       .collectionGroup("messages")
-      .where("gebruikersnaam", "==", gebruikersnaamMe)
       .where("gebruikersnaamMe", "==", gebruikersnaam)
+      .where("gebruikersnaam", "==", gebruikersnaamMe)
       .orderBy("timestamp")
       .onSnapshot(async (snapshot) => {
         snapshot.docChanges().forEach(async (change) => {
           console.log(change);
           if (change.type === "added") {
-            onMessageAdded(change.doc.data());
+            onMessageAdded2(change.doc.data());
           }
         });
       });
