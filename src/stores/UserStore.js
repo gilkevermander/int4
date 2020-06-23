@@ -62,6 +62,8 @@ class UserStore {
   loadMessagesForUser = async (user, me) => {//zonder me
     const gebruikersnaam = user.gebruikersnaam
     const gebruikersnaamMe = me.gebruikersnaam
+    console.log(gebruikersnaam);
+    console.log(gebruikersnaamMe);
     const messages = await this.usersService.getMessagesForUser(
       gebruikersnaam, gebruikersnaamMe, this.onMessageAdded
     );
@@ -73,7 +75,7 @@ class UserStore {
     const gebruikersnaam = user.gebruikersnaam
     const gebruikersnaamMe = me.gebruikersnaam
     const messages = await this.usersService.getMessagesForUser2(
-      gebruikersnaam, gebruikersnaamMe, this.onMessageAdded
+      gebruikersnaam, gebruikersnaamMe, this.onMessageAdded2
     );
     console.log(messages)
     return messages
@@ -92,6 +94,11 @@ class UserStore {
   // };
 
   onMessageAdded = async (json) => {
+    this.rootStore.messageStore.updateMessageFromServer(json);
+    
+  };
+
+  onMessageAdded2 = async (json) => {
     console.log(json);
     console.log(this.rootStore.messageStore.updateMessageFromServer(json))
     this.rootStore.messageStore.updateMessageFromServer(json);
@@ -166,7 +173,7 @@ class UserStore {
   // };
 
   resolveUser = (id) => this.users.find((user) => user.id === id);
-  resolveUserg = (gebruikersnaam) => this.users.find((user) => user.gebruikersnaam === gebruikersnaam);
+  resolveUserg = (gebruikersnaamMe) => this.users.find((user) => user.gebruikersnaamMe === gebruikersnaamMe);
 
   addUser = (user) => {
     this.users.push(user);
