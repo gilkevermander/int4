@@ -6,9 +6,10 @@ class Message {
     if (!store) {
       throw new Error("voorzie een store");
     }
-    if (!userId) {
-      throw new Error("A message must have a userId");
-    }
+    // if (!userId) {
+    //   console.log(userId)
+    //   throw new Error("A message must have a userId");
+    // }
     if (!content || content === "") {
       throw new Error("A message must have some content");
     }
@@ -64,8 +65,8 @@ class Message {
     }
     this.date = (date !== undefined) ? new Date(date) : this.date;
     if (userId !== undefined) {
-      //this.setUser(this.store.rootStore.userStore.resolveUser(userId));//dit  is de ontvanger die geset wordt
-      this.setUser(this.store.rootStore.userStore.resolveUserg(gebruikersnaamMe));
+      console.log(userId)
+      this.setUser(this.store.rootStore.userStore.resolveUser(userId));
     }
   };
 

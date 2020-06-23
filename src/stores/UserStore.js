@@ -173,7 +173,7 @@ class UserStore {
   // };
 
   resolveUser = (id) => this.users.find((user) => user.id === id);
-  resolveUserg = (gebruikersnaamMe) => this.users.find((user) => user.gebruikersnaamMe === gebruikersnaamMe);
+  resolveUserg = (gebruikersnaam) => this.users.find((user) => user.gebruikersnaam === gebruikersnaam);
 
   addUser = (user) => {
     this.users.push(user);
