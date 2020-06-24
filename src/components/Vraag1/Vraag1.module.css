@@ -11,7 +11,7 @@
     font-size: 20px;
     line-height: 23px;
     text-align: center;
-    margin-top: 2rem;;
+    margin-top: 7rem;;
 }
 
 .grid {
@@ -21,7 +21,7 @@
   height: 31.7rem;
   width: 31.7rem;
   grid-gap: 1.1rem;
-  margin: 4rem auto
+  margin: 2rem auto
 }
 
 .text {
@@ -88,7 +88,7 @@
   .progress {
       display: flex;
       justify-content: center;
-      margin-top: 2rem;
+      margin-top: -2rem;
   }
 
   .button {
