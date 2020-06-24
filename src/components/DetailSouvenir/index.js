@@ -41,7 +41,9 @@ const DetailSouvenir = () => {
         }
         setSouvenir(souvenir);
         const user = userStore.resolveUser(souvenir.souvenirs[0].userId)
+        console.log(user);
         setUser(user);
+        
         // setState(STATE_LOADING_MORE_DETAILS);
         // //await souvenirStore.loadLandVerhalen(id); //hier blijft hij op wachten maar er komt niets
         setState(STATE_FULLY_LOADED);
@@ -85,7 +87,7 @@ const DetailSouvenir = () => {
             <h3 className={style.verhaal} >Reisverhaal naar {souvenir.title}</h3>
             {/* <p>land:{souvenir.land.title}</p> */}
             {/* <p>{user.gebruikersnaam}</p> */}
-            <p className={style.reiziger}>Gebruikersnaam</p>
+            {/* <p className={style.reiziger}>Gebruikersnaam</p> */}
             <Link className={style.button} to={ROUTES.chat}>
               <h3 className={style.button__text}>Bedank met een berichtje</h3>
             </Link>
